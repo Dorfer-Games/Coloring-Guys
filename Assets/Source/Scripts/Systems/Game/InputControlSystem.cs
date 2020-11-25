@@ -17,12 +17,12 @@ public class InputControlSystem : GameSystem, IUpdating
         {
             var mouse = Input.mousePosition;
             var delta = mouse.x - touchPosition.x;
-            game.charactersRotations[0] = Mathf.Clamp(delta / maxDelta, -1, 1);
+            game.characters[0].rotationValue = Mathf.Clamp(delta / maxDelta, -1, 1);
         }
 
         else if (Input.GetMouseButtonUp(0))
         {
-            game.charactersRotations[0] = 0;
+            game.characters[0].rotationValue = 0;
         }
     }
 }

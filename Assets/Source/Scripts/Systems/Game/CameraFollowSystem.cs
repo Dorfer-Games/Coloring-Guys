@@ -11,7 +11,7 @@ public class CameraFollowSystem : GameSystem, IIniting
     {
         var seq = DOTween.Sequence();
         var camera = Camera.main.transform;
-        var camPoint = game.characters[0].transform.Find("Camera point");
+        var camPoint = game.characters[0].rigidbody.transform.Find("Camera point");
 
         camera.SetParent(camPoint, true);
 

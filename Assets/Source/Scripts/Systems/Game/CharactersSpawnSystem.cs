@@ -7,8 +7,8 @@ public class CharactersSpawnSystem : GameSystem, IIniting
 
     void IIniting.OnInit()
     {
-        game.characters = new Rigidbody[1] { character };
-        game.charactersRotations = new float[1];
-        game.characterAnimators = new Animator[1] { character.GetComponent<Animator>() };
+        game.characters = new Character[1] { new Character() };
+        game.characters[0].rigidbody = character;
+        game.characters[0].animator = character.GetComponent<Animator>();
     }
 }

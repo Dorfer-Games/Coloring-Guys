@@ -7,8 +7,6 @@ namespace Kuhpik
     /// </summary>
     public class GameData
     {
-        public Rigidbody[] characters;
-        public float[] charactersRotations;
-        public Animator[] characterAnimators;
+        public Character[] characters;
     }
 }

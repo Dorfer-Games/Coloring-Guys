@@ -8,7 +8,7 @@ public class CellCollisionSystem : GameSystem, IIniting
     {
         foreach (var character in game.characters)
         {
-            character.GetComponent<OnCollisionEnterComponent>().OnEnter += ColorCell;
+            character.rigidbody.GetComponent<OnCollisionEnterComponent>().OnEnter += ColorCell;
         }
     }
 
@@ -21,8 +21,9 @@ public class CellCollisionSystem : GameSystem, IIniting
             var renderer = other.GetComponent<MeshRenderer>();
             var seq = DOTween.Sequence();
 
-            seq.Append(renderer.material.DOColor(Color.red, config.CellFadeTime).SetEase(Ease.OutSine));
-            seq.Join(other.DOMoveY(-20, config.CellFallTime).SetEase(Ease.InCubic));
+            seq.Append(renderer.material.DOColor(Color.red, config.CellFadeTime).SetEase(Ease.OutCubic));
+            seq.Append(other.DOMoveY(-20, config.CellFallTime).SetEase(Ease.Linear));
+            seq.SetEase(Ease.Linear);
             seq.Play();
         }
     }
