@@ -9,5 +9,6 @@ public class CharactersSpawnSystem : GameSystem, IIniting
     {
         game.characters = new Rigidbody[1] { character };
         game.charactersRotations = new float[1];
+        game.characterAnimators = new Animator[1] { character.GetComponent<Animator>() };
     }
 }

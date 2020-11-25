@@ -9,5 +9,6 @@ namespace Kuhpik
     {
         public Rigidbody[] characters;
         public float[] charactersRotations;
+        public Animator[] characterAnimators;
     }
 }

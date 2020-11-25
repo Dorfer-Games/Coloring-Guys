@@ -21,8 +21,8 @@ public class CellCollisionSystem : GameSystem, IIniting
             var renderer = other.GetComponent<MeshRenderer>();
             var seq = DOTween.Sequence();
 
-            seq.Append(renderer.material.DOColor(Color.red, config.CellFadeTime)).SetEase(Ease.Linear);
-            seq.Append(other.DOMoveY(-20, config.CellFallTime).SetEase(Ease.InCubic));
+            seq.Append(renderer.material.DOColor(Color.red, config.CellFadeTime).SetEase(Ease.OutSine));
+            seq.Join(other.DOMoveY(-20, config.CellFallTime).SetEase(Ease.InCubic));
             seq.Play();
         }
     }
