@@ -1,55 +1,43 @@
 ﻿using Kuhpik;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class DebugCheatingSystem : GameSystem, IIniting, IDisposing
 {
     [SerializeField] GameObject cheatingPanel;
-    [SerializeField] Slider moveSpeedSlider;
-    [SerializeField] Slider rotationSpeedSlider;
+    [SerializeField] CheatSliderComponent moveSpeedSlider;
+    [SerializeField] CheatSliderComponent rotationSpeedSlider;
+    [SerializeField] CheatSliderComponent hexFallTimeSlider;
+    [SerializeField] CheatSliderComponent hexFadeTimeSlider;
 
-    [SerializeField] TextMeshProUGUI speedValueText;
-    [SerializeField] TextMeshProUGUI rotationValueText;
-
-    float originalMoveSpeed, originalRotationSpeed;
+    float originalMoveSpeed;
+    float originalRotationSpeed;
+    float originalHexFallSpeed;
+    float originalHexFadeSpeed;
 
     void IIniting.OnInit()
     {
 #if DEBUG
         cheatingPanel.SetActive(true);
 
-        moveSpeedSlider.minValue = 1;
-        moveSpeedSlider.maxValue = 30;
-        moveSpeedSlider.value = config.MoveSpeed;
-        moveSpeedSlider.onValueChanged.AddListener(OnSpeedChange);
-        OnSpeedChange(config.MoveSpeed);
-        originalMoveSpeed = config.MoveSpeed;
+        moveSpeedSlider.Subscribe(1, 30, config.MoveSpeed, config.UpdateMoveSpeed);
+        rotationSpeedSlider.Subscribe(1, 200, config.RotationSpeed, config.UpdateRotationSpeed);
+        hexFallTimeSlider.Subscribe(0.1f, 10f, config.CellFallTime, config.UpdateCellFallTime);
+        hexFadeTimeSlider.Subscribe(0.1f, 5f, config.CellFadeTime, config.UpdateCellFadeTime);
 
-        rotationSpeedSlider.minValue = 1;
-        rotationSpeedSlider.maxValue = 200;
-        rotationSpeedSlider.value = config.RotationSpeed;
-        rotationSpeedSlider.onValueChanged.AddListener(OnRotationChange);
-        OnRotationChange(config.RotationSpeed);
+        originalMoveSpeed = config.MoveSpeed;
         originalRotationSpeed = config.RotationSpeed;
+        originalHexFallSpeed = config.CellFallTime;
+        originalHexFadeSpeed = config.CellFadeTime;
 #endif
     }
 
-    void OnSpeedChange(float value)
-    {
-        config.UpdateMoveSpeed(value);
-        speedValueText.text = value.ToString("F2");
-    }
-
-    void OnRotationChange(float value)
-    {
-        config.UpdateRotationSpeed(value);
-        rotationValueText.text = value.ToString("F2");
-    }
-
-    void IDisposing.OnDispose()
+    //Можно было бы это сделать в каком-то левом классе, тогда можно было бы не делать ресет.
+    //Сейчас проблема в том, что я не могу поменять создать копию GameConfig и заменить его во всех системах.
+    void IDisposing.OnDispose() 
     {
         config.UpdateMoveSpeed(originalMoveSpeed);
         config.UpdateRotationSpeed(originalRotationSpeed);
+        config.UpdateCellFallTime(originalHexFallSpeed);
+        config.UpdateCellFadeTime(originalHexFadeSpeed);
     }
 }

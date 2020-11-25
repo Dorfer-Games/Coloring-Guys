@@ -46,6 +46,16 @@ namespace Kuhpik
             }
         }
 
+        private void OnApplicationQuit()
+        {
+            foreach (var system in systems.Values)
+            {
+                (system as IGameSystem).PerformAction<IDisposing>();
+            }
+
+            SaveExtension.Save(playerData, saveKey);
+        }
+
         public static void GameRestart(int sceneIndex)
         {
             foreach (var system in systems.Values)

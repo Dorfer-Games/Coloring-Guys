@@ -5,8 +5,10 @@ namespace Kuhpik
     [CreateAssetMenu(menuName = "Kuhpik/GameConfig")]
     public sealed class GameConfig : ScriptableObject
     {
-        [field: SerializeField] public float MoveSpeed;
-        [field: SerializeField] public float RotationSpeed;
+        [field: SerializeField] public float MoveSpeed { get; private set; }
+        [field: SerializeField] public float RotationSpeed { get; private set; }
+        [field: SerializeField] public float CellFadeTime { get; private set; }
+        [field: SerializeField] public float CellFallTime { get; private set; }
 
         public void UpdateMoveSpeed(float value)
         {
@@ -16,6 +18,16 @@ namespace Kuhpik
         public void UpdateRotationSpeed(float value)
         {
             RotationSpeed = value;
+        }
+
+        public void UpdateCellFadeTime(float value)
+        {
+            CellFadeTime = value;
+        }
+
+        public void UpdateCellFallTime(float value)
+        {
+            CellFallTime = value;
         }
     }
 }
