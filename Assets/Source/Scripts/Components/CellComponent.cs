@@ -16,7 +16,7 @@ public class CellComponent : MonoBehaviour
     }
 
     //Тоже самое, только информация.
-    public void SetState(bool isDown)
+    public void SetDown(bool isDown)
     {
         IsDown = isDown;
     }

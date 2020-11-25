@@ -16,3 +16,4 @@ MonoBehaviour:
   <RotationSpeed>k__BackingField: 50
   <CellFadeTime>k__BackingField: 1
   <CellFallTime>k__BackingField: 2.5
+  <CellBackTime>k__BackingField: 2

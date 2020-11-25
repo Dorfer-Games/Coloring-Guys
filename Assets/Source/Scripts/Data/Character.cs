@@ -5,5 +5,6 @@ public class Character
     public Animator animator;
     public float rotationValue;
     public Rigidbody rigidbody;
-    public Color color;
+    public Color color; //Цвет игрока
+    public int stacks; //Сколько клеток мы можем покрасить
 }

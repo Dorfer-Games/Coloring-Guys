@@ -8,11 +8,13 @@ public class DebugCheatingSystem : GameSystem, IIniting, IDisposing
     [SerializeField] CheatSliderComponent rotationSpeedSlider;
     [SerializeField] CheatSliderComponent hexFallTimeSlider;
     [SerializeField] CheatSliderComponent hexFadeTimeSlider;
+    [SerializeField] CheatSliderComponent hexBackTimeSlider;
 
     float originalMoveSpeed;
     float originalRotationSpeed;
     float originalHexFallSpeed;
     float originalHexFadeSpeed;
+    float originalHexBackSpeed;
 
     void IIniting.OnInit()
     {
@@ -23,11 +25,13 @@ public class DebugCheatingSystem : GameSystem, IIniting, IDisposing
         rotationSpeedSlider.Subscribe(1, 200, config.RotationSpeed, config.UpdateRotationSpeed);
         hexFallTimeSlider.Subscribe(0.1f, 10f, config.CellFallTime, config.UpdateCellFallTime);
         hexFadeTimeSlider.Subscribe(0.1f, 5f, config.CellFadeTime, config.UpdateCellFadeTime);
+        hexBackTimeSlider.Subscribe(0.5f, 20f, config.CellBackTime, config.UpdateCellBackTime);
 
         originalMoveSpeed = config.MoveSpeed;
         originalRotationSpeed = config.RotationSpeed;
         originalHexFallSpeed = config.CellFallTime;
         originalHexFadeSpeed = config.CellFadeTime;
+        originalHexBackSpeed = config.CellBackTime;
 #endif
     }
 
@@ -39,5 +43,6 @@ public class DebugCheatingSystem : GameSystem, IIniting, IDisposing
         config.UpdateRotationSpeed(originalRotationSpeed);
         config.UpdateCellFallTime(originalHexFallSpeed);
         config.UpdateCellFadeTime(originalHexFadeSpeed);
+        config.UpdateCellBackTime(originalHexBackSpeed);
     }
 }
