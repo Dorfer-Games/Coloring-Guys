@@ -2870,6 +2870,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bandit Run
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4a1ca7966839cd94890c785ede625e95, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5150285217545641351, guid: 4a1ca7966839cd94890c785ede625e95, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -3176,9 +3180,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cellPrefab: {fileID: 4475343288119919344, guid: 16a2ea4f21e372443bf2e8e95b4d8c55, type: 3}
-  borders: {x: 30, y: 30}
+  borders: {x: 50, y: 50}
   position: {x: -75, y: 0, z: 0}
-  scale: 5
+  scale: 3
+  xOffset: 1
+  zOffset: 0.867
 --- !u!1 &1046513046
 GameObject:
   m_ObjectHideFlags: 0
