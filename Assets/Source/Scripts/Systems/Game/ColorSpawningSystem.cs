@@ -11,7 +11,7 @@ public class ColorSpawningSystem : GameSystem, IIniting
     {
         foreach (var character in game.characters)
         {
-            character.rigidbody.GetComponent<OnTriggerEnterComponent>().OnEnter += Collect;
+            character.onTriggerComponent.OnEnter += Collect;
         }
 
         var colorStack = Instantiate(colorPrefab, spawnPosition, Quaternion.identity).GetComponent<ColorStackComponent>();
@@ -19,11 +19,11 @@ public class ColorSpawningSystem : GameSystem, IIniting
         colorStack.Setup(30);
     }
 
-    void Collect(Transform other, Transform moving)
+    void Collect(Transform other, Transform @object)
     {
         if (other.CompareTag("Color")) 
         {
-            var character = game.characters.First(x => x.rigidbody.transform == moving);
+            var character = game.characterDictionary[@object];
             var color = other.GetComponent<ColorStackComponent>();
 
             if (color.Color == character.color)

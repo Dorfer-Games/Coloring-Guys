@@ -9,12 +9,16 @@ public class DebugCheatingSystem : GameSystem, IIniting, IDisposing
     [SerializeField] CheatSliderComponent hexFallTimeSlider;
     [SerializeField] CheatSliderComponent hexFadeTimeSlider;
     [SerializeField] CheatSliderComponent hexBackTimeSlider;
+    [SerializeField] CheatSliderComponent jumpStrengthSlider;
+    [SerializeField] CheatSliderComponent gravityStrengthSlider;
 
     float originalMoveSpeed;
     float originalRotationSpeed;
     float originalHexFallSpeed;
     float originalHexFadeSpeed;
     float originalHexBackSpeed;
+    float originaljumpStrength;
+    float originalGravityStrength;
 
     void IIniting.OnInit()
     {
@@ -26,12 +30,16 @@ public class DebugCheatingSystem : GameSystem, IIniting, IDisposing
         hexFallTimeSlider.Subscribe(0.1f, 10f, config.CellFallTime, config.UpdateCellFallTime);
         hexFadeTimeSlider.Subscribe(0.1f, 5f, config.CellFadeTime, config.UpdateCellFadeTime);
         hexBackTimeSlider.Subscribe(0.5f, 20f, config.CellBackTime, config.UpdateCellBackTime);
+        jumpStrengthSlider.Subscribe(3, 30, config.JumpStrength, config.UpdateJumpStrength);
+        gravityStrengthSlider.Subscribe(10, 80, config.GravityStrength, config.UpdateGravityStrenght);
 
         originalMoveSpeed = config.MoveSpeed;
         originalRotationSpeed = config.RotationSpeed;
         originalHexFallSpeed = config.CellFallTime;
         originalHexFadeSpeed = config.CellFadeTime;
         originalHexBackSpeed = config.CellBackTime;
+        originaljumpStrength = config.JumpStrength;
+        originalGravityStrength = config.GravityStrength;
 #endif
     }
 
@@ -44,5 +52,7 @@ public class DebugCheatingSystem : GameSystem, IIniting, IDisposing
         config.UpdateCellFallTime(originalHexFallSpeed);
         config.UpdateCellFadeTime(originalHexFadeSpeed);
         config.UpdateCellBackTime(originalHexBackSpeed);
+        config.UpdateJumpStrength(originaljumpStrength);
+        config.UpdateGravityStrenght(originalGravityStrength);
     }
 }

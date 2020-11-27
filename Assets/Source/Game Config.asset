@@ -17,3 +17,5 @@ MonoBehaviour:
   <CellFadeTime>k__BackingField: 1
   <CellFallTime>k__BackingField: 2.5
   <CellBackTime>k__BackingField: 2
+  <JumpStrength>k__BackingField: 10
+  <GravityStrength>k__BackingField: 20

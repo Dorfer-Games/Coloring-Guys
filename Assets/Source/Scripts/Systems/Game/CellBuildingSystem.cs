@@ -9,16 +9,16 @@ public class CellBuildingSystem : GameSystem, IIniting
     {
         foreach (var character in game.characters)
         {
-            character.rigidbody.GetComponent<OnTriggerEnterComponent>().OnEnter += Build;
+            character.onTriggerComponent.OnEnter += Build;
         }
     }
 
-    void Build(Transform other, Transform moving)
+    void Build(Transform other, Transform @object)
     {
         if (other.CompareTag("Cell"))
         {
-            var character = game.characters.First(x => x.rigidbody.transform == moving);
-            var component = other.parent.GetComponent<CellComponent>();
+            var character = game.characterDictionary[@object];
+            var component = game.cellDictionary[other.parent];
 
             if (component.IsDown && character.stacks > 0)
             {

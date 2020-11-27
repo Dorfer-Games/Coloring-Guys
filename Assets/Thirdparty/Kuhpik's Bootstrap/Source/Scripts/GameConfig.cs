@@ -10,6 +10,8 @@ namespace Kuhpik
         [field: SerializeField] public float CellFadeTime { get; private set; }
         [field: SerializeField] public float CellFallTime { get; private set; }
         [field: SerializeField] public float CellBackTime { get; private set; }
+        [field: SerializeField] public float JumpStrength { get; private set; }
+        [field: SerializeField] public float GravityStrength { get; private set; }
 
         public void UpdateMoveSpeed(float value)
         {
@@ -34,6 +36,16 @@ namespace Kuhpik
         public void UpdateCellBackTime(float value)
         {
             CellBackTime = value;
+        }
+
+        public void UpdateJumpStrength(float value)
+        {
+            JumpStrength = value;
+        }
+
+        public void UpdateGravityStrenght(float value)
+        {
+            GravityStrength = value;
         }
     }
 }

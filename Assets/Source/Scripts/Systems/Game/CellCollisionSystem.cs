@@ -9,18 +9,18 @@ public class CellCollisionSystem : GameSystem, IIniting
     {
         foreach (var character in game.characters)
         {
-            character.rigidbody.GetComponent<OnCollisionEnterComponent>().OnEnter += ColorCell;
+            character.onCollisionComponent.OnEnter += ColorCell;
         }
     }
 
-    void ColorCell(Transform other, Transform moving)
+    void ColorCell(Transform other, Transform @object)
     {
         if (other.CompareTag("Cell"))
         {
             if (DOTween.IsTweening(other)) return;
 
-            var character = game.characters.First(x => x.rigidbody.transform == moving);
-            var component = other.parent.GetComponent<CellComponent>();
+            var character = game.characterDictionary[@object];
+            var component = game.cellDictionary[other.parent];
 
             if (character.stacks > 0) ColorCell(character, component);
             else if (character.color != component.Color) FadeCell(other, component);            
@@ -48,7 +48,7 @@ public class CellCollisionSystem : GameSystem, IIniting
 
     void BringCellBack(Transform cell)
     {
-        var component = cell.parent.GetComponent<CellComponent>();
+        var component = game.cellDictionary[cell.parent];
         component.Renderer.material.color = Color.white;
         component.SetColor(Color.white);
         component.SetDown(true);
