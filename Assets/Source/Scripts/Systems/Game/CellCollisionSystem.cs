@@ -22,8 +22,11 @@ public class CellCollisionSystem : GameSystem, IIniting
             var character = game.characterDictionary[@object];
             var component = game.cellDictionary[other.parent];
 
-            if (character.stacks > 0) ColorCell(character, component);
-            else if (character.color != component.Color) FadeCell(other, component);            
+            if (character.color != component.Color)
+            {
+                if (character.stacks > 0) ColorCell(character, component);
+                else FadeCell(other, component);
+            }
         }
     }
 

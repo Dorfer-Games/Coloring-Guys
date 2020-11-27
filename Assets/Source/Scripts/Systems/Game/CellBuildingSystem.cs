@@ -24,7 +24,6 @@ public class CellBuildingSystem : GameSystem, IIniting
                 if (DOTween.IsTweening(component.GetInstanceID()))
                 {
                     DOTween.Kill(component.GetInstanceID());
-                    Debug.Log("Kill");
                 }
 
                 character.stacks--;
