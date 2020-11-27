@@ -29,8 +29,8 @@ public class CellBuildingSystem : GameSystem, IIniting
                 character.stacks--;
                 component.SetDown(false);
                 component.SetColor(character.color);
+                component.Cell.transform.DOLocalMoveY(0, 0);
                 component.Renderer.material.color = character.color;
-                component.Cell.transform.localPosition = Vector2.zero;
             }
         }
     }

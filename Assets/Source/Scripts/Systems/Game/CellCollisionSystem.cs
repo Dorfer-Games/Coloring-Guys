@@ -45,18 +45,19 @@ public class CellCollisionSystem : GameSystem, IIniting
 
         seq.Append(renderer.material.DOColor(Color.red, config.CellFadeTime).SetEase(Ease.OutCubic));
         seq.Append(other.DOLocalMoveY(-20, config.CellFallTime).SetEase(Ease.Linear));
-        seq.OnComplete(() => BringCellBack(component));
+        seq.OnComplete(() => BringCellBack(other));
         seq.SetId(component.GetInstanceID());
         seq.SetEase(Ease.Linear);
         seq.Play();
     }
 
-    void BringCellBack(CellComponent component)
+    void BringCellBack(Transform cell)
     {
+        var component = game.cellDictionary[cell.parent];
         component.Renderer.material.color = Color.white;
         component.SetColor(Color.white);
 
-        component.Cell.transform.DOLocalMoveY(0, config.CellFallTime).SetDelay(config.CellBackTime).SetEase(Ease.Linear).SetId(component.GetInstanceID()).OnComplete(() =>
+        cell.DOLocalMoveY(0, config.CellFallTime).SetDelay(config.CellBackTime).SetId(component.GetInstanceID()).OnComplete(() =>
         {
             component.SetDown(false);
         });
