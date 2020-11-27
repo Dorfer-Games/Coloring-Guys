@@ -19,7 +19,6 @@ public class LevelCreatorComponent : MonoBehaviour
         for (int i = 0; i < borders.y; i++)
         {
             var additionalXoffset = (i % 2) * (xOffset / 2f);
-            Debug.Log(additionalXoffset);
 
             for (int j = 0; j < borders.x; j++)
             {

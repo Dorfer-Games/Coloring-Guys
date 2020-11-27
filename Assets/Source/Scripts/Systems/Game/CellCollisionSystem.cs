@@ -38,22 +38,22 @@ public class CellCollisionSystem : GameSystem, IIniting
     {
         var renderer = component.Renderer;
         var seq = DOTween.Sequence();
+        component.SetDown(true);
 
         seq.Append(renderer.material.DOColor(Color.red, config.CellFadeTime).SetEase(Ease.OutCubic));
-        seq.Append(other.DOMoveY(-20, config.CellFallTime).SetEase(Ease.Linear));
-        seq.OnComplete(() => BringCellBack(other));
+        seq.Append(other.DOLocalMoveY(-20, config.CellFallTime).SetEase(Ease.Linear));
+        seq.OnComplete(() => BringCellBack(component));
+        seq.SetId(component.GetInstanceID());
         seq.SetEase(Ease.Linear);
         seq.Play();
     }
 
-    void BringCellBack(Transform cell)
+    void BringCellBack(CellComponent component)
     {
-        var component = game.cellDictionary[cell.parent];
         component.Renderer.material.color = Color.white;
         component.SetColor(Color.white);
-        component.SetDown(true);
 
-        cell.DOMoveY(0, config.CellFallTime).SetDelay(config.CellBackTime).SetEase(Ease.Linear).OnComplete(() =>
+        component.Cell.transform.DOLocalMoveY(0, config.CellFallTime).SetDelay(config.CellBackTime).SetEase(Ease.Linear).SetId(component.GetInstanceID()).OnComplete(() =>
         {
             component.SetDown(false);
         });
