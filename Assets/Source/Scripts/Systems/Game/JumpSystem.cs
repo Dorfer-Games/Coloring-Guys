@@ -1,4 +1,5 @@
 ﻿using Kuhpik;
+using Supyrb;
 using UnityEngine;
 
 public class JumpSystem : GameSystem, IIniting, IUpdating
@@ -10,6 +11,7 @@ public class JumpSystem : GameSystem, IIniting, IUpdating
 
     void IIniting.OnInit()
     {
+        Signals.Get<JumpReadySignal>().AddListener(Jump);
         Physics.gravity = Vector3.down * config.GravityStrength;
 
         foreach (var character in game.characters)

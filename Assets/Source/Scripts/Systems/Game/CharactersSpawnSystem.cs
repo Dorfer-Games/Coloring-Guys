@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class CharactersSpawnSystem : GameSystem, IIniting
 {
-    [SerializeField] Rigidbody character;
+    [Header("Игрок должен быть на индексе 0")]
+    [SerializeField] Rigidbody[] characters;
+    [SerializeField] Color[] characterColors;
 
     void IIniting.OnInit()
     {
-        game.characters = new Character[1] { new Character() };
-        game.characters[0].rigidbody = character;
-        game.characters[0].animator = character.GetComponent<Animator>();
-        game.characters[0].color = Color.yellow;
-        game.characters[0].onCollisionComponent = character.GetComponent<OnCollisionEnterComponent>();
-        game.characters[0].onTriggerComponent = character.GetComponent<OnTriggerEnterComponent>();
+        game.characters = new Character[characters.Length];
+
+        for (int i = 0; i < characters.Length; i++)
+        {
+            game.characters[i] = new Character();
+            game.characters[i].rigidbody = characters[i];
+            game.characters[i].animator = characters[i].GetComponent<Animator>();
+            game.characters[i].color = characterColors[i];
+            game.characters[i].onCollisionComponent = characters[i].GetComponent<OnCollisionEnterComponent>();
+            game.characters[i].onTriggerComponent = characters[i].GetComponent<OnTriggerEnterComponent>();
+        }        
 
         game.characterDictionary = game.characters.ToDictionary(x => x.rigidbody.transform, x => x);
     }

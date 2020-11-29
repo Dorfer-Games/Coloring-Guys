@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4475343286660289414}
   - component: {fileID: 732533597800340054}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trigger
   m_TagString: Cell
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4475343288119919345}
   - component: {fileID: 4475343288119919346}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cell
   m_TagString: Cell
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 4475343288565608742}
   - component: {fileID: 4475343288565608741}
   - component: {fileID: 4720589995236091145}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Object
   m_TagString: Cell
   m_Icon: {fileID: 0}
