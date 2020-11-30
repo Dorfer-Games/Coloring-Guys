@@ -8,6 +8,7 @@ public class Character
     public Color color; //Цвет игрока
     public int stacks; //Сколько клеток мы можем покрасить
     public bool isJumping;
+    public bool isDeath;
 
     public OnCollisionEnterComponent onCollisionComponent;
     public OnTriggerEnterComponent onTriggerComponent;
