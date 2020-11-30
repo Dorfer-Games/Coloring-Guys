@@ -47,6 +47,7 @@ public class DebugCheatingSystem : GameSystem, IIniting, IDisposing
     //Сейчас проблема в том, что я не могу поменять создать копию GameConfig и заменить его во всех системах.
     void IDisposing.OnDispose() 
     {
+#if UNITY_EDITOR
         config.UpdateMoveSpeed(originalMoveSpeed);
         config.UpdateRotationSpeed(originalRotationSpeed);
         config.UpdateCellFallTime(originalHexFallSpeed);
@@ -54,5 +55,6 @@ public class DebugCheatingSystem : GameSystem, IIniting, IDisposing
         config.UpdateCellBackTime(originalHexBackSpeed);
         config.UpdateJumpStrength(originaljumpStrength);
         config.UpdateGravityStrenght(originalGravityStrength);
+#endif
     }
 }
