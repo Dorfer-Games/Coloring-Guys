@@ -15,7 +15,7 @@ public class ColorSpawningSystem : GameSystem, IIniting
         }
 
         var colorStack = Instantiate(colorPrefab, spawnPosition, Quaternion.identity).GetComponent<ColorStackComponent>();
-        colorStack.Renderer.material.color = Color.yellow;
+        colorStack.Renderer.material.color = game.characters[0].color;
         colorStack.Setup(30);
     }
 
