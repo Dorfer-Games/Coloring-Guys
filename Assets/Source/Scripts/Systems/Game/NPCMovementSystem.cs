@@ -15,6 +15,7 @@ public class NPCMovementSystem : GameSystem, IFixedUpdating
     [SerializeField] int safeRays = 6; //Если до пропасти есть хотя бы столько проверок, то можно бежать вперёд
     [SerializeField] int safeRaysSide = 3; //Безопасное расстояние от края по бокам персонааж.
     [SerializeField] int raysToJump = 3; //Какое расстояния мы можем перепрыгнуть
+    [SerializeField] int safeRaySideBeforeJump = 2; //Зато не магия... Для проверки того, есть ли обрывы перед прыжком.
 
     void IFixedUpdating.OnFixedUpdate()
     {
@@ -25,10 +26,16 @@ public class NPCMovementSystem : GameSystem, IFixedUpdating
             if (character.isJumping || character.isDeath) continue;
 
             game.characters[i].rotationValue = 0;
-            RaycastDirection(character, character.rigidbody.transform.forward, out var indexBeforeEmpty, out var emptyCombo, out var checks, out var empty);
 
-            //Прыгаем только если рядом с пропастью и после пропасти есть куда преземляться
-            if (indexBeforeEmpty == 0 && checks > raysToJump)
+            RaycastDirection(character, character.rigidbody.transform.forward, out var indexBeforeEmpty, out var emptyCombo, out var checks, out var empty);
+            RaycastDirection(character, character.rigidbody.transform.right, out var rightIndex, out var rightCombo, out var rightChecks, out var rightEmpty);
+            RaycastDirection(character, character.rigidbody.transform.right * -1, out var leftIndex, out var leftCombo, out var leftChecks, out var leftEmpty);
+
+            var sidesIsSafe = (rightIndex < 0 || rightIndex > safeRaySideBeforeJump) && (leftIndex < 0 || leftIndex > safeRaySideBeforeJump);
+            Debug.Log($"{character.rigidbody.name} is side {(sidesIsSafe ? "safe" : "danger") }");
+
+            //Прыгаем только если рядом с пропастью и после пропасти есть куда преземляться и сбоку нет пропасти
+            if (indexBeforeEmpty == 0 && checks > raysToJump && sidesIsSafe)
             {
                 //Прыгаем
                 //Мы вызываем сигнал для общения с другими системами. Слушают его или нет, нам не важно.
@@ -38,13 +45,10 @@ public class NPCMovementSystem : GameSystem, IFixedUpdating
 
             else
             {
-                RaycastDirection(character, character.rigidbody.transform.right, out var rightIndex, out var rightCombo, out var rightChecks, out var rightEmpty);
-                RaycastDirection(character, character.rigidbody.transform.right * -1, out var leftIndex, out var leftCombo, out var leftChecks, out var leftEmpty);
-
                 //Бежим вперёд, если достаточно далеко до границы арены. Например 12 прверок и 3 empty
                 //Из-за неровной генерации хексов у нас часто на границах бывают кейсы с 101010 проверками...
                 //Поэтому проверяем ещё по сторонам сразу
-                if (checks - emptyCombo > safeRays && leftEmpty < safeRaysSide && rightEmpty < safeRaysSide)
+                if (checks - emptyCombo > safeRays && sidesIsSafe)
                 {
                     //Бежим
                     continue;
@@ -53,7 +57,7 @@ public class NPCMovementSystem : GameSystem, IFixedUpdating
                 //Ищем куда бы повернуть
                 else
                 {
-                    var rotationDirection = rightChecks - rightCombo > leftChecks - leftCombo ? 1 : -1;
+                    var rotationDirection = rightEmpty < leftEmpty ? 1 : -1;
                     game.characters[i].rotationValue = rotationDirection;
                 }
             }
@@ -71,6 +75,7 @@ public class NPCMovementSystem : GameSystem, IFixedUpdating
         for (int i = 0; i < maxRays; i++)
         {
             var startPoint = character.rigidbody.position + (direction * rayOffset) + (Vector3.up * 0.5f) + (direction * (rayStep * (i + 1)));
+            var index = i;
 
             //Луч попал. Впереди есть место и клетка не опускается
             if (Physics.Raycast(startPoint, Vector2.down, out var hit, downDistance, mask) && !game.cellDictionary[hit.transform.parent].IsDown)
@@ -83,7 +88,7 @@ public class NPCMovementSystem : GameSystem, IFixedUpdating
             else
             {
                 Debug.DrawLine(startPoint, startPoint + Vector3.down, Color.red, 0.1f, false);
-                if (indexBeforeEmpty == -1) indexBeforeEmpty = i;
+                if (indexBeforeEmpty == -1) indexBeforeEmpty = index;
                 emptyCombo++;
                 empty++;
 

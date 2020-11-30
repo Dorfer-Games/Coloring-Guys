@@ -370,7 +370,8 @@ MonoBehaviour:
   maxRays: 20
   safeRays: 10
   safeRaysSide: 10
-  raysToJump: 5
+  raysToJump: 3
+  safeRaySideBeforeJump: 3
 --- !u!1 &60057052
 GameObject:
   m_ObjectHideFlags: 0
