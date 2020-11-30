@@ -32,7 +32,6 @@ public class NPCMovementSystem : GameSystem, IFixedUpdating
             RaycastDirection(character, character.rigidbody.transform.right * -1, out var leftIndex, out var leftCombo, out var leftChecks, out var leftEmpty);
 
             var sidesIsSafe = (rightIndex < 0 || rightIndex > safeRaySideBeforeJump) && (leftIndex < 0 || leftIndex > safeRaySideBeforeJump);
-            Debug.Log($"{character.rigidbody.name} is side {(sidesIsSafe ? "safe" : "danger") }");
 
             //Прыгаем только если рядом с пропастью и после пропасти есть куда преземляться и сбоку нет пропасти
             if (indexBeforeEmpty == 0 && checks > raysToJump && sidesIsSafe)
