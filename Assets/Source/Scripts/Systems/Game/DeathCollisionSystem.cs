@@ -18,6 +18,8 @@ public class DeathCollisionSystem : GameSystem, IIniting
             var character = game.characterDictionary[@object];
             character.rigidbody.gameObject.SetActive(false);
             character.isDeath = true;
+
+            if (character == game.characters[0]) Bootstrap.GameRestart(0);
         }
     }
 }
