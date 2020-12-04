@@ -8,6 +8,7 @@ namespace Kuhpik
     /// </summary>
     public class GameData
     {
+        public GameObject level;
         public Character[] characters;
 
         //-----------Helping-------------//

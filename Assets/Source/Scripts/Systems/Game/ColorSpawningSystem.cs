@@ -13,10 +13,6 @@ public class ColorSpawningSystem : GameSystem, IIniting
         {
             character.onTriggerComponent.OnEnter += Collect;
         }
-
-        var colorStack = Instantiate(colorPrefab, spawnPosition, Quaternion.identity).GetComponent<ColorStackComponent>();
-        colorStack.Renderer.material.color = game.characters[0].color;
-        colorStack.Setup(30);
     }
 
     void Collect(Transform other, Transform @object)
