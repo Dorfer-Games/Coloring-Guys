@@ -1,5 +1,6 @@
 ﻿using NaughtyAttributes;
 using System;
+using UnityEditor;
 using UnityEngine;
 
 [Obsolete] //Используется только для первых тестов механики. Далее лвлы должны собираться руками.
@@ -40,7 +41,10 @@ public class LevelCreatorComponent : MonoBehaviour
                 float x = xOffset * j + additionalXoffset;
                 float z = zOffset * i;
 
-                Instantiate(cellPrefab, new Vector3(x, 0, z), Quaternion.identity, cells.transform);
+                var cell = PrefabUtility.InstantiatePrefab(cellPrefab) as GameObject;
+                cell.transform.SetParent(cells.transform);
+                cell.transform.localPosition = new Vector3(x, 0, z);
+
             }
         }
 

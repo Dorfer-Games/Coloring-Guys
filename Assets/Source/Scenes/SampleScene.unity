@@ -20,12 +20,12 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.5510413, g: 0.5591848, b: 0.5754717, a: 1}
+  m_AmbientSkyColor: {r: 0.39067784, g: 0.39843965, b: 0.4087887, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 3
-  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_SubtractiveShadowColor: {r: 0.35177112, g: 0.38838267, b: 0.4811321, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -786,11 +786,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4742137061820686541, guid: 6e7d44a66d4ad1d4e8dd5e10898f50b8, type: 3}
       propertyPath: index
-      value: 3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742137061820686541, guid: 6e7d44a66d4ad1d4e8dd5e10898f50b8, type: 3}
+      propertyPath: borders.x
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4742137061820686541, guid: 6e7d44a66d4ad1d4e8dd5e10898f50b8, type: 3}
       propertyPath: borders.y
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e7d44a66d4ad1d4e8dd5e10898f50b8, type: 3}
