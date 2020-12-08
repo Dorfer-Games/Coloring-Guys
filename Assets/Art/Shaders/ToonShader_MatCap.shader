@@ -60,7 +60,6 @@ Shader "ToonShader_MatCap"
 		//================================================================
 		// VARIABLES
 
-		fixed4 _Color;
 		sampler2D _MainTex;
 		sampler2D _MatCap;
 		fixed4 _MatCapColor;
@@ -94,6 +93,7 @@ Shader "ToonShader_MatCap"
 		// #pragma instancing_options assumeuniformscaling
 		UNITY_INSTANCING_BUFFER_START(Props)
 			// put more per-instance properties here
+			UNITY_DEFINE_INSTANCED_PROP(fixed4, _Color)
 		UNITY_INSTANCING_BUFFER_END(Props)
 
 		//Custom SurfaceOutput
@@ -206,8 +206,8 @@ Shader "ToonShader_MatCap"
 		void surf(Input IN, inout SurfaceOutputCustom o)
 		{
 			fixed4 mainTex = tex2D(_MainTex, IN.UV_MAINTEX);
-			o.Albedo = mainTex.rgb * _Color.rgb;
-			o.Alpha = mainTex.a * _Color.a;
+			o.Albedo = mainTex.rgb * UNITY_ACCESS_INSTANCED_PROP(Props, _Color.rgb);
+			o.Alpha = mainTex.a * UNITY_ACCESS_INSTANCED_PROP(Props, _Color.a);
 
 			//Specular
 			_Smoothness *= mainTex.a;

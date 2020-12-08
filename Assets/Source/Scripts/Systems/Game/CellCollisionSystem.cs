@@ -32,18 +32,18 @@ public class CellCollisionSystem : GameSystem, IIniting
 
     private static void ColorCell(Character character, CellComponent component)
     {
-        component.Renderer.material.color = character.color;
         component.SetColor(character.color);
         character.stacks--;
     }
 
     private void FadeCell(Transform other, CellComponent component)
     {
-        var renderer = component.Renderer;
         var seq = DOTween.Sequence();
+        var color = Color.white;
+
         component.SetDown(true);
 
-        seq.Append(renderer.material.DOColor(Color.red, config.CellFadeTime).SetEase(Ease.OutCubic));
+        seq.Append(DOTween.To(() => color, x => color = x, Color.red, config.CellFadeTime).OnUpdate(() => component.SetColor(color)).SetEase(Ease.OutCubic));
         seq.Append(other.DOLocalMoveY(-20, config.CellFallTime).SetEase(Ease.Linear));
         seq.OnComplete(() => BringCellBack(other));
         seq.SetId(component.GetInstanceID());
@@ -54,7 +54,6 @@ public class CellCollisionSystem : GameSystem, IIniting
     void BringCellBack(Transform cell)
     {
         var component = game.cellDictionary[cell.parent];
-        component.Renderer.material.color = Color.white;
         component.SetColor(Color.white);
 
         cell.DOLocalMoveY(0, config.CellFallTime).SetDelay(config.CellBackTime).SetId(component.GetInstanceID()).OnComplete(() =>

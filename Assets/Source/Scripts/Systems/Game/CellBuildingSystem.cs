@@ -30,7 +30,6 @@ public class CellBuildingSystem : GameSystem, IIniting
                 component.SetDown(false);
                 component.SetColor(character.color);
                 component.Cell.transform.DOLocalMoveY(0, 0);
-                component.Renderer.material.color = character.color;
             }
         }
     }
