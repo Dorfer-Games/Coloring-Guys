@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a0bbf493a6018b41b94c2288283a11a, type: 3}
   m_Name: Game Config
   m_EditorClassIdentifier: 
-  <MoveSpeed>k__BackingField: 10
-  <RotationSpeed>k__BackingField: 50
-  <CellFadeTime>k__BackingField: 1
-  <CellFallTime>k__BackingField: 2.5
-  <CellBackTime>k__BackingField: 2
-  <JumpStrength>k__BackingField: 10
-  <GravityStrength>k__BackingField: 20
+  <MoveSpeed>k__BackingField: 9
+  <RotationSpeed>k__BackingField: 80
+  <CellFadeTime>k__BackingField: 0.1
+  <CellFallTime>k__BackingField: 1
+  <CellBackTime>k__BackingField: 4
+  <JumpStrength>k__BackingField: 11
+  <GravityStrength>k__BackingField: 25
