@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MoveSpeed>k__BackingField: 9
   <RotationSpeed>k__BackingField: 80
-  <CellFadeTime>k__BackingField: 0.1
-  <CellFallTime>k__BackingField: 1
+  <CellFadeTime>k__BackingField: 1
+  <CellFallTime>k__BackingField: 0.1
   <CellBackTime>k__BackingField: 4
   <JumpStrength>k__BackingField: 11
   <GravityStrength>k__BackingField: 25
