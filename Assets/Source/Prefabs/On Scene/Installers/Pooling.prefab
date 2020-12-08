@@ -43,5 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbb60f141f9ccc645b7a74c41cac29aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  usePooling: 0
-  config: {fileID: 0}
+  usePooling: 1
+  config: {fileID: 11400000, guid: ae793679f70647a47b29f8e0a15ec89b, type: 2}
