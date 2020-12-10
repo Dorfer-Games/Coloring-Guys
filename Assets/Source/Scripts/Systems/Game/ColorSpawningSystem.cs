@@ -75,7 +75,7 @@ public class ColorSpawningSystem : GameSystem, IIniting
 
             //if (color == game.characters[0].color)
             //{
-                //Signals.Get<PlayerNotificationSignal>().Dispatch("Color Spawned!");
+            Signals.Get<PlayerNotificationSignal>().Dispatch("Color Spawned!");
                 //Signals.Get<ColorSpawnedSignal>().Dispatch(component.Parent, 0);
             //}
         }

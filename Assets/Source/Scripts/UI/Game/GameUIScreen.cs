@@ -1,6 +1,8 @@
 ﻿using DG.Tweening;
 using Kuhpik;
 using Supyrb;
+using System;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 
@@ -8,6 +10,8 @@ public class GameUIScreen : UIScreen
 {
     [SerializeField] TextMeshProUGUI notificationText;
     [SerializeField] TextMeshProUGUI hexCountText;
+
+    bool canDisplayNotification = true;
 
     public override void Subscribe()
     {
@@ -25,14 +29,22 @@ public class GameUIScreen : UIScreen
         }
     }
 
-    void ShowNotification(string notification)
+    async void ShowNotification(string notification)
     {
-        notificationText.gameObject.SetActive(true);
-        notificationText.text = notification;
-
-        notificationText.transform.DOPunchScale(Vector3.one * 1.1f, 1.5f, 5, 0.25f).OnComplete(() =>
+        if (canDisplayNotification)
         {
-            notificationText.gameObject.SetActive(false);
-        });
+            notificationText.gameObject.SetActive(true);
+            notificationText.text = notification;
+            canDisplayNotification = false;
+
+            notificationText.transform.DOPunchScale(Vector3.one * 1.1f, 1.5f, 5, 0.25f).OnComplete(() =>
+            {
+                notificationText.gameObject.SetActive(false);
+            });
+
+            await Task.Delay(TimeSpan.FromSeconds(2f));
+
+            canDisplayNotification = true;
+        }
     }
 }
