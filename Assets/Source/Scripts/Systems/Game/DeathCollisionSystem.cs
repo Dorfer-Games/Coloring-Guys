@@ -1,4 +1,5 @@
 ﻿using Kuhpik;
+using System.Linq;
 using UnityEngine;
 
 public class DeathCollisionSystem : GameSystem, IIniting
@@ -19,7 +20,20 @@ public class DeathCollisionSystem : GameSystem, IIniting
             character.rigidbody.gameObject.SetActive(false);
             character.isDeath = true;
 
-            if (character == game.characters[0]) Bootstrap.GameRestart(0);
+            if (character == game.characters[0])
+            {
+                game.isVictory = false;
+                Bootstrap.ChangeGameState(EGamestate.Finish);
+            }
+
+            else
+            {
+                if (game.characters.Count(x => x.isDeath) == game.characters.Length - 1)
+                {
+                    game.isVictory = true;
+                    Bootstrap.ChangeGameState(EGamestate.Finish);
+                }
+            }
         }
     }
 }
