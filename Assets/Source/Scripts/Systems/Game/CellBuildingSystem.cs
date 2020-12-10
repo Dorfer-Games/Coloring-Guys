@@ -1,5 +1,6 @@
 ﻿using DG.Tweening;
 using Kuhpik;
+using Supyrb;
 using UnityEngine;
 
 public class CellBuildingSystem : GameSystem, IIniting
@@ -30,6 +31,8 @@ public class CellBuildingSystem : GameSystem, IIniting
                 component.SetDown(false);
                 component.SetColor(character.color);
                 component.Cell.transform.DOLocalMoveY(0, 0);
+
+                if (character == game.characters[0]) Signals.Get<HexCountChangedSignal>().Dispatch(character.stacks);
             }
         }
     }

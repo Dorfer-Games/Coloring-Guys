@@ -1,5 +1,6 @@
 ﻿using DG.Tweening;
 using Kuhpik;
+using Supyrb;
 using System.Linq;
 using UnityEngine;
 
@@ -26,6 +27,11 @@ public class CellCollisionSystem : GameSystem, IIniting
             {
                 if (character.stacks > 0) ColorCell(character, component);
                 else FadeCell(other, component);
+            }
+
+            if (character == game.characters[0])
+            {
+                Signals.Get<HexCountChangedSignal>().Dispatch(character.stacks);
             }
         }
     }

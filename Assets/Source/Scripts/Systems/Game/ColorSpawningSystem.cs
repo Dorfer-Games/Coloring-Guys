@@ -1,5 +1,6 @@
 ﻿using Kuhpik;
 using Kuhpik.Pooling;
+using Supyrb;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,10 +43,11 @@ public class ColorSpawningSystem : GameSystem, IIniting
             {
                 colors.Remove(color);
                 character.stacks += color.Count;
-                StartCoroutine(RespawnRoutine(color.transform.parent, respawnTime));
+                StartCoroutine(RespawnRoutine(color.Parent, respawnTime));
 
                 color.transform.parent = null;
                 PoolingSystem.Pool(color.gameObject);
+                if (character == game.characters[0]) Signals.Get<HexCountChangedSignal>().Dispatch(character.stacks);
             }
         }
     }
@@ -64,11 +66,16 @@ public class ColorSpawningSystem : GameSystem, IIniting
             }
 
             PoolingSystem.GetComponent(colorPrefab, out ColorStackComponent component);
-            component.Setup(color, colorPerStack);
+            component.Setup(component.Parent == null? spawn : null, color, colorPerStack);
             colors.Add(component);
 
-            component.transform.SetParent(spawn);
+            component.transform.SetParent(component.Parent);
             component.transform.localPosition = spawnPosition;
+
+            if (color == game.characters[0].color)
+            {
+                Signals.Get<PlayerNotificationSignal>().Dispatch("Color Spawned!");
+            }
         }
     }
 
