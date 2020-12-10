@@ -18,6 +18,8 @@ public class LevelCreatorComponent : MonoBehaviour
     [Header("Indexes")]
     [SerializeField] int index;
 
+#if UNITY_EDITOR
+
     [Button]
     void Create()
     {
@@ -50,4 +52,6 @@ public class LevelCreatorComponent : MonoBehaviour
 
         level.transform.localScale = new Vector3(scale, 1, scale);
     }
+
+#endif
 }
