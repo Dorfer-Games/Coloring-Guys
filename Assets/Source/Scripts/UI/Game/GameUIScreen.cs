@@ -27,7 +27,7 @@ public class GameUIScreen : UIScreen
         notificationText.gameObject.SetActive(true);
         notificationText.text = notification;
 
-        notificationText.transform.DOPunchScale(Vector3.one * 1.2f, 1.5f, 5, 0.25f).OnComplete(() =>
+        notificationText.transform.DOPunchScale(Vector3.one * 1.1f, 1.5f, 5, 0.25f).OnComplete(() =>
         {
             notificationText.gameObject.SetActive(false);
         });
