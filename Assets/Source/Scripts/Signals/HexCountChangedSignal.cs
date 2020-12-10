@@ -1,6 +1,6 @@
 ﻿using Supyrb;
 
-public class HexCountChangedSignal : Signal<int>
+public class HexCountChangedSignal : Signal<Character, int>
 {
     
 }

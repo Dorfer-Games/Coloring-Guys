@@ -14,6 +14,7 @@ namespace Kuhpik
         [field: SerializeField] public float GravityStrength { get; private set; }
         [field: SerializeField] public int ColorPerStack { get; private set; }
         [field: SerializeField] public int ColorMax { get; private set; }
+        [field: SerializeField] public bool DisplayHexes { get; private set; }
 
         public void UpdateMoveSpeed(float value)
         {
@@ -58,6 +59,11 @@ namespace Kuhpik
         public void UpdateColorMax(float value)
         {
             ColorMax = Mathf.RoundToInt(value);
+        }
+
+        public void UpdateDisplayHexes(float value)
+        {
+            DisplayHexes = Mathf.RoundToInt(value) == 1;
         }
     }
 }

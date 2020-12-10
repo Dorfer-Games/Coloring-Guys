@@ -40,18 +40,15 @@ public class ColorSpawningSystem : GameSystem, IIniting
 
             //if (color.Color == character.color)
             //{
-                colors.Remove(color);
-                character.stacks = Mathf.Clamp(character.stacks + color.Count, 0, config.ColorMax);
-                StartCoroutine(RespawnRoutine(color.Parent, respawnTime));
+            colors.Remove(color);
+            character.stacks = Mathf.Clamp(character.stacks + color.Count, 0, config.ColorMax);
+            StartCoroutine(RespawnRoutine(color.Parent, respawnTime));
 
-                color.transform.parent = null;
-                PoolingSystem.Pool(color.gameObject);
+            color.transform.parent = null;
+            PoolingSystem.Pool(color.gameObject);
 
-                if (character == game.characters[0])
-                {
-                    Signals.Get<HexCountChangedSignal>().Dispatch(character.stacks);
-                    Signals.Get<ColorPickedupSignal>().Dispatch(0);
-                }
+            Signals.Get<HexCountChangedSignal>().Dispatch(character, character.stacks);
+            //Signals.Get<ColorPickedupSignal>().Dispatch(0);
             //}
         }
     }
@@ -78,8 +75,8 @@ public class ColorSpawningSystem : GameSystem, IIniting
 
             //if (color == game.characters[0].color)
             //{
-            //    Signals.Get<PlayerNotificationSignal>().Dispatch("Color Spawned!");
-            //    Signals.Get<ColorSpawnedSignal>().Dispatch(component.Parent, 0);
+                //Signals.Get<PlayerNotificationSignal>().Dispatch("Color Spawned!");
+                //Signals.Get<ColorSpawnedSignal>().Dispatch(component.Parent, 0);
             //}
         }
     }

@@ -16,10 +16,13 @@ public class GameUIScreen : UIScreen
         Signals.Get<PlayerNotificationSignal>().AddListener(ShowNotification);
     }
 
-    void UpdateHexCount(int value)
+    void UpdateHexCount(Character character, int value)
     {
-        hexCountText.gameObject.SetActive(value > 0);
-        hexCountText.text = $"HEX: {value}";
+        if (character.isPlayer)
+        {
+            hexCountText.gameObject.SetActive(value > 0);
+            hexCountText.text = $"HEX: {value}";
+        }
     }
 
     void ShowNotification(string notification)

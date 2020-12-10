@@ -9,6 +9,7 @@ public class Character
     public int stacks; //Сколько клеток мы можем покрасить
     public bool isJumping;
     public bool isDeath;
+    public bool isPlayer;
 
     public OnCollisionEnterComponent onCollisionComponent;
     public OnTriggerEnterComponent onTriggerComponent;

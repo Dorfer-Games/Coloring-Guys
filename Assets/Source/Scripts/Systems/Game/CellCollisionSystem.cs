@@ -29,10 +29,7 @@ public class CellCollisionSystem : GameSystem, IIniting
                 else FadeCell(other, component);
             }
 
-            if (character == game.characters[0])
-            {
-                Signals.Get<HexCountChangedSignal>().Dispatch(character.stacks);
-            }
+            Signals.Get<HexCountChangedSignal>().Dispatch(character, character.stacks);
         }
     }
 

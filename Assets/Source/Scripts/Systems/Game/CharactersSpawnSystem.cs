@@ -22,6 +22,7 @@ public class CharactersSpawnSystem : GameSystem, IIniting
             game.characters[i].color = characterColors[i];
             game.characters[i].onCollisionComponent = character.GetComponent<OnCollisionEnterComponent>();
             game.characters[i].onTriggerComponent = character.GetComponent<OnTriggerEnterComponent>();
+            game.characters[i].isPlayer = i == 0;
         }        
 
         game.characterDictionary = game.characters.ToDictionary(x => x.rigidbody.transform, x => x);

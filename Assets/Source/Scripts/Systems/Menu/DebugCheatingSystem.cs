@@ -13,6 +13,7 @@ public class DebugCheatingSystem : GameSystem, IIniting, IDisposing
     [SerializeField] CheatSliderComponent gravityStrengthSlider;
     [SerializeField] CheatSliderComponent colorPerStackSlider;
     [SerializeField] CheatSliderComponent colorMaxSlider;
+    [SerializeField] CheatSliderComponent hexDisplaySlider;
 
     float originalMoveSpeed;
     float originalRotationSpeed;
@@ -38,6 +39,7 @@ public class DebugCheatingSystem : GameSystem, IIniting, IDisposing
         gravityStrengthSlider.Subscribe(10, 80, config.GravityStrength, config.UpdateGravityStrenght);
         colorPerStackSlider.Subscribe(10, 100, config.ColorPerStack, config.UpdateColorPerStack);
         colorMaxSlider.Subscribe(10, 300, config.ColorMax, config.UpdateColorMax);
+        hexDisplaySlider.Subscribe(0, 1, config.DisplayHexes ? 1 : 0, config.UpdateDisplayHexes);
 
         originalMoveSpeed = config.MoveSpeed;
         originalRotationSpeed = config.RotationSpeed;
@@ -53,7 +55,7 @@ public class DebugCheatingSystem : GameSystem, IIniting, IDisposing
 
     //Можно было бы это сделать в каком-то левом классе, тогда можно было бы не делать ресет.
     //Сейчас проблема в том, что я не могу поменять создать копию GameConfig и заменить его во всех системах.
-    void IDisposing.OnDispose() 
+    void IDisposing.OnDispose()
     {
 #if UNITY_EDITOR
         config.UpdateMoveSpeed(originalMoveSpeed);
@@ -65,6 +67,7 @@ public class DebugCheatingSystem : GameSystem, IIniting, IDisposing
         config.UpdateGravityStrenght(originalGravityStrength);
         config.UpdateColorPerStack(originalColorPerStack);
         config.UpdateColorMax(originalColorMax);
+        config.UpdateDisplayHexes(1);
 #endif
     }
 }

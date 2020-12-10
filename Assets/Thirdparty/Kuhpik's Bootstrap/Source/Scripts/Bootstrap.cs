@@ -64,8 +64,8 @@ namespace Kuhpik
             }
 
             SaveExtension.Save(playerData, saveKey);
-            SceneManager.LoadScene(sceneIndex);
             PoolingSystem.Clear();
+            SceneManager.LoadScene(sceneIndex);
         }
 
         public static void ChangeGameState(EGamestate type, bool openScreen = true)

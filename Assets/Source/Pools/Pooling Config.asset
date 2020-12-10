@@ -15,3 +15,4 @@ MonoBehaviour:
   defaultCapacity: 16
   pools:
   - {fileID: 11400000, guid: 5fa947f5121b981459d0d882582b23fb, type: 2}
+  - {fileID: 11400000, guid: d61666ed0eca21947900e2427e5db5ff, type: 2}
