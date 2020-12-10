@@ -9,6 +9,7 @@ public class ColorSpawningSystem : GameSystem, IIniting
 {
     [SerializeField] GameObject colorPrefab;
     [SerializeField] Vector3 spawnPosition;
+    [SerializeField] float firstSpawnTime;
     [SerializeField] float respawnTime;
     [SerializeField] int colorPerStack;
 
@@ -26,7 +27,7 @@ public class ColorSpawningSystem : GameSystem, IIniting
 
         foreach (var spawnPoint in colorSpawnPoints)
         {
-            StartCoroutine(RespawnRoutine(spawnPoint.transform));
+            StartCoroutine(RespawnRoutine(spawnPoint.transform, firstSpawnTime));
         }
     }
 
@@ -41,7 +42,7 @@ public class ColorSpawningSystem : GameSystem, IIniting
             {
                 colors.Remove(color);
                 character.stacks += color.Count;
-                StartCoroutine(RespawnRoutine(color.transform.parent));
+                StartCoroutine(RespawnRoutine(color.transform.parent, respawnTime));
 
                 color.transform.parent = null;
                 PoolingSystem.Pool(color.gameObject);
@@ -71,9 +72,9 @@ public class ColorSpawningSystem : GameSystem, IIniting
         }
     }
 
-    IEnumerator RespawnRoutine(Transform spawnPoint)
+    IEnumerator RespawnRoutine(Transform spawnPoint, float time)
     {
-        yield return new WaitForSeconds(respawnTime);
+        yield return new WaitForSeconds(time);
         Spawn(spawnPoint);
     }
 }
