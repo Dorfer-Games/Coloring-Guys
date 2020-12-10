@@ -21,6 +21,6 @@ public class CheatSliderComponent : MonoBehaviour
 
     void UpdateValue(float value)
     {
-        text.text = value.ToString("F2");
+        text.text = value.ToString("F1");
     }
 }

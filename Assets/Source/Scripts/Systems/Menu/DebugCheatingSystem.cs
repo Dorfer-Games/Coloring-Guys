@@ -11,6 +11,8 @@ public class DebugCheatingSystem : GameSystem, IIniting, IDisposing
     [SerializeField] CheatSliderComponent hexBackTimeSlider;
     [SerializeField] CheatSliderComponent jumpStrengthSlider;
     [SerializeField] CheatSliderComponent gravityStrengthSlider;
+    [SerializeField] CheatSliderComponent colorPerStackSlider;
+    [SerializeField] CheatSliderComponent colorMaxSlider;
 
     float originalMoveSpeed;
     float originalRotationSpeed;
@@ -19,6 +21,8 @@ public class DebugCheatingSystem : GameSystem, IIniting, IDisposing
     float originalHexBackSpeed;
     float originaljumpStrength;
     float originalGravityStrength;
+    int originalColorPerStack;
+    int originalColorMax;
 
     void IIniting.OnInit()
     {
@@ -32,6 +36,8 @@ public class DebugCheatingSystem : GameSystem, IIniting, IDisposing
         hexBackTimeSlider.Subscribe(0.5f, 20f, config.CellBackTime, config.UpdateCellBackTime);
         jumpStrengthSlider.Subscribe(3, 30, config.JumpStrength, config.UpdateJumpStrength);
         gravityStrengthSlider.Subscribe(10, 80, config.GravityStrength, config.UpdateGravityStrenght);
+        colorPerStackSlider.Subscribe(10, 100, config.ColorPerStack, config.UpdateColorPerStack);
+        colorMaxSlider.Subscribe(10, 300, config.ColorMax, config.UpdateColorMax);
 
         originalMoveSpeed = config.MoveSpeed;
         originalRotationSpeed = config.RotationSpeed;
@@ -40,6 +46,8 @@ public class DebugCheatingSystem : GameSystem, IIniting, IDisposing
         originalHexBackSpeed = config.CellBackTime;
         originaljumpStrength = config.JumpStrength;
         originalGravityStrength = config.GravityStrength;
+        originalColorPerStack = config.ColorPerStack;
+        originalColorMax = config.ColorMax;
 #endif
     }
 
@@ -55,6 +63,8 @@ public class DebugCheatingSystem : GameSystem, IIniting, IDisposing
         config.UpdateCellBackTime(originalHexBackSpeed);
         config.UpdateJumpStrength(originaljumpStrength);
         config.UpdateGravityStrenght(originalGravityStrength);
+        config.UpdateColorPerStack(originalColorPerStack);
+        config.UpdateColorMax(originalColorMax);
 #endif
     }
 }

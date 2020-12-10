@@ -19,3 +19,5 @@ MonoBehaviour:
   <CellBackTime>k__BackingField: 4
   <JumpStrength>k__BackingField: 11
   <GravityStrength>k__BackingField: 25
+  <ColorPerStack>k__BackingField: 60
+  <ColorMax>k__BackingField: 100

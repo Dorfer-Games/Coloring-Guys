@@ -12,6 +12,8 @@ namespace Kuhpik
         [field: SerializeField] public float CellBackTime { get; private set; }
         [field: SerializeField] public float JumpStrength { get; private set; }
         [field: SerializeField] public float GravityStrength { get; private set; }
+        [field: SerializeField] public int ColorPerStack { get; private set; }
+        [field: SerializeField] public int ColorMax { get; private set; }
 
         public void UpdateMoveSpeed(float value)
         {
@@ -46,6 +48,16 @@ namespace Kuhpik
         public void UpdateGravityStrenght(float value)
         {
             GravityStrength = value;
+        }
+
+        public void UpdateColorPerStack(float value)
+        {
+            ColorPerStack = Mathf.RoundToInt(value);
+        }
+
+        public void UpdateColorMax(float value)
+        {
+            ColorMax = Mathf.RoundToInt(value);
         }
     }
 }

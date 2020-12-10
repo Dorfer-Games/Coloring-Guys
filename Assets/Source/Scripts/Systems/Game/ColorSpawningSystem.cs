@@ -12,7 +12,6 @@ public class ColorSpawningSystem : GameSystem, IIniting
     [SerializeField] Vector3 spawnPosition;
     [SerializeField] float firstSpawnTime;
     [SerializeField] float respawnTime;
-    [SerializeField] int colorPerStack;
 
     ColorSpawnComponent[] colorSpawnPoints;
     List<ColorStackComponent> colors = new List<ColorStackComponent>();
@@ -42,7 +41,7 @@ public class ColorSpawningSystem : GameSystem, IIniting
             //if (color.Color == character.color)
             //{
                 colors.Remove(color);
-                character.stacks += color.Count;
+                character.stacks = Mathf.Clamp(character.stacks + color.Count, 0, config.ColorMax);
                 StartCoroutine(RespawnRoutine(color.Parent, respawnTime));
 
                 color.transform.parent = null;
@@ -71,7 +70,7 @@ public class ColorSpawningSystem : GameSystem, IIniting
             //}
 
             PoolingSystem.GetComponent(colorPrefab, out ColorStackComponent component);
-            component.Setup(component.Parent == null ? spawn : null, Color.yellow, colorPerStack);
+            component.Setup(component.Parent == null ? spawn : null, Color.yellow, config.ColorPerStack);
             colors.Add(component);
 
             component.transform.SetParent(component.Parent);
