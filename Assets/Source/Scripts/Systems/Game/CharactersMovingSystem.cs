@@ -14,7 +14,7 @@ public class CharactersMovingSystem : GameSystem, IFixedUpdating
             var rotation = Vector3.up * config.RotationSpeed * game.characters[i].rotationValue * Time.fixedDeltaTime;
             var movement = Vector3.forward * config.MoveSpeed * Time.fixedDeltaTime;
 
-            if (speedupMainCharacter) movement *= speedMult;
+            if (speedupMainCharacter && game.characters[i].isPlayer) movement *= speedMult;
 
             game.characters[i].rigidbody.transform.Rotate(rotation);
             game.characters[i].rigidbody.transform.Translate(movement, Space.Self);
