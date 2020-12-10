@@ -21,3 +21,5 @@ MonoBehaviour:
   <GravityStrength>k__BackingField: 25
   <ColorPerStack>k__BackingField: 60
   <ColorMax>k__BackingField: 100
+  <DisplayHexes>k__BackingField: 1
+  <PlayerSpeedX>k__BackingField: 1.5

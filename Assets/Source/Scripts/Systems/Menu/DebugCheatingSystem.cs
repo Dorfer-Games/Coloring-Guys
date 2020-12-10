@@ -14,6 +14,7 @@ public class DebugCheatingSystem : GameSystem, IIniting, IDisposing
     [SerializeField] CheatSliderComponent colorPerStackSlider;
     [SerializeField] CheatSliderComponent colorMaxSlider;
     [SerializeField] CheatSliderComponent hexDisplaySlider;
+    [SerializeField] CheatSliderComponent playerdSpeedXSlider;
 
     float originalMoveSpeed;
     float originalRotationSpeed;
@@ -24,6 +25,7 @@ public class DebugCheatingSystem : GameSystem, IIniting, IDisposing
     float originalGravityStrength;
     int originalColorPerStack;
     int originalColorMax;
+    float originalPlayerSpeedX;
 
     void IIniting.OnInit()
     {
@@ -40,6 +42,7 @@ public class DebugCheatingSystem : GameSystem, IIniting, IDisposing
         colorPerStackSlider.Subscribe(10, 100, config.ColorPerStack, config.UpdateColorPerStack);
         colorMaxSlider.Subscribe(10, 300, config.ColorMax, config.UpdateColorMax);
         hexDisplaySlider.Subscribe(0, 1, config.DisplayHexes ? 1 : 0, config.UpdateDisplayHexes);
+        playerdSpeedXSlider.Subscribe(1f, 3f, config.PlayerSpeedX, config.UpdatePlayerSpeedX);
 
         originalMoveSpeed = config.MoveSpeed;
         originalRotationSpeed = config.RotationSpeed;
@@ -50,6 +53,7 @@ public class DebugCheatingSystem : GameSystem, IIniting, IDisposing
         originalGravityStrength = config.GravityStrength;
         originalColorPerStack = config.ColorPerStack;
         originalColorMax = config.ColorMax;
+        originalPlayerSpeedX = config.PlayerSpeedX;
 #endif
     }
 
@@ -67,6 +71,7 @@ public class DebugCheatingSystem : GameSystem, IIniting, IDisposing
         config.UpdateGravityStrenght(originalGravityStrength);
         config.UpdateColorPerStack(originalColorPerStack);
         config.UpdateColorMax(originalColorMax);
+        config.UpdatePlayerSpeedX(originalPlayerSpeedX);
         config.UpdateDisplayHexes(1);
 #endif
     }

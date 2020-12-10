@@ -15,6 +15,7 @@ namespace Kuhpik
         [field: SerializeField] public int ColorPerStack { get; private set; }
         [field: SerializeField] public int ColorMax { get; private set; }
         [field: SerializeField] public bool DisplayHexes { get; private set; }
+        [field: SerializeField] public float PlayerSpeedX { get; private set; }
 
         public void UpdateMoveSpeed(float value)
         {
@@ -64,6 +65,11 @@ namespace Kuhpik
         public void UpdateDisplayHexes(float value)
         {
             DisplayHexes = Mathf.RoundToInt(value) == 1;
+        }
+
+        public void UpdatePlayerSpeedX(float value)
+        {
+            PlayerSpeedX = value;
         }
     }
 }
