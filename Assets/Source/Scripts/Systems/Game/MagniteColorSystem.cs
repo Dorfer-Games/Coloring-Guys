@@ -19,7 +19,7 @@ public class MagniteColorSystem : GameSystem, IIniting
 
     void Magnite(Transform other, Transform @object)
     {
-        if (other.CompareTag(collisionTag) && other.parent.GetComponent<ColorStackComponent>().Color == game.characterDictionary[@object].color)
+        if (other.CompareTag(collisionTag))
         {
             var position = other.parent.position;
             position.x = 0;

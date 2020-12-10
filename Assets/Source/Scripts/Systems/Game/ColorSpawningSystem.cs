@@ -39,8 +39,8 @@ public class ColorSpawningSystem : GameSystem, IIniting
             var character = game.characterDictionary[@object];
             var color = other.GetComponent<ColorStackComponent>();
 
-            if (color.Color == character.color)
-            {
+            //if (color.Color == character.color)
+            //{
                 colors.Remove(color);
                 character.stacks += color.Count;
                 StartCoroutine(RespawnRoutine(color.Parent, respawnTime));
@@ -53,7 +53,7 @@ public class ColorSpawningSystem : GameSystem, IIniting
                     Signals.Get<HexCountChangedSignal>().Dispatch(character.stacks);
                     Signals.Get<ColorPickedupSignal>().Dispatch(0);
                 }
-            }
+            //}
         }
     }
 
@@ -62,26 +62,26 @@ public class ColorSpawningSystem : GameSystem, IIniting
         //Не делаем переспавн, что бы избежать случаев, когда игрок почти добежал до своей краски, а она появилась в другом месте.
         if (spawn.childCount == 0)
         {
-            var color = game.characters[0].color;
+            //var color = game.characters[0].color;
             //Нужно, что бы у игрока всегда была краска.
-            if (colors.Any(x => x.Color == game.characters[0].color))
-            {
-                var colorsLeft = game.characters.Select(x => x.color).Except(colors.Select(x => x.Color));
-                color = colorsLeft.ToArray().GetRandom();
-            }
+            //if (colors.Any(x => x.Color == game.characters[0].color))
+            //{
+            //    var colorsLeft = game.characters.Select(x => x.color).Except(colors.Select(x => x.Color));
+            //    color = colorsLeft.ToArray().GetRandom();
+            //}
 
             PoolingSystem.GetComponent(colorPrefab, out ColorStackComponent component);
-            component.Setup(component.Parent == null ? spawn : null, color, colorPerStack);
+            component.Setup(component.Parent == null ? spawn : null, Color.yellow, colorPerStack);
             colors.Add(component);
 
             component.transform.SetParent(component.Parent);
             component.transform.localPosition = spawnPosition;
 
-            if (color == game.characters[0].color)
-            {
-                Signals.Get<PlayerNotificationSignal>().Dispatch("Color Spawned!");
-                Signals.Get<ColorSpawnedSignal>().Dispatch(component.Parent, 0);
-            }
+            //if (color == game.characters[0].color)
+            //{
+            //    Signals.Get<PlayerNotificationSignal>().Dispatch("Color Spawned!");
+            //    Signals.Get<ColorSpawnedSignal>().Dispatch(component.Parent, 0);
+            //}
         }
     }
 
