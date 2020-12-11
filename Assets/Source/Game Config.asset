@@ -23,3 +23,4 @@ MonoBehaviour:
   <ColorMax>k__BackingField: 100
   <DisplayHexes>k__BackingField: 1
   <PlayerSpeedX>k__BackingField: 1.5
+  <HitImpulse>k__BackingField: 15

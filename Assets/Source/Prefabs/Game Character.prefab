@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 130622948479270163}
   m_Layer: 0
   m_Name: Game Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -198,7 +198,7 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: b14ec168bc4a7f84b8dc0361e97f5beb, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.8271158
   m_Height: 2.300399
   m_Direction: 1
   m_Center: {x: 0, y: 1.15, z: 0}
