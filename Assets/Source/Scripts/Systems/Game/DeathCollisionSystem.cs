@@ -1,4 +1,5 @@
 ﻿using Kuhpik;
+using Supyrb;
 using System.Linq;
 using UnityEngine;
 
@@ -28,6 +29,8 @@ public class DeathCollisionSystem : GameSystem, IIniting
 
             else
             {
+                Signals.Get<PlayerNotificationSignal>().Dispatch($"{@object.name} is going down!");
+
                 if (game.characters.Count(x => x.isDeath) == game.characters.Length - 1)
                 {
                     game.isVictory = true;
