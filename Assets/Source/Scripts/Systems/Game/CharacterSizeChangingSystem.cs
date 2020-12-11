@@ -7,7 +7,9 @@ public class CharacterSizeChangingSystem : GameSystem, IIniting
 
     void IIniting.OnInit()
     {
-        if (!config.ScaleCamera)
+        var scaleCamera = Mathf.RoundToInt(config.GetValue(EGameValue.ScaleCamera)) == 1f;
+
+        if (!scaleCamera)
         {
             cameraPoint = game.characters[0].rigidbody.transform.Find("Camera point");
             cameraPoint.SetParent(null);
@@ -15,10 +17,10 @@ public class CharacterSizeChangingSystem : GameSystem, IIniting
 
         foreach (var character in game.characters)
         {
-            character.rigidbody.transform.localScale = Vector3.one * config.CharacterSize;
+            character.rigidbody.transform.localScale = Vector3.one * config.GetValue(EGameValue.CharacterSize);
         }
 
-        if (!config.ScaleCamera)
+        if (!scaleCamera)
         {
             cameraPoint.SetParent(game.characters[0].rigidbody.transform);
         }

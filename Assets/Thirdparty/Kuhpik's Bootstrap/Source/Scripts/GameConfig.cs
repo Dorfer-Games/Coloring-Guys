@@ -1,93 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Kuhpik
 {
+    public enum EGameValue
+    { 
+        MoveSpeed,
+        RotationSpeed,
+        CellFadeTime,
+        CellFallTime,
+        CellBackTime,
+        JumpSTR,
+        GravitySTR,
+        ColorPerStack,
+        ColorMax,
+        DisplayHexes,
+        PlayerSpeedX,
+        HitImpulse,
+        CharacterSize,
+        ScaleCamera
+    }
+
+    [Serializable]
+    public class GameValueConfig
+    {
+        public EGameValue type;
+        public float value;
+        public Vector2 minmaxValue;
+    }
+
     [CreateAssetMenu(menuName = "Kuhpik/GameConfig")]
     public sealed class GameConfig : ScriptableObject
     {
-        [field: SerializeField] public float MoveSpeed { get; private set; }
-        [field: SerializeField] public float RotationSpeed { get; private set; }
-        [field: SerializeField] public float CellFadeTime { get; private set; }
-        [field: SerializeField] public float CellFallTime { get; private set; }
-        [field: SerializeField] public float CellBackTime { get; private set; }
-        [field: SerializeField] public float JumpStrength { get; private set; }
-        [field: SerializeField] public float GravityStrength { get; private set; }
-        [field: SerializeField] public int ColorPerStack { get; private set; }
-        [field: SerializeField] public int ColorMax { get; private set; }
-        [field: SerializeField] public bool DisplayHexes { get; private set; }
-        [field: SerializeField] public float PlayerSpeedX { get; private set; }
-        [field: SerializeField] public float HitImpulse { get; private set; }
-        [field: SerializeField] public float CharacterSize { get; private set; }
-        [field: SerializeField] public bool ScaleCamera { get; private set; }
+        [field: SerializeField] GameValueConfig[] gameValueConfigs;
+        public Dictionary<EGameValue, GameValueConfig> gameValuesDict { get; private set; }
+        public GameValueConfig[] GameValusConfigs => gameValueConfigs;
 
-        public void UpdateMoveSpeed(float value)
+        public void Init(GameValueConfig[] gameValues)
         {
-            MoveSpeed = value;
+            gameValuesDict = gameValues.ToDictionary(x => x.type, x => x);
         }
 
-        public void UpdateRotationSpeed(float value)
+        public float GetValue(EGameValue type)
         {
-            RotationSpeed = value;
-        }
-
-        public void UpdateCellFadeTime(float value)
-        {
-            CellFadeTime = value;
-        }
-
-        public void UpdateCellFallTime(float value)
-        {
-            CellFallTime = value;
-        }
-
-        public void UpdateCellBackTime(float value)
-        {
-            CellBackTime = value;
-        }
-
-        public void UpdateJumpStrength(float value)
-        {
-            JumpStrength = value;
-        }
-
-        public void UpdateGravityStrenght(float value)
-        {
-            GravityStrength = value;
-        }
-
-        public void UpdateColorPerStack(float value)
-        {
-            ColorPerStack = Mathf.RoundToInt(value);
-        }
-
-        public void UpdateColorMax(float value)
-        {
-            ColorMax = Mathf.RoundToInt(value);
-        }
-
-        public void UpdateDisplayHexes(float value)
-        {
-            DisplayHexes = Mathf.RoundToInt(value) == 1;
-        }
-
-        public void UpdatePlayerSpeedX(float value)
-        {
-            PlayerSpeedX = value;
-        }
-
-        public void UpdateHitImpulse(float value)
-        {
-            HitImpulse = value;
-        }
-
-        public void UpdateCharacterSize(float value)
-        {
-            CharacterSize = value;
-        }
-
-        public void UpdateCameraScaleWithSize(float value)
-        { 
-            ScaleCamera = Mathf.RoundToInt(value) == 1;
+            return gameValuesDict[type].value;
         }
     }
 }

@@ -12,7 +12,7 @@ public class JumpSystem : GameSystem, IIniting, IUpdating
     void IIniting.OnInit()
     {
         Signals.Get<JumpReadySignal>().AddListener(Jump);
-        Physics.gravity = Vector3.down * config.GravityStrength;
+        Physics.gravity = Vector3.down * config.GetValue(EGameValue.GravitySTR);
 
         foreach (var character in game.characters)
         {
@@ -61,7 +61,7 @@ public class JumpSystem : GameSystem, IIniting, IUpdating
 
     void Jump(int index)
     {
-        game.characters[index].rigidbody.AddRelativeForce(Vector3.up * config.JumpStrength, ForceMode.VelocityChange);
+        game.characters[index].rigidbody.AddRelativeForce(Vector3.up * config.GetValue(EGameValue.JumpSTR), ForceMode.VelocityChange);
         game.characters[index].animator.SetBool("Jumping", true);
         game.characters[index].isJumping = true;
     }

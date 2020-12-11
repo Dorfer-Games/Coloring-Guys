@@ -12,16 +12,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a0bbf493a6018b41b94c2288283a11a, type: 3}
   m_Name: Game Config
   m_EditorClassIdentifier: 
-  <MoveSpeed>k__BackingField: 9
-  <RotationSpeed>k__BackingField: 80
-  <CellFadeTime>k__BackingField: 1
-  <CellFallTime>k__BackingField: 0.1
-  <CellBackTime>k__BackingField: 4
-  <JumpStrength>k__BackingField: 11
-  <GravityStrength>k__BackingField: 25
-  <ColorPerStack>k__BackingField: 60
-  <ColorMax>k__BackingField: 100
-  <DisplayHexes>k__BackingField: 1
-  <PlayerSpeedX>k__BackingField: 1.5
-  <HitImpulse>k__BackingField: 15
-  <CharacterSize>k__BackingField: 2
+  gameValueConfigs:
+  - type: 0
+    value: 8
+    minmaxValue: {x: 2, y: 20}
+  - type: 1
+    value: 125
+    minmaxValue: {x: 60, y: 360}
+  - type: 2
+    value: 0.5
+    minmaxValue: {x: 0.1, y: 5}
+  - type: 3
+    value: 1.5
+    minmaxValue: {x: 0.1, y: 5}
+  - type: 4
+    value: 9
+    minmaxValue: {x: 1, y: 30}
+  - type: 5
+    value: 26
+    minmaxValue: {x: 5, y: 100}
+  - type: 6
+    value: 70
+    minmaxValue: {x: 10, y: 200}
+  - type: 7
+    value: 15
+    minmaxValue: {x: 10, y: 300}
+  - type: 8
+    value: 100
+    minmaxValue: {x: 10, y: 300}
+  - type: 9
+    value: 1
+    minmaxValue: {x: 0, y: 1}
+  - type: 10
+    value: 1.2
+    minmaxValue: {x: 1, y: 3}

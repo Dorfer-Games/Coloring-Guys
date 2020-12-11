@@ -1,26 +1,37 @@
-﻿using TMPro;
+﻿using Kuhpik;
+using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class CheatSliderComponent : MonoBehaviour
 {
     [SerializeField] Slider slider;
     [SerializeField] TextMeshProUGUI text;
+    [SerializeField] TextMeshProUGUI titleText;
+    [field: SerializeField] public EGameValue Type { get; private set; }
 
-    public void Subscribe(float min, float max, float value, UnityAction<float> callBack)
+    GameValueConfig config;
+
+    public bool Subscribe(GameValueConfig config)
     {
-        slider.minValue = min;
-        slider.maxValue = max;
-        slider.value = value;
-        slider.onValueChanged.AddListener(callBack);
+        this.config = config;
+
+        slider.minValue = config.minmaxValue.x;
+        slider.maxValue = config.minmaxValue.y;
+        slider.value = config.value;
         slider.onValueChanged.AddListener(UpdateValue);
 
-        UpdateValue(value);
+        UpdateValue(config.value);
+
+        titleText.text = gameObject.name;
+
+        //Быстрый хак для LINQ
+        return false;
     }
 
     void UpdateValue(float value)
     {
         text.text = value.ToString("F1");
+        config.value = value;
     }
 }

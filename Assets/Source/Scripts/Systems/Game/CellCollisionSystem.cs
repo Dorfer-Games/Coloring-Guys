@@ -46,8 +46,8 @@ public class CellCollisionSystem : GameSystem, IIniting
 
         component.SetDown(true);
 
-        seq.Append(DOTween.To(() => color, x => color = x, Color.red, config.CellFadeTime).OnUpdate(() => component.SetColor(color)).SetEase(Ease.OutCubic));
-        seq.Append(other.DOLocalMoveY(-20, config.CellFallTime).SetEase(Ease.Linear));
+        seq.Append(DOTween.To(() => color, x => color = x, Color.red, config.GetValue(EGameValue.CellFadeTime)).OnUpdate(() => component.SetColor(color)).SetEase(Ease.OutCubic));
+        seq.Append(other.DOLocalMoveY(-20, config.GetValue(EGameValue.CellFallTime)).SetEase(Ease.Linear));
         seq.OnComplete(() => BringCellBack(other));
         seq.SetId(component.GetInstanceID());
         seq.SetEase(Ease.Linear);
@@ -59,7 +59,7 @@ public class CellCollisionSystem : GameSystem, IIniting
         var component = game.cellDictionary[cell.parent];
         component.SetColor(Color.white);
 
-        cell.DOLocalMoveY(0, config.CellFallTime).SetDelay(config.CellBackTime).SetId(component.GetInstanceID()).OnComplete(() =>
+        cell.DOLocalMoveY(0, config.GetValue(EGameValue.CellFallTime)).SetDelay(config.GetValue(EGameValue.CellBackTime)).SetId(component.GetInstanceID()).OnComplete(() =>
         {
             component.SetDown(false);
         });

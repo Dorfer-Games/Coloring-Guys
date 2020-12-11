@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 7470742954145563264}
   - component: {fileID: 4446574364623119539}
   m_Layer: 0
-  m_Name: Player Speedup
+  m_Name: Player speed X
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -256,6 +256,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 7470742954145563264}
   text: {fileID: 5201861847767186787}
+  titleText: {fileID: 3515081983588124613}
+  <Type>k__BackingField: 10
 --- !u!1 &1961852178268604291
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,7 +590,7 @@ GameObject:
   - component: {fileID: 6030644940954185717}
   - component: {fileID: 7832006182374828339}
   m_Layer: 0
-  m_Name: Max colors
+  m_Name: Max color
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -682,6 +684,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 6030644940954185717}
   text: {fileID: 6385264424906963004}
+  titleText: {fileID: 4667989426919137151}
+  <Type>k__BackingField: 8
 --- !u!1 &3924104725826321143
 GameObject:
   m_ObjectHideFlags: 0
@@ -2206,7 +2210,7 @@ GameObject:
   - component: {fileID: 2198382148189637912}
   - component: {fileID: 2666895677932773915}
   m_Layer: 0
-  m_Name: Display Hexes
+  m_Name: Display hexes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2300,6 +2304,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 2198382148189637912}
   text: {fileID: 4794456757602220626}
+  titleText: {fileID: 570257674693835276}
+  <Type>k__BackingField: 9
 --- !u!1 &8392515516588137722
 GameObject:
   m_ObjectHideFlags: 0
@@ -3145,7 +3151,7 @@ GameObject:
   - component: {fileID: 8465360483198418456}
   - component: {fileID: 8465360483198418459}
   m_Layer: 0
-  m_Name: Fade time Slider
+  m_Name: Hex Fade time
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3239,6 +3245,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 8465360483198418456}
   text: {fileID: 8465360484891875596}
+  titleText: {fileID: 8465360483084539546}
+  <Type>k__BackingField: 2
 --- !u!1 &8465360483245341398
 GameObject:
   m_ObjectHideFlags: 0
@@ -3398,7 +3406,7 @@ GameObject:
   - component: {fileID: 8465360483293821848}
   - component: {fileID: 8465360483293821851}
   m_Layer: 0
-  m_Name: Rotation Slider
+  m_Name: Rotation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3492,6 +3500,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 8465360483293821848}
   text: {fileID: 8465360483183689697}
+  titleText: {fileID: 8465360484896205167}
+  <Type>k__BackingField: 1
 --- !u!1 &8465360483393869491
 GameObject:
   m_ObjectHideFlags: 0
@@ -3648,7 +3658,7 @@ GameObject:
   - component: {fileID: 8465360483445053302}
   - component: {fileID: 8465360483445053303}
   m_Layer: 0
-  m_Name: Back time Slider
+  m_Name: Hex Back time
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3742,6 +3752,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 8465360483445053302}
   text: {fileID: 8465360483882648639}
+  titleText: {fileID: 8465360484605106388}
+  <Type>k__BackingField: 4
 --- !u!1 &8465360483451787526
 GameObject:
   m_ObjectHideFlags: 0
@@ -4059,7 +4071,7 @@ GameObject:
   - component: {fileID: 8465360483520662773}
   - component: {fileID: 8465360483520662770}
   m_Layer: 0
-  m_Name: Gravity strength Slider
+  m_Name: Gravity STR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4153,6 +4165,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 8465360483520662773}
   text: {fileID: 8465360484533493842}
+  titleText: {fileID: 8465360483078564515}
+  <Type>k__BackingField: 6
 --- !u!1 &8465360483583550883
 GameObject:
   m_ObjectHideFlags: 0
@@ -4619,7 +4633,7 @@ GameObject:
   - component: {fileID: 8465360483786545571}
   - component: {fileID: 8465360483786545570}
   m_Layer: 0
-  m_Name: Fall time Slider
+  m_Name: Hex Fall time
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4713,6 +4727,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 8465360483786545571}
   text: {fileID: 8465360484619323735}
+  titleText: {fileID: 8465360485031147764}
+  <Type>k__BackingField: 3
 --- !u!1 &8465360483844435574
 GameObject:
   m_ObjectHideFlags: 0
@@ -5279,7 +5295,7 @@ GameObject:
   - component: {fileID: 8465360484118333670}
   - component: {fileID: 8465360484118333673}
   m_Layer: 0
-  m_Name: Movespeed Slider
+  m_Name: Movespeed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5373,6 +5389,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 8465360484118333670}
   text: {fileID: 8465360483619873103}
+  titleText: {fileID: 8465360483506563606}
+  <Type>k__BackingField: 0
 --- !u!1 &8465360484145984767
 GameObject:
   m_ObjectHideFlags: 0
@@ -7085,7 +7103,7 @@ GameObject:
   - component: {fileID: 8465360484893462754}
   - component: {fileID: 8465360484893462755}
   m_Layer: 0
-  m_Name: Jump strength Slider
+  m_Name: Jump STR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7179,6 +7197,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 8465360484893462754}
   text: {fileID: 8465360483451787528}
+  titleText: {fileID: 8465360484779666078}
+  <Type>k__BackingField: 5
 --- !u!1 &8465360484896205165
 GameObject:
   m_ObjectHideFlags: 0
@@ -7678,7 +7698,7 @@ GameObject:
   - component: {fileID: 8284038866768221255}
   - component: {fileID: 4411668976470208608}
   m_Layer: 0
-  m_Name: Color in Stack
+  m_Name: Color in stack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7772,3 +7792,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 8284038866768221255}
   text: {fileID: 8596938203076312006}
+  titleText: {fileID: 5314845536472400088}
+  <Type>k__BackingField: 7

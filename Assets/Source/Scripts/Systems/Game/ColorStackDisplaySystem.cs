@@ -14,7 +14,7 @@ public class ColorStackDisplaySystem : GameSystem, IIniting
 
     void IIniting.OnInit()
     {
-        if (config.DisplayHexes)
+        if (Mathf.RoundToInt(config.GetValue(EGameValue.DisplayHexes)) == 1)
         {
             characterHexPoints = new Dictionary<Character, Transform>();
 
@@ -23,7 +23,7 @@ public class ColorStackDisplaySystem : GameSystem, IIniting
                 var point = game.characters[i].rigidbody.transform.Find(stackPointName);
                 characterHexPoints.Add(game.characters[i], point);
 
-                for (int j = 0; j < config.ColorMax; j++)
+                for (int j = 0; j < Mathf.RoundToInt(config.GetValue(EGameValue.ColorMax)); j++)
                 {
                     var position = Vector3.zero;
                     position.y = j * offset;
@@ -51,7 +51,7 @@ public class ColorStackDisplaySystem : GameSystem, IIniting
 
     void ChangeHexCountDisplaying(Character character, int index)
     {
-        for (int i = 0; i < config.ColorMax; i++)
+        for (int i = 0; i < Mathf.RoundToInt(config.GetValue(EGameValue.ColorMax)); i++)
         {
             characterHexPoints[character].GetChild(i).gameObject.SetActive(i < character.stacks);
         }

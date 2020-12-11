@@ -10,10 +10,10 @@ public class CharactersMovingSystem : GameSystem, IFixedUpdating
     {
         for (int i = 0; i < game.characters.Length; i++)
         {
-            var rotation = Vector3.up * config.RotationSpeed * game.characters[i].rotationValue * Time.fixedDeltaTime;
-            var movement = Vector3.forward * config.MoveSpeed * Time.fixedDeltaTime;
+            var rotation = Vector3.up * config.GetValue(EGameValue.RotationSpeed) * game.characters[i].rotationValue * Time.fixedDeltaTime;
+            var movement = Vector3.forward * config.GetValue(EGameValue.MoveSpeed) * Time.fixedDeltaTime;
 
-            if (speedupMainCharacter && game.characters[i].isPlayer) movement *= config.PlayerSpeedX;
+            if (speedupMainCharacter && game.characters[i].isPlayer) movement *= config.GetValue(EGameValue.PlayerSpeedX);
 
             game.characters[i].rigidbody.transform.Rotate(rotation);
             game.characters[i].rigidbody.transform.Translate(movement, Space.Self);
