@@ -11,13 +11,14 @@ public class ColorSpawningSystem : GameSystem, IIniting
     [SerializeField] GameObject colorPrefab;
     [SerializeField] Vector3 spawnPosition;
     [SerializeField] float firstSpawnTime;
-    [SerializeField] float respawnTime;
 
+    LevelInfoComponent levelInfo;
     ColorSpawnComponent[] colorSpawnPoints;
     List<ColorStackComponent> colors = new List<ColorStackComponent>();
 
     void IIniting.OnInit()
     {
+        levelInfo = game.level.GetComponent<LevelInfoComponent>();
         colorSpawnPoints = game.level.transform.Find("Colors SP").GetComponentsInChildren<ColorSpawnComponent>().ToArray();
 
         foreach (var character in game.characters)
@@ -38,18 +39,14 @@ public class ColorSpawningSystem : GameSystem, IIniting
             var character = game.characterDictionary[@object];
             var color = other.GetComponent<ColorStackComponent>();
 
-            //if (color.Color == character.color)
-            //{
             colors.Remove(color);
             character.stacks = Mathf.Clamp(character.stacks + color.Count, 0, Mathf.RoundToInt(config.GetValue(EGameValue.ColorMax)));
-            StartCoroutine(RespawnRoutine(color.Parent, respawnTime));
+            StartCoroutine(RespawnRoutine(color.Parent, config.GetValue(EGameValue.ColorSpawnDelay)));
 
             color.transform.parent = null;
             PoolingSystem.Pool(color.gameObject);
 
             Signals.Get<HexCountChangedSignal>().Dispatch(character, character.stacks);
-            //Signals.Get<ColorPickedupSignal>().Dispatch(0);
-            //}
         }
     }
 
@@ -58,14 +55,6 @@ public class ColorSpawningSystem : GameSystem, IIniting
         //Не делаем переспавн, что бы избежать случаев, когда игрок почти добежал до своей краски, а она появилась в другом месте.
         if (spawn.childCount == 0)
         {
-            //var color = game.characters[0].color;
-            //Нужно, что бы у игрока всегда была краска.
-            //if (colors.Any(x => x.Color == game.characters[0].color))
-            //{
-            //    var colorsLeft = game.characters.Select(x => x.color).Except(colors.Select(x => x.Color));
-            //    color = colorsLeft.ToArray().GetRandom();
-            //}
-
             PoolingSystem.GetComponent(colorPrefab, out ColorStackComponent component);
             component.Setup(component.Parent == null ? spawn : null, Color.yellow, Mathf.RoundToInt(config.GetValue(EGameValue.ColorPerStack)));
             colors.Add(component);
@@ -73,11 +62,12 @@ public class ColorSpawningSystem : GameSystem, IIniting
             component.transform.SetParent(component.Parent);
             component.transform.localPosition = spawnPosition;
 
-            //if (color == game.characters[0].color)
-            //{
+            if (Mathf.RoundToInt(config.GetValue(EGameValue.RandomColorSpawn)) == 1)
+            {
+                component.Parent.localPosition = new Vector3(levelInfo.ColorSpawnAreaX.FromMinMax(), 0, levelInfo.ColorSpawnAreaZ.FromMinMax());
+            }
+
             Signals.Get<PlayerNotificationSignal>().Dispatch("Color Spawned!");
-                //Signals.Get<ColorSpawnedSignal>().Dispatch(component.Parent, 0);
-            //}
         }
     }
 

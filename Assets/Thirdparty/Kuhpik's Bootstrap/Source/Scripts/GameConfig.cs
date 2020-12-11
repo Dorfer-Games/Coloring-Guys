@@ -20,7 +20,9 @@ namespace Kuhpik
         PlayerSpeedX,
         HitImpulse,
         CharacterSize,
-        ScaleCamera
+        ScaleCamera,
+        RandomColorSpawn,
+        ColorSpawnDelay
     }
 
     [Serializable]
