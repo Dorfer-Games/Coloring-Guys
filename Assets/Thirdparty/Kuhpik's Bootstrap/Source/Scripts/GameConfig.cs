@@ -17,6 +17,8 @@ namespace Kuhpik
         [field: SerializeField] public bool DisplayHexes { get; private set; }
         [field: SerializeField] public float PlayerSpeedX { get; private set; }
         [field: SerializeField] public float HitImpulse { get; private set; }
+        [field: SerializeField] public float CharacterSize { get; private set; }
+        [field: SerializeField] public bool ScaleCamera { get; private set; }
 
         public void UpdateMoveSpeed(float value)
         {
@@ -76,6 +78,16 @@ namespace Kuhpik
         public void UpdateHitImpulse(float value)
         {
             HitImpulse = value;
+        }
+
+        public void UpdateCharacterSize(float value)
+        {
+            CharacterSize = value;
+        }
+
+        public void UpdateCameraScaleWithSize(float value)
+        { 
+            ScaleCamera = Mathf.RoundToInt(value) == 1;
         }
     }
 }
