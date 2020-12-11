@@ -5178,6 +5178,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4233559147451562778}
     m_Modifications:
+    - target: {fileID: 4981106967593898940, guid: 5a34034dc6438bb449aeb98558cecb7d, type: 3}
+      propertyPath: m_Size.y
+      value: 2.9587555
+      objectReference: {fileID: 0}
+    - target: {fileID: 4981106967593898940, guid: 5a34034dc6438bb449aeb98558cecb7d, type: 3}
+      propertyPath: m_Center.y
+      value: 1.4793777
+      objectReference: {fileID: 0}
     - target: {fileID: 4981106967593898942, guid: 5a34034dc6438bb449aeb98558cecb7d, type: 3}
       propertyPath: m_Name
       value: Water Plane
@@ -5188,15 +5196,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4981106967593898943, guid: 5a34034dc6438bb449aeb98558cecb7d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.2
+      value: 17.3
       objectReference: {fileID: 0}
     - target: {fileID: 4981106967593898943, guid: 5a34034dc6438bb449aeb98558cecb7d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -25
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 4981106967593898943, guid: 5a34034dc6438bb449aeb98558cecb7d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 14.1
+      value: 12.6
       objectReference: {fileID: 0}
     - target: {fileID: 4981106967593898943, guid: 5a34034dc6438bb449aeb98558cecb7d, type: 3}
       propertyPath: m_LocalRotation.w
