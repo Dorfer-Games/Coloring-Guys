@@ -11,6 +11,8 @@ public class GameUIScreen : UIScreen
     [SerializeField] TextMeshProUGUI notificationText;
     [SerializeField] TextMeshProUGUI hexCountText;
 
+    [field: SerializeField] public RectTransform Leaderboard { get; private set; }
+
     bool canDisplayNotification = true;
 
     public override void Subscribe()

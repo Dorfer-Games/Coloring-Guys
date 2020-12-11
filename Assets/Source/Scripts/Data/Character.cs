@@ -7,6 +7,7 @@ public class Character
     public Rigidbody rigidbody;
     public Color color; //Цвет игрока
     public int stacks; //Сколько клеток мы можем покрасить
+    public int colored; //Сколько клеток закрасил
     public bool isJumping;
     public bool isDeath;
     public bool isPlayer;
