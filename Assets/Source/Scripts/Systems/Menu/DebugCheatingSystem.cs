@@ -1,30 +1,50 @@
 ﻿using Kuhpik;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class DebugCheatingSystem : GameSystem, IIniting, IDisposing
+public class DebugCheatingSystem : GameSystem, IIniting
 {
     [SerializeField] GameObject[] cheatingPanels;
+    [SerializeField] Button nextPageButton;
+    
+    int page = 0;
 
     void IIniting.OnInit()
     {
         config.Init(config.GameValusConfigs);
 
 #if DEBUG
-        foreach (var panel in cheatingPanels)
+
+        for (int i = 0; i < cheatingPanels.Length; i++)
         {
-            panel.SetActive(true);
-            panel.transform.GetComponentsInChildren<CheatSliderComponent>().Any(x => x.Subscribe(config.gameValuesDict[x.Type]));
+            cheatingPanels[i].SetActive(true);
+            cheatingPanels[i].transform.GetComponentsInChildren<CheatSliderComponent>().Any(x => x.Subscribe(config.gameValuesDict[x.Type]));
+
+            if (i != 0)
+            {
+                cheatingPanels[i].SetActive(false);
+            }
         }
+
+        nextPageButton.gameObject.SetActive(true);
+        nextPageButton.onClick.AddListener(NextPage);
+
 #endif
     }
 
-    //Можно было бы это сделать в каком-то левом классе, тогда можно было бы не делать ресет.
-    //Сейчас проблема в том, что я не могу поменять создать копию GameConfig и заменить его во всех системах.
-    void IDisposing.OnDispose()
+    void NextPage()
     {
-#if UNITY_EDITOR
+        page++;
 
-#endif
+        if (page == cheatingPanels.Length)
+        {
+            page = 0;
+        }
+
+        for (int i = 0; i < cheatingPanels.Length; i++)
+        {
+            cheatingPanels[i].SetActive(i == page);
+        }
     }
 }
