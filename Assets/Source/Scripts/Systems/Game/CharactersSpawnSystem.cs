@@ -15,6 +15,8 @@ public class CharactersSpawnSystem : GameSystem, IIniting
         for (int i = 0; i < spawnPoints.Length; i++)
         {
             var character = Instantiate(characterPrefab, spawnPoints[i].transform.position, spawnPoints[i].transform.rotation);
+            if(i == 0)
+            GameObject.FindObjectOfType<ControllerCameraCinemachine>().SetSettingsCamera(character.transform);
 
             game.characters[i] = new Character();
             game.characters[i].rigidbody = character.GetComponent<Rigidbody>();

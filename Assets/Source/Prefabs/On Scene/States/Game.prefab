@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b3fcc6f45d493044becae98619aa160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorPrefab: {fileID: 7871949154645396642, guid: 63b8d6646c1ad6f4ca604649f077d263, type: 3}
+  colorPrefab: {fileID: 6097415518250171596, guid: 63b8d6646c1ad6f4ca604649f077d263, type: 3}
   spawnPosition: {x: 0, y: 2.25, z: 0}
   firstSpawnTime: 5
 --- !u!1 &194567217764876692

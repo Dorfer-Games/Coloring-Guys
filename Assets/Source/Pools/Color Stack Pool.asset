@@ -15,6 +15,11 @@ MonoBehaviour:
   capacity: 4
   poolTime: 0
   dontDestroy: 0
-  prefab: {fileID: 7871949154645396642, guid: 63b8d6646c1ad6f4ca604649f077d263, type: 3}
+  prefab: {fileID: 421384443050325426, guid: cfd78b725db1f914c922d95de1915989, type: 3}
   cachedComponents:
-  - {fileID: 7871949154645396643, guid: 63b8d6646c1ad6f4ca604649f077d263, type: 3}
+  - {fileID: 421384443050325432, guid: cfd78b725db1f914c922d95de1915989, type: 3}
+  - {fileID: 421384443050325431, guid: cfd78b725db1f914c922d95de1915989, type: 3}
+  - {fileID: 421384443050325430, guid: cfd78b725db1f914c922d95de1915989, type: 3}
+  - {fileID: 421384443050325429, guid: cfd78b725db1f914c922d95de1915989, type: 3}
+  - {fileID: 421384443050325428, guid: cfd78b725db1f914c922d95de1915989, type: 3}
+  - {fileID: 421384443050325427, guid: cfd78b725db1f914c922d95de1915989, type: 3}
