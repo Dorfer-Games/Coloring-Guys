@@ -17,22 +17,29 @@ public class CellBuildingSystem : GameSystem, IIniting
     {
         if (other.CompareTag("Cell"))
         {
-            var character = game.characterDictionary[@object];
-            var component = game.cellDictionary[other.parent];
-
-            if (component.IsDown && character.stacks > 0)
+            try
             {
-                if (DOTween.IsTweening(component.GetInstanceID()))
+                var character = game.characterDictionary[@object];
+                var component = game.cellDictionary[other.parent];
+
+                if (component.IsDown && character.stacks > 0)
                 {
-                    DOTween.Kill(component.GetInstanceID());
+                    if (DOTween.IsTweening(component.GetInstanceID()))
+                    {
+                        DOTween.Kill(component.GetInstanceID());
+                    }
+
+                    character.stacks--;
+                    component.SetDown(false);
+                    component.SetColor(character.color);
+                    component.Cell.transform.DOLocalMoveY(0, 0);
+
+                    if (character == game.characters[0]) Signals.Get<HexCountChangedSignal>().Dispatch(character, character.stacks);
                 }
+            }
+            catch
+            {
 
-                character.stacks--;
-                component.SetDown(false);
-                component.SetColor(character.color);
-                component.Cell.transform.DOLocalMoveY(0, 0);
-
-                if (character == game.characters[0]) Signals.Get<HexCountChangedSignal>().Dispatch(character, character.stacks);
             }
         }
     }

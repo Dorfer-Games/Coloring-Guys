@@ -1407,7 +1407,13 @@ MonoBehaviour:
   stackPrefab: {fileID: 1500631835949107579, guid: 028260c9bd4127c4baddd9462d5c0e0b, type: 3}
   offset: 0.155
   stackPointName: Color Bricks
-  nameParentObject: box
+  nameParentObject:
+  - bandit
+  - metarig
+  - pelvis
+  - spine.001
+  - spine.002
+  - box
 --- !u!1 &8276697385017190877
 GameObject:
   m_ObjectHideFlags: 0

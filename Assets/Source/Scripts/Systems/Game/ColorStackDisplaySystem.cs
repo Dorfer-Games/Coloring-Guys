@@ -8,8 +8,8 @@ public class ColorStackDisplaySystem : GameSystem, IIniting
 {
     [SerializeField] GameObject stackPrefab;
     [SerializeField] float offset;
-    [SerializeField] string stackPointName, nameParentObject;
-
+    [SerializeField] string stackPointName;
+    [SerializeField] private string[] nameParentObject;
     Dictionary<Character, Transform> characterHexPoints;
 
     void IIniting.OnInit()
@@ -20,7 +20,7 @@ public class ColorStackDisplaySystem : GameSystem, IIniting
 
             for (int i = 0; i < game.characters.Length; i++)
             {
-                var point = game.characters[i].rigidbody.transform.Find(nameParentObject).transform.Find(stackPointName);
+                var point = game.characters[i].rigidbody.transform.Find(nameParentObject[0]).Find(nameParentObject[1]).Find(nameParentObject[2]).Find(nameParentObject[3]).Find(nameParentObject[4]).Find(nameParentObject[5]).transform.Find(stackPointName);
                 characterHexPoints.Add(game.characters[i], point);
 
                 for (int j = 0; j < Mathf.RoundToInt(config.GetValue(EGameValue.ColorMax)); j++)

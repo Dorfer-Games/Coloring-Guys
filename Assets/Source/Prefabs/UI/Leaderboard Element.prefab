@@ -92,8 +92,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -151,7 +151,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &135172352273825534
 RectTransform:
   m_ObjectHideFlags: 0
@@ -280,6 +280,7 @@ GameObject:
   - component: {fileID: 312122572185883832}
   - component: {fileID: 1411345519149612236}
   - component: {fileID: 8463878855063083816}
+  - component: {fileID: -502186668356850166}
   m_Layer: 0
   m_Name: Leaderboard Element
   m_TagString: Untagged
@@ -358,7 +359,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02273ac5ca4f29e4eb3db3dde6a36058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Target: {fileID: 0}
   backgroundImage: {fileID: 1411345519149612236}
   colorAlpha: 0.75
   placeText: {fileID: 3692369934479971112}
   nameText: {fileID: 5968095025574798227}
+--- !u!114 &-502186668356850166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5934356218567998710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 864e650c826f6ba46a2a2f35af617a7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  Elements:
+  - {fileID: 1725351877246811190}

@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
 using DG.Tweening;
 using System.Collections;
+using NaughtyAttributes;
 
 public class TrapDisabledCell : TrapsBehaviour
 {
+    [SerializeField] [Tag] private string tagObject;
+    [SerializeField] private Color colorDistanceTrap;
+
     [Header("Время через, которое ловушка активируется")]
     [SerializeField] private float timeDisabledTrap;
 
@@ -14,9 +18,12 @@ public class TrapDisabledCell : TrapsBehaviour
     [SerializeField] private float levelTrap;
 
 
+    private CellComponent cellComponent;
+
     private void Start()
     {
         StartCoroutine(timeStartTrap());
+        cellComponent = GetComponent<CellComponent>();
     }
 
     public override void MovementTrap()
@@ -28,6 +35,21 @@ public class TrapDisabledCell : TrapsBehaviour
         seq.Append(transform.DOLocalMoveY(startYpos, speed));
         seq.Play();
         StartCoroutine(timeStartTrap());
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag(tagObject))
+        {
+            cellComponent.SetColor(colorDistanceTrap);
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag(tagObject))
+        {
+            cellComponent.SetColor(Color.white);
+        }
     }
 
     private IEnumerator timeStartTrap()

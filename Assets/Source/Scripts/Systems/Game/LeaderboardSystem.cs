@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using System;
 
 public class LeaderboardSystem : GameSystemWithScreen<GameUIScreen>, IIniting, IUpdating
 {
@@ -9,7 +10,7 @@ public class LeaderboardSystem : GameSystemWithScreen<GameUIScreen>, IIniting, I
 
     Dictionary<Character, LeaderboardUIElement> elementsDict;
     int counter;
-
+    public event Action<String> OnCrownEnter;
     void IIniting.OnInit()
     {
         elementsDict = new Dictionary<Character, LeaderboardUIElement>();
@@ -19,6 +20,7 @@ public class LeaderboardSystem : GameSystemWithScreen<GameUIScreen>, IIniting, I
             var component = Instantiate(leaderboardElementPrefab, screen.Leaderboard).GetComponent<LeaderboardUIElement>();
             component.UpdateColor(character.color);
             component.UpdateName(character.rigidbody.name);
+            component.Target = character.rigidbody.transform;
             elementsDict.Add(character, component);
         }
 
@@ -52,7 +54,7 @@ public class LeaderboardSystem : GameSystemWithScreen<GameUIScreen>, IIniting, I
         }
 
         var orderedList = game.characters.OrderByDescending(x => x.colored).ToArray();
-
+        OnCrownEnter?.Invoke(orderedList[0].rigidbody.name);
         for (int i = 0; i < orderedList.Length; i++)
         {
             var ui = elementsDict[orderedList[i]];

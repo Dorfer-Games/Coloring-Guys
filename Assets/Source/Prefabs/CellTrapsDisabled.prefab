@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 5504669989273006322}
   - component: {fileID: 8810999352685300567}
   - component: {fileID: 365849993998905968}
+  - component: {fileID: 2873223295461614972}
   m_Layer: 8
   m_Name: CellTrapsDisabled
   m_TagString: Cell
@@ -159,9 +160,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 643c54531e87a8d45a24120a10c58fd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tagObject: Player
+  colorDistanceTrap: {r: 0.2735849, g: 0.23357956, b: 0.23357956, a: 1}
   timeDisabledTrap: 10
   speed: 0.3
   levelTrap: 5
+--- !u!65 &2873223295461614972
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5504669989273006323}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7, y: 1, z: 7}
+  m_Center: {x: 0.02502513, y: 0, z: -0.1918633}
 --- !u!1 &6395369595533138239
 GameObject:
   m_ObjectHideFlags: 0

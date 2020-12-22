@@ -61,3 +61,6 @@ MonoBehaviour:
   - type: 15
     value: 15
     minmaxValue: {x: 5, y: 60}
+  - type: 16
+    value: 15
+    minmaxValue: {x: 5, y: 100}

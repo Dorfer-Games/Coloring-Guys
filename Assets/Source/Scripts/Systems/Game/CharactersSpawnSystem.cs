@@ -20,7 +20,7 @@ public class CharactersSpawnSystem : GameSystem, IIniting
 
             game.characters[i] = new Character();
             game.characters[i].rigidbody = character.GetComponent<Rigidbody>();
-            game.characters[i].animator = character.GetComponent<Animator>();
+            game.characters[i].animator = character.transform.Find("bandit").GetComponent<Animator>();
             game.characters[i].color = characterColors[i];
             game.characters[i].onCollisionComponent = character.GetComponent<OnCollisionEnterComponent>();
             game.characters[i].onTriggerComponent = character.GetComponent<OnTriggerEnterComponent>();
