@@ -16,7 +16,7 @@ public class CharactersSpawnSystem : GameSystem, IIniting
         {
             var character = Instantiate(characterPrefab, spawnPoints[i].transform.position, spawnPoints[i].transform.rotation);
             if(i == 0)
-            GameObject.FindObjectOfType<ControllerCameraCinemachine>().SetSettingsCamera(character.transform);
+            GameObject.FindObjectOfType<CameraCinemachineComponent>().SetSettingsCamera(character.transform);
 
             game.characters[i] = new Character();
             game.characters[i].rigidbody = character.GetComponent<Rigidbody>();
@@ -24,6 +24,7 @@ public class CharactersSpawnSystem : GameSystem, IIniting
             game.characters[i].color = characterColors[i];
             game.characters[i].onCollisionComponent = character.GetComponent<OnCollisionEnterComponent>();
             game.characters[i].onTriggerComponent = character.GetComponent<OnTriggerEnterComponent>();
+            game.characters[i].onTriggerEnterImpact = character.GetComponent<OnTriggerEnterImpactComponent>();
             game.characters[i].isPlayer = i == 0;
         }        
 

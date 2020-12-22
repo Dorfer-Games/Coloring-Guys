@@ -10,15 +10,15 @@ public class CharacterCollisionImpactSystem : GameSystem, IIniting
     {
         foreach (var character in game.characters)
         {
-            character.onCollisionComponent.OnEnter += OnPlayerCollision;
+            character.onTriggerEnterImpact.OnEnter += OnPlayerCollision;
         }
     }
 
-    void OnPlayerCollision(Transform other, Transform @object)
+    void OnPlayerCollision(Transform other)
     {
         if (other.transform.CompareTag(collisionTag)) 
         {
-            var normalized = (other.position - @object.position).normalized;
+            var normalized = other.position.normalized;
             game.characterDictionary[other].rigidbody.AddForce(normalized * config.GetValue(EGameValue.HitImpulse), ForceMode.Impulse);
         }
     }

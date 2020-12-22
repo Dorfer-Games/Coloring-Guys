@@ -22,7 +22,10 @@ namespace Kuhpik
         CharacterSize,
         ScaleCamera,
         RandomColorSpawn,
-        ColorSpawnDelay
+        ColorSpawnDelay,
+
+        ForceTrapImpulse
+
     }
 
     [Serializable]

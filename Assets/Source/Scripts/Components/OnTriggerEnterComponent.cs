@@ -5,8 +5,8 @@ public class OnTriggerEnterComponent : MonoBehaviour
 {
     public event Action<Transform, Transform> OnEnter;
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider collision)
     {
-        OnEnter?.Invoke(other.transform, transform);
+        OnEnter?.Invoke(collision.transform, transform);
     }
 }

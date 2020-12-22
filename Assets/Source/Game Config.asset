@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameValueConfigs:
   - type: 0
-    value: 5.4973416
+    value: 7
     minmaxValue: {x: 2, y: 20}
   - type: 1
-    value: 125
+    value: 130
     minmaxValue: {x: 60, y: 360}
   - type: 2
     value: 0.5
@@ -35,7 +35,7 @@ MonoBehaviour:
     value: 70
     minmaxValue: {x: 10, y: 200}
   - type: 7
-    value: 15
+    value: 20
     minmaxValue: {x: 10, y: 300}
   - type: 8
     value: 100
@@ -47,13 +47,13 @@ MonoBehaviour:
     value: 1.2
     minmaxValue: {x: 1, y: 3}
   - type: 11
-    value: 25
+    value: 45
     minmaxValue: {x: 5, y: 80}
   - type: 12
-    value: 1
+    value: 1.3
     minmaxValue: {x: 1, y: 5}
   - type: 13
-    value: 0
+    value: 0.6
     minmaxValue: {x: 0, y: 1}
   - type: 14
     value: 1

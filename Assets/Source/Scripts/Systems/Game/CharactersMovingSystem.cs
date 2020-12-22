@@ -6,6 +6,7 @@ public class CharactersMovingSystem : GameSystem, IFixedUpdating
 {
     [SerializeField] [BoxGroup("Settings")] bool speedupMainCharacter;
 
+
     void IFixedUpdating.OnFixedUpdate()
     {
         for (int i = 0; i < game.characters.Length; i++)

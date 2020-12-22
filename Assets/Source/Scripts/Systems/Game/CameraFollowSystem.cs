@@ -13,7 +13,7 @@ public class CameraFollowSystem : GameSystem, IIniting
         var camera = mainCamera.transform;
         var camPoint = game.characters[0].rigidbody.transform.Find("Camera point");
 
-        //camera.SetParent(camPoint, true);
+        
 
         seq.Append(camera.DOLocalMove(Vector3.zero, animationTime));
         seq.Join(camera.DOLocalRotate(Vector3.zero, animationTime));

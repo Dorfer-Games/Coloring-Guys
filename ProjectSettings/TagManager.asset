@@ -8,6 +8,7 @@ TagManager:
   - Color
   - Death
   - Color Radius
+  - Trap
   layers:
   - Default
   - TransparentFX

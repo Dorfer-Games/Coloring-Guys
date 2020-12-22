@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
+
 public class OnCollisionEnterComponent : MonoBehaviour
 {
     public event Action<Transform, Transform> OnEnter;

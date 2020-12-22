@@ -12,6 +12,8 @@ public class Character
     public bool isDeath;
     public bool isPlayer;
 
-    public OnCollisionEnterComponent onCollisionComponent;
+    public OnTriggerEnterImpactComponent onTriggerEnterImpact;
     public OnTriggerEnterComponent onTriggerComponent;
+    public OnCollisionEnterComponent onCollisionComponent;
+
 }

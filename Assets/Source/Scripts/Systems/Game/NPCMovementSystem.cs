@@ -75,32 +75,37 @@ public class NPCMovementSystem : GameSystem, IFixedUpdating
         {
             var startPoint = character.rigidbody.position + (direction * rayOffset) + (Vector3.up * 0.5f) + (direction * (rayStep * (i + 1)));
             var index = i;
-
-            //Луч попал. Впереди есть место и клетка не опускается
-            if (Physics.Raycast(startPoint, Vector2.down, out var hit, downDistance, mask) && !game.cellDictionary[hit.transform.parent].IsDown)
+            try
             {
+                //Луч попал. Впереди есть место и клетка не опускается
+                if (Physics.Raycast(startPoint, Vector2.down, out var hit, downDistance, mask) && !game.cellDictionary[hit.transform.parent].IsDown)
+                {
 #if UNITY_EDITOR
-                Debug.DrawLine(startPoint, startPoint + Vector3.down, Color.green, 0.1f, false);
+                    Debug.DrawLine(startPoint, startPoint + Vector3.down, Color.green, 0.1f, false);
 #endif
-                emptyCombo = 0;
-            }
+                    emptyCombo = 0;
+                }
+                //Луч не попал
+                else
+                {
+#if UNITY_EDITOR
+                    Debug.DrawLine(startPoint, startPoint + Vector3.down, Color.red, 0.1f, false);
+#endif
+                    if (indexBeforeEmpty == -1) indexBeforeEmpty = index;
+                    emptyCombo++;
+                    empty++;
 
-            //Луч не попал
-            else
+                    //Тут уже не перепрыгнуть, анализируем
+                    if (emptyCombo > raysToJump) break;
+                }
+
+                //Предположим indexBeforeEmpty начался с индекса 0, тогда комбо будет равно raysToJump + 1, а checks будет raysToJump
+                checks++;
+            }
+            catch
             {
-#if UNITY_EDITOR
-                Debug.DrawLine(startPoint, startPoint + Vector3.down, Color.red, 0.1f, false);
-#endif
-                if (indexBeforeEmpty == -1) indexBeforeEmpty = index;
-                emptyCombo++;
-                empty++;
 
-                //Тут уже не перепрыгнуть, анализируем
-                if (emptyCombo > raysToJump) break;
             }
-
-            //Предположим indexBeforeEmpty начался с индекса 0, тогда комбо будет равно raysToJump + 1, а checks будет raysToJump
-            checks++;
         }
     }
 }
