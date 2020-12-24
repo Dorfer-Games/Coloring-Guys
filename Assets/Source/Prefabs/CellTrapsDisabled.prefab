@@ -106,8 +106,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5504669989273006322}
   - component: {fileID: 8810999352685300567}
-  - component: {fileID: 365849993998905968}
   - component: {fileID: 2873223295461614972}
+  - component: {fileID: 7670796482528605903}
   m_Layer: 8
   m_Name: CellTrapsDisabled
   m_TagString: Cell
@@ -148,23 +148,6 @@ MonoBehaviour:
   <Trigger>k__BackingField: {fileID: 6395369595533138239}
   <Color>k__BackingField: {r: 1, g: 1, b: 1, a: 0}
   <IsDown>k__BackingField: 0
---- !u!114 &365849993998905968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5504669989273006323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 643c54531e87a8d45a24120a10c58fd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tagObject: Player
-  colorDistanceTrap: {r: 0.2735849, g: 0.23357956, b: 0.23357956, a: 1}
-  timeDisabledTrap: 10
-  speed: 0.3
-  levelTrap: 5
 --- !u!65 &2873223295461614972
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -178,6 +161,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7, y: 1, z: 7}
   m_Center: {x: 0.02502513, y: 0, z: -0.1918633}
+--- !u!114 &7670796482528605903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5504669989273006323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 040de3c9328c5bc47b658f4c24c0071e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagObject: Player
+  colorDistanceTrap: {r: 0.4811321, g: 0.4561677, b: 0.4561677, a: 1}
+  timeDisabledTrap: 5
+  speed: 0.3
+  levelTrap: 3
 --- !u!1 &6395369595533138239
 GameObject:
   m_ObjectHideFlags: 0

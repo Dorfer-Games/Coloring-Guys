@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 312122572185883832}
   - component: {fileID: 1411345519149612236}
   - component: {fileID: 8463878855063083816}
-  - component: {fileID: -502186668356850166}
+  - component: {fileID: 405812599888800984}
   m_Layer: 0
   m_Name: Leaderboard Element
   m_TagString: Untagged
@@ -364,7 +364,7 @@ MonoBehaviour:
   colorAlpha: 1
   placeText: {fileID: 3692369934479971112}
   nameText: {fileID: 5968095025574798227}
---- !u!114 &-502186668356850166
+--- !u!114 &405812599888800984
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -373,7 +373,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5934356218567998710}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 864e650c826f6ba46a2a2f35af617a7d, type: 3}
+  m_Script: {fileID: 11500000, guid: fb4dac16fa103144b90f105aa265f564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}

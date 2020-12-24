@@ -203,8 +203,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7044068920436175864}
-  - component: {fileID: 947023023356244030}
   - component: {fileID: 4077234497917084282}
+  - component: {fileID: 3320556927395489562}
   m_Layer: 0
   m_Name: MoveShlagbaum
   m_TagString: Untagged
@@ -227,20 +227,6 @@ Transform:
   m_Father: {fileID: 5454599849798489264}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &947023023356244030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8392559383672354278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fd7188160350f64e94b65f3fc48ac05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trapMove: {fileID: 7044068920436175864}
-  speedTraps: 3
 --- !u!65 &4077234497917084282
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -254,3 +240,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.07233748, y: 0.0038310294, z: 0.0038310257}
   m_Center: {x: -0.044272922, y: -8.831889e-10, z: -0.0008421512}
+--- !u!114 &3320556927395489562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8392559383672354278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad4f871925538014a88bd2bb3dfcf9c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trapMove: {fileID: 7044068920436175864}
+  speedTraps: 3

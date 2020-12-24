@@ -680,7 +680,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2000307263}
-  - component: {fileID: 1267226803254805200}
+  - component: {fileID: 389634170063466885}
   m_Layer: 0
   m_Name: Traps Controller
   m_TagString: Untagged
@@ -702,7 +702,7 @@ Transform:
   m_Father: {fileID: 1877431542}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1267226803254805200
+--- !u!114 &389634170063466885
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -711,7 +711,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2000307262}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7afee269bd1a91540bc352f03c443713, type: 3}
+  m_Script: {fileID: 11500000, guid: cd490be09d2f38c48b89c8bbee8e4e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tagObjectCollision: Player

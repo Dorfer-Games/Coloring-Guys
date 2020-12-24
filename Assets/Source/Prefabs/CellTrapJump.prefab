@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3069626291711323212}
-  - component: {fileID: 3069626291711323210}
   - component: {fileID: 3069626291711323211}
+  - component: {fileID: 4795622266329371373}
   m_Layer: 8
-  m_Name: CellTraps
+  m_Name: CellTrapJump
   m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,20 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3069626291711323210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3069626291711323213}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0fece52fda15f545b9e21d8f84f23e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  forceUpTrap: 0.3
-  levelTrap: 5
 --- !u!65 &3069626291711323211
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -60,6 +46,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9679413, y: 0.55496716, z: 0.8985596}
   m_Center: {x: -0.040740967, y: -0.22251642, z: 0.027626038}
+--- !u!114 &4795622266329371373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3069626291711323213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916037d6c85610242b36893add0f2442, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceUpTrap: 0.3
+  levelTrap: 5
 --- !u!1 &3069626292339449759
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,7 +120,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 530a7e6f4129b41478c38565148e692d, type: 2}
+  - {fileID: 2100000, guid: 3e91472a1cd350640aeff7c85d1dfa63, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Skybox 1
-  m_Shader: {fileID: 4800000, guid: 8c70bf7419e4da14c819a73b599d2e13, type: 3}
+  m_Name: Skybox 2
+  m_Shader: {fileID: 4800000, guid: 53974f89ca5178d4da95571f5e03079c, type: 3}
   m_ShaderKeywords: _MAPPING_LATITUDE_LONGITUDE_LAYOUT
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -89,7 +89,7 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _SkyColor1: {r: 0.9529412, g: 0.928693, b: 0.30980396, a: 0}
+    - _SkyColor1: {r: 0.36209506, g: 0.9716981, b: 0.3798461, a: 0}
     - _SkyColor2: {r: 0.58139175, g: 0.9529412, b: 0.23921566, a: 0}
     - _SkyColor3: {r: 1, g: 1, b: 1, a: 0}
     - _SunColor: {r: 1, g: 0.98999995, b: 0.87, a: 1}

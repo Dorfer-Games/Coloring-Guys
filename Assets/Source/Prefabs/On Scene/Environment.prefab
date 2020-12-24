@@ -104,7 +104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1394664369}
   - component: {fileID: 1394664370}
-  - component: {fileID: 1394664371}
+  - component: {fileID: 4757704724421990186}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -162,7 +162,7 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1281348346}
---- !u!114 &1394664371
+--- !u!114 &4757704724421990186
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -171,13 +171,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1394664368}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2488b976bfe7a184b9f6aae0834773bb, type: 3}
+  m_Script: {fileID: 11500000, guid: d55dfb667e4e9f34eb576dde8edd8834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   targetObject: {fileID: 0}
-  positionCamera: {x: 0, y: 13, z: -15}
+  positionCamera: {x: 0, y: 17, z: -13}
   smoothMovement: 0.5
-  target_rotationCamera: {x: 0, y: 2.45, z: 0}
+  target_rotationCamera: {x: 0, y: 2.5, z: 0}
 --- !u!1 &924401148944492231
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,7 +397,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 924401149819348681}
-  - component: {fileID: 1626709490}
+  - component: {fileID: 8320990018870480427}
   m_Layer: 0
   m_Name: Environment
   m_TagString: Untagged
@@ -422,7 +422,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1626709490
+--- !u!114 &8320990018870480427
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -431,10 +431,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 924401149819348680}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a23f8834cbd813f42a4e3d5f1f27b1bd, type: 3}
+  m_Script: {fileID: 11500000, guid: 799b1be4342fc47478713cf425a65104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sky:
-  - {fileID: 2100000, guid: 855d26d343b1c8f4dbbf5c6d1d55b823, type: 2}
-  - {fileID: 2100000, guid: 6d9c32412128394408d32dfdf60160c4, type: 2}
-  - {fileID: 2100000, guid: 74f4eeafc4a016e4e83dda76de137278, type: 2}
+  - {fileID: 2100000, guid: 548c2e9fddda74540a7b21a9196e362f, type: 2}
+  - {fileID: 2100000, guid: 4c11846b79f64ae4b82bbe605df04d2d, type: 2}
+  - {fileID: 2100000, guid: 6bce5d367274d9746b10e10406ec8f7f, type: 2}
