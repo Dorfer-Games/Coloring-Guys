@@ -5190,6 +5190,10 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 1.4793777
       objectReference: {fileID: 0}
+    - target: {fileID: 4981106967593898941, guid: 5a34034dc6438bb449aeb98558cecb7d, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4981106967593898942, guid: 5a34034dc6438bb449aeb98558cecb7d, type: 3}
       propertyPath: m_Name
       value: Water Plane
