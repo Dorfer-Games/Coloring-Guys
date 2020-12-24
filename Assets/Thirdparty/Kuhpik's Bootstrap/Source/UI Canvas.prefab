@@ -666,13 +666,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -200
       objectReference: {fileID: 0}
+    - target: {fileID: 5026363443198011055, guid: f894a1c004b97e340a583288fa91836a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5660281995985743991, guid: f894a1c004b97e340a583288fa91836a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6623492627434005249, guid: f894a1c004b97e340a583288fa91836a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -229
+      objectReference: {fileID: 0}
+    - target: {fileID: 7466004914970435668, guid: f894a1c004b97e340a583288fa91836a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7867116669026549454, guid: f894a1c004b97e340a583288fa91836a, type: 3}
       propertyPath: m_Pivot.x

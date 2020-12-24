@@ -59,8 +59,8 @@ public class LeaderboardSystem : GameSystemWithScreen<GameUIScreen>, IIniting, I
         {
             var ui = elementsDict[orderedList[i]];
             ui.UpdateName(orderedList[i].rigidbody.name, orderedList[i].isDeath);
-            ui.UpdatePlace(i);
-            ui.transform.SetAsLastSibling();
+            //ui.UpdatePlace(i);
+            //ui.transform.SetAsLastSibling();
         }
     }
 }
