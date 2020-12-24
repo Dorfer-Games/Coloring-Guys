@@ -232,7 +232,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crown: {fileID: 3334169277343778431}
-  speedMove: 1
 --- !u!1 &1060577967939892658
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,6 +4,7 @@ using DG.Tweening;
 
 public class TrapShlakbaum : TrapsBehaviour
 {
+    [SerializeField] private Transform trapMove;
     [Header("Move Trap")]
     [SerializeField] private float speedTraps;
 
@@ -14,7 +15,7 @@ public class TrapShlakbaum : TrapsBehaviour
 
     public override void MovementTrap()
     {
-        transform.DOLocalRotate(Vector3.up * 360, speedTraps, RotateMode.FastBeyond360).SetLoops(-1).SetEase(Ease.Linear);
+        trapMove.transform.DOLocalRotate(Vector3.forward * 360, speedTraps, RotateMode.FastBeyond360).SetLoops(-1).SetEase(Ease.Linear);
     }
 
 
