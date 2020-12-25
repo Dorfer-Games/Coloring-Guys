@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3e91472a1cd350640aeff7c85d1dfa63, type: 2}
+  - {fileID: 2100000, guid: 24352e1127dea194b9e8513651fe238e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -143,7 +143,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3e91472a1cd350640aeff7c85d1dfa63, type: 2}
+  - {fileID: 2100000, guid: 24352e1127dea194b9e8513651fe238e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -177,7 +177,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 916037d6c85610242b36893add0f2442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meshRenderers:
+  - {fileID: 3902224810137420958}
   forceUpTrap: 0.3
+  colorDistanceTrap: {r: 0.9433962, g: 0.5473478, b: 0.5473478, a: 1}
   levelTrapTop: 1.005
   levelTrapBottom: 0.098
 --- !u!65 &3902224810137420956
