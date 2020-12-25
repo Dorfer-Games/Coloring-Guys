@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class FinishUIScreen : UIScreen
 {
-    [field: SerializeField] public TextMeshProUGUI ResultText { get; private set; }
-    [field: SerializeField] public TextMeshProUGUI ButtonText { get; private set; }
-    [field: SerializeField] public Button RestartButton { get; private set; }
+    [field: SerializeField] public GameObject VictoryPanel { get; private set; }
+    [field: SerializeField] public GameObject AlmostPanel { get; private set; }
+    [field: SerializeField] public Button TryAgainButton { get; private set; }
+    [field: SerializeField] public Button NextButton { get; private set; }
 }

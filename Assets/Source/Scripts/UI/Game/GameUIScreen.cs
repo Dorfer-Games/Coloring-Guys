@@ -27,7 +27,7 @@ public class GameUIScreen : UIScreen
         if (character.isPlayer)
         {
             hexCountText.gameObject.SetActive(value > 0);
-            hexCountText.text = $"HEX: {value}";
+            hexCountText.text = value.ToString();
         }
     }
 

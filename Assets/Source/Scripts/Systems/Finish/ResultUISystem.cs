@@ -2,11 +2,19 @@
 
 public class ResultUISystem : GameSystemWithScreen<FinishUIScreen>, IIniting
 {
+
+
     void IIniting.OnInit()
     {
-        screen.ResultText.text = game.isVictory ? "Victory!" : "Almost";
-        screen.ButtonText.text = game.isVictory ? "Next level" : "Try again";
+        if (game.isVictory) {
+            screen.VictoryPanel.SetActive(true);
+        }
+        else
+        {
+            screen.AlmostPanel.SetActive(true);
+        }
 
-        screen.RestartButton.onClick.AddListener(() => Bootstrap.GameRestart(0));
+        screen.TryAgainButton.onClick.AddListener(() => Bootstrap.GameRestart(0));
+        screen.NextButton.onClick.AddListener(() => Bootstrap.GameRestart(0));
     }
 }
