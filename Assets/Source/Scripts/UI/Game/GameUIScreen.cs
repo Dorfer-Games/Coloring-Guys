@@ -10,11 +10,16 @@ public class GameUIScreen : UIScreen
 {
     [SerializeField] TextMeshProUGUI notificationText;
     [SerializeField] TextMeshProUGUI hexCountText;
+    [SerializeField] private TextMeshProUGUI level;
 
     [field: SerializeField] public RectTransform Leaderboard { get; private set; }
 
     bool canDisplayNotification = true;
 
+    private void Start()
+    {
+        LevelLoadingSystem.loadingSystem.OnLevel += (x) => { level.text = "Level " + x; };
+    }
     public override void Subscribe()
     {
         base.Subscribe();

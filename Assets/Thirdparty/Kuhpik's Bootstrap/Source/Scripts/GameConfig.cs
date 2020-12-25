@@ -24,7 +24,8 @@ namespace Kuhpik
         RandomColorSpawn,
         ColorSpawnDelay,
 
-        ForceTrapImpulse
+        ForceTrapImpulse,
+        LevelsCount
 
     }
 

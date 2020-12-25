@@ -4,15 +4,68 @@ using Supyrb;
 using System.Linq;
 using UnityEngine;
 
+
 public class LevelLoadingSystem : GameSystem, IIniting, IDisposing
 {
-    [SerializeField] GameObject[] levels;
+    public static LevelLoadingSystem loadingSystem { get; private set; }
+    public GameObject[] levels;
+    private int currentLevel = 0;
+    [Header("Поставив true isTesting и указав номер уровня игра со старта запустит уровень по номеру, который вы указали")]
+    [SerializeField] private bool isTesting;
+    [SerializeField] private int level;
+
+    public System.Action<int> OnLevel;
+
+    private void Awake()
+    {
+        if(loadingSystem == null)
+        loadingSystem = this;
+    }
+
+
 
     void IIniting.OnInit()
     {
-        game.level = Instantiate(levels[player.level]);
+        PlayerData data = new PlayerData();
+        data.level = levels.Length;
+        #region Loading Levels
+#if UNITY_EDITOR
+        if (isTesting)
+        {
+            if (levels[level] != null)
+            {
+                CreateLevel(level);
+            }
+            else
+            {
+                Debug.LogError("Такого уровня не существует");
+            }
+        }
+#endif
+        if(!isTesting)
+        {
+            if (levels.Length > config.GetValue(EGameValue.LevelsCount))
+            {
+                CreateLevel((int)config.GetValue(EGameValue.LevelsCount));
+            }
+            else
+            {
+                int randomLevel = Random.Range(1, levels.Length);
+                CreateLevel(randomLevel);
+            }
+        }
+
+        #endregion
+    }
+
+    private void CreateLevel(int level)
+    {
+        currentLevel = level + 1;
+        OnLevel.Invoke(currentLevel);
+        game.level = Instantiate(levels[level]);
         game.cellDictionary = FindObjectsOfType<CellComponent>().ToDictionary(x => x.transform, x => x);
     }
+
 
     void IDisposing.OnDispose()
     {

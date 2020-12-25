@@ -254,6 +254,22 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1394664369}
+    - target: {fileID: 1244751811, guid: 865d14520ea908b47818a741324e3095, type: 3}
+      propertyPath: levels.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1244751811, guid: 865d14520ea908b47818a741324e3095, type: 3}
+      propertyPath: levels.Array.data[0]
+      value: 
+      objectReference: {fileID: 8102454399946895666, guid: a7db712e9e8bdaa4c9266e58bf1132e4, type: 3}
+    - target: {fileID: 1244751811, guid: 865d14520ea908b47818a741324e3095, type: 3}
+      propertyPath: levels.Array.data[1]
+      value: 
+      objectReference: {fileID: 4179703956241861376, guid: 3f45809c3d0faca4caf4bb87476ef900, type: 3}
+    - target: {fileID: 1244751811, guid: 865d14520ea908b47818a741324e3095, type: 3}
+      propertyPath: levels.Array.data[2]
+      value: 
+      objectReference: {fileID: 3761764954150601972, guid: 3dca46f5fe549504e9f95110b2ed41e6, type: 3}
     - target: {fileID: 1818619317, guid: 865d14520ea908b47818a741324e3095, type: 3}
       propertyPath: nextPageButton
       value: 
