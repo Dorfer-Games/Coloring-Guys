@@ -326,34 +326,6 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1394664369}
-    - target: {fileID: 1244751811, guid: 865d14520ea908b47818a741324e3095, type: 3}
-      propertyPath: level
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1244751811, guid: 865d14520ea908b47818a741324e3095, type: 3}
-      propertyPath: isTesting
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1244751811, guid: 865d14520ea908b47818a741324e3095, type: 3}
-      propertyPath: levels.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1244751811, guid: 865d14520ea908b47818a741324e3095, type: 3}
-      propertyPath: levels.Array.data[0]
-      value: 
-      objectReference: {fileID: 8102454399946895666, guid: a7db712e9e8bdaa4c9266e58bf1132e4, type: 3}
-    - target: {fileID: 1244751811, guid: 865d14520ea908b47818a741324e3095, type: 3}
-      propertyPath: levels.Array.data[1]
-      value: 
-      objectReference: {fileID: 4179703956241861376, guid: 3f45809c3d0faca4caf4bb87476ef900, type: 3}
-    - target: {fileID: 1244751811, guid: 865d14520ea908b47818a741324e3095, type: 3}
-      propertyPath: levels.Array.data[2]
-      value: 
-      objectReference: {fileID: 3761764954150601972, guid: 3dca46f5fe549504e9f95110b2ed41e6, type: 3}
-    - target: {fileID: 1244751811, guid: 865d14520ea908b47818a741324e3095, type: 3}
-      propertyPath: levels.Array.data[3]
-      value: 
-      objectReference: {fileID: 8584566050458122475, guid: 37cd3c60f2cfc4847963e6d03636c747, type: 3}
     - target: {fileID: 1818619317, guid: 865d14520ea908b47818a741324e3095, type: 3}
       propertyPath: nextPageButton
       value: 
@@ -413,10 +385,6 @@ PrefabInstance:
     - target: {fileID: 4987531766057273802, guid: 865d14520ea908b47818a741324e3095, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9185162611348662961, guid: 865d14520ea908b47818a741324e3095, type: 3}
-      propertyPath: gameValue
-      value: 17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 865d14520ea908b47818a741324e3095, type: 3}

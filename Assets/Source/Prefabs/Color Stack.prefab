@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 421384443050325429}
   - component: {fileID: 421384443050325428}
   - component: {fileID: 421384443050325427}
+  - component: {fileID: 1416222273794736693}
   m_Layer: 0
   m_Name: Color Stack
   m_TagString: Color
@@ -126,3 +127,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.55, y: 3.1630807, z: 1.55}
   m_Center: {x: -0.00000015407927, y: -1.5815403, z: -0.00000007703964}
+--- !u!114 &1416222273794736693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421384443050325426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe4c0212c40cea04c8e5c381eb8715b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
