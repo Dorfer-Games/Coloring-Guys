@@ -56,7 +56,7 @@ public class ColorSpawningSystem : GameSystem, IIniting
         if (spawn.childCount == 0)
         {
             PoolingSystem.GetComponent(colorPrefab, out ColorStackComponent component);
-            component.Setup(component.Parent == null ? spawn : null, Color.yellow, Mathf.RoundToInt(config.GetValue(EGameValue.ColorPerStack)));
+            component.Setup(component.Parent == null ? spawn : null, Color.green, Mathf.RoundToInt(config.GetValue(EGameValue.ColorPerStack)));
             colors.Add(component);
 
             component.transform.SetParent(component.Parent);
