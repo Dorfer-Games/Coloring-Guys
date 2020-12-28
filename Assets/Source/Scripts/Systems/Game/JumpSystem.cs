@@ -5,9 +5,11 @@ using UnityEngine;
 public class JumpSystem : GameSystem, IIniting, IUpdating
 {
     [SerializeField] int framesBeforeJumpEnds;
+    [SerializeField] int maxTouchDelta;
     [SerializeField] bool canRotateWhileJump;
 
     int framesFromTouch = 200;
+    Vector2 firstTouchPos;
 
     void IIniting.OnInit()
     {
@@ -42,6 +44,7 @@ public class JumpSystem : GameSystem, IIniting, IUpdating
         if (Input.GetMouseButtonDown(0))
         {
             framesFromTouch = 0;
+            firstTouchPos = Input.mousePosition;
         }
 
         else if (Input.GetMouseButton(0))
@@ -54,7 +57,10 @@ public class JumpSystem : GameSystem, IIniting, IUpdating
             //Не прошло достаточно кадров, что бы не считали действие за попытку прыжка
             if (framesFromTouch <= framesBeforeJumpEnds && !game.characters[0].isJumping)
             {
-                Jump(0);
+                if (Vector2.Distance(firstTouchPos, Input.mousePosition) < maxTouchDelta)
+                {
+                    Jump(0);
+                }
             }
         }
     }
