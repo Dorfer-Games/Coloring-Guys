@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+<<<<<<< Updated upstream:Assets/model box/trap_coloring.fbx.meta
       name: "\u041C\u0430\u0442\u0435\u0440\u0438\u0430\u043B.003"
     second: {fileID: 2100000, guid: 4f68b21bac1cfd14daf6329c84c49031, type: 2}
+=======
+      name: "\u041C\u0430\u0442\u0435\u0440\u0438\u0430\u043B"
+    second: {fileID: 2100000, guid: eb6eb143dada52942864abb051bfa20b, type: 2}
+>>>>>>> Stashed changes:Assets/Source/Models/model box/box.fbx.meta
   materials:
     materialImportMode: 1
     materialName: 0

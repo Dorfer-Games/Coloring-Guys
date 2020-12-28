@@ -7,7 +7,11 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream:Assets/model box/Materials/3 3.mat
   m_Name: 3 3
+=======
+  m_Name: "\u041C\u0430\u0442\u0435\u0440\u0438\u0430\u043B"
+>>>>>>> Stashed changes:Assets/Source/Models/model box/Материал.mat
   m_Shader: {fileID: 4800000, guid: 9b4425a2c82ae7e479eff6d2ee517e69, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -71,6 +75,7 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+<<<<<<< Updated upstream:Assets/model box/Materials/3 3.mat
     - _RampSmooth: 1
     - _RampThreshold: 1
     - _RimMax: 2
@@ -78,12 +83,22 @@ Material:
     - _Smoothness: 0.2
     - _SmoothnessTextureChannel: 0
     - _SpecSmooth: 1
+=======
+    - _RampSmooth: 0.38
+    - _RampThreshold: 0.115
+    - _RimMax: 0
+    - _RimMin: 0.43
+    - _Smoothness: 0.2
+    - _SmoothnessTextureChannel: 0
+    - _SpecSmooth: 0.61
+>>>>>>> Stashed changes:Assets/Source/Models/model box/Материал.mat
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     - __dummy__: 0
     m_Colors:
+<<<<<<< Updated upstream:Assets/model box/Materials/3 3.mat
     - _Color: {r: 0.8679245, g: 0.44970182, b: 0.08597365, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HColor: {r: 0.53233176, g: 0.16540584, b: 0.5943396, a: 1}
@@ -91,4 +106,13 @@ Material:
     - _RimColor: {r: 0.754717, g: 0.09611962, b: 0.3543675, a: 0.6}
     - _SColor: {r: 0.471909, g: 0.13007298, b: 0.745283, a: 1}
     - _SpecColor: {r: 0.6886792, g: 0.35408506, b: 0.4057398, a: 1}
+=======
+    - _Color: {r: 0.07756319, g: 0.7830189, b: 0.49091613, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _HColor: {r: 0.32373622, g: 0.6738108, b: 0.7075472, a: 1}
+    - _MatCapColor: {r: 1, g: 1, b: 1, a: 1}
+    - _RimColor: {r: 0.22988607, g: 0.41464704, b: 0.7735849, a: 0.6}
+    - _SColor: {r: 0.17880027, g: 0.4055015, b: 0.9245283, a: 1}
+    - _SpecColor: {r: 0.5412696, g: 0.58431375, b: 0.023529427, a: 1}
+>>>>>>> Stashed changes:Assets/Source/Models/model box/Материал.mat
   m_BuildTextureStacks: []

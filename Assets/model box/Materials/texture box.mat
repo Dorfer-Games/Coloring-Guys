@@ -7,11 +7,11 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 3 2
-  m_Shader: {fileID: 4800000, guid: 9b4425a2c82ae7e479eff6d2ee517e69, type: 3}
+  m_Name: Trap
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -43,10 +43,6 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _MatCap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -65,64 +61,18 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream:Assets/model box/Materials/3 2.mat
-    - _Glossiness: 0
-=======
     - _Glossiness: 0.321
->>>>>>> Stashed changes:Assets/Source/Materials/Trap 1.mat
     - _GlossyReflections: 1
     - _Metallic: 0.569
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RampSmooth: 0.16
-    - _RampThreshold: 0.58
-    - _RimMax: 0.49
-    - _RimMin: 0.67
-    - _Smoothness: 0.9
     - _SmoothnessTextureChannel: 0
-    - _SpecSmooth: 0.05
-=======
-    - _Glossiness: 0
-    - _GlossyReflections: 1
-    - _Metallic: 0
-    - _Mode: 0
-    - _OcclusionStrength: 1
-    - _Parallax: 0.02
-    - _RampSmooth: 0.58
-    - _RampThreshold: 0.3
-    - _RimMax: 0.56
-    - _RimMin: 0
-    - _Smoothness: 0.9
-    - _SmoothnessTextureChannel: 0
-    - _SpecSmooth: 1
->>>>>>> Stashed changes
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
-    - __dummy__: 0
     m_Colors:
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream:Assets/model box/Materials/3 2.mat
-    - _Color: {r: 0.7302827, g: 0.53960484, b: 0.8113208, a: 1}
-=======
     - _Color: {r: 0.32805273, g: 0.7012702, b: 0.7169812, a: 1}
->>>>>>> Stashed changes:Assets/Source/Materials/Trap 1.mat
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _HColor: {r: 0.7893378, g: 0.8144247, b: 0.9245283, a: 1}
-    - _MatCapColor: {r: 1, g: 1, b: 1, a: 1}
-    - _RimColor: {r: 0.20216268, g: 0.5566038, b: 0.50742126, a: 0.6}
-    - _SColor: {r: 0.43454075, g: 0.4598924, b: 0.8773585, a: 1}
-    - _SpecColor: {r: 0.6486657, g: 0.32395872, b: 0.754717, a: 1}
-=======
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _HColor: {r: 1, g: 1, b: 1, a: 1}
-    - _MatCapColor: {r: 1, g: 1, b: 1, a: 1}
-    - _RimColor: {r: 0.31105122, g: 0.29196337, b: 0.764151, a: 0.6}
-    - _SColor: {r: 0.8934965, g: 0.8254717, b: 1, a: 1}
-    - _SpecColor: {r: 1, g: 0.6650944, b: 0.7398254, a: 1}
->>>>>>> Stashed changes
   m_BuildTextureStacks: []
