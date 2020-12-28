@@ -16,8 +16,7 @@ public class DebugCheatingSystem : GameSystem, IIniting
     void IIniting.OnInit()
     {
         config.Init(config.GameValusConfigs);
-/*
-#if DEBUG
+/*#if DEBUG
 
         for (int i = 0; i < cheatingPanels.Length; i++)
         {

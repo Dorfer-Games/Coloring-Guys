@@ -19,7 +19,7 @@ public class CharacterCollisionImpactSystem : GameSystem, IIniting
         if (other.transform.CompareTag(collisionTag)) 
         {
             var normalized = other.position.normalized;
-            game.characterDictionary[other].rigidbody.AddForce(normalized * config.GetValue(EGameValue.HitImpulse), ForceMode.Impulse);
+            game.characterDictionary[other].rigidbody.AddForce((normalized + transform.forward) * config.GetValue(EGameValue.HitImpulse), ForceMode.Impulse);
         }
     }
 }

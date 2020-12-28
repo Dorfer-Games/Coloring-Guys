@@ -23,7 +23,7 @@ public class TriggerTrapsSystem : GameSystem, ImpulseTrap, JumpTrap
     {
         if (other.CompareTag(tagObjectCollision))
         {
-            var normilized = (other.transform.position).normalized;
+            var normilized = other.transform.position.normalized;
             other.GetComponent<Rigidbody>().AddForce((-normilized + Vector3.up) * config.GetValue(EGameValue.ForceTrapImpulse), ForceMode.Impulse);
         }
     }

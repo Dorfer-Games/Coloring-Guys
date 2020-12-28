@@ -128,7 +128,6 @@ GameObject:
   - component: {fileID: 5763032213368489724}
   - component: {fileID: 8697669776778096002}
   - component: {fileID: 5723797922309907899}
-  - component: {fileID: 4588127297205946749}
   m_Layer: 0
   m_Name: Game Character
   m_TagString: Player
@@ -233,18 +232,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VFXCollisionEffects: {fileID: 4920813067475015631}
---- !u!114 &4588127297205946749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 941667047645102151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 140ca911170df044282d5124d0a41247, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1060577967939892658
 GameObject:
   m_ObjectHideFlags: 0
