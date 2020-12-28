@@ -70,6 +70,7 @@ public class JumpSystem : GameSystem, IIniting, IUpdating
         game.characters[index].rigidbody.AddRelativeForce(Vector3.up * config.GetValue(EGameValue.JumpSTR), ForceMode.VelocityChange);
         game.characters[index].animator.SetBool("Jumping", true);
         game.characters[index].isJumping = true;
+        game.characters[index].audioComponent.DisabledAudio();
     }
 
     void Grouding(Transform other, Transform @object)
@@ -82,6 +83,7 @@ public class JumpSystem : GameSystem, IIniting, IUpdating
             {
                 character.animator.SetBool("Jumping", false);
                 character.isJumping = false;
+                character.audioComponent.EnabledAudio();
             }
         }
     }

@@ -25,16 +25,21 @@ public class DeathCollisionSystem : GameSystem, IIniting
             {
                 game.isVictory = false;
                 Bootstrap.ChangeGameState(EGamestate.Finish);
+                AudioSysytem.audioSysytem.AudioDefeat();
+                game.characters[0].audioComponent.DisabledAudio();
             }
 
             else
             {
                 Signals.Get<PlayerNotificationSignal>().Dispatch($"{@object.name} is going down!");
+                AudioSysytem.audioSysytem.AudioDead();
 
                 if (game.characters.Count(x => x.isDeath) == game.characters.Length - 1)
                 {
                     game.isVictory = true;
                     Bootstrap.ChangeGameState(EGamestate.Finish);
+                    AudioSysytem.audioSysytem.AudioVictory();
+                    game.characters[0].audioComponent.DisabledAudio();
                 }
             }
         }

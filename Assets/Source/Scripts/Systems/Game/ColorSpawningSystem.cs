@@ -47,6 +47,7 @@ public class ColorSpawningSystem : GameSystem, IIniting
             PoolingSystem.Pool(color.gameObject);
 
             Signals.Get<HexCountChangedSignal>().Dispatch(character, character.stacks);
+            AudioSysytem.audioSysytem.AudioCollectStack();
         }
     }
 
@@ -68,6 +69,7 @@ public class ColorSpawningSystem : GameSystem, IIniting
             }
 
             Signals.Get<PlayerNotificationSignal>().Dispatch("Color Spawned!");
+            AudioSysytem.audioSysytem.AudioSpawnStack();
         }
     }
 

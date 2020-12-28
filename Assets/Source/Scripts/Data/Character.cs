@@ -15,5 +15,5 @@ public class Character
     public OnTriggerEnterImpactComponent onTriggerEnterImpact;
     public OnTriggerEnterComponent onTriggerComponent;
     public OnCollisionEnterComponent onCollisionComponent;
-
+    public AudioComponent audioComponent;
 }

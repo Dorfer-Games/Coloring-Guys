@@ -10,9 +10,7 @@ public class LevelLoadingSystem : GameSystem, IIniting, IDisposing
     public static LevelLoadingSystem loadingSystem { get; private set; }
     public GameObject[] levels;
     private int currentLevel = 0;
-    [Header("Поставив true isTesting и указав номер уровня игра со старта запустит уровень по номеру, который вы указали")]
-    [SerializeField] private bool isTesting;
-    [SerializeField] private int level;
+
 
     public System.Action<int> OnLevel;
 
@@ -29,21 +27,6 @@ public class LevelLoadingSystem : GameSystem, IIniting, IDisposing
         PlayerData data = new PlayerData();
         data.level = levels.Length;
         #region Loading Levels
-#if UNITY_EDITOR
-        if (isTesting)
-        {
-            if (levels[level] != null)
-            {
-                CreateLevel(level);
-            }
-            else
-            {
-                Debug.LogError("Такого уровня не существует");
-            }
-        }
-#endif
-        if(!isTesting)
-        {
             if (levels.Length > config.GetValue(EGameValue.LevelsCount))
             {
                 CreateLevel((int)config.GetValue(EGameValue.LevelsCount));
@@ -53,7 +36,6 @@ public class LevelLoadingSystem : GameSystem, IIniting, IDisposing
                 int randomLevel = Random.Range(1, levels.Length);
                 CreateLevel(randomLevel);
             }
-        }
 
         #endregion
     }

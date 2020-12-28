@@ -25,6 +25,7 @@ public class CharactersSpawnSystem : GameSystem, IIniting
             game.characters[i].onCollisionComponent = character.GetComponent<OnCollisionEnterComponent>();
             game.characters[i].onTriggerComponent = character.GetComponent<OnTriggerEnterComponent>();
             game.characters[i].onTriggerEnterImpact = character.GetComponent<OnTriggerEnterImpactComponent>();
+            game.characters[i].audioComponent = character.GetComponent<AudioComponent>();
             game.characters[i].isPlayer = i == 0;
         }        
 
