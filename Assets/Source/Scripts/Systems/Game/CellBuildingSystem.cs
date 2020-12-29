@@ -17,11 +17,10 @@ public class CellBuildingSystem : GameSystem, IIniting
     {
         if (other.CompareTag("Cell"))
         {
+            var character = game.characterDictionary[@object];
+            var component = game.cellDictionary[other.parent];
             try
             {
-                var character = game.characterDictionary[@object];
-                var component = game.cellDictionary[other.parent];
-
                 if (component.IsDown && character.stacks > 0)
                 {
                     if (DOTween.IsTweening(component.GetInstanceID()))
@@ -37,6 +36,7 @@ public class CellBuildingSystem : GameSystem, IIniting
                     if (character == game.characters[0]) Signals.Get<HexCountChangedSignal>().Dispatch(character, character.stacks);
                 }
             }
+
             catch
             {
 
