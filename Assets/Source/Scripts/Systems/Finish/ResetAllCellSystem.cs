@@ -15,9 +15,8 @@ public class ResetAllCellSystem : GameSystem, IIniting
             {
                 try
                 {
-                    var cell = game.cellsList[b];
-                    cell.IsDown = false;
-                    cell.Cell.transform.DOLocalMoveY(0f, 0f);
+                    var cell = game.cellsList[b].Cell;
+                    cell.transform.DOLocalMoveY(0f, 0f);
                 }
                 catch { }
             }

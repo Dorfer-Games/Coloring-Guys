@@ -1,22 +1,35 @@
 ﻿using UnityEngine;
+using Kuhpik;
+using System.Collections;
 
 [RequireComponent(typeof(AudioSource))]
 
-public class AudioSysytem : MonoBehaviour
+public class AudioSysytem : GameSystemWithScreen<GameUIScreen>, IIniting
 {
     public static AudioSysytem audioSysytem { get; private set; }
-
+    
+    [SerializeField] private AudioClip victory, stackCollect, dead, defeat, spawn_Stack, startAudio;
     private AudioSource audio;
-    [SerializeField] private AudioClip victory, stackCollect, dead, defeat, spawn_Stack;
 
 
-    private void Start()
+    private void Awake()
     {
         if (audioSysytem == null) audioSysytem = this;
         audio = GetComponent<AudioSource>();
     }
 
+
+    void IIniting.OnInit()
+    {
+        GameManager.gameManager.StartGame += (startGame) => { if(!startGame)AudioStartGame(); };
+    }
     #region StartAudio
+
+    public void AudioStartGame()
+    {
+        audio.clip = startAudio;
+        audio.Play();
+    }
     public void AudioVictory()
     {
         audio.clip = victory;
