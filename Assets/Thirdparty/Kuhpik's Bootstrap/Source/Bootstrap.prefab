@@ -378,8 +378,6 @@ MonoBehaviour:
   - {fileID: 4179703956241861376, guid: 3f45809c3d0faca4caf4bb87476ef900, type: 3}
   - {fileID: 5456975307693696057, guid: 7fa366495cf9c3248bb53a4f9d74a5c9, type: 3}
   - {fileID: 8584566050458122475, guid: 37cd3c60f2cfc4847963e6d03636c747, type: 3}
-  isTesting: 0
-  level: 3
 --- !u!1 &1381916348
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,15 +670,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   downDistance: 1
   rayStep: 1
-  rayOffset: 2.5
+  rayOffset: 3
   mask:
     serializedVersion: 2
     m_Bits: 256
-  maxRays: 20
-  safeRays: 10
-  safeRaysSide: 10
-  raysToJump: 3
-  safeRaySideBeforeJump: 3
+  maxRays: 15
+  safeRays: 7
+  safeRaysSide: 7
+  raysToJump: 2
+  safeRaySideBeforeJump: 1
 --- !u!1 &2000307262
 GameObject:
   m_ObjectHideFlags: 0
