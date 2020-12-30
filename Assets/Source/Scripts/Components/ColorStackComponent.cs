@@ -9,7 +9,7 @@ public class ColorStackComponent : MonoBehaviour
 
     public void Setup(Transform parent, Color color, int count)
     {
-        Renderer.material.color = color;
+        Renderer.materials[0].color = color;
         if (parent != null) Parent = parent;
         Color = color;
         Count = count;

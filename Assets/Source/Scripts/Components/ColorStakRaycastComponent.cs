@@ -11,7 +11,7 @@ public class ColorStakRaycastComponent : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other)
+        if (other.gameObject.name == "Trigger")
         {
             UpdatePosition();
         }

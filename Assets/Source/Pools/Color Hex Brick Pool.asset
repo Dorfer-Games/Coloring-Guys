@@ -15,6 +15,8 @@ MonoBehaviour:
   capacity: 500
   poolTime: 0
   dontDestroy: 0
-  prefab: {fileID: 1500631835949107579, guid: 028260c9bd4127c4baddd9462d5c0e0b, type: 3}
+  prefab: {fileID: 8459975585038990667, guid: 413dd3aabfb2ca34bb0b53656d68e9bb, type: 3}
   cachedComponents:
-  - {fileID: 1211946102394736275, guid: 028260c9bd4127c4baddd9462d5c0e0b, type: 3}
+  - {fileID: 9091657503171258353, guid: 413dd3aabfb2ca34bb0b53656d68e9bb, type: 3}
+  - {fileID: 5297312612126992468, guid: 413dd3aabfb2ca34bb0b53656d68e9bb, type: 3}
+  - {fileID: 7955365238379273374, guid: 413dd3aabfb2ca34bb0b53656d68e9bb, type: 3}

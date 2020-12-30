@@ -43,10 +43,7 @@ public class ColorStackDisplaySystem : GameSystem, IIniting
 
     void Color(MeshRenderer renderer, Color color)
     {
-        var block = new MaterialPropertyBlock();
-        renderer.GetPropertyBlock(block);
-        block.SetVector("_Color", color);
-        renderer.SetPropertyBlock(block);
+        renderer.materials[0].color = color;
     }
 
     void ChangeHexCountDisplaying(Character character, int index)
