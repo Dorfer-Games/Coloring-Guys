@@ -4,27 +4,36 @@
 
 public class AudioComponent : MonoBehaviour
 {
+    [SerializeField] private Rigidbody rigidbody;
     private AudioSource audio;
 
-    private bool playAudio, isPlayer;
+    private bool playAudio, isPlayer, startGame;
     private void Start()
     {
             audio = GetComponent<AudioSource>();
         if (transform.name == "Player")
         {
             audio.enabled = true;
-            StartAudio();
             isPlayer = true;
         }
     }
 
 
+    private void Update()
+    {
+        if (!startGame && isPlayer && !playAudio && !rigidbody.isKinematic)
+        {
+            EnabledAudio();
+            startGame = true;
+        }
+    }
     public void EnabledAudio()
     {
-        if (isPlayer) {
+            if (isPlayer)
+            {
             audio.enabled = true;
-            if(!playAudio)
-            StartAudio();
+            if (!playAudio)
+                    StartAudio();
         }
     }
     public void DisabledAudio()

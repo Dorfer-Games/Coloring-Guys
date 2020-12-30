@@ -67,7 +67,7 @@ MonoBehaviour:
   m_ScreenY: 0.5
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
-  m_SoftZoneWidth: 0.8
+  m_SoftZoneWidth: 0.3
   m_SoftZoneHeight: 1
   m_BiasX: 0
   m_BiasY: 0
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetObject: {fileID: 0}
-  positionCamera: {x: 0, y: 25, z: -19}
+  positionCamera: {x: 0, y: 30, z: -19}
   smoothMovement: 1
   target_rotationCamera: {x: 0, y: 2.5, z: 0}
 --- !u!1 &924401148944492231
