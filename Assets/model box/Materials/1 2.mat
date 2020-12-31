@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 1 2
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 9b4425a2c82ae7e479eff6d2ee517e69, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
@@ -71,11 +71,11 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RampSmooth: 0.8
-    - _RampThreshold: 0.61
+    - _RampSmooth: 0.355
+    - _RampThreshold: 0.647
     - _RimMax: 0.18
     - _RimMin: 0.17
-    - _Smoothness: 0.2
+    - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecSmooth: 0.88
     - _SpecularHighlights: 1
@@ -84,7 +84,7 @@ Material:
     - _ZWrite: 1
     - __dummy__: 0
     m_Colors:
-    - _Color: {r: 0.7254902, g: 0.40454924, b: 0.0980392, a: 1}
+    - _Color: {r: 0.8867924, g: 0.36445442, b: 0.071110725, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HColor: {r: 0.26415092, g: 0.21094835, b: 0.056069776, a: 1}
     - _MatCapColor: {r: 1, g: 1, b: 1, a: 1}
