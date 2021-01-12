@@ -315,10 +315,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 880132168238570762, guid: c3fa0afcd939b2e47980786796662224, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 941667047645102151, guid: c3fa0afcd939b2e47980786796662224, type: 3}
       propertyPath: m_Name
       value: Game Character
@@ -438,67 +434,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c59469aae2288b4a9454662a7f79fe3, type: 3}
---- !u!1001 &2661356668335358800
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1427035054744818213, guid: 070803dbfa412bd4981224857d7be06d, type: 3}
-      propertyPath: m_Name
-      value: Game Character (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1427035054744818213, guid: 070803dbfa412bd4981224857d7be06d, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1427035054744825558, guid: 070803dbfa412bd4981224857d7be06d, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1427035054744825558, guid: 070803dbfa412bd4981224857d7be06d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.021637
-      objectReference: {fileID: 0}
-    - target: {fileID: 1427035054744825558, guid: 070803dbfa412bd4981224857d7be06d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.14614
-      objectReference: {fileID: 0}
-    - target: {fileID: 1427035054744825558, guid: 070803dbfa412bd4981224857d7be06d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.90053
-      objectReference: {fileID: 0}
-    - target: {fileID: 1427035054744825558, guid: 070803dbfa412bd4981224857d7be06d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1427035054744825558, guid: 070803dbfa412bd4981224857d7be06d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1427035054744825558, guid: 070803dbfa412bd4981224857d7be06d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1427035054744825558, guid: 070803dbfa412bd4981224857d7be06d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1427035054744825558, guid: 070803dbfa412bd4981224857d7be06d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1427035054744825558, guid: 070803dbfa412bd4981224857d7be06d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1427035054744825558, guid: 070803dbfa412bd4981224857d7be06d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 070803dbfa412bd4981224857d7be06d, type: 3}
 --- !u!1001 &2897221919761761206
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -506,10 +441,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 170263739, guid: 865d14520ea908b47818a741324e3095, type: 3}
-      propertyPath: characterPrefab
-      value: 
-      objectReference: {fileID: 1427035054744818213, guid: 070803dbfa412bd4981224857d7be06d, type: 3}
     - target: {fileID: 710604859, guid: 865d14520ea908b47818a741324e3095, type: 3}
       propertyPath: mainCamera
       value: 
@@ -526,33 +457,9 @@ PrefabInstance:
       propertyPath: cheatingPanels.Array.data[1]
       value: 
       objectReference: {fileID: 701601861273190975}
-    - target: {fileID: 2049613099, guid: 865d14520ea908b47818a741324e3095, type: 3}
-      propertyPath: colorPrefab
-      value: 
-      objectReference: {fileID: 1211175933034548835, guid: e118c1c4fe592524897a6c25b1fbea7f, type: 3}
-    - target: {fileID: 2049613099, guid: 865d14520ea908b47818a741324e3095, type: 3}
-      propertyPath: spawnPosition.y
-      value: 0.17
-      objectReference: {fileID: 0}
     - target: {fileID: 1666517717631791289, guid: 865d14520ea908b47818a741324e3095, type: 3}
       propertyPath: m_Name
       value: Bootstrap
-      objectReference: {fileID: 0}
-    - target: {fileID: 2170105047011489304, guid: 865d14520ea908b47818a741324e3095, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3447784213333603759, guid: 865d14520ea908b47818a741324e3095, type: 3}
-      propertyPath: stackPrefab
-      value: 
-      objectReference: {fileID: 8459975585038990667, guid: 413dd3aabfb2ca34bb0b53656d68e9bb, type: 3}
-    - target: {fileID: 3447784213333603759, guid: 865d14520ea908b47818a741324e3095, type: 3}
-      propertyPath: nameParentObject.Array.data[3]
-      value: spine_01
-      objectReference: {fileID: 0}
-    - target: {fileID: 3447784213333603759, guid: 865d14520ea908b47818a741324e3095, type: 3}
-      propertyPath: nameParentObject.Array.data[4]
-      value: spine_02
       objectReference: {fileID: 0}
     - target: {fileID: 4987531766057273802, guid: 865d14520ea908b47818a741324e3095, type: 3}
       propertyPath: m_RootOrder
@@ -597,10 +504,6 @@ PrefabInstance:
     - target: {fileID: 4987531766057273802, guid: 865d14520ea908b47818a741324e3095, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7286463918151150497, guid: 865d14520ea908b47818a741324e3095, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 865d14520ea908b47818a741324e3095, type: 3}

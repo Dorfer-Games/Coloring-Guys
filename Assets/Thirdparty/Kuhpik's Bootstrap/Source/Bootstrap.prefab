@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d39ed3170f6b35441a5b1f80aa9375c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterPrefab: {fileID: 941667047645102151, guid: c3fa0afcd939b2e47980786796662224, type: 3}
+  characterPrefab: {fileID: 6453319075141096474, guid: d5df5e9185d140346be43fb9e4004f8d, type: 3}
   characterColors:
   - {r: 0, g: 1, b: 0, a: 1}
   - {r: 1, g: 0.99997795, b: 0, a: 1}
@@ -811,8 +811,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b3fcc6f45d493044becae98619aa160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorPrefab: {fileID: 421384443050325426, guid: cfd78b725db1f914c922d95de1915989, type: 3}
-  spawnPosition: {x: 0, y: 3.3, z: 0}
+  colorPrefab: {fileID: 1211175933034548835, guid: e118c1c4fe592524897a6c25b1fbea7f, type: 3}
+  spawnPosition: {x: 0, y: 0.17, z: 0}
   firstSpawnTime: 10
 --- !u!1 &2097430569
 GameObject:
@@ -1078,7 +1078,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7651756751095278189
 Transform:
   m_ObjectHideFlags: 0
@@ -1560,6 +1560,7 @@ MonoBehaviour:
   defeat: {fileID: 8300000, guid: 0cdc8538cc0a8f34f99e2d461bbd04f2, type: 3}
   spawn_Stack: {fileID: 8300000, guid: 3300fd4a69ad7e849a748b75345e8f63, type: 3}
   startAudio: {fileID: 8300000, guid: 7874e1c9a024b2d4892a008a92ad8e3f, type: 3}
+  collisionAudio: {fileID: 8300000, guid: aad1f99fd3d2de74f9e0cd4823b78325, type: 3}
 --- !u!1 &7220913567164247938
 GameObject:
   m_ObjectHideFlags: 0
@@ -1646,16 +1647,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 792ee91666f72a24bb424dce1bfb527d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stackPrefab: {fileID: 1500631835949107579, guid: 028260c9bd4127c4baddd9462d5c0e0b, type: 3}
-  offset: 0.155
+  stackPrefab: {fileID: 8459975585038990667, guid: 413dd3aabfb2ca34bb0b53656d68e9bb, type: 3}
+  offset: 0.0119
   stackPointName: Color Bricks
   nameParentObject:
   - bandit
-  - metarig
+  - AmongUs
   - pelvis
-  - spine.001
-  - spine.002
-  - box
+  - spine_01
+  - spine_02
 --- !u!1 &8276697385017190877
 GameObject:
   m_ObjectHideFlags: 0
