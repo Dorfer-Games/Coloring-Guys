@@ -8,7 +8,7 @@ public class AudioSysytem : GameSystemWithScreen<GameUIScreen>, IIniting
 {
     public static AudioSysytem audioSysytem { get; private set; }
     
-    [SerializeField] private AudioClip victory, stackCollect, dead, defeat, spawn_Stack, startAudio;
+    [SerializeField] private AudioClip victory, stackCollect, dead, defeat, spawn_Stack, startAudio, collisionAudio;
     private AudioSource audio;
 
 
@@ -57,6 +57,11 @@ public class AudioSysytem : GameSystemWithScreen<GameUIScreen>, IIniting
     {
         audio.clip = spawn_Stack;
         audio.Play();
+    }
+
+    public void AudioCollision()
+    {
+        audio.PlayOneShot(collisionAudio);
     }
     #endregion
 }

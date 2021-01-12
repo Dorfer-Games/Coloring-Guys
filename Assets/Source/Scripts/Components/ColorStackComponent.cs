@@ -14,4 +14,9 @@ public class ColorStackComponent : MonoBehaviour
         Color = color;
         Count = count;
     }
+    public void UpdatePosition()
+    {
+        Debug.Log("Update");
+        transform.position = new Vector3(Random.Range(23.85f, 1.29f), transform.position.y, Random.Range(3f, 15f));
+    }
   }

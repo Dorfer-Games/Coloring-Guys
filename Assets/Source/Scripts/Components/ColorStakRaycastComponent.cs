@@ -6,7 +6,8 @@ public class ColorStakRaycastComponent : MonoBehaviour
 
     private void UpdatePosition()
     {
-        transform.position = new Vector3(Random.Range(1.3f, 33f), transform.position.y, Random.Range(2.1f, 25f));
+        Debug.Log("Update");
+        transform.position = new Vector3(Random.Range(-23.85f, -1.29f), transform.position.y, Random.Range(-3f, -15f));
     }
 
     private void OnTriggerEnter(Collider other)
