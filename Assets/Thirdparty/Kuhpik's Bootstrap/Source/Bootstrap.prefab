@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d39ed3170f6b35441a5b1f80aa9375c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterPrefab: {fileID: 6453319075141096474, guid: d5df5e9185d140346be43fb9e4004f8d, type: 3}
+  characterPrefab: {fileID: 1499716158954714510, guid: d5df5e9185d140346be43fb9e4004f8d, type: 3}
   characterColors:
   - {r: 0, g: 1, b: 0, a: 1}
   - {r: 1, g: 0.99997795, b: 0, a: 1}
@@ -811,7 +811,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b3fcc6f45d493044becae98619aa160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorPrefab: {fileID: 1211175933034548835, guid: e118c1c4fe592524897a6c25b1fbea7f, type: 3}
+  colorPrefab: {fileID: 1211175933034548835, guid: 2098d74415b6624438494c913b8d22ab, type: 3}
   spawnPosition: {x: 0, y: 0.17, z: 0}
   firstSpawnTime: 10
 --- !u!1 &2097430569
@@ -1647,7 +1647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 792ee91666f72a24bb424dce1bfb527d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stackPrefab: {fileID: 8459975585038990667, guid: 413dd3aabfb2ca34bb0b53656d68e9bb, type: 3}
+  stackPrefab: {fileID: 552291627672545299, guid: b5ec85edfb54a7243a045b394af14f24, type: 3}
   offset: 0.0119
   stackPointName: Color Bricks
   nameParentObject:
