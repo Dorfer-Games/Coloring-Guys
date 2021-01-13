@@ -478,9 +478,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a7ce858a0b48c34a9c42dc5a6b83184, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: 3
+  offset: 4.5
   distance: 3
-  up: 0.75
+  upPosition: 0
   Jump: 0
 --- !u!1 &6162855981930293010
 GameObject:
