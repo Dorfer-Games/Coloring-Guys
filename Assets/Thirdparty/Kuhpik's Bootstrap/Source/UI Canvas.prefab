@@ -76,7 +76,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4282950848
-  m_fontColor: {r: 0.754717, g: 0.64198416, b: 0.28123888, a: 1}
+  m_fontColor: {r: 0.7137255, g: 0.99607843, b: 0.4745098, a: 1}
   m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
@@ -647,6 +647,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7216109752398195791}
     m_Modifications:
+    - target: {fileID: 175473827832637888, guid: a996a0d9a2b5d87409aa159d39606f41, type: 3}
+      propertyPath: m_EffectColor.b
+      value: 0.08966714
+      objectReference: {fileID: 0}
+    - target: {fileID: 175473827832637888, guid: a996a0d9a2b5d87409aa159d39606f41, type: 3}
+      propertyPath: m_EffectColor.g
+      value: 0.6132076
+      objectReference: {fileID: 0}
+    - target: {fileID: 175473827832637888, guid: a996a0d9a2b5d87409aa159d39606f41, type: 3}
+      propertyPath: m_EffectColor.r
+      value: 0.2649702
+      objectReference: {fileID: 0}
     - target: {fileID: 357491841649250026, guid: a996a0d9a2b5d87409aa159d39606f41, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -770,6 +782,18 @@ PrefabInstance:
     - target: {fileID: 1892588404945782964, guid: a996a0d9a2b5d87409aa159d39606f41, type: 3}
       propertyPath: m_PreserveAspect
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3197882176426534395, guid: a996a0d9a2b5d87409aa159d39606f41, type: 3}
+      propertyPath: m_Color.b
+      value: 0.09411765
+      objectReference: {fileID: 0}
+    - target: {fileID: 3197882176426534395, guid: a996a0d9a2b5d87409aa159d39606f41, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 3197882176426534395, guid: a996a0d9a2b5d87409aa159d39606f41, type: 3}
+      propertyPath: m_Color.r
+      value: 0.38431373
       objectReference: {fileID: 0}
     - target: {fileID: 3197882176426534395, guid: a996a0d9a2b5d87409aa159d39606f41, type: 3}
       propertyPath: m_PreserveAspect
@@ -1246,7 +1270,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6778539976222403935, guid: 362507269146d15408cd1b34284f80af, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -444.0005
+      value: -444
       objectReference: {fileID: 0}
     - target: {fileID: 7228161294054652656, guid: 362507269146d15408cd1b34284f80af, type: 3}
       propertyPath: m_SizeDelta.x
