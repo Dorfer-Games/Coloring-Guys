@@ -59,7 +59,7 @@ public class CellCollisionSystem : GameSystem, IIniting
         var component = game.cellDictionary[cell.parent];
         component.SetColor(Color.white);
 
-        cell.DOLocalMoveY(0, config.GetValue(EGameValue.CellFallTime)).SetDelay(config.GetValue(EGameValue.CellBackTime)).SetId(component.GetInstanceID()).OnComplete(() =>
+        cell.DOLocalMoveY(config.GetValue(EGameValue.CellUpY), config.GetValue(EGameValue.CellFallTime)).SetDelay(config.GetValue(EGameValue.CellBackTime)).SetId(component.GetInstanceID()).OnComplete(() =>
         {
             component.SetDown(false);
         });

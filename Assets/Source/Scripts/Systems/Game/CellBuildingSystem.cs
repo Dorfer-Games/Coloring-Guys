@@ -31,7 +31,7 @@ public class CellBuildingSystem : GameSystem, IIniting
                     character.stacks--;
                     component.SetDown(false);
                     component.SetColor(character.color);
-                    component.Cell.transform.DOLocalMoveY(0, 0);
+                    component.Cell.transform.DOLocalMoveY(config.GetValue(EGameValue.CellUpY),0f);
 
                     if (character == game.characters[0]) Signals.Get<HexCountChangedSignal>().Dispatch(character, character.stacks);
                 }

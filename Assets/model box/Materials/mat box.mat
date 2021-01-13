@@ -44,7 +44,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MatCap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 70a3827aeca8c2245baf6b4881e771d7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -71,10 +71,10 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RampSmooth: 0.195
-    - _RampThreshold: 0.554
-    - _RimMax: 0
-    - _RimMin: 0.54
+    - _RampSmooth: 0.838
+    - _RampThreshold: 0.532
+    - _RimMax: 0.712
+    - _RimMin: 0
     - _Smoothness: 0.01
     - _SmoothnessTextureChannel: 0
     - _SpecSmooth: 1
@@ -84,11 +84,11 @@ Material:
     - _ZWrite: 1
     - __dummy__: 0
     m_Colors:
-    - _Color: {r: 0.5943396, g: 0.45515665, b: 0.09812209, a: 1}
+    - _Color: {r: 0.21586865, g: 0.661441, b: 0.9339623, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HColor: {r: 0.8773585, g: 0.8773585, b: 0.8773585, a: 1}
-    - _MatCapColor: {r: 1, g: 1, b: 1, a: 1}
-    - _RimColor: {r: 0.7924528, g: 0.7863813, b: 0.078497685, a: 0.6}
+    - _MatCapColor: {r: 0.3679245, g: 0.33495015, b: 0.33495015, a: 1}
+    - _RimColor: {r: 0.19372968, g: 0.46226418, b: 0.115566045, a: 0.6}
     - _SColor: {r: 0.38679248, g: 0.18206759, b: 0.0054734685, a: 1}
-    - _SpecColor: {r: 0.85882354, g: 0.6750537, b: 0.13333334, a: 1}
+    - _SpecColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

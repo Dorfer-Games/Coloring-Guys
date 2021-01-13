@@ -811,7 +811,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b3fcc6f45d493044becae98619aa160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorPrefab: {fileID: 1211175933034548835, guid: 2098d74415b6624438494c913b8d22ab, type: 3}
+  colorPrefab: {fileID: 2764977219947573276, guid: 553dfed669a1e6d4890008248e1ccb76, type: 3}
   spawnPosition: {x: 0, y: 0.17, z: 0}
   firstSpawnTime: 10
 --- !u!1 &2097430569
@@ -857,6 +857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3865648b6f9bcb44bbc785d779aae3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numberStartGameText: {fileID: 0}
 --- !u!1 &644811943697364845
 GameObject:
   m_ObjectHideFlags: 0
