@@ -4,7 +4,7 @@ using UnityEngine;
 public class OnTriggerEnterImpactComponent: MonoBehaviour
 {
 
-    public event Action<Transform> OnEnter;
+    public event Action<Transform, Transform> OnEnter;
 
     [SerializeField] private ParticleSystem VFXCollisionEffects;
     private bool toPlayer;
@@ -20,7 +20,7 @@ public class OnTriggerEnterImpactComponent: MonoBehaviour
     public void TriggerEnterImact(Transform other)
     {
         if(toPlayer)
-        OnEnter?.Invoke(other.transform);
+        OnEnter?.Invoke(other.transform, transform);
         VFXCollisionEffects.Play();
     }
 }
