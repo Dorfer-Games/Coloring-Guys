@@ -32,7 +32,7 @@ public class MoneyRewardedSystem : GameSystemWithScreen<FinishUIScreen>, IInitin
     }
     private IEnumerator StartAnimationRewarded()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.7f);
         AddMoney(100);
         moneyAnimation.SetActive(false);
         yield return new WaitForSeconds(0.5f);

@@ -17,6 +17,11 @@ public class ResultUISystem : GameSystemWithScreen<FinishUIScreen>, IIniting
         {
             screen.AlmostPanel.SetActive(true);
         }
+
+        for (int i = 0; i < game.characters.Length; i++)
+        {
+            game.characters[i].animator.SetBool("idle", true);
+        }
         HapticSystem.hapticSystem.VibrateLong();
         screen.TryAgainButton.onClick.AddListener(() => Bootstrap.GameRestart(0));
         screen.NextButton.onClick.AddListener(() => Level(config.gameValuesDict[EGameValue.LevelsCount]));
