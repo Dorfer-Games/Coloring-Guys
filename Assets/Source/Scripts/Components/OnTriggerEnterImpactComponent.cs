@@ -19,8 +19,9 @@ public class OnTriggerEnterImpactComponent: MonoBehaviour
 
     public void TriggerEnterImact(Transform other)
     {
-        if(toPlayer)
         OnEnter?.Invoke(other.transform, transform);
         VFXCollisionEffects.Play();
+        if (toPlayer)
+            HapticSystem.hapticSystem.Vibrate();
     }
 }

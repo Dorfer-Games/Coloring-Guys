@@ -16,11 +16,19 @@ public class LocalNavMeshBuilder : MonoBehaviour
     NavMeshDataInstance m_Instance;
     List<NavMeshBuildSource> m_Sources = new List<NavMeshBuildSource>();
 
+    private int countUpdateStart = 10;
     IEnumerator Start()
     {
         while (true)
         {
-            UpdateNavMesh(true);
+            if (countUpdateStart > 0) {
+                UpdateNavMesh(true);
+                countUpdateStart--;
+            }
+            else
+            {
+                break;
+            }
             yield return m_Operation;
         }
     }

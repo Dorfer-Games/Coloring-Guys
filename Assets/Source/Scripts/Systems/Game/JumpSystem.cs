@@ -41,7 +41,7 @@ public class JumpSystem : GameSystem, IIniting, IUpdating
 
     void UserInputHandling()
     {
-        if (Input.GetMouseButtonDown(0))
+        /*if (Input.GetMouseButtonDown(0))
         {
             framesFromTouch = 0;
             firstTouchPos = Input.mousePosition;
@@ -62,7 +62,7 @@ public class JumpSystem : GameSystem, IIniting, IUpdating
                     Jump(0);
                 }
             }
-        }
+        }*/
     }
 
     void Jump(int index)

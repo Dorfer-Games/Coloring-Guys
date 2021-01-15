@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1081368940
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1081368941}
+  - component: {fileID: 1081368942}
+  m_Layer: 0
+  m_Name: MoneySystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1081368941
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081368940}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6298820699657881958}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1081368942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081368940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 212db90b88abc5f49b4d1557981e3529, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyText: {fileID: 0}
 --- !u!1 &115316038545404343
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,6 +88,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leaderboardElementPrefab: {fileID: 5934356218567998710, guid: e6ecc43dfb7f22748aceb4a4ce5feb0c, type: 3}
+--- !u!1 &400980980462286989
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7080736586141744874}
+  - component: {fileID: 7248024980830803038}
+  m_Layer: 0
+  m_Name: VictoryRewardedSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7080736586141744874
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400980980462286989}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6298820699944581975}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7248024980830803038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400980980462286989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e12fa79e6c1a04582f11b4ab4c28c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyAnimation: {fileID: 0}
+  moneyText: {fileID: 0}
 --- !u!1 &513388093700741845
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,6 +437,7 @@ MonoBehaviour:
   isTesting: 0
   playerData:
     level: 0
+    money: 0
 --- !u!1 &3322304284965847664
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,6 +726,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be8bfa913769a3448a7dc6f68e0c17bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &3879244520731636139
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5472485589368988656}
+  - component: {fileID: 3730134803170667949}
+  m_Layer: 0
+  m_Name: HapticSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5472485589368988656
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3879244520731636139}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6298820699657881958}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3730134803170667949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3879244520731636139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e2f961a1da444540bed3f2b0bc024ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Haptic: 1
 --- !u!1 &4632305181500581436
 GameObject:
   m_ObjectHideFlags: 0
@@ -1374,6 +1508,8 @@ Transform:
   - {fileID: 7614586478922007543}
   - {fileID: 6298820700472323775}
   - {fileID: 6298820699880326952}
+  - {fileID: 5472485589368988656}
+  - {fileID: 1081368941}
   m_Father: {fileID: 8410704116390783444}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1613,6 +1749,7 @@ Transform:
   - {fileID: 4561434327711334007}
   - {fileID: 3502268939143434500}
   - {fileID: 6298820699673166628}
+  - {fileID: 7080736586141744874}
   m_Father: {fileID: 8410704116390783444}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

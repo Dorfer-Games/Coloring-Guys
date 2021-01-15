@@ -32,7 +32,6 @@ public class UIControllerLevels : GameSystem, IIniting
             {
                 levelsProgressBars[d].Process();
             }
-            print(d);
         }
     }
 }

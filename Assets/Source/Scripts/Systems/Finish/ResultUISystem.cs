@@ -17,7 +17,7 @@ public class ResultUISystem : GameSystemWithScreen<FinishUIScreen>, IIniting
         {
             screen.AlmostPanel.SetActive(true);
         }
-
+        HapticSystem.hapticSystem.VibrateLong();
         screen.TryAgainButton.onClick.AddListener(() => Bootstrap.GameRestart(0));
         screen.NextButton.onClick.AddListener(() => Level(config.gameValuesDict[EGameValue.LevelsCount]));
     }
@@ -30,6 +30,6 @@ public class ResultUISystem : GameSystemWithScreen<FinishUIScreen>, IIniting
             Config = game;
             Config.value++;
         }
-        Bootstrap.GameRestart(0);
+        MoneyRewardedSystem.rewardedSystem.AnimationStart();
     }
 }

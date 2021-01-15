@@ -10,5 +10,6 @@ namespace Kuhpik
     public class PlayerData
     {
         public int level;
+        public int money;
     }
 }
