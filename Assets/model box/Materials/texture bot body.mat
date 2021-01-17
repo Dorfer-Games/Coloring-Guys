@@ -72,9 +72,9 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _RampSmooth: 0.634
-    - _RampThreshold: 0.509
-    - _RimMax: 0.1
-    - _RimMin: 0.42
+    - _RampThreshold: 0.233
+    - _RimMax: 0.678
+    - _RimMin: 0
     - _Smoothness: 0.01
     - _SmoothnessTextureChannel: 0
     - _SpecSmooth: 0.702
@@ -84,11 +84,11 @@ Material:
     - _ZWrite: 1
     - __dummy__: 0
     m_Colors:
-    - _Color: {r: 0.08624065, g: 0.29226238, b: 0.3207547, a: 1}
+    - _Color: {r: 0.6698113, g: 0.47076362, b: 0.54569924, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _HColor: {r: 0.35117835, g: 0.27549842, b: 0.38679248, a: 1}
+    - _HColor: {r: 0.9056604, g: 0.9056604, b: 0.9056604, a: 1}
     - _MatCapColor: {r: 1, g: 1, b: 1, a: 1}
-    - _RimColor: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 0.6}
-    - _SColor: {r: 0.754717, g: 0.754717, b: 0.754717, a: 1}
-    - _SpecColor: {r: 0.034042373, g: 0.14495617, b: 0.16037738, a: 1}
+    - _RimColor: {r: 0.4245283, g: 0.26812354, b: 0.19424173, a: 0.6}
+    - _SColor: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
+    - _SpecColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
