@@ -133,6 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyAnimation: {fileID: 0}
   moneyText: {fileID: 0}
+  Next: {fileID: 0}
 --- !u!1 &513388093700741845
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,7 +582,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 0.7
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -683,6 +684,7 @@ MonoBehaviour:
   spawn_Stack: {fileID: 8300000, guid: 3300fd4a69ad7e849a748b75345e8f63, type: 3}
   startAudio: {fileID: 8300000, guid: 7874e1c9a024b2d4892a008a92ad8e3f, type: 3}
   collisionAudio: {fileID: 8300000, guid: aad1f99fd3d2de74f9e0cd4823b78325, type: 3}
+  audio: {fileID: 3816868687605553830}
 --- !u!1 &3700901903409019143
 GameObject:
   m_ObjectHideFlags: 0

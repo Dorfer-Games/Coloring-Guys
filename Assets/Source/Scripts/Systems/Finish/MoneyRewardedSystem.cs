@@ -3,6 +3,7 @@
 using System.Collections;
 using Kuhpik;
 using TMPro;
+using UnityEngine.UI;
 
 public class MoneyRewardedSystem : GameSystemWithScreen<FinishUIScreen>, IIniting
 {
@@ -10,6 +11,7 @@ public class MoneyRewardedSystem : GameSystemWithScreen<FinishUIScreen>, IInitin
 
     [SerializeField] private GameObject moneyAnimation;
     [SerializeField] private TMP_Text moneyText;
+    [SerializeField] private Button Next;
     private void Start()
     {
         if (rewardedSystem == null) rewardedSystem = this;
@@ -32,6 +34,7 @@ public class MoneyRewardedSystem : GameSystemWithScreen<FinishUIScreen>, IInitin
     }
     private IEnumerator StartAnimationRewarded()
     {
+        Next.enabled = false;
         yield return new WaitForSeconds(1.7f);
         AddMoney(100);
         moneyAnimation.SetActive(false);

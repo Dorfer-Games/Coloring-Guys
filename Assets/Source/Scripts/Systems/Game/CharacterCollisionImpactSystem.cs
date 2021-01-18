@@ -23,6 +23,7 @@ public class CharacterCollisionImpactSystem : GameSystem, IIniting
 
            /* var normalized_ = mainObject.position.normalized;
             game.characterDictionary[mainObject].rigidbody.AddForce((normalized_ - transform.forward) * (config.GetValue(EGameValue.HitImpulse) - 10f), ForceMode.Impulse);*/
+            if(mainObject.transform.name == "Player")
             AudioSysytem.audioSysytem.AudioCollision();
         }
     }

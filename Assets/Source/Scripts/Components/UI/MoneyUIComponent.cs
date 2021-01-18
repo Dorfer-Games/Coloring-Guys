@@ -8,7 +8,6 @@ public class MoneyUIComponent : GameSystem, IIniting
 
     void IIniting.OnInit()
     {
-        print(player.money);
         moneyText.text = player.money.ToString();
     }
 }

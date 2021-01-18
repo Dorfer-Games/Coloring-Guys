@@ -67,10 +67,10 @@ public class JumpSystem : GameSystem, IIniting, IUpdating
 
     void Jump(int index)
     {
-        game.characters[index].rigidbody.AddRelativeForce(Vector3.up * config.GetValue(EGameValue.JumpSTR), ForceMode.VelocityChange);
-        game.characters[index].animator.SetBool("Jumping", true);
-        game.characters[index].isJumping = true;
-        game.characters[index].audioComponent.DisabledAudio();
+            game.characters[index].rigidbody.AddForce(Vector3.up * config.GetValue(EGameValue.JumpSTR));
+            game.characters[index].animator.SetBool("Jumping", true);
+            game.characters[index].isJumping = true;
+            game.characters[index].audioComponent.DisabledAudio();
     }
 
     void Grouding(Transform other, Transform @object)

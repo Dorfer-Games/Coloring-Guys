@@ -9,13 +9,12 @@ public class AudioSysytem : GameSystemWithScreen<GameUIScreen>, IIniting
     public static AudioSysytem audioSysytem { get; private set; }
     
     [SerializeField] private AudioClip victory, stackCollect, dead, defeat, spawn_Stack, startAudio, collisionAudio;
-    private AudioSource audio;
+    public AudioSource audio;
 
 
     private void Awake()
     {
         if (audioSysytem == null) audioSysytem = this;
-        audio = GetComponent<AudioSource>();
     }
 
 
