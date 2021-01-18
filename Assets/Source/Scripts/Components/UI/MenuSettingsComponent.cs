@@ -8,7 +8,29 @@ public class MenuSettingsComponent : MonoBehaviour
     [SerializeField] private GameObject SettingMenu;
     [SerializeField] private Sprite hapticOn, hapticOff, soundOn, soundOff;
     [SerializeField] private AudioListener audioListener;
-    private bool sound = true, haptic = true;
+    private static bool sound = true, haptic = true;
+
+    private void Start()
+    {
+        ChangeSettings();
+    }
+
+
+    private void ChangeSettings()
+    {
+        if (!haptic)
+        {
+            hapticUI.sprite = hapticOff;
+            HapticSystem.hapticSystem.Haptic = haptic;
+        }
+
+
+        if (!sound)
+        {
+            soundUI.sprite = soundOff;
+            AudioListener.volume = 0f;
+        }
+    }
 
 
     public void Haptic()
@@ -31,12 +53,12 @@ public class MenuSettingsComponent : MonoBehaviour
         if (sound)
         {
             soundUI.sprite = soundOn;
-            audioListener.enabled = true;
+            AudioListener.volume = 1.0f;
         }
         else
         {
             soundUI.sprite = soundOff;
-            audioListener.enabled = false;
+            AudioListener.volume = 0f;
         }
     }
 

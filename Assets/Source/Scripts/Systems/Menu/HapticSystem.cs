@@ -18,16 +18,19 @@ public class HapticSystem : MonoBehaviour
 
     public void Vibrate()
     {
+        if(Haptic)
         MMVibrationManager.Vibrate();
     }
 
     public void VibrateLong()
     {
-        MMVibrationManager.Haptic(HapticTypes.HeavyImpact);
+        if (Haptic)
+            MMVibrationManager.Haptic(HapticTypes.HeavyImpact);
     }
 
     public void VibrateShort()
     {
-        MMVibrationManager.Vibrate();
+        if (Haptic)
+            MMVibrationManager.Vibrate();
     }
 }
