@@ -41,7 +41,7 @@ public class JumpSystem : GameSystem, IIniting, IUpdating
 
     void UserInputHandling()
     {
-        if (Input.GetMouseButtonDown(0))
+        /*if (Input.GetMouseButtonDown(0))
         {
             framesFromTouch = 0;
             firstTouchPos = Input.mousePosition;
@@ -62,15 +62,16 @@ public class JumpSystem : GameSystem, IIniting, IUpdating
                     Jump(0);
                 }
             }
-        }
+        }*/
     }
 
     void Jump(int index)
     {
-        game.characters[index].rigidbody.AddRelativeForce(Vector3.up * config.GetValue(EGameValue.JumpSTR), ForceMode.VelocityChange);
-        game.characters[index].animator.SetBool("Jumping", true);
-        game.characters[index].isJumping = true;
-        game.characters[index].audioComponent.DisabledAudio();
+        game.characters[index].rigidbody.velocity = new Vector3(0f,0f,0f);
+        game.characters[index].rigidbody.AddForce(Vector3.up * config.GetValue(EGameValue.JumpSTR));
+            game.characters[index].animator.SetBool("Jumping", true);
+            game.characters[index].isJumping = true;
+            game.characters[index].audioComponent.DisabledAudio();
     }
 
     void Grouding(Transform other, Transform @object)
@@ -84,6 +85,7 @@ public class JumpSystem : GameSystem, IIniting, IUpdating
                 character.animator.SetBool("Jumping", false);
                 character.isJumping = false;
                 character.audioComponent.EnabledAudio();
+                character.jumpPlayerComponent.Jump = false;
             }
         }
     }

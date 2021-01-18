@@ -25,7 +25,10 @@ public class CellCollisionSystem : GameSystem, IIniting
 
             if (character.color != component.Color)
             {
-                if (character.stacks > 0) ColorCell(character, component);
+                if (character.stacks > 0)
+                {
+                    ColorCell(character, component);
+                }
                 else FadeCell(other, component);
             }
 

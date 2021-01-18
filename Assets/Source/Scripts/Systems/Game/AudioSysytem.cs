@@ -9,13 +9,12 @@ public class AudioSysytem : GameSystemWithScreen<GameUIScreen>, IIniting
     public static AudioSysytem audioSysytem { get; private set; }
     
     [SerializeField] private AudioClip victory, stackCollect, dead, defeat, spawn_Stack, startAudio, collisionAudio;
-    private AudioSource audio;
+    public AudioSource audio;
 
 
     private void Awake()
     {
         if (audioSysytem == null) audioSysytem = this;
-        audio = GetComponent<AudioSource>();
     }
 
 
@@ -32,25 +31,21 @@ public class AudioSysytem : GameSystemWithScreen<GameUIScreen>, IIniting
     }
     public void AudioVictory()
     {
-        audio.clip = victory;
-        audio.Play();
+        audio.PlayOneShot(victory);
     }
 
     public void AudioDefeat()
     {
-        audio.clip = defeat;
-        audio.Play();
+        audio.PlayOneShot(defeat);
     }
 
     public void AudioDead()
     {
-        audio.clip = dead;
-        audio.Play();
+        audio.PlayOneShot(dead);
     }
     public void AudioCollectStack()
     {
-        audio.clip = stackCollect;
-        audio.Play();
+        audio.PlayOneShot(stackCollect);;
     }
 
     public void AudioSpawnStack()

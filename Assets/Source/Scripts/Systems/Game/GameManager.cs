@@ -46,6 +46,7 @@ public class GameManager : GameSystemWithScreen<GameUIScreen>, IIniting, IUpdati
         yield return new WaitForSeconds(3.5f);
         StartGame?.Invoke(true);
         yield return new WaitForSeconds(1.5f);
+        AudioSysytem.audioSysytem.audio.pitch = 1.0f;
         numberStartGameText.gameObject.SetActive(false);
     }
 }

@@ -18,18 +18,20 @@ public class ResultUISystem : GameSystemWithScreen<FinishUIScreen>, IIniting
             screen.AlmostPanel.SetActive(true);
         }
 
+        for (int i = 0; i < game.characters.Length; i++)
+        {
+            game.characters[i].animator.SetBool("idle", true);
+        }
+        HapticSystem.hapticSystem.VibrateLong();
         screen.TryAgainButton.onClick.AddListener(() => Bootstrap.GameRestart(0));
-        screen.NextButton.onClick.AddListener(() => Level(config.gameValuesDict[EGameValue.LevelsCount]));
+        screen.NextButton.onClick.AddListener(() => Level());
     }
 
 
 
-    private void Level(GameValueConfig game)
+    private void Level()
     {
-        if (config.GetValue(EGameValue.LevelsCount) <= LevelLoadingSystem.loadingSystem.levels.Length) {
-            Config = game;
-            Config.value++;
-        }
-        Bootstrap.GameRestart(0);
+        LevelLoadingSystem.loadingSystem.AddLevel();
+        MoneyRewardedSystem.rewardedSystem.AnimationStart();
     }
 }

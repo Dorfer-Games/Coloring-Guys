@@ -18,7 +18,7 @@ public class GameUIScreen : UIScreen
 
     private void Start()
     {
-        LevelLoadingSystem.loadingSystem.OnLevel += (x) => { level.text = "Level " + x; };
+        LevelLoadingSystem.loadingSystem.OnLevel += (x) => { level.text = "Level " + (x + 1); };
     }
     public override void Subscribe()
     {

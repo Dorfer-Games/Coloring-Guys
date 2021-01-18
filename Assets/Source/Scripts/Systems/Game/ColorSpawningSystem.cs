@@ -47,7 +47,10 @@ public class ColorSpawningSystem : GameSystem, IIniting
             PoolingSystem.Pool(color.gameObject);
 
             Signals.Get<HexCountChangedSignal>().Dispatch(character, character.stacks);
-            AudioSysytem.audioSysytem.AudioCollectStack();
+            if (@object.name == "Player") {
+                AudioSysytem.audioSysytem.AudioCollectStack();
+                HapticSystem.hapticSystem.Vibrate();
+            }
         }
     }
 
