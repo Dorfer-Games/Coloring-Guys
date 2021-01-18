@@ -19,7 +19,7 @@ public class UIControllerLevels : GameSystem, IIniting
     void IIniting.OnInit()
     {
         
-        var maxLevel = config.GetValue(EGameValue.LevelsCount);
+        var maxLevel = player.level;
 
         for (int d = 0; d < levelsProgressBars.Length; d++)
         {

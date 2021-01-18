@@ -31,25 +31,21 @@ public class AudioSysytem : GameSystemWithScreen<GameUIScreen>, IIniting
     }
     public void AudioVictory()
     {
-        audio.clip = victory;
-        audio.Play();
+        audio.PlayOneShot(victory);
     }
 
     public void AudioDefeat()
     {
-        audio.clip = defeat;
-        audio.Play();
+        audio.PlayOneShot(defeat);
     }
 
     public void AudioDead()
     {
-        audio.clip = dead;
-        audio.Play();
+        audio.PlayOneShot(dead);
     }
     public void AudioCollectStack()
     {
-        audio.clip = stackCollect;
-        audio.Play();
+        audio.PlayOneShot(stackCollect);;
     }
 
     public void AudioSpawnStack()

@@ -176,7 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObject: {fileID: 0}
   positionCamera: {x: 0, y: 37, z: -30}
-  smoothMovement: 0.15
+  smoothMovement: 0.2
   target_rotationCamera: {x: 0, y: 2.5, z: 0}
 --- !u!1 &924401148944492231
 GameObject:
