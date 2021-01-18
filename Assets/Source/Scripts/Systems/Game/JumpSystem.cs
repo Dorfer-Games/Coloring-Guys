@@ -67,7 +67,8 @@ public class JumpSystem : GameSystem, IIniting, IUpdating
 
     void Jump(int index)
     {
-            game.characters[index].rigidbody.AddForce(Vector3.up * config.GetValue(EGameValue.JumpSTR));
+        game.characters[index].rigidbody.velocity = new Vector3(0f,0f,0f);
+        game.characters[index].rigidbody.AddForce(Vector3.up * config.GetValue(EGameValue.JumpSTR));
             game.characters[index].animator.SetBool("Jumping", true);
             game.characters[index].isJumping = true;
             game.characters[index].audioComponent.DisabledAudio();

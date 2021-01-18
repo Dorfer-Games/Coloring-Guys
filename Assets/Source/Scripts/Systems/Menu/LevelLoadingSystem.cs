@@ -24,16 +24,14 @@ public class LevelLoadingSystem : GameSystem, IIniting, IDisposing
 
     void IIniting.OnInit()
     {
-        PlayerData data = new PlayerData();
-        data.level = levels.Length;
         #region Loading Levels
-            if (levels.Length > config.GetValue(EGameValue.LevelsCount))
+            if (levels.Length > player.level)
             {
-                CreateLevel((int)config.GetValue(EGameValue.LevelsCount));
+                CreateLevel(player.level);
             }
             else
             {
-                int randomLevel = Random.Range(1, levels.Length);
+                int randomLevel = Random.Range(0, levels.Length);
                 CreateLevel(randomLevel);
             }
 
@@ -42,11 +40,18 @@ public class LevelLoadingSystem : GameSystem, IIniting, IDisposing
 
     private void CreateLevel(int level)
     {
-        currentLevel = level;
-        OnLevel?.Invoke(currentLevel);
+        OnLevel?.Invoke(level);
         game.level = Instantiate(levels[level]);
         game.cellDictionary = FindObjectsOfType<CellComponent>().ToDictionary(x => x.transform, x => x);
         game.cellsList = FindObjectsOfType<CellComponent>();
+    }
+
+    public void AddLevel()
+    {
+        if (player.level <= levels.Length)
+        {
+            player.level++;
+        }
     }
 
 
