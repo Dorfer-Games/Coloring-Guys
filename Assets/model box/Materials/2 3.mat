@@ -72,9 +72,9 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _RampSmooth: 0.77
-    - _RampThreshold: 0.34
-    - _RimMax: 0.37
-    - _RimMin: 0.58
+    - _RampThreshold: 0.077
+    - _RimMax: 2
+    - _RimMin: 0.444
     - _Smoothness: 0.01
     - _SmoothnessTextureChannel: 0
     - _SpecSmooth: 1
@@ -90,5 +90,5 @@ Material:
     - _MatCapColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 0.8, g: 0.8, b: 0.8, a: 0.6}
     - _SColor: {r: 0.10568706, g: 0.69844586, b: 0.8962264, a: 1}
-    - _SpecColor: {r: 0.063412234, g: 0.79589766, b: 0.8962264, a: 1}
+    - _SpecColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
