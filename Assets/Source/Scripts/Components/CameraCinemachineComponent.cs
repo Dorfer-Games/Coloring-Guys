@@ -2,7 +2,7 @@
 
 using Cinemachine;
 using NaughtyAttributes;
-
+using System.Collections;
 [RequireComponent(typeof(CinemachineVirtualCamera))]
 public class CameraCinemachineComponent : MonoBehaviour
 {
@@ -37,5 +37,12 @@ public class CameraCinemachineComponent : MonoBehaviour
     {
         virtualCamera.Follow = targetObject; // Цель за, которой двигается камера
         virtualCamera.LookAt = targetObject; // Цель за, которой следит камера
+        //StartCoroutine(SetCameraSetting());
+    }
+
+    private IEnumerator SetCameraSetting()
+    {
+        yield return new WaitForSeconds(3f);
+        virtualCamera.LookAt = null;
     }
 }
