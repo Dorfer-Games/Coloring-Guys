@@ -213,46 +213,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1174815436, guid: 7c59469aae2288b4a9454662a7f79fe3, type: 3}
-      propertyPath: m_fontColor.b
-      value: 0.4745098
-      objectReference: {fileID: 0}
-    - target: {fileID: 1174815436, guid: 7c59469aae2288b4a9454662a7f79fe3, type: 3}
-      propertyPath: m_fontColor.g
-      value: 0.99607843
-      objectReference: {fileID: 0}
-    - target: {fileID: 1174815436, guid: 7c59469aae2288b4a9454662a7f79fe3, type: 3}
-      propertyPath: m_fontColor.r
-      value: 0.7137255
-      objectReference: {fileID: 0}
-    - target: {fileID: 2053040680, guid: 7c59469aae2288b4a9454662a7f79fe3, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 475543639580836403, guid: 7c59469aae2288b4a9454662a7f79fe3, type: 3}
-      propertyPath: m_EffectColor.b
-      value: 0.08966714
-      objectReference: {fileID: 0}
-    - target: {fileID: 475543639580836403, guid: 7c59469aae2288b4a9454662a7f79fe3, type: 3}
-      propertyPath: m_EffectColor.g
-      value: 0.6132076
-      objectReference: {fileID: 0}
-    - target: {fileID: 475543639580836403, guid: 7c59469aae2288b4a9454662a7f79fe3, type: 3}
-      propertyPath: m_EffectColor.r
-      value: 0.2649702
-      objectReference: {fileID: 0}
-    - target: {fileID: 2924868100753640968, guid: 7c59469aae2288b4a9454662a7f79fe3, type: 3}
-      propertyPath: m_Color.b
-      value: 0.09411765
-      objectReference: {fileID: 0}
-    - target: {fileID: 2924868100753640968, guid: 7c59469aae2288b4a9454662a7f79fe3, type: 3}
-      propertyPath: m_Color.g
-      value: 0.9607843
-      objectReference: {fileID: 0}
-    - target: {fileID: 2924868100753640968, guid: 7c59469aae2288b4a9454662a7f79fe3, type: 3}
-      propertyPath: m_Color.r
-      value: 0.38431373
-      objectReference: {fileID: 0}
     - target: {fileID: 4447428783891798019, guid: 7c59469aae2288b4a9454662a7f79fe3, type: 3}
       propertyPath: m_Name
       value: UI Canvas
@@ -339,10 +299,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4866436705484695762, guid: 7c59469aae2288b4a9454662a7f79fe3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8143335232682761014, guid: 7c59469aae2288b4a9454662a7f79fe3, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
