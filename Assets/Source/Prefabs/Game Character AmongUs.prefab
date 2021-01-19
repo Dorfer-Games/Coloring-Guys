@@ -478,7 +478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a7ce858a0b48c34a9c42dc5a6b83184, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: 2.5
+  offset: 1.9
   distance: 3
   upPosition: 0
   mask:
