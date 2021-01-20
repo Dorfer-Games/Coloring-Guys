@@ -17,7 +17,7 @@ MonoBehaviour:
     value: 7.7
     minmaxValue: {x: 2, y: 20}
   - type: 1
-    value: 155
+    value: 180
     minmaxValue: {x: 60, y: 360}
   - type: 2
     value: 1
@@ -47,7 +47,7 @@ MonoBehaviour:
     value: 1.9
     minmaxValue: {x: 1, y: 3}
   - type: 11
-    value: 17
+    value: 40
     minmaxValue: {x: 5, y: 80}
   - type: 12
     value: 1.3
