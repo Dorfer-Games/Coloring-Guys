@@ -31,12 +31,12 @@ public class AutoJumpPlayerComponent : GameSystem
             Debug.DrawRay(transform.position + (transform.up * upPosition) + (transform.forward * offset), -Vector3.up * distance, Color.black);
 #endif
             Ray ray = new Ray(transform.position + (transform.up * upPosition) + (transform.forward * offset), -Vector3.up * distance);
-            if (Physics.Raycast(ray, out var hit, distance, mask) || !Physics.Raycast(ray, out hit, distance, mask))
+            if (Physics.Raycast(ray, out var hit, distance, mask))
             {
                 try
                 {
                     var cell = hit.collider.GetComponentInParent<CellComponent>();
-                    if (!Jump && cell.Cell.transform.position.y <= -1.5f)
+                    if (!Jump && cell.Cell.transform.position.y <= -6.5f)
                     {
                         if (cell.IsDown == true)
                         {

@@ -529,7 +529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stackPrefab: {fileID: 552291627672545299, guid: b5ec85edfb54a7243a045b394af14f24, type: 3}
-  offset: 0.0119
+  offset: 0.0195
   stackPointName: Color Bricks
   nameParentObject:
   - bandit
