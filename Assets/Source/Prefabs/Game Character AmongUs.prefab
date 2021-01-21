@@ -344,6 +344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VFXCollisionEffects: {fileID: 6162855982579314168}
+  Triggers: {fileID: 6162855981930293010}
 --- !u!82 &6162855981926546084
 AudioSource:
   m_ObjectHideFlags: 0

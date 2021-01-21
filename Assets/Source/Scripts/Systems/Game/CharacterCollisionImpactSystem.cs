@@ -21,8 +21,8 @@ public class CharacterCollisionImpactSystem : GameSystem, IIniting
             var normalized = (other.position - mainObject.position).normalized;
             game.characterDictionary[other].rigidbody.AddForce(normalized * config.GetValue(EGameValue.HitImpulse), ForceMode.Impulse);
 
-           /* var normalized_ = mainObject.position.normalized;
-            game.characterDictionary[mainObject].rigidbody.AddForce((normalized_ - transform.forward) * (config.GetValue(EGameValue.HitImpulse) - 10f), ForceMode.Impulse);*/
+           var normalized_ = mainObject.position.normalized;
+            game.characterDictionary[mainObject].rigidbody.AddForce(-normalized_ * (config.GetValue(EGameValue.HitImpulse) - 19f), ForceMode.Impulse);
             if(mainObject.transform.name == "Player")
             AudioSysytem.audioSysytem.AudioCollision();
         }

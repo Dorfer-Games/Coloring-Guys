@@ -1174,7 +1174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorPrefab: {fileID: 2764977219947573276, guid: 553dfed669a1e6d4890008248e1ccb76, type: 3}
   spawnPosition: {x: 0, y: 0.17, z: 0}
-  firstSpawnTime: 10
+  firstSpawnTime: 5
 --- !u!1 &6298820699152258732
 GameObject:
   m_ObjectHideFlags: 0
@@ -1362,7 +1362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   framesBeforeJumpEnds: 20
   maxTouchDelta: 10
-  canRotateWhileJump: 0
+  canRotateWhileJump: 1
 --- !u!1 &6298820699435350834
 GameObject:
   m_ObjectHideFlags: 0
