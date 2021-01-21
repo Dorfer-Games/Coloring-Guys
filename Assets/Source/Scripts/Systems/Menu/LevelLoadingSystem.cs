@@ -9,7 +9,7 @@ public class LevelLoadingSystem : GameSystem, IIniting, IDisposing
 {
     public static LevelLoadingSystem loadingSystem { get; private set; }
     public GameObject[] levels;
-    private int currentLevel = 0;
+    public int currentLevel = 0;
 
 
     public System.Action<int> OnLevel;
@@ -40,6 +40,7 @@ public class LevelLoadingSystem : GameSystem, IIniting, IDisposing
 
     private void CreateLevel(int level)
     {
+        currentLevel = level;
         OnLevel?.Invoke(player.level);
         game.level = Instantiate(levels[level]);
         game.cellDictionary = FindObjectsOfType<CellComponent>().ToDictionary(x => x.transform, x => x);

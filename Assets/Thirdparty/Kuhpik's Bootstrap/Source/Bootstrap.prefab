@@ -995,6 +995,50 @@ Transform:
   m_Father: {fileID: 1323686357218844495}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5946493471358380177
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2703923753933377004}
+  - component: {fileID: 7428627646859284335}
+  m_Layer: 0
+  m_Name: SmilesSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2703923753933377004
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5946493471358380177}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6298820699443823219}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7428627646859284335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5946493471358380177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6ffc94c47673824aa07ea5240f98d3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leaderboardElementPrefab: {fileID: 6846473051321395404, guid: 39af67a598730b44a817582a4c929aa5, type: 3}
 --- !u!1 &6298820698708016938
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,6 +1173,7 @@ MonoBehaviour:
   - {fileID: 4179703956241861376, guid: 3f45809c3d0faca4caf4bb87476ef900, type: 3}
   - {fileID: 5456975307693696057, guid: 7fa366495cf9c3248bb53a4f9d74a5c9, type: 3}
   - {fileID: 8584566050458122475, guid: 37cd3c60f2cfc4847963e6d03636c747, type: 3}
+  currentLevel: 0
 --- !u!1 &6298820699137493928
 GameObject:
   m_ObjectHideFlags: 0
@@ -1454,6 +1499,7 @@ Transform:
   - {fileID: 6298820699320947386}
   - {fileID: 4420221962856584488}
   - {fileID: 6298820699152258735}
+  - {fileID: 2703923753933377004}
   m_Father: {fileID: 8410704116390783444}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1712,7 +1758,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterPrefab: {fileID: 6162855981926546082, guid: d5df5e9185d140346be43fb9e4004f8d, type: 3}
   characterColors:
-  - {r: 0, g: 1, b: 0, a: 1}
+  - {r: 0.16313636, g: 0.8867924, b: 0.16313636, a: 1}
   - {r: 1, g: 0.99997795, b: 0, a: 1}
   - {r: 0, g: 0, b: 1, a: 1}
   - {r: 1, g: 0.49019608, b: 0, a: 1}

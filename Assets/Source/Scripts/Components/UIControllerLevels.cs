@@ -12,7 +12,7 @@ public class UIControllerLevels : GameSystem, IIniting
     void Start()
     {
         LevelLoadingSystem.loadingSystem.OnLevel += (x) => {
-            number_Level = x;
+            number_Level = LevelLoadingSystem.loadingSystem.currentLevel;
         };
     }
 

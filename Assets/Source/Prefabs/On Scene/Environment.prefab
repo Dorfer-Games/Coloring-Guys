@@ -373,7 +373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d359902af91985488070f0ccd4137ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0, y: 45, z: -45}
+  offset: {x: 0, y: 37, z: -37}
   velocity: {x: 0, y: 0, z: 0}
   follower: {fileID: 924401149260904746}
   target: {fileID: 0}

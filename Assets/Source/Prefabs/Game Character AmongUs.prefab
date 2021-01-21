@@ -344,7 +344,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VFXCollisionEffects: {fileID: 6162855982579314168}
-  Triggers: {fileID: 6162855981930293010}
 --- !u!82 &6162855981926546084
 AudioSource:
   m_ObjectHideFlags: 0
@@ -357,7 +356,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d616d7e5f2220104c9c9b0a7643c4023, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0

@@ -36,7 +36,7 @@ public class AutoJumpPlayerComponent : GameSystem
                 try
                 {
                     var cell = hit.collider.GetComponentInParent<CellComponent>();
-                    if (!Jump && cell.Cell.transform.position.y <= -6.5f)
+                    if (!Jump && cell.Cell.transform.position.y <= -1.5f)
                     {
                         if (cell.IsDown == true)
                         {
