@@ -29,8 +29,9 @@ public class CharacterCollisionImpactSystem : GameSystem, IIniting
             var normalized_ = (other.position - mainObject.position).normalized;
             game.characterDictionary[mainObject].rigidbody.AddForce(-normalized_ * (config.GetValue(EGameValue.HitImpulse) - 19f), ForceMode.Impulse);
             StartCoroutine(SetCollision());
-            Bootstrap.GetSystem<SmilesSystem>().CreateSmiles(other, mainObject);
-            if(mainObject.transform.name == "Player")
+            Bootstrap.GetSystem<SmilesSystem>().CreateSmiles(other, mainObject, true);
+            game.characterDictionary[other].onTriggerEnterImpact.SetLastPlayer(mainObject);
+            if (mainObject.transform.name == "Player")
             AudioSysytem.audioSysytem.AudioCollision();
         }
     }
