@@ -10,7 +10,7 @@ namespace Kuhpik
         MoveSpeed,
         RotationSpeed,
         CellFadeTime,
-        CellFallTime,
+        CellIncreaseSpeed,
         CellBackTime,
         JumpSTR,
         GravitySTR,

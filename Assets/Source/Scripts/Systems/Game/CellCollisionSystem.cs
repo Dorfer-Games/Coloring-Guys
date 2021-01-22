@@ -3,6 +3,7 @@ using Kuhpik;
 using Supyrb;
 using System.Linq;
 using UnityEngine;
+using System.Collections;
 
 public class CellCollisionSystem : GameSystem, IIniting
 {
@@ -29,7 +30,7 @@ public class CellCollisionSystem : GameSystem, IIniting
                 {
                     ColorCell(character, component);
                 }
-                else FadeCell(other, component);
+                else FadeCell(other, component, @object);
             }
 
             Signals.Get<HexCountChangedSignal>().Dispatch(character, character.stacks);
@@ -42,7 +43,7 @@ public class CellCollisionSystem : GameSystem, IIniting
         character.stacks--;
     }
 
-    private void FadeCell(Transform other, CellComponent component)
+    private void FadeCell(Transform cell, CellComponent component, Transform character)
     {
         var seq = DOTween.Sequence();
         var color = Color.white;
@@ -54,11 +55,36 @@ public class CellCollisionSystem : GameSystem, IIniting
             component.SetUp(true);
         }));
         //seq.PrependInterval(config.GetValue(EGameValue.CellFadeTime));
-        seq.Append(other.DOLocalMoveY(4.4f, config.GetValue(EGameValue.CellFallTime)).SetEase(Ease.Linear));
-        seq.OnComplete(() => BringCellBack(other));
+        //seq.Append(other.DOLocalMoveY(4.4f, config.GetValue(EGameValue.CellFallTime)).SetEase(Ease.Linear));
+        //seq.OnComplete(() => BringCellBack(other));
+        seq.OnComplete(() => StartCoroutine(CellMoving(cell, character)));
+
         seq.SetId(component.GetInstanceID());
         seq.SetEase(Ease.Linear);
         seq.Play();
+    }
+
+
+    IEnumerator CellMoving(Transform cell, Transform character)
+    {
+        float needHight = 4.4f;
+        float baseHexIncreaseSpeed = config.GetValue(EGameValue.CellIncreaseSpeed);
+        float distnaceBetweenCellAndCharacter = GetDistance(character, cell);
+        float cellSize = 1f;
+        while (distnaceBetweenCellAndCharacter <= 3f || cell.transform.position.y < needHight)
+        {
+            distnaceBetweenCellAndCharacter = GetDistance(character, cell);
+            cell.transform.position += new Vector3(0, baseHexIncreaseSpeed * (distnaceBetweenCellAndCharacter / (3f * cellSize)),0);
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+        cell.transform.position = new Vector3(cell.transform.position.x, needHight, cell.transform.position.z);
+        BringCellBack(cell);
+    }
+
+    private static float GetDistance(Transform character, Transform cell)
+    {
+        return Vector2.Distance(new Vector2(character.position.x, character.position.z),
+                    new Vector2(cell.position.x, cell.position.z));
     }
 
     void BringCellBack(Transform cell)
@@ -66,7 +92,7 @@ public class CellCollisionSystem : GameSystem, IIniting
         var component = game.cellDictionary[cell.parent];
         component.SetColor(Color.red);
 
-        cell.DOLocalMoveY(config.GetValue(EGameValue.CellUpY), config.GetValue(EGameValue.CellFallTime)).SetDelay(config.GetValue(EGameValue.CellBackTime)).SetId(component.GetInstanceID()).OnComplete(() =>
+        cell.DOLocalMoveY(config.GetValue(EGameValue.CellUpY), config.GetValue(EGameValue.CellIncreaseSpeed)).SetDelay(config.GetValue(EGameValue.CellBackTime)).SetId(component.GetInstanceID()).OnComplete(() =>
         {
             component.SetUp(false);
             component.SetColor(Color.white);
