@@ -15,7 +15,7 @@ public class DeathCollisionSystem : GameSystem, IIniting
 
     void Death(Transform other, Transform @object)
     {
-        if (other.CompareTag("Death"))
+        if (other.CompareTag("Death") || other.CompareTag("Cell") && game.cellDictionary[other.parent].IsUp)
         {
             var character = game.characterDictionary[@object];
             character.rigidbody.gameObject.SetActive(false);

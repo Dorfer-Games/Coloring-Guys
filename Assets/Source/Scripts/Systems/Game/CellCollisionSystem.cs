@@ -47,10 +47,14 @@ public class CellCollisionSystem : GameSystem, IIniting
         var seq = DOTween.Sequence();
         var color = Color.white;
 
-        component.SetDown(true);
+        //component.SetUp(true);
 
-        seq.Append(DOTween.To(() => color, x => color = x, Color.red, config.GetValue(EGameValue.CellFadeTime)).OnUpdate(() => component.SetColor(color)).SetEase(Ease.OutCubic));
-        seq.Append(other.DOLocalMoveY(-20, config.GetValue(EGameValue.CellFallTime)).SetEase(Ease.Linear));
+        seq.Append(DOTween.To(() => color, x => color = x, Color.red, config.GetValue(EGameValue.CellFadeTime)).OnUpdate(() => component.SetColor(color)).SetEase(Ease.OutCubic).OnComplete(() =>
+        {
+            component.SetUp(true);
+        }));
+        //seq.PrependInterval(config.GetValue(EGameValue.CellFadeTime));
+        seq.Append(other.DOLocalMoveY(4.4f, config.GetValue(EGameValue.CellFallTime)).SetEase(Ease.Linear));
         seq.OnComplete(() => BringCellBack(other));
         seq.SetId(component.GetInstanceID());
         seq.SetEase(Ease.Linear);
@@ -60,11 +64,12 @@ public class CellCollisionSystem : GameSystem, IIniting
     void BringCellBack(Transform cell)
     {
         var component = game.cellDictionary[cell.parent];
-        component.SetColor(Color.white);
+        component.SetColor(Color.red);
 
         cell.DOLocalMoveY(config.GetValue(EGameValue.CellUpY), config.GetValue(EGameValue.CellFallTime)).SetDelay(config.GetValue(EGameValue.CellBackTime)).SetId(component.GetInstanceID()).OnComplete(() =>
         {
-            component.SetDown(false);
+            component.SetUp(false);
+            component.SetColor(Color.white);
         });
     }
 }

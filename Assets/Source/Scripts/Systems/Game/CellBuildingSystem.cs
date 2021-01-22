@@ -21,7 +21,7 @@ public class CellBuildingSystem : GameSystem, IIniting
             var component = game.cellDictionary[other.parent];
             try
             {
-                if (component.IsDown && character.stacks > 0)
+                if (component.IsUp && character.stacks > 0)
                 {
                     if (DOTween.IsTweening(component.GetInstanceID()))
                     {
@@ -29,7 +29,7 @@ public class CellBuildingSystem : GameSystem, IIniting
                     }
 
                     character.stacks--;
-                    component.SetDown(false);
+                    component.SetUp(false);
                     component.SetColor(character.color);
                     component.Cell.transform.DOLocalMoveY(config.GetValue(EGameValue.CellUpY),0f);
 

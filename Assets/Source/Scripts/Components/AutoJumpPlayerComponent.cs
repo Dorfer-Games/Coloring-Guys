@@ -36,7 +36,7 @@ public class AutoJumpPlayerComponent : GameSystem
                 var cell = hit.collider.GetComponentInParent<CellComponent>();
                 if (!Jump && cell.Cell.transform.position.y < -7)
                 {
-                    if (cell.IsDown == true) {
+                    if (cell.IsUp == true) {
                         Signals.Get<JumpReadySignal>().Dispatch(0);
                         Jump = true;
                     }

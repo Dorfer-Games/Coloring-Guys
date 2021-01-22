@@ -10,7 +10,7 @@ public class OnTriggerCellChange : MonoBehaviour
     {
         if (other.transform.TryGetComponent<ColorStackComponent>(out var component))
         {
-            if (cellComponent.IsDown) {
+            if (cellComponent.IsUp) {
                 component.UpdatePosition();
             }
         }

@@ -15,15 +15,27 @@ public class CameraCinemachineComponent : MonoBehaviour
     [SerializeField] [BoxGroup("Settings LookAt Camera")] Vector3 target_rotationCamera;
 
     private CinemachineVirtualCamera virtualCamera;
-    
+    private CinemachineTransposer cinemachineTransposer;
+    private CinemachineComposer cinemachineComposer;
+
     private void Start()
     {
         // Получаем компоненты
         virtualCamera = GetComponent<CinemachineVirtualCamera>();
-        CinemachineTransposer cinemachineTransposer = virtualCamera.GetCinemachineComponent<CinemachineTransposer>();
-        CinemachineComposer cinemachineComposer = virtualCamera.GetCinemachineComponent<CinemachineComposer>();
+        cinemachineTransposer = virtualCamera.GetCinemachineComponent<CinemachineTransposer>();
+        cinemachineComposer = virtualCamera.GetCinemachineComponent<CinemachineComposer>();
 
 
+        #region Set Settings Camera
+        //Присваеваем наши настройки для камеры
+        cinemachineTransposer.m_FollowOffset = positionCamera;
+        cinemachineTransposer.m_YawDamping = smoothMovement;
+        cinemachineComposer.m_TrackedObjectOffset = target_rotationCamera;
+        #endregion
+    }
+
+    private void Update()
+    {
         #region Set Settings Camera
         //Присваеваем наши настройки для камеры
         cinemachineTransposer.m_FollowOffset = positionCamera;

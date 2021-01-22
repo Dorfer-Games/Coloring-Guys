@@ -86,7 +86,7 @@ public class NPCMovementSystem : GameSystem, IFixedUpdating
             try
             {
                 //Луч попал. Впереди есть место и клетка не опускается
-                if (Physics.Raycast(startPoint, Vector2.down, out var hit, downDistance, mask) && !game.cellDictionary[hit.transform.parent].IsDown)
+                if (Physics.Raycast(startPoint, Vector2.down, out var hit, downDistance, mask) && !game.cellDictionary[hit.transform.parent].IsUp)
                 {
 #if UNITY_EDITOR
                     Debug.DrawLine(startPoint, startPoint + Vector3.down, Color.green, 0.1f, false);
