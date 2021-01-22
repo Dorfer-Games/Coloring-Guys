@@ -8,6 +8,7 @@ public class AutoJumpPlayerComponent : GameSystem
     [SerializeField] private float offset; // смещение луча
     [SerializeField] private float distance; // дистанция луча
     [SerializeField] private float upPosition; // весота луча
+    [SerializeField] private float sidePosition; // боковая позция луча
     [SerializeField] private LayerMask mask;
 
     private bool thisPlayer; // если true, то значит это игрок, которым мы управляем
@@ -28,9 +29,9 @@ public class AutoJumpPlayerComponent : GameSystem
         if (thisPlayer)
         {
 #if UNITY_EDITOR
-            Debug.DrawRay(transform.position + (transform.up * upPosition) + (transform.forward * offset), -Vector3.up * distance, Color.black);
+            Debug.DrawRay(transform.position + (transform.up * upPosition) + (transform.forward * offset) + (transform.right * sidePosition), -Vector3.up * distance, Color.black);
 #endif
-            Ray ray = new Ray(transform.position + (transform.up * upPosition) + (transform.forward * offset), -Vector3.up * distance);
+            Ray ray = new Ray(transform.position + (transform.up * upPosition) + (transform.forward * offset) + (transform.right * sidePosition), -Vector3.up * distance);
             if (Physics.Raycast(ray, out var hit, distance, mask))
             {
                 try

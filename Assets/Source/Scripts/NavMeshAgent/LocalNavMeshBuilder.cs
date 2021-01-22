@@ -21,14 +21,8 @@ public class LocalNavMeshBuilder : MonoBehaviour
     {
         while (true)
         {
-            if (countUpdateStart > 0) {
                 UpdateNavMesh(true);
                 countUpdateStart--;
-            }
-            else
-            {
-                break;
-            }
             yield return m_Operation;
         }
     }
