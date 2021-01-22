@@ -573,6 +573,10 @@ PrefabInstance:
       propertyPath: numberStartGameText
       value: 
       objectReference: {fileID: 6764894861241317454}
+    - target: {fileID: 6298820699247899711, guid: 865d14520ea908b47818a741324e3095, type: 3}
+      propertyPath: safeRays
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6298820699435350832, guid: 865d14520ea908b47818a741324e3095, type: 3}
       propertyPath: nextPageButton
       value: 

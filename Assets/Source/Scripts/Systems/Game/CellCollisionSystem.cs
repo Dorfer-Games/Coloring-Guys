@@ -19,10 +19,10 @@ public class CellCollisionSystem : GameSystem, IIniting
     {
         if (other.CompareTag("Cell"))
         {
-            if (DOTween.IsTweening(other)) return;
+            var component = game.cellDictionary[other.parent];
+            if (DOTween.IsTweening(other) || component.IsGoingToGoUp) return;
 
             var character = game.characterDictionary[@object];
-            var component = game.cellDictionary[other.parent];
 
             if (character.color != component.Color)
             {
@@ -50,14 +50,13 @@ public class CellCollisionSystem : GameSystem, IIniting
 
         //component.SetUp(true);
 
-        seq.Append(DOTween.To(() => color, x => color = x, Color.red, config.GetValue(EGameValue.CellFadeTime)).OnUpdate(() => component.SetColor(color)).SetEase(Ease.OutCubic).OnComplete(() =>
-        {
-            component.SetUp(true);
-        }));
+        component.IsGoingToGoUp = true;
+
+        seq.Append(DOTween.To(() => color, x => color = x, Color.red, config.GetValue(EGameValue.CellFadeTime)).OnUpdate(() => component.SetColor(color)).SetEase(Ease.OutCubic));
         //seq.PrependInterval(config.GetValue(EGameValue.CellFadeTime));
-        //seq.Append(other.DOLocalMoveY(4.4f, config.GetValue(EGameValue.CellFallTime)).SetEase(Ease.Linear));
-        //seq.OnComplete(() => BringCellBack(other));
-        seq.OnComplete(() => StartCoroutine(CellMoving(cell, character)));
+        //seq.Append(cell.DOLocalMoveY(4.4f, config.GetValue(EGameValue.CellIncreaseTime)).SetEase(Ease.Linear));
+        //seq.OnComplete(() => BringCellBack(cell));
+        seq.OnComplete(() => StartCoroutine(CellMoving(cell, component, character)));
 
         seq.SetId(component.GetInstanceID());
         seq.SetEase(Ease.Linear);
@@ -65,17 +64,22 @@ public class CellCollisionSystem : GameSystem, IIniting
     }
 
 
-    IEnumerator CellMoving(Transform cell, Transform character)
+    IEnumerator CellMoving(Transform cell, CellComponent component, Transform character)
     {
         float needHight = 4.4f;
-        float baseHexIncreaseSpeed = config.GetValue(EGameValue.CellIncreaseSpeed);
+        float baseHexIncreaseSpeed = needHight / config.GetValue(EGameValue.CellIncreaseTime) ;
         float distnaceBetweenCellAndCharacter = GetDistance(character, cell);
         float cellSize = 1f;
-        while (distnaceBetweenCellAndCharacter <= 3f || cell.transform.position.y < needHight)
+        float startCellYAxisPos = cell.transform.position.y;
+        while (cell.transform.position.y < needHight)
         {
+            if (cell.transform.position.y - startCellYAxisPos >= 0.2f * needHight)
+            {
+                component.SetUp(true);
+            }
             distnaceBetweenCellAndCharacter = GetDistance(character, cell);
-            cell.transform.position += new Vector3(0, baseHexIncreaseSpeed * (distnaceBetweenCellAndCharacter / (3f * cellSize)),0);
-            yield return new WaitForSeconds(Time.deltaTime);
+            cell.transform.position += Vector3.up * baseHexIncreaseSpeed * Time.deltaTime* Mathf.Clamp(distnaceBetweenCellAndCharacter / (3f * cellSize), 0f, 1f);
+            yield return null;
         }
         cell.transform.position = new Vector3(cell.transform.position.x, needHight, cell.transform.position.z);
         BringCellBack(cell);
@@ -92,9 +96,10 @@ public class CellCollisionSystem : GameSystem, IIniting
         var component = game.cellDictionary[cell.parent];
         component.SetColor(Color.red);
 
-        cell.DOLocalMoveY(config.GetValue(EGameValue.CellUpY), config.GetValue(EGameValue.CellIncreaseSpeed)).SetDelay(config.GetValue(EGameValue.CellBackTime)).SetId(component.GetInstanceID()).OnComplete(() =>
+        cell.DOLocalMoveY(config.GetValue(EGameValue.CellUpY), config.GetValue(EGameValue.CellIncreaseTime)).SetDelay(config.GetValue(EGameValue.CellBackTime)).SetId(component.GetInstanceID()).OnComplete(() =>
         {
             component.SetUp(false);
+            component.IsGoingToGoUp = false;
             component.SetColor(Color.white);
         });
     }

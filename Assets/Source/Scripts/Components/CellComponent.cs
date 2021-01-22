@@ -9,6 +9,7 @@ public class CellComponent : MonoBehaviour
     [field: SerializeField] public GameObject Trigger { get; private set; } //Триггер. Включается, если реальный объект внизу (нужен для краски)
     [field: SerializeField] public Color Color { get; private set; }
     [field: SerializeField] public bool IsUp { get; set; }
+    [field: SerializeField] public bool IsGoingToGoUp { get; set; }
 
     // Красим через метод в тонком монобехе для сохранения принципа DRY.
     // Иначе кастомную логику краски придётся копировать в разных системах. (Сейчас покраска вызывается в 2ух системах)
@@ -27,4 +28,5 @@ public class CellComponent : MonoBehaviour
     {
         IsUp = isUp;
     }
+
 }
