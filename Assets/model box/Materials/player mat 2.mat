@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 3 1
-  m_Shader: {fileID: 4800000, guid: c5bd25fa1bf36184f8b15607cbb93929, type: 3}
+  m_Name: player mat 2
+  m_Shader: {fileID: 4800000, guid: 4cd3fcc9ab2dd7e49846ad00241ba4f6, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
@@ -40,11 +40,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: aac852532ef40cc4ea2faf71a3c4cb0b, type: 3}
-        m_Scale: {x: 200, y: 200}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MatCap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 29200e006ade536428fea64093a3bbe4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -59,10 +59,6 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _WiggleTex:
-        m_Texture: {fileID: 2800000, guid: f806cdf32dc8f0a44a58001db0867a80, type: 3}
-        m_Scale: {x: 20, y: 10}
-        m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
@@ -71,29 +67,30 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
-    - _Metallic: 0
+    - _Metallic: 0.45
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RampSmooth: 0.371
-    - _RampThreshold: 0
-    - _RimMax: 1.14
+    - _RampSmooth: 1
+    - _RampThreshold: 0.321
+    - _RimMax: 1.22
     - _RimMin: 0
-    - _Smoothness: 0
+    - _RimPower: 2.31
+    - _Shininess: 0.175
+    - _Smoothness: 0.01
     - _SmoothnessTextureChannel: 0
     - _SpecSmooth: 1
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _WiggleStrength: 0.1
     - _ZWrite: 1
     - __dummy__: 0
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.051397286, g: 0.7264151, b: 0.18015799, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _HColor: {r: 0.50614095, g: 0.57547146, b: 0.8867924, a: 1}
-    - _MatCapColor: {r: 1, g: 1, b: 1, a: 1}
-    - _RimColor: {r: 0.31990921, g: 0.7766784, b: 0.8584906, a: 0.6}
-    - _SColor: {r: 0.29436633, g: 0.39094567, b: 0.46226418, a: 1}
-    - _SpecColor: {r: 0.16037738, g: 0.16037738, b: 0.16037738, a: 1}
+    - _HColor: {r: 0.8396226, g: 0.8396226, b: 0.8396226, a: 1}
+    - _MatCapColor: {r: 0.25511748, g: 0.5943396, b: 0.26539692, a: 1}
+    - _RimColor: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 1}
+    - _SColor: {r: 0, g: 0.6415094, b: 0.33533445, a: 1}
+    - _SpecColor: {r: 0.8773585, g: 0.8773585, b: 0.8773585, a: 1}
   m_BuildTextureStacks: []
