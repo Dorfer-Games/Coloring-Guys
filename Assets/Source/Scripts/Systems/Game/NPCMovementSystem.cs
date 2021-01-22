@@ -5,12 +5,12 @@ using UnityEngine;
 public class NPCMovementSystem : GameSystem, IFixedUpdating
 {
     [Header("Distances")]
-    [SerializeField] float downDistance;
-    [SerializeField] float rayStep;
-    [SerializeField] float rayOffset;
+    [SerializeField] float lengthOfCkeckingRay;
+    [SerializeField] float stepOfRay;
+    [SerializeField] float startOffsetOfRay;
 
     [Header("Rays")]
-    [SerializeField] LayerMask mask;
+    [SerializeField] LayerMask groundLayer;
     [SerializeField] int maxRays = 12; //Кол-во проверок
     [SerializeField] int safeRays = 6; //Если до пропасти есть хотя бы столько проверок, то можно бежать вперёд
     [SerializeField] int safeRaysSide = 3; //Безопасное расстояние от края по бокам персонааж.
@@ -86,12 +86,12 @@ public class NPCMovementSystem : GameSystem, IFixedUpdating
         //Можно ли бежать вперёд?
         for (int i = 0; i < maxRays; i++)
         {
-            var startPoint = character.rigidbody.position + (direction * rayOffset) + (Vector3.up * 0.5f) + (direction * (rayStep * (i + 1)));
+            var startPoint = character.rigidbody.position + (direction * startOffsetOfRay) + (Vector3.up * 0.5f) + (direction * (stepOfRay * (i + 1)));
             var index = i;
             try
             {
                 //Луч попал. Впереди есть место и клетка не опускается
-                if (Physics.Raycast(startPoint, Vector2.down, out var hit, downDistance, mask) && !game.cellDictionary[hit.transform.parent].IsGoingToGoUp)
+                if (Physics.Raycast(startPoint, Vector2.down, out var hit, lengthOfCkeckingRay, groundLayer) && !game.cellDictionary[hit.transform.parent].IsGoingToGoUp)
                 {
 #if UNITY_EDITOR
                     Debug.DrawLine(startPoint, startPoint + Vector3.down, Color.green, 0.1f, false);
