@@ -30,6 +30,7 @@ public class CellBuildingSystem : GameSystem, IIniting
 
                     character.stacks--;
                     component.SetUp(false);
+                    component.IsGoingToGoUp = false;
                     component.SetColor(character.color);
                     component.Cell.transform.DOLocalMoveY(config.GetValue(EGameValue.CellUpY),0f);
 

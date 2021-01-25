@@ -19,26 +19,28 @@ public class CellCollisionSystem : GameSystem, IIniting
     {
         if (other.CompareTag("Cell"))
         {
-            var component = game.cellDictionary[other.parent];
-            if (DOTween.IsTweening(other) || component.IsGoingToGoUp) return;
+            var cellComponent = game.cellDictionary[other.parent];
+            var characterComponent = game.characterDictionary[@object];
 
-            var character = game.characterDictionary[@object];
+            if (DOTween.IsTweening(other) || cellComponent.IsGoingToGoUp) return;
 
-            if (character.color != component.Color)
+
+            if (characterComponent.color != cellComponent.Color)
             {
-                if (character.stacks > 0)
+                if (characterComponent.stacks > 0)
                 {
-                    ColorCell(character, component);
+                    ColorCell(characterComponent, cellComponent);
                 }
-                else FadeCell(other, component, @object);
+                else FadeCell(other, cellComponent, @object);
             }
 
-            Signals.Get<HexCountChangedSignal>().Dispatch(character, character.stacks);
+            Signals.Get<HexCountChangedSignal>().Dispatch(characterComponent, characterComponent.stacks);
         }
     }
 
     private static void ColorCell(Character character, CellComponent component)
     {
+        
         component.SetColor(character.color);
         character.stacks--;
     }
@@ -71,7 +73,7 @@ public class CellCollisionSystem : GameSystem, IIniting
         float distnaceBetweenCellAndCharacter = GetDistance(character, cell);
         float cellSize = 1f;
         float startCellYAxisPos = cell.transform.position.y;
-        while (cell.transform.position.y < needHight)
+        while (cell.transform.position.y < needHight && component.IsGoingToGoUp != false)
         {
             if (cell.transform.position.y - startCellYAxisPos >= 0.2f * needHight)
             {
@@ -81,8 +83,11 @@ public class CellCollisionSystem : GameSystem, IIniting
             cell.transform.position += Vector3.up * baseHexIncreaseSpeed * Time.deltaTime* Mathf.Clamp(distnaceBetweenCellAndCharacter / (3f * cellSize), 0f, 1f);
             yield return null;
         }
-        cell.transform.position = new Vector3(cell.transform.position.x, needHight, cell.transform.position.z);
-        BringCellBack(cell);
+        if (component.IsGoingToGoUp)
+        {
+            cell.transform.position = new Vector3(cell.transform.position.x, needHight, cell.transform.position.z);
+            BringCellBack(cell);
+        }
     }
 
     private static float GetDistance(Transform character, Transform cell)
