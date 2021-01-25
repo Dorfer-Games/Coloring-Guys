@@ -1084,6 +1084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e92cece3e98298b45bf3d64a1f5fcfdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VFXExplosionEffectsPrefab: {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
 --- !u!1 &6298820698727188537
 GameObject:
   m_ObjectHideFlags: 0
@@ -1311,14 +1312,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9943f56893d6c974e9b8fe808c1c04f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  downDistance: 1
-  rayStep: 1
-  rayOffset: 3
-  mask:
+  lengthOfCkeckingRay: 1
+  stepOfRay: 1
+  startOffsetOfRay: 3
+  groundLayer:
     serializedVersion: 2
     m_Bits: 256
-  maxRays: 15
-  safeRays: 7
+  maxRays: 6
+  safeRays: 1
   safeRaysSide: 7
   raysToJump: 2
   safeRaySideBeforeJump: 1
