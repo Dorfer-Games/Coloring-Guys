@@ -11,5 +11,7 @@ namespace Kuhpik
     {
         public int level;
         public int money;
+        public int numberIterationLevels;
+        public int lastIterationLevels;
     }
 }

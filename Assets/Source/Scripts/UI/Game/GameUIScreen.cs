@@ -13,6 +13,7 @@ public class GameUIScreen : UIScreen
     [SerializeField] private TextMeshProUGUI level;
 
     [field: SerializeField] public RectTransform Leaderboard { get; private set; }
+    [field: SerializeField] public RectTransform Smiles { get; private set; }
 
     bool canDisplayNotification = true;
 

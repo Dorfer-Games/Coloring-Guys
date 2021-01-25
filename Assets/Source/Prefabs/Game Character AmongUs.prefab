@@ -49,7 +49,7 @@ MeshRenderer:
   m_GameObject: {fileID: 2984377122475360731}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -292,8 +292,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0503879, y: 2.2313902, z: 1.4788189}
-  m_Center: {x: 0.032136004, y: 1.1201247, z: -0.27468476}
+  m_Size: {x: 1.0503879, y: 2.2313902, z: 1.377857}
+  m_Center: {x: 0.032135982, y: 1.1201247, z: -0.32516554}
 --- !u!114 &6162855981926546104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,6 +343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bf21eb76f6791c4b856ff52b659146b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lastCollisionPlayer: {fileID: 0}
   VFXCollisionEffects: {fileID: 6162855982579314168}
 --- !u!82 &6162855981926546084
 AudioSource:
@@ -356,7 +357,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d616d7e5f2220104c9c9b0a7643c4023, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -478,9 +479,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a7ce858a0b48c34a9c42dc5a6b83184, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: 2.5
+  offset: 2.35
   distance: 3
-  upPosition: 0
+  upPosition: 0.3
+  sidePosition: 0
   mask:
     serializedVersion: 2
     m_Bits: 256
@@ -6645,7 +6647,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6162855983795384054}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.007, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 6162855983645943247}
@@ -6660,7 +6662,7 @@ SkinnedMeshRenderer:
   m_GameObject: {fileID: 6162855983795384054}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1

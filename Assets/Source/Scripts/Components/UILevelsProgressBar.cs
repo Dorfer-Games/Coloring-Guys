@@ -1,11 +1,11 @@
 ﻿using UnityEngine.UI;
-
+using TMPro;
 using UnityEngine;
 
 public class UILevelsProgressBar : MonoBehaviour
 {
-    [Header("Settings")]
     [SerializeField] private GameObject process, passed, notPassed;
+    [SerializeField] private TMP_Text numberText;
 
 
     public void NotPassed()
@@ -27,5 +27,9 @@ public class UILevelsProgressBar : MonoBehaviour
         process.SetActive(true);
         notPassed.SetActive(false);
         passed.SetActive(false);
+    }
+    public void SetText(int levelCount)
+    {
+        numberText.text = levelCount.ToString();
     }
 }

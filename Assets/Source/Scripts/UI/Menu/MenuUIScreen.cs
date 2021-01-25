@@ -5,6 +5,7 @@ using TMPro;
 public class MenuUIScreen : UIScreen
 {
     [field: SerializeField] public Button TapToRestartButton;
+    [field: SerializeField] public Transform LevelsProgressBar;
     
 
     

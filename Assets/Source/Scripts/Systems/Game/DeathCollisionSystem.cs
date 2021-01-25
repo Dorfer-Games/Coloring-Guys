@@ -42,6 +42,7 @@ public class DeathCollisionSystem : GameSystem, IIniting
                     game.characters[0].audioComponent.DisabledAudio();
                 }
             }
+            Bootstrap.GetSystem<SmilesSystem>().CreateSmiles(@object, character.onTriggerEnterImpact.lastCollisionPlayer, false);
         }
     }
 }

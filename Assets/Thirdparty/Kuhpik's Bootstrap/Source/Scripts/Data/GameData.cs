@@ -11,6 +11,7 @@ namespace Kuhpik
         public GameObject level;
         public Character[] characters;
 
+
         public bool isVictory;
 
         //-----------Helping-------------//
