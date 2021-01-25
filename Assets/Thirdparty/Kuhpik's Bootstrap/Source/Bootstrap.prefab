@@ -437,10 +437,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTesting: 0
   playerData:
-    level: 20
+    level: 89
     money: 0
     numberIterationLevels: 0
-    lastIterationLevels: 0
+    lastIterationLevels: 80
 --- !u!1 &3322304284965847664
 GameObject:
   m_ObjectHideFlags: 0
@@ -1669,17 +1669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f074a9a95f8b1b847bda2887dd596fe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelsProgressBars:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  levelsProgressBars: []
   levelsProgressBarUI: {fileID: 778550314400312123, guid: be210c594fd8a1341be249fd3c37f3eb, type: 3}
   parentScreen: {fileID: 0}
 --- !u!1 &6298820699898612295

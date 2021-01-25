@@ -15,6 +15,7 @@ public class UIControllerLevels : GameSystem, IIniting
         LevelLoadingSystem.loadingSystem.OnLevel += (x) => {
             number_Level = LevelLoadingSystem.loadingSystem.levelAmount;
         };
+        levelsProgressBars = new UILevelsProgressBar[LevelLoadingSystem.loadingSystem.countLevelsFirstIteration + 1];
     }
 
     void IIniting.OnInit()
