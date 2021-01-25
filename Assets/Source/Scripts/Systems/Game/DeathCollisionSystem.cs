@@ -77,10 +77,8 @@ public class DeathCollisionSystem : GameSystem, IIniting
     private void PlayVFX(Transform character)
     {
         GameObject VFXobject = Instantiate(VFXExplosionEffectsPrefab, character.position, Quaternion.identity);
-        VFXobject.transform.localScale = new Vector3(10f,10f,10f);
-        ParticleSystem particleSystem = VFXobject.GetComponent<ParticleSystem>();
-        particleSystem.startColor = game.characterDictionary[character].color;
-        particleSystem.Play();
+        ColorComponent particleSystem = VFXobject.GetComponent<ColorComponent>();
+        particleSystem.color = game.characterDictionary[character].color;
         //Destroy(VFXobject, 2f);
     }
 }

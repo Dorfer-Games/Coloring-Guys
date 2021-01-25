@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 19800000}
   - component: {fileID: 19900000}
   - component: {fileID: 11400000}
+  - component: {fileID: 5562128893903016857}
+  - component: {fileID: 4254128764985692323}
   m_Layer: 0
   m_Name: CFX_Hit_C White
   m_TagString: FxTemporaire
@@ -4822,12 +4824,38 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100000}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6fd2e8874f60266498a388d7229a1bac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OnlyDeactivate: 0
+--- !u!114 &5562128893903016857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfdc3cdf4b81dc045b67dcf66a0b9ec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 0, g: 0.0033602715, b: 1, a: 1}
+--- !u!114 &4254128764985692323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac93ab2b0abd21347aa1e73a3ba7adaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorComponent: {fileID: 5562128893903016857}
 --- !u!1 &494300211026943247
 GameObject:
   m_ObjectHideFlags: 0
@@ -4839,6 +4867,7 @@ GameObject:
   - component: {fileID: 3703520362101296899}
   - component: {fileID: 3086915332863458664}
   - component: {fileID: 4133476045501808340}
+  - component: {fileID: 2434803924054868543}
   m_Layer: 0
   m_Name: Rings
   m_TagString: Untagged
@@ -9527,6 +9556,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &2434803924054868543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494300211026943247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac93ab2b0abd21347aa1e73a3ba7adaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorComponent: {fileID: 5562128893903016857}
 --- !u!1 &2182073335282158808
 GameObject:
   m_ObjectHideFlags: 0
@@ -9538,6 +9580,7 @@ GameObject:
   - component: {fileID: 8985769592997693456}
   - component: {fileID: 3583136319842127399}
   - component: {fileID: 4218854957714189961}
+  - component: {fileID: 976366494528649762}
   m_Layer: 0
   m_Name: sparksTrail
   m_TagString: Untagged
@@ -14406,6 +14449,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &976366494528649762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2182073335282158808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac93ab2b0abd21347aa1e73a3ba7adaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorComponent: {fileID: 5562128893903016857}
 --- !u!1 &2545139582872263381
 GameObject:
   m_ObjectHideFlags: 0
@@ -14417,6 +14473,7 @@ GameObject:
   - component: {fileID: 391186125860611261}
   - component: {fileID: 3990920252255172707}
   - component: {fileID: 896531824893062325}
+  - component: {fileID: 5216037781951393781}
   m_Layer: 0
   m_Name: Dust
   m_TagString: Untagged
@@ -19132,6 +19189,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &5216037781951393781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2545139582872263381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac93ab2b0abd21347aa1e73a3ba7adaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorComponent: {fileID: 5562128893903016857}
 --- !u!1 &2611423708919620022
 GameObject:
   m_ObjectHideFlags: 0
@@ -19143,6 +19213,7 @@ GameObject:
   - component: {fileID: 4080961109111522241}
   - component: {fileID: 8564881233733881373}
   - component: {fileID: 3332096321150393349}
+  - component: {fileID: 621514674111583057}
   m_Layer: 0
   m_Name: BlueUltimateNova
   m_TagString: Untagged
@@ -23893,6 +23964,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &621514674111583057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2611423708919620022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac93ab2b0abd21347aa1e73a3ba7adaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorComponent: {fileID: 5562128893903016857}
 --- !u!1 &4944634856369270375
 GameObject:
   m_ObjectHideFlags: 0
@@ -23904,6 +23988,7 @@ GameObject:
   - component: {fileID: 111147788634446696}
   - component: {fileID: 7258551763474604290}
   - component: {fileID: 4512707463730781467}
+  - component: {fileID: 4268014331754610661}
   m_Layer: 0
   m_Name: LensFlare
   m_TagString: Untagged
@@ -28709,6 +28794,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &4268014331754610661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4944634856369270375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac93ab2b0abd21347aa1e73a3ba7adaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorComponent: {fileID: 0}
 --- !u!1 &5413519046165031981
 GameObject:
   m_ObjectHideFlags: 0
@@ -28720,6 +28818,7 @@ GameObject:
   - component: {fileID: 6300709444598106081}
   - component: {fileID: 5003253357461882580}
   - component: {fileID: 4235855126346479943}
+  - component: {fileID: 8431888546021140986}
   m_Layer: 0
   m_Name: sparks
   m_TagString: Untagged
@@ -33580,6 +33679,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &8431888546021140986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5413519046165031981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac93ab2b0abd21347aa1e73a3ba7adaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorComponent: {fileID: 5562128893903016857}
 --- !u!1 &6040517243160235897
 GameObject:
   m_ObjectHideFlags: 0
@@ -33591,6 +33703,7 @@ GameObject:
   - component: {fileID: 1587087007826428936}
   - component: {fileID: 2169128682591102285}
   - component: {fileID: 982039177923232366}
+  - component: {fileID: 1157696440502511631}
   m_Layer: 0
   m_Name: Ring3D
   m_TagString: Untagged
@@ -38279,6 +38392,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &1157696440502511631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6040517243160235897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac93ab2b0abd21347aa1e73a3ba7adaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorComponent: {fileID: 5562128893903016857}
 --- !u!1 &6444088652419343467
 GameObject:
   m_ObjectHideFlags: 0
@@ -38290,6 +38416,7 @@ GameObject:
   - component: {fileID: 5405230938730632321}
   - component: {fileID: 6626977557676712232}
   - component: {fileID: 1456429197652357123}
+  - component: {fileID: 1065184038754978218}
   m_Layer: 0
   m_Name: CubesExplosionHuge
   m_TagString: Untagged
@@ -43169,3 +43296,16 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &1065184038754978218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6444088652419343467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac93ab2b0abd21347aa1e73a3ba7adaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorComponent: {fileID: 5562128893903016857}
