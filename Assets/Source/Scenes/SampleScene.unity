@@ -587,6 +587,30 @@ PrefabInstance:
       propertyPath: numberStartGameText
       value: 
       objectReference: {fileID: 5762588753042131147}
+    - target: {fileID: 6298820699247899711, guid: 865d14520ea908b47818a741324e3095, type: 3}
+      propertyPath: maxRays
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6298820699247899711, guid: 865d14520ea908b47818a741324e3095, type: 3}
+      propertyPath: safeRays
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6298820699247899711, guid: 865d14520ea908b47818a741324e3095, type: 3}
+      propertyPath: stepOfRay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6298820699247899711, guid: 865d14520ea908b47818a741324e3095, type: 3}
+      propertyPath: startOffsetOfRay
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6298820699247899711, guid: 865d14520ea908b47818a741324e3095, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 6298820699247899711, guid: 865d14520ea908b47818a741324e3095, type: 3}
+      propertyPath: lengthOfCkeckingRay
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6298820699435350832, guid: 865d14520ea908b47818a741324e3095, type: 3}
       propertyPath: nextPageButton
       value: 
