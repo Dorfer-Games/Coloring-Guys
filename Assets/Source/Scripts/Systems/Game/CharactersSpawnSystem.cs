@@ -1,5 +1,6 @@
 ﻿using Kuhpik;
 using System.Linq;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CharactersSpawnSystem : GameSystem, IIniting
@@ -20,6 +21,7 @@ public class CharactersSpawnSystem : GameSystem, IIniting
 
 
             game.characters[i] = new Character();
+            game.characters[i].increasedCells = new List<CellComponent>();
             game.characters[i].rigidbody = character.GetComponent<Rigidbody>();
             game.characters[i].animator = character.transform.Find("bandit").GetComponent<Animator>();
             game.characters[i].color = characterColors[i];

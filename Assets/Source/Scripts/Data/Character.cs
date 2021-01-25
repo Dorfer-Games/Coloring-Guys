@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 public class Character
 {
@@ -11,6 +12,7 @@ public class Character
     public bool isJumping;
     public bool isDeath;
     public bool isPlayer;
+    public List<CellComponent> increasedCells;
 
     public OnTriggerEnterImpactComponent onTriggerEnterImpact;
     public OnTriggerEnterComponent onTriggerComponent;

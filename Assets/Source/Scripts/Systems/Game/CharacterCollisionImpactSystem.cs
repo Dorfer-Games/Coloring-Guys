@@ -2,6 +2,9 @@
 using NaughtyAttributes;
 using UnityEngine;
 using System.Collections;
+using DG.Tweening;
+using System;
+
 public class CharacterCollisionImpactSystem : GameSystem, IIniting
 {
     [SerializeField] [Tag] string collisionTag;
@@ -21,6 +24,10 @@ public class CharacterCollisionImpactSystem : GameSystem, IIniting
     {
         if (isCollision && other.transform.CompareTag(collisionTag)) 
         {
+            SetDownCells(game.characterDictionary[other]);
+            SetDownCells(game.characterDictionary[mainObject]);
+
+
             game.characterDictionary[other].rigidbody.velocity = new Vector3(0f,0f,0f);
             var normalized = (other.position - mainObject.position).normalized;
             game.characterDictionary[other].rigidbody.AddForce((normalized * config.GetValue(EGameValue.HitImpulse)) + Vector3.up * (config.GetValue(EGameValue.HitImpulse)  - 30f), ForceMode.Impulse);
@@ -36,6 +43,23 @@ public class CharacterCollisionImpactSystem : GameSystem, IIniting
         }
     }
 
+    private void SetDownCells(Character character)
+    {
+        var cells = character.increasedCells;
+        foreach(CellComponent cellComponent in cells)
+        {
+            if (cellComponent.Color == character.color)
+            {
+                continue;
+            }
+            cellComponent.SetUp(false);
+            cellComponent.IsGoingToGoUp = false;
+            cellComponent.Cell.transform.DOLocalMoveY(config.GetValue(EGameValue.CellUpY), 0f);
+            cellComponent.CharacterWhoCollored = null;
+            cellComponent.SetColor(Color.white);
+        }
+        character.increasedCells.Clear();
+    }
 
     private IEnumerator SetCollision()
     {

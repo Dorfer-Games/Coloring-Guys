@@ -12,8 +12,27 @@ public class CellCollisionSystem : GameSystem, IIniting
         foreach (var character in game.characters)
         {
             character.onCollisionComponent.OnEnter += ColorCell;
+            character.onCollisionComponent.OnEnter += SetPlayersCells;
         }
     }
+
+    void SetPlayersCells(Transform other, Transform @object)
+    {
+        if (other.CompareTag("Cell"))
+        {
+
+            var cellComponent = game.cellDictionary[other.parent];
+            var characterComponent = game.characterDictionary[@object];
+
+            if (cellComponent.CharacterWhoCollored == null)
+            {
+                cellComponent.CharacterWhoCollored = characterComponent;
+                characterComponent.increasedCells.Add(cellComponent);
+            }
+        }
+        
+    }
+
 
     void ColorCell(Transform other, Transform @object)
     {
@@ -87,6 +106,12 @@ public class CellCollisionSystem : GameSystem, IIniting
         {
             cell.transform.position = new Vector3(cell.transform.position.x, needHight, cell.transform.position.z);
             BringCellBack(cell);
+        }
+        else
+        {
+            component.SetUp(false);
+            component.IsGoingToGoUp = false;
+            component.SetColor(Color.white);
         }
     }
 

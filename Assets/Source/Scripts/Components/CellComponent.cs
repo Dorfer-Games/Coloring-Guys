@@ -12,6 +12,7 @@ public class CellComponent : MonoBehaviour
     [field: SerializeField] public Color Color { get; private set; }
     [field: SerializeField] public bool IsUp { get; set; }
     [field: SerializeField] public bool IsGoingToGoUp { get; set; }
+    [field: SerializeField] public Character CharacterWhoCollored { get; set; }
 
     // Красим через метод в тонком монобехе для сохранения принципа DRY.
     // Иначе кастомную логику краски придётся копировать в разных системах. (Сейчас покраска вызывается в 2ух системах)
