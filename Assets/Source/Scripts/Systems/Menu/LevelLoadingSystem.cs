@@ -1,4 +1,4 @@
-п»їusing DG.Tweening;
+using DG.Tweening;
 using Kuhpik;
 using Supyrb;
 using System.Linq;
@@ -10,7 +10,7 @@ public class LevelLoadingSystem : GameSystem, IIniting, IDisposing
     public GameObject[] levels;
     public int currentLevel = 0;
 
-    public int countLevelsFirstIteration = 9; // РєРѕР»РёС‡РµСЃС‚РІРѕ СѓСЂРѕРІРЅРµР№ РІ РѕРґРЅРѕР№ РёС‚РµСЂР°С†РёРё. 9, РїРѕС‚РѕРјСѓ С‡С‚Рѕ РѕС‚СЃС‡С‘С‚ РёРґС‘С‚ СЃ 0
+    public int countLevelsFirstIteration = 9; // количество уровней в одной итерации. 9, потому что отсчёт идёт с 0
 
     public System.Action<int> OnLevel;
 
@@ -30,17 +30,19 @@ public class LevelLoadingSystem : GameSystem, IIniting, IDisposing
     {
         #region Loading Levels
         levelAmount = player.level - player.lastIterationLevels;
-        print(player.lastIterationLevels);
+        
         if (levelAmount > countLevelsFirstIteration)
             {
-            if (player.numberIterationLevels < levels.Length)
+            if (player.numberIterationLevels < (levels.Length - 1))
             {
                 player.numberIterationLevels++;
             }
-            else
+            else //if (player.numberIterationLevels > (levels.Length - 1))
+
             {
                 player.numberIterationLevels = 0;
             }
+print(player.numberIterationLevels);
             player.lastIterationLevels = player.level;
             levelAmount = player.level - player.lastIterationLevels;
             CreateLevel(player.numberIterationLevels);
