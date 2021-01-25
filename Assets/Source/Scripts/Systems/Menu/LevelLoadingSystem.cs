@@ -1,6 +1,7 @@
 using DG.Tweening;
 using Kuhpik;
 using Supyrb;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -58,6 +59,7 @@ print(player.numberIterationLevels);
     private void CreateLevel(int level)
     {
         OnLevel?.Invoke(player.level);
+        SendAppMetrica();
         game.level = Instantiate(levels[level]);
         game.cellDictionary = FindObjectsOfType<CellComponent>().ToDictionary(x => x.transform, x => x);
         game.cellsList = FindObjectsOfType<CellComponent>();
@@ -69,6 +71,16 @@ print(player.numberIterationLevels);
     }
 
 
+    private void SendAppMetrica()
+    {
+        var @params = new Dictionary<string, object>()
+        {
+            { "level", player.level + 1 }
+        };
+
+        AppMetrica.Instance.ReportEvent("level_start", @params);
+        AppMetrica.Instance.SendEventsBuffer();
+    }
     void IDisposing.OnDispose()
     {
         Signals.Clear();

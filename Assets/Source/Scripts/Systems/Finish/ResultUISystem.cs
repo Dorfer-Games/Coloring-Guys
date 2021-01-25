@@ -1,4 +1,5 @@
 ﻿using Kuhpik;
+using System.Collections.Generic;
 
 public class ResultUISystem : GameSystemWithScreen<FinishUIScreen>, IIniting
 {
@@ -23,15 +24,29 @@ public class ResultUISystem : GameSystemWithScreen<FinishUIScreen>, IIniting
             game.characters[i].animator.SetBool("idle", true);
         }
         HapticSystem.hapticSystem.VibrateLong();
-        screen.TryAgainButton.onClick.AddListener(() => Bootstrap.GameRestart(0));
-        screen.NextButton.onClick.AddListener(() => Level());
+        screen.TryAgainButton.onClick.AddListener(() => LevelNotVictory());
+        screen.NextButton.onClick.AddListener(() => LevelVictory());
     }
 
+    private void SendAppMetrica()
+    {
+        var @params = new Dictionary<string, object>()
+        {
+            { "level", player.level + 1 }
+        };
 
+        AppMetrica.Instance.ReportEvent("level_finish", @params);
+        AppMetrica.Instance.SendEventsBuffer();
+    }
 
-    private void Level()
+    private void LevelVictory()
     {
         LevelLoadingSystem.loadingSystem.AddLevel();
         MoneyRewardedSystem.rewardedSystem.AnimationStart();
+    }
+    private void LevelNotVictory()
+    {
+        SendAppMetrica();
+        Bootstrap.GameRestart(0);
     }
 }
