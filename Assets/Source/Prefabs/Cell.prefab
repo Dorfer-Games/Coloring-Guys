@@ -270,10 +270,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 2845138051292652452}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
   <Cell>k__BackingField: {fileID: 1397995951396388623}
   <Trigger>k__BackingField: {fileID: 4475343286660289413}
   <Color>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
-  <IsDown>k__BackingField: 0
+  <IsUp>k__BackingField: 0
+  <IsGoingToGoUp>k__BackingField: 0
 --- !u!1 &7131139080726835489
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,10 +1,13 @@
 ﻿using Kuhpik;
 using Supyrb;
+using DG.Tweening;
+using System;
 using System.Linq;
 using UnityEngine;
 
 public class DeathCollisionSystem : GameSystem, IIniting
 {
+    [SerializeField] private GameObject VFXExplosionEffectsPrefab;
     void IIniting.OnInit()
     {
         foreach (var character in game.characters)
@@ -20,6 +23,11 @@ public class DeathCollisionSystem : GameSystem, IIniting
             var character = game.characterDictionary[@object];
             character.rigidbody.gameObject.SetActive(false);
             character.isDeath = true;
+            PlayVFX(@object);
+            if (other.CompareTag("Cell"))
+            {
+                ColorCellAround(other, @object);
+            }
 
             if (character == game.characters[0])
             {
@@ -44,5 +52,35 @@ public class DeathCollisionSystem : GameSystem, IIniting
             }
             Bootstrap.GetSystem<SmilesSystem>().CreateSmiles(@object, character.onTriggerEnterImpact.lastCollisionPlayer, false);
         }
+    }
+
+    private void ColorCellAround(Transform cell, Transform character)
+    {
+        
+        var cellComponent = game.cellDictionary[cell.parent];
+        var characterComponent = game.characterDictionary[character];
+        ColorCell(game.cellDictionary[cell.parent], characterComponent);
+        foreach(CellComponent cellComponent1 in cellComponent.GetCellsAround())
+        {
+            ColorCell(cellComponent1, characterComponent);
+        }
+    }
+
+    private void ColorCell(CellComponent cellComponent, Character characterComponent)
+    {
+        cellComponent.SetUp(false);
+        cellComponent.IsGoingToGoUp = false;
+        cellComponent.SetColor(characterComponent.color);
+        cellComponent.Cell.transform.DOLocalMoveY(config.GetValue(EGameValue.CellUpY), 0f);
+    }
+
+    private void PlayVFX(Transform character)
+    {
+        GameObject VFXobject = Instantiate(VFXExplosionEffectsPrefab, character.position, Quaternion.identity);
+        VFXobject.transform.localScale = new Vector3(10f,10f,10f);
+        ParticleSystem particleSystem = VFXobject.GetComponent<ParticleSystem>();
+        particleSystem.startColor = game.characterDictionary[character].color;
+        particleSystem.Play();
+        //Destroy(VFXobject, 2f);
     }
 }

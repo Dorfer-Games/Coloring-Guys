@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 7076477203242964195}
   - component: {fileID: 7076477203242964192}
   m_Layer: 8
-  m_Name: Cell 1
+  m_Name: Cell_new
   m_TagString: Cell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -378,10 +378,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 9213545888090966544}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
   <Cell>k__BackingField: {fileID: 4528873768139073331}
   <Trigger>k__BackingField: {fileID: 7076477204467778967}
   <Color>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
-  <IsDown>k__BackingField: 0
+  <IsUp>k__BackingField: 0
+  <IsGoingToGoUp>k__BackingField: 0
 --- !u!1 &7076477204467778967
 GameObject:
   m_ObjectHideFlags: 0
