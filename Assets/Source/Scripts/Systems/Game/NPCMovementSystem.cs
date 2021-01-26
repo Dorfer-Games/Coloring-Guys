@@ -84,7 +84,7 @@ public class NPCMovementSystem : GameSystem, IFixedUpdating, IIniting
                     passedTimeOnCheckRightSide[i] = 0;
                     continue;
                 }
-                if (RandomPathing(i, leftEmpty, rightEmpty)) { continue; }
+                //if (RandomPathing(i, leftEmpty, rightEmpty)) { continue; }
             }
              else
              {
@@ -94,7 +94,7 @@ public class NPCMovementSystem : GameSystem, IFixedUpdating, IIniting
                     passedTimeOnCheckRightSide[i] = 0;
                     continue;
                 }
-                if(RandomPathing(i, rightEmpty, leftEmpty)) { continue; }
+                //if(RandomPathing(i, rightEmpty, leftEmpty)) { continue; }
              
             }
         }

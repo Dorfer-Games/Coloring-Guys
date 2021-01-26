@@ -26,6 +26,8 @@ public class CharacterCollisionImpactSystem : GameSystem, IIniting
         {
             SetDownCells(game.characterDictionary[other]);
             SetDownCells(game.characterDictionary[mainObject]);
+            StartCoroutine(SuspendIncreasing(game.characterDictionary[other]));
+            StartCoroutine(SuspendIncreasing(game.characterDictionary[mainObject]));
 
 
             game.characterDictionary[other].rigidbody.velocity = new Vector3(0f,0f,0f);
@@ -41,6 +43,13 @@ public class CharacterCollisionImpactSystem : GameSystem, IIniting
             if (mainObject.transform.name == "Player")
             AudioSysytem.audioSysytem.AudioCollision();
         }
+    }
+
+    IEnumerator SuspendIncreasing(Character character)
+    {
+        character.canIncreaseCells = false;
+        yield return new WaitForSeconds(config.GetValue(EGameValue.SuspendIncreasTime));
+        character.canIncreaseCells = true;
     }
 
     private void SetDownCells(Character character)

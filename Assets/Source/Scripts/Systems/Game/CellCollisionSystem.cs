@@ -50,7 +50,11 @@ public class CellCollisionSystem : GameSystem, IIniting
                 {
                     ColorCell(characterComponent, cellComponent);
                 }
-                else FadeCell(other, cellComponent, @object);
+                else if (characterComponent.canIncreaseCells)
+                {
+                    FadeCell(other, cellComponent, @object);
+                }
+
             }
 
             Signals.Get<HexCountChangedSignal>().Dispatch(characterComponent, characterComponent.stacks);
@@ -66,24 +70,40 @@ public class CellCollisionSystem : GameSystem, IIniting
 
     private void FadeCell(Transform cell, CellComponent component, Transform character)
     {
-        var seq = DOTween.Sequence();
+        //var seq = DOTween.Sequence();
         var color = Color.white;
 
         //component.SetUp(true);
 
         component.IsGoingToGoUp = true;
 
-        seq.Append(DOTween.To(() => color, x => color = x, Color.red, config.GetValue(EGameValue.CellFadeTime)).OnUpdate(() => component.SetColor(color)).SetEase(Ease.OutCubic));
+        //seq.Append(DOTween.To(() => color, x => color = x, Color.red, config.GetValue(EGameValue.CellFadeTime)).OnUpdate(() => component.SetColor(color)).SetEase(Ease.OutCubic));
+        StartCoroutine(CellColorTransition(cell, component, character));
         //seq.PrependInterval(config.GetValue(EGameValue.CellFadeTime));
         //seq.Append(cell.DOLocalMoveY(4.4f, config.GetValue(EGameValue.CellIncreaseTime)).SetEase(Ease.Linear));
         //seq.OnComplete(() => BringCellBack(cell));
-        seq.OnComplete(() => StartCoroutine(CellMoving(cell, component, character)));
+        //seq.OnComplete(() => StartCoroutine(CellMoving(cell, component, character)));
 
-        seq.SetId(component.GetInstanceID());
+        /*seq.SetId(component.GetInstanceID());
         seq.SetEase(Ease.Linear);
-        seq.Play();
+        seq.Play();*/
     }
 
+    IEnumerator CellColorTransition(Transform cell, CellComponent component, Transform character)
+    {
+        Color currentColor = component.Color;
+        Color needColor = Color.red;
+        Vector4 stepColor = needColor - currentColor;
+        Vector4 vectorsDif = (Vector4)needColor - (Vector4)component.Color;
+        while (vectorsDif.x + vectorsDif.y + vectorsDif.z < 0 && component.IsGoingToGoUp != false)
+        {
+            component.SetColor((Vector4)component.Color + stepColor * Time.deltaTime);
+            vectorsDif = (Vector4)needColor - (Vector4)component.Color;
+            yield return null;
+        }
+        component.SetColor(needColor);
+        StartCoroutine(CellMoving(cell, component, character));
+    }
 
     IEnumerator CellMoving(Transform cell, CellComponent component, Transform character)
     {

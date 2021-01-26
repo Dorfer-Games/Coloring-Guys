@@ -45,7 +45,7 @@ public class CharactersSpawnSystem : GameSystem, IIniting
 
             if (i != 0)
             {
-                game.characters[i].levelOfMistake = 1;
+                game.characters[i].levelOfMistake = 0;
             }
         }        
 

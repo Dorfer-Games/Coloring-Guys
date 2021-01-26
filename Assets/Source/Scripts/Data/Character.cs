@@ -12,6 +12,7 @@ public class Character
     public bool isJumping;
     public bool isDeath;
     public bool isPlayer;
+    public bool canIncreaseCells = true;
     public int levelOfMistake;
     public List<CellComponent> increasedCells;
 

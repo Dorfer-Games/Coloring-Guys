@@ -25,7 +25,8 @@ namespace Kuhpik
         ColorSpawnDelay,
 
         ForceTrapImpulse,
-        CellUpY
+        CellUpY,
+        SuspendIncreasTime
 
     }
 
