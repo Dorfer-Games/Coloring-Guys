@@ -76,7 +76,7 @@ Material:
     - _RimMax: 0.51
     - _RimMin: 0.15
     - _RimPower: 1.13
-    - _Shininess: 0.217
+    - _Shininess: 0.404
     - _Smoothness: 5.13
     - _SmoothnessTextureChannel: 0
     - _SpecSmooth: 0
