@@ -12,6 +12,7 @@ public class Character
     public bool isJumping;
     public bool isDeath;
     public bool isPlayer;
+    public int levelOfMistake;
     public List<CellComponent> increasedCells;
 
     public OnTriggerEnterImpactComponent onTriggerEnterImpact;

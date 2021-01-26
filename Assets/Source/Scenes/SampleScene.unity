@@ -247,6 +247,10 @@ PrefabInstance:
       value: 071abf2e-b460-438a-8212-0ff71b8b9514
       objectReference: {fileID: 0}
     - target: {fileID: 11457290, guid: 1edb7f7d5ea68467097decc77664b28d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11457290, guid: 1edb7f7d5ea68467097decc77664b28d, type: 3}
       propertyPath: LocationTracking
       value: 0
       objectReference: {fileID: 0}
@@ -311,6 +315,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1114040584, guid: c0a3d2330378b0e4ba5e24c11539db6c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1394664370, guid: c0a3d2330378b0e4ba5e24c11539db6c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 924401149819348680, guid: c0a3d2330378b0e4ba5e24c11539db6c, type: 3}
       propertyPath: m_Name
       value: Environment
@@ -376,6 +388,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1167865767}
+    - target: {fileID: 3947057208897668126, guid: 7c59469aae2288b4a9454662a7f79fe3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -217.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420798666297700183, guid: 7c59469aae2288b4a9454662a7f79fe3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 238
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420798666297700183, guid: 7c59469aae2288b4a9454662a7f79fe3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1057
+      objectReference: {fileID: 0}
     - target: {fileID: 4447428783891798019, guid: 7c59469aae2288b4a9454662a7f79fe3, type: 3}
       propertyPath: m_Name
       value: UI Canvas
@@ -638,6 +662,30 @@ PrefabInstance:
       propertyPath: numberStartGameText
       value: 
       objectReference: {fileID: 852716357}
+    - target: {fileID: 6298820699247899711, guid: 865d14520ea908b47818a741324e3095, type: 3}
+      propertyPath: maxRays
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6298820699247899711, guid: 865d14520ea908b47818a741324e3095, type: 3}
+      propertyPath: timeOnMistake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6298820699247899711, guid: 865d14520ea908b47818a741324e3095, type: 3}
+      propertyPath: levelsOfMistakes
+      value: 
+      objectReference: {fileID: 11400000, guid: 61d620e4840e6284ba1a4833d824dfd5, type: 2}
+    - target: {fileID: 6298820699247899711, guid: 865d14520ea908b47818a741324e3095, type: 3}
+      propertyPath: timeOnCheckingSide
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6298820699247899711, guid: 865d14520ea908b47818a741324e3095, type: 3}
+      propertyPath: timeOnRandomRotation
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6298820699247899711, guid: 865d14520ea908b47818a741324e3095, type: 3}
+      propertyPath: timeOnCheckingSideForRandomRotation
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6298820699435350832, guid: 865d14520ea908b47818a741324e3095, type: 3}
       propertyPath: nextPageButton
       value: 

@@ -9,6 +9,9 @@ public class ParticleColorSetterComponent : MonoBehaviour
     private void Start()
     {
         ParticleSystem particleSystem = GetComponent<ParticleSystem>();
-        particleSystem.startColor = colorComponent.color;
+        if (colorComponent)
+        {
+            particleSystem.startColor = colorComponent.color;
+        }
     }
 }

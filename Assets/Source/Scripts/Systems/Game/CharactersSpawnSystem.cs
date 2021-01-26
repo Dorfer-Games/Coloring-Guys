@@ -15,10 +15,20 @@ public class CharactersSpawnSystem : GameSystem, IIniting
 
         for (int i = 0; i < spawnPoints.Length; i++)
         {
+            
             var character = Instantiate(characterPrefab, spawnPoints[i].transform.position, spawnPoints[i].transform.rotation);
-            if(i == 0)
-                GameObject.FindObjectOfType<CameraCinemachineComponent>().SetSettingsCamera(character.transform);
 
+            if (i == 0)
+            {
+                /*character.transform.position = new Vector3(38, 27, 15);
+                Rigidbody rb = character.GetComponent<Rigidbody>();
+                rb.isKinematic = false;
+                rb.useGravity = false;*/
+
+                GameObject.FindObjectOfType<CameraCinemachineComponent>().SetSettingsCamera(character.transform);
+            }
+
+            
 
             game.characters[i] = new Character();
             game.characters[i].increasedCells = new List<CellComponent>();
@@ -32,6 +42,11 @@ public class CharactersSpawnSystem : GameSystem, IIniting
             character.GetComponent<SkinedPlayerComponent>().UpdateBodyColor(characterColors[i]);
             game.characters[i].jumpPlayerComponent = character.GetComponent<AutoJumpPlayerComponent>();
             game.characters[i].isPlayer = i == 0;
+
+            if (i != 0)
+            {
+                game.characters[i].levelOfMistake = 1;
+            }
         }        
 
         game.characterDictionary = game.characters.ToDictionary(x => x.rigidbody.transform, x => x);
