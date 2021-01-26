@@ -1,4 +1,5 @@
 ﻿using Kuhpik;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ public class CharactersSpawnSystem : GameSystem, IIniting
     {
         var spawnPoints = game.level.transform.Find("Characters SP").GetComponentsInChildren<CharacterSpawnComponent>().OrderBy(x => x.Index).ToArray();
         game.characters = new Character[spawnPoints.Length];
+        game.Player = new List<GameObject>();
 
         for (int i = 0; i < spawnPoints.Length; i++)
         {
@@ -20,6 +22,7 @@ public class CharactersSpawnSystem : GameSystem, IIniting
 
 
             game.characters[i] = new Character();
+            game.Player.Add(character);
             game.characters[i].rigidbody = character.GetComponent<Rigidbody>();
             game.characters[i].animator = character.transform.Find("bandit").GetComponent<Animator>();
             game.characters[i].color = characterColors[i];

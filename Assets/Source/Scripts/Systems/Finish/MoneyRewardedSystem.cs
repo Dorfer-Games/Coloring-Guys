@@ -37,7 +37,7 @@ public class MoneyRewardedSystem : GameSystemWithScreen<FinishUIScreen>, IInitin
         Next.enabled = false;
         yield return new WaitForSeconds(1.7f);
         AddMoney(100);
-        moneyAnimation.SetActive(false);
+        //moneyAnimation.SetActive(false);
         yield return new WaitForSeconds(0.5f);
         Bootstrap.GameRestart(0);
     }

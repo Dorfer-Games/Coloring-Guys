@@ -11,6 +11,7 @@ namespace Kuhpik
         public GameObject level;
         public Character[] characters;
         public Vector3 playerRotation;
+        public List<GameObject> Player;
 
 
         public bool isVictory;

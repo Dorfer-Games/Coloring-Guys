@@ -2,7 +2,7 @@
 using Supyrb;
 using UnityEngine;
 
-public class NPCMovementSystem : GameSystem, IFixedUpdating
+public class NPCMovementSystem : GameSystem, IFixedUpdating, IUpdating
 {
     [Header("Distances")]
     [SerializeField] float downDistance;
@@ -16,9 +16,18 @@ public class NPCMovementSystem : GameSystem, IFixedUpdating
     [SerializeField] int safeRaysSide = 3; //Безопасное расстояние от края по бокам персонааж.
     [SerializeField] int raysToJump = 3; //Какое расстояния мы можем перепрыгнуть
     [SerializeField] int safeRaySideBeforeJump = 2; //Зато не магия... Для проверки того, есть ли обрывы перед прыжком.
+    [SerializeField] private float timeDeathAI;
 
 
-    
+    private int NotdeathPlayer = 0;
+    private bool timeDeathStart = false;
+
+    private void Start()
+    {
+        timeDeathAI = Random.Range(5,15);
+    }
+
+
     void IFixedUpdating.OnFixedUpdate()
     {
         //Все персонажи кроме индекса 0 (игрока)
@@ -28,8 +37,9 @@ public class NPCMovementSystem : GameSystem, IFixedUpdating
             if (character.isJumping || character.isDeath) continue;
 
             game.characters[i].rotationValue = 0;
-
-            RaycastDirection(character, character.rigidbody.transform.forward, out var indexBeforeEmpty, out var emptyCombo, out var checks, out var empty);
+            if (timeDeathAI > 0f)
+            {
+                RaycastDirection(character, character.rigidbody.transform.forward, out var indexBeforeEmpty, out var emptyCombo, out var checks, out var empty);
             RaycastDirection(character, character.rigidbody.transform.right, out var rightIndex, out var rightCombo, out var rightChecks, out var rightEmpty);
             RaycastDirection(character, character.rigidbody.transform.right * -1, out var leftIndex, out var leftCombo, out var leftChecks, out var leftEmpty);
             RaycastDirection(character, character.rigidbody.transform.forward * -1, out var backindex, out var backEmpityCombo, out var leftChbackChecks, out var backEmpity);
@@ -37,16 +47,16 @@ public class NPCMovementSystem : GameSystem, IFixedUpdating
             var sidesIsSafe = (rightIndex < 0 || rightIndex > safeRaySideBeforeJump) && (leftIndex < 0 || leftIndex > safeRaySideBeforeJump);
 
             //Прыгаем только если рядом с пропастью и после пропасти есть куда преземляться и сбоку нет пропасти
-            if (indexBeforeEmpty == 0 && checks > raysToJump && sidesIsSafe)
-            {
-                //Прыгаем
-                //Мы вызываем сигнал для общения с другими системами. Слушают его или нет, нам не важно.
-                //Это позволит делать отключаемый прыжок. Единственная проблема, что расчёты бота всё же думают что прыжок всегда есть.
-                Signals.Get<JumpReadySignal>().Dispatch(i);
-            }
+                if (indexBeforeEmpty == 0 && checks > raysToJump && sidesIsSafe)
+                {
+                    //Прыгаем
+                    //Мы вызываем сигнал для общения с другими системами. Слушают его или нет, нам не важно.
+                    //Это позволит делать отключаемый прыжок. Единственная проблема, что расчёты бота всё же думают что прыжок всегда есть.
+                    Signals.Get<JumpReadySignal>().Dispatch(i);
+                }
 
-            else
-            {
+                else
+                {
                     //Бежим вперёд, если достаточно далеко до границы арены. Например 12 прверок и 3 empty
                     //Из-за неровной генерации хексов у нас часто на границах бывают кейсы с 101010 проверками...
                     //Поэтому проверяем ещё по сторонам сразу
@@ -67,6 +77,7 @@ public class NPCMovementSystem : GameSystem, IFixedUpdating
                             game.characters[i].rotationValue = rotationDirection;
                         }
                     }
+                }
             }
         }
     }
@@ -113,6 +124,27 @@ public class NPCMovementSystem : GameSystem, IFixedUpdating
             catch
             {
 
+            }
+        }
+    }
+
+    public void OnUpdate()
+    {
+
+        if (!timeDeathStart) {
+            if (game.Player.Count == 2)
+            {
+                timeDeathStart = true;
+            }
+        }
+
+
+        if (timeDeathStart && timeDeathAI > 0)
+        {
+            timeDeathAI -= Time.deltaTime;
+            if (timeDeathAI <= 0)
+            {
+                timeDeathStart = false;
             }
         }
     }

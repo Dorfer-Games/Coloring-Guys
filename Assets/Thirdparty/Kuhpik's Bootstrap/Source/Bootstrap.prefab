@@ -1322,6 +1322,7 @@ MonoBehaviour:
   safeRaysSide: 7
   raysToJump: 2
   safeRaySideBeforeJump: 1
+  timeDeathAI: 0
 --- !u!1 &6298820699320947387
 GameObject:
   m_ObjectHideFlags: 0
