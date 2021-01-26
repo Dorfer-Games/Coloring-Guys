@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HexagonMat
+  m_Name: _exagonMat
   m_Shader: {fileID: 4800000, guid: 4cd3fcc9ab2dd7e49846ad00241ba4f6, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -75,13 +75,8 @@ Material:
     - _RampThreshold: 0.939
     - _RimMax: 0.51
     - _RimMin: 0.15
-<<<<<<< HEAD
-    - _RimPower: 1.13
-    - _Shininess: 0.404
-=======
     - _RimPower: 2.02
     - _Shininess: 0.174
->>>>>>> f3690fe6202940f4870193eb95bad666cc8caa10
     - _Smoothness: 5.13
     - _SmoothnessTextureChannel: 0
     - _SpecSmooth: 0

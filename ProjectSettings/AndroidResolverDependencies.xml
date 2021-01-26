@@ -10,7 +10,7 @@
   <files />
   <settings>
     <setting name="androidAbis" value="armeabi-v7a" />
-    <setting name="bundleId" value="com.DorferGames.ColoringGuys" />
+    <setting name="bundleId" value="hexagone.colored.guys" />
     <setting name="explodeAars" value="True" />
     <setting name="gradleBuildEnabled" value="True" />
     <setting name="gradleTemplateEnabled" value="True" />
