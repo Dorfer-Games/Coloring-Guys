@@ -26,7 +26,10 @@ namespace Kuhpik
 
         ForceTrapImpulse,
         CellUpY,
-        SuspendIncreasTime
+        SuspendIncreasTime,
+        CameraXPos,
+        CameraYPos,
+        CameraRotation
 
     }
 

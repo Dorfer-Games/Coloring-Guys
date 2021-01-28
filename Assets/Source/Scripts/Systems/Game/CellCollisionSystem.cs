@@ -108,19 +108,23 @@ public class CellCollisionSystem : GameSystem, IIniting
     IEnumerator CellMoving(Transform cell, CellComponent component, Transform character)
     {
         float needHight = 4.4f;
-        float baseHexIncreaseSpeed = needHight / config.GetValue(EGameValue.CellIncreaseTime) ;
+        Vector3 startPos = cell.position;
+        Vector3 needPos = new Vector3(cell.position.x, needHight, cell.position.z);
+        
+        float speed = needHight / config.GetValue(EGameValue.CellIncreaseTime);
+        float step = (speed / (startPos - needPos).magnitude) * Time.fixedDeltaTime * 2;
+        float t = 0;
         float distnaceBetweenCellAndCharacter = GetDistance(character, cell);
         float cellSize = 1f;
-        float startCellYAxisPos = cell.transform.position.y;
         while (cell.transform.position.y < needHight && component.IsGoingToGoUp != false)
         {
-            if (cell.transform.position.y - startCellYAxisPos >= 0.2f * needHight)
+            if (cell.transform.position.y - startPos.y >= 0.2f * needHight)
             {
                 component.SetUp(true);
             }
-            distnaceBetweenCellAndCharacter = GetDistance(character, cell);
-            cell.transform.position += Vector3.up * baseHexIncreaseSpeed * Time.deltaTime* Mathf.Clamp(distnaceBetweenCellAndCharacter / (3f * cellSize), 0f, 1f);
-            yield return null;
+            t += step * Mathf.Clamp(distnaceBetweenCellAndCharacter / (3f * cellSize), 0f, 1f);
+            cell.position = Vector3.Lerp(startPos, needPos, t);
+            yield return new WaitForFixedUpdate();
         }
         if (component.IsGoingToGoUp)
         {
