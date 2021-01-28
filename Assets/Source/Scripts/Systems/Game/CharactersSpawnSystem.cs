@@ -25,7 +25,7 @@ public class CharactersSpawnSystem : GameSystem, IIniting
                 rb.isKinematic = false;
                 rb.useGravity = false;*/
 
-                GameObject.FindObjectOfType<CameraCinemachineComponent>().SetSettingsCamera(character.transform);
+                GameObject.FindObjectOfType<CameraFollow>().SetTarget(character.transform);
             }
 
             

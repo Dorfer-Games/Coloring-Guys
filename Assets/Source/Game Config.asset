@@ -23,10 +23,10 @@ MonoBehaviour:
     value: 1
     minmaxValue: {x: 0.1, y: 5}
   - type: 3
-    value: 1
+    value: 0.2
     minmaxValue: {x: 0.1, y: 5}
   - type: 4
-    value: 5
+    value: 2
     minmaxValue: {x: 1, y: 30}
   - type: 5
     value: 1300
