@@ -72,7 +72,7 @@ public class DeathCollisionSystem : GameSystem, IIniting
         cellComponent.SetUp(false);
         cellComponent.IsGoingToGoUp = false;
         cellComponent.SetColor(characterComponent.color);
-        cellComponent.Cell.transform.DOLocalMoveY(config.GetValue(EGameValue.CellUpY), 0f);
+        cellComponent.Cell.transform.DOLocalMoveY(config.GetValue(EGameValue.CellBaseYPos), 0f);
     }
 
     private void PlayVFX(Transform character)

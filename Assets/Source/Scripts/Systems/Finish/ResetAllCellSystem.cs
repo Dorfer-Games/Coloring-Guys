@@ -16,7 +16,7 @@ public class ResetAllCellSystem : GameSystem, IIniting
                 try
                 {
                     var cell = game.cellsList[b].Cell;
-                    cell.transform.DOLocalMoveY(config.GetValue(EGameValue.CellUpY), 0f);
+                    cell.transform.DOLocalMoveY(config.GetValue(EGameValue.CellBaseYPos), 0f);
                 }
                 catch { }
             }

@@ -95,9 +95,10 @@ public class CellCollisionSystem : GameSystem, IIniting
         Color needColor = Color.red;
         Vector4 stepColor = needColor - currentColor;
         Vector4 vectorsDif = (Vector4)needColor - (Vector4)component.Color;
+        float speed = vectorsDif.magnitude / config.GetValue(EGameValue.CellFadeTime);
         while (vectorsDif.x + vectorsDif.y + vectorsDif.z < 0 && component.IsGoingToGoUp != false)
         {
-            component.SetColor((Vector4)component.Color + stepColor * Time.deltaTime);
+            component.SetColor((Vector4)component.Color + stepColor * speed * Time.deltaTime);
             vectorsDif = (Vector4)needColor - (Vector4)component.Color;
             yield return null;
         }
@@ -107,7 +108,7 @@ public class CellCollisionSystem : GameSystem, IIniting
 
     IEnumerator CellMoving(Transform cell, CellComponent component, Transform character)
     {
-        float needHight = 4.4f;
+        float needHight = config.GetValue(EGameValue.CellMaxYPos);
         Vector3 startPos = cell.position;
         Vector3 needPos = new Vector3(cell.position.x, needHight, cell.position.z);
         
@@ -150,7 +151,7 @@ public class CellCollisionSystem : GameSystem, IIniting
         var component = game.cellDictionary[cell.parent];
         component.SetColor(Color.red);
 
-        cell.DOLocalMoveY(config.GetValue(EGameValue.CellUpY), config.GetValue(EGameValue.CellIncreaseTime)).SetDelay(config.GetValue(EGameValue.CellBackTime)).SetId(component.GetInstanceID()).OnComplete(() =>
+        cell.DOLocalMoveY(config.GetValue(EGameValue.CellBaseYPos), config.GetValue(EGameValue.CellIncreaseTime)).SetDelay(config.GetValue(EGameValue.CellBackTime)).SetId(component.GetInstanceID()).OnComplete(() =>
         {
             component.SetUp(false);
             component.IsGoingToGoUp = false;

@@ -25,11 +25,13 @@ namespace Kuhpik
         ColorSpawnDelay,
 
         ForceTrapImpulse,
-        CellUpY,
+        CellBaseYPos,
         SuspendIncreasTime,
         CameraXPos,
         CameraYPos,
-        CameraRotation
+        CameraRotation,
+        CellMaxYPos,
+        SetCellsBackAfterTouch
 
     }
 

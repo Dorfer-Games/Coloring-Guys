@@ -20,14 +20,14 @@ MonoBehaviour:
     value: 270
     minmaxValue: {x: 1, y: 360}
   - type: 2
-    value: 1
-    minmaxValue: {x: 0.1, y: 5}
+    value: 0.9968824
+    minmaxValue: {x: 0.1, y: 3}
   - type: 3
     value: 0.2
     minmaxValue: {x: 0.1, y: 2}
   - type: 4
     value: 3
-    minmaxValue: {x: 1, y: 30}
+    minmaxValue: {x: 1, y: 7}
   - type: 5
     value: 1300
     minmaxValue: {x: 5, y: 1500}
@@ -68,7 +68,7 @@ MonoBehaviour:
     value: -4.48
     minmaxValue: {x: -10, y: 10}
   - type: 18
-    value: 0.7
+    value: 0.8713387
     minmaxValue: {x: 0.5, y: 3}
   - type: 19
     value: 41.8
@@ -79,3 +79,9 @@ MonoBehaviour:
   - type: 21
     value: 53.7
     minmaxValue: {x: 10, y: 90}
+  - type: 22
+    value: 3
+    minmaxValue: {x: 1, y: 5}
+  - type: 23
+    value: 1
+    minmaxValue: {x: 0, y: 1}

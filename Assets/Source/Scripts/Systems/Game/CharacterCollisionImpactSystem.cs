@@ -24,8 +24,11 @@ public class CharacterCollisionImpactSystem : GameSystem, IIniting
     {
         if (isCollision && other.transform.CompareTag(collisionTag)) 
         {
-            SetDownCells(game.characterDictionary[other]);
-            SetDownCells(game.characterDictionary[mainObject]);
+            if(config.GetValue(EGameValue.SetCellsBackAfterTouch) >= 0.98f)
+            {
+                SetDownCells(game.characterDictionary[other]);
+                SetDownCells(game.characterDictionary[mainObject]);
+            }
             StartCoroutine(SuspendIncreasing(game.characterDictionary[other]));
             StartCoroutine(SuspendIncreasing(game.characterDictionary[mainObject]));
 
@@ -63,7 +66,7 @@ public class CharacterCollisionImpactSystem : GameSystem, IIniting
             }
             cellComponent.SetUp(false);
             cellComponent.IsGoingToGoUp = false;
-            cellComponent.Cell.transform.DOLocalMoveY(config.GetValue(EGameValue.CellUpY), 0f);
+            cellComponent.Cell.transform.DOLocalMoveY(config.GetValue(EGameValue.CellBaseYPos), 0f);
             cellComponent.CharacterWhoCollored = null;
             cellComponent.SetColor(Color.white);
         }
