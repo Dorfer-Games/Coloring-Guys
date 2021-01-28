@@ -11,12 +11,12 @@ public class DebugCheatingSystem : GameSystem, IIniting
     int page = 0;
     void Start()
     {
-        this.enabled = false;
+        //this.enabled = false;
     }
     void IIniting.OnInit()
     {
         config.Init(config.GameValusConfigs);
-/*#if DEBUG
+#if DEBUG
 
         for (int i = 0; i < cheatingPanels.Length; i++)
         {
@@ -32,7 +32,7 @@ public class DebugCheatingSystem : GameSystem, IIniting
         nextPageButton.gameObject.SetActive(true);
         nextPageButton.onClick.AddListener(NextPage);
 
-#endif*/
+#endif
     }
 
     void NextPage()
