@@ -59,7 +59,7 @@ print(player.numberIterationLevels);
     private void CreateLevel(int level)
     {
         OnLevel?.Invoke(player.level);
-        //SendAppMetrica();
+        SendAppMetrica();
         game.level = Instantiate(levels[level]);
         game.cellDictionary = FindObjectsOfType<CellComponent>().ToDictionary(x => x.transform, x => x);
         game.cellsList = FindObjectsOfType<CellComponent>();

@@ -46,7 +46,7 @@ public class ResultUISystem : GameSystemWithScreen<FinishUIScreen>, IIniting
     }
     private void LevelNotVictory()
     {
-        //SendAppMetrica();
+        SendAppMetrica();
         Bootstrap.GameRestart(0);
     }
 }
