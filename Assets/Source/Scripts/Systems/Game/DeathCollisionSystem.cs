@@ -26,7 +26,7 @@ public class DeathCollisionSystem : GameSystem, IIniting
             PlayVFX(@object);
             if (other.CompareTag("Cell"))
             {
-                ColorCellAround(other, @object);
+                //ColorCellAround(other, @object);
                 AudioSysytem.audioSysytem.AudioCollision();
             }
 

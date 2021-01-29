@@ -16,7 +16,7 @@ public class DebugCheatingSystem : GameSystem, IIniting
     void IIniting.OnInit()
     {
         config.Init(config.GameValusConfigs);
-        #region DEBUG
+        /*#region DEBUG
 
         for (int i = 0; i < cheatingPanels.Length; i++)
         {
@@ -32,7 +32,7 @@ public class DebugCheatingSystem : GameSystem, IIniting
         nextPageButton.gameObject.SetActive(true);
         nextPageButton.onClick.AddListener(NextPage);
 
-        #endregion
+        #endregion*/
     }
 
     void NextPage()

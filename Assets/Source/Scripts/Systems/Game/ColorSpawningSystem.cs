@@ -26,10 +26,10 @@ public class ColorSpawningSystem : GameSystem, IIniting
             character.onTriggerComponent.OnEnter += Collect;
         }
 
-        foreach (var spawnPoint in colorSpawnPoints)
+        /*foreach (var spawnPoint in colorSpawnPoints)
         {
             StartCoroutine(RespawnRoutine(spawnPoint.transform, firstSpawnTime));
-        }
+        }*/
     }
 
     void Collect(Transform other, Transform @object)
