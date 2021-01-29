@@ -16,9 +16,9 @@ MonoBehaviour:
   clientTokens:
   - 
   appIds:
-  - 731812574390701
+  - 1801692693341685
   appLabels:
-  - Coloring Guys
+  - Stickman Fall
   cookie: 1
   logging: 1
   status: 1
