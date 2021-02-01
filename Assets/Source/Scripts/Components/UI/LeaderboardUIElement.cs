@@ -13,7 +13,7 @@ public class LeaderboardUIElement : MonoBehaviour
 
     private void Start()
     {
-        //GetComponent<LookAtLeaderboardUIElements>().target = Target;
+        GetComponent<LookAtLeaderboardUIElements>().target = Target;
     }
     public void UpdateColor(Color color)
     {
