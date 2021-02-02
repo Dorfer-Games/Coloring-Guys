@@ -69,9 +69,14 @@ public class NPCMovementSystem : GameSystem, IFixedUpdating, IIniting
                 passedTimeOnDoingMistake[i] += Time.deltaTime;
             }
 
+            if (AvoidingObstacles(i, emptyComboForward, emptyCombo_right, emptyCombo_left, empty_right, empty_left))
+            {
+                passedTimeOnCheckLeftSide[i] = 0;
+                passedTimeOnCheckRightSide[i] = 0;
+                continue;
+            }
 
-            
-            if (passedTimeOnDoingMistake[i] >= mistakeDelay[i])
+            /*if (passedTimeOnDoingMistake[i] >= mistakeDelay[i])
             {
                if (passedTimeOnDoingMistake[i] >= mistakeDelay[i] + timeOnMistake)
                {
@@ -96,7 +101,7 @@ public class NPCMovementSystem : GameSystem, IFixedUpdating, IIniting
                 }
                 //if(RandomPathing(i, rightEmpty, leftEmpty)) { continue; }
              
-            }
+            }*/
         }
     }
 
