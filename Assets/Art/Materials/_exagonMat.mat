@@ -75,8 +75,8 @@ Material:
     - _RampThreshold: 0.939
     - _RimMax: 0.51
     - _RimMin: 0.15
-    - _RimPower: 2.02
-    - _Shininess: 0.174
+    - _RimPower: 4.72
+    - _Shininess: 0.98
     - _Smoothness: 5.13
     - _SmoothnessTextureChannel: 0
     - _SpecSmooth: 0
@@ -92,5 +92,4 @@ Material:
     - _MatCapColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 0.49056602, g: 0.49056602, b: 0.49056602, a: 0.6}
     - _SColor: {r: 0.0754717, g: 0.0754717, b: 0.0754717, a: 1}
-    - _SpecColor: {r: 0.43396226, g: 0.43396226, b: 0.43396226, a: 1}
-  m_BuildTextureStacks: []
+    - _SpecColor: {r: 0, g: 0.9399266, b: 1, a: 1}

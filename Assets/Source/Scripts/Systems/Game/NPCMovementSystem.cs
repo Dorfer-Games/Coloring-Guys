@@ -42,7 +42,7 @@ public class NPCMovementSystem : GameSystem, IFixedUpdating, IUpdating
                 RaycastDirection(character, character.rigidbody.transform.forward, out var indexBeforeEmpty, out var emptyCombo, out var checks, out var empty);
             RaycastDirection(character, character.rigidbody.transform.right, out var rightIndex, out var rightCombo, out var rightChecks, out var rightEmpty);
             RaycastDirection(character, character.rigidbody.transform.right * -1, out var leftIndex, out var leftCombo, out var leftChecks, out var leftEmpty);
-            RaycastDirection(character, character.rigidbody.transform.forward * -1, out var backindex, out var backEmpityCombo, out var leftChbackChecks, out var backEmpity);
+            //RaycastDirection(character, character.rigidbody.transform.forward * -1, out var backindex, out var backEmpityCombo, out var leftChbackChecks, out var backEmpity);
 
             var sidesIsSafe = (rightIndex < 0 || rightIndex > safeRaySideBeforeJump) && (leftIndex < 0 || leftIndex > safeRaySideBeforeJump);
 
@@ -71,11 +71,11 @@ public class NPCMovementSystem : GameSystem, IFixedUpdating, IUpdating
                     {
                         var rotationDirection = rightEmpty < leftEmpty ? 1 : -1;
                         game.characters[i].rotationValue = rotationDirection;
-                        if (backindex == 0 && indexBeforeEmpty != 0 && !sidesIsSafe)
-                        {
-                            rotationDirection = backEmpity < empty ? 1 : -1;
+                        //if (backindex == 0 && indexBeforeEmpty != 0 && !sidesIsSafe)
+                        //{
+                            rotationDirection = rightEmpty < leftEmpty ? 1 : -1;
                             game.characters[i].rotationValue = rotationDirection;
-                        }
+                        //}
                     }
                 }
             }

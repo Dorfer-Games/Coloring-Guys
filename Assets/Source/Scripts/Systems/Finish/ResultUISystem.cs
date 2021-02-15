@@ -1,9 +1,8 @@
 ﻿using Kuhpik;
 using System.Collections.Generic;
-
+using UnityEngine;
 public class ResultUISystem : GameSystemWithScreen<FinishUIScreen>, IIniting
 {
-
 
     GameValueConfig Config;
 
@@ -32,7 +31,7 @@ public class ResultUISystem : GameSystemWithScreen<FinishUIScreen>, IIniting
     {
         var @params = new Dictionary<string, object>()
         {
-            { "level", player.level + 1 }
+            { "level", player.level}
         };
 
         AppMetrica.Instance.ReportEvent("level_finish", @params);

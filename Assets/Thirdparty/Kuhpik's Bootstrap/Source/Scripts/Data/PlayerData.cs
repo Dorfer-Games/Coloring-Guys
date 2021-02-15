@@ -13,5 +13,7 @@ namespace Kuhpik
         public int money;
         public int numberIterationLevels;
         public int lastIterationLevels;
+        public int RateUs;
+        public string RateUsDateTime;
     }
 }

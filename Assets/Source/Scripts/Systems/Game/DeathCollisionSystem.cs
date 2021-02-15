@@ -25,7 +25,7 @@ public class DeathCollisionSystem : GameSystem, IIniting
             if (character == game.characters[0])
             {
                 game.isVictory = false;
-                Bootstrap.ChangeGameState(EGamestate.Finish);
+                Bootstrap.ChangeGameState(EGamestate.VFX);
                 AudioSysytem.audioSysytem.AudioDefeat();
                 game.characters[0].audioComponent.DisabledAudio();
             }
@@ -38,7 +38,7 @@ public class DeathCollisionSystem : GameSystem, IIniting
                 if (game.characters.Count(x => x.isDeath) == game.characters.Length - 1)
                 {
                     game.isVictory = true;
-                    Bootstrap.ChangeGameState(EGamestate.Finish);
+                    Bootstrap.ChangeGameState(EGamestate.VFX);
                     AudioSysytem.audioSysytem.AudioVictory();
                     game.characters[0].audioComponent.DisabledAudio();
                 }

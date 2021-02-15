@@ -5,7 +5,7 @@ using Kuhpik;
 using TMPro;
 using UnityEngine.UI;
 
-public class MoneyRewardedSystem : GameSystemWithScreen<FinishUIScreen>, IIniting
+public class MoneyRewardedSystem : GameSystem, IIniting
 {
     public static MoneyRewardedSystem rewardedSystem { get; private set; }
 

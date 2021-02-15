@@ -4,7 +4,7 @@
     {
         Menu = 1,
         Game = 2,
-
+        VFX = 5,
         Finish = 10
     }
 }
