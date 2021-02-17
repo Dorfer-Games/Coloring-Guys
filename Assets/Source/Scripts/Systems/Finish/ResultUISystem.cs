@@ -18,13 +18,14 @@ public class ResultUISystem : GameSystemWithScreen<FinishUIScreen>, IIniting
             screen.AlmostPanel.SetActive(true);
         }
 
+        Bootstrap.GetSystem<AdsSystem>().AdsInterstitialEndLevelGame();
         for (int i = 0; i < game.characters.Length; i++)
         {
             game.characters[i].animator.SetBool("idle", true);
         }
         HapticSystem.hapticSystem.VibrateLong();
         screen.TryAgainButton.onClick.AddListener(() => LevelNotVictory());
-        screen.NextButton.onClick.AddListener(() => LevelVictory());
+        screen.NoThanksButton.onClick.AddListener(() => NoThanksLevelVictory());
     }
 
     private void SendAppMetrica()
@@ -38,11 +39,12 @@ public class ResultUISystem : GameSystemWithScreen<FinishUIScreen>, IIniting
         AppMetrica.Instance.SendEventsBuffer();
     }
 
-    private void LevelVictory()
+    private void NoThanksLevelVictory()
     {
         LevelLoadingSystem.loadingSystem.AddLevel();
-        MoneyRewardedSystem.rewardedSystem.AnimationStart();
+        MoneyRewardedSystem.rewardedSystem.AnimationStart(100, MoneyRewardedSystem.rewardedSystem.startPoint_No);
     }
+
     private void LevelNotVictory()
     {
         SendAppMetrica();

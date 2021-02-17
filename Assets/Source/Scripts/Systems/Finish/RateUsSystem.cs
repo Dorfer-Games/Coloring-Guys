@@ -4,18 +4,28 @@ using System;
 using Kuhpik;
 using System.Collections;
 
+using UnityEngine.UI;
+using System.Linq;
+using System.Collections.Generic;
 public class RateUsSystem : GameSystem, IIniting
 {
     private RateUsComponent RateUsComponent;
     private int Ocenka = 0;
     [Header("Settings First Start RateUs")]
+    [SerializeField] private float timeFirstRateUs = 0f;
+
     [Tooltip("Время указывается в секундах")]
-    [SerializeField] private static float FirstTimeRateUsStart = 300f;
+    [SerializeField] private static float FirstTimeRateUsStart = 0f;
     [SerializeField] private static bool timeFirstStart;
+
     [Header("Время(в часах), через которое RateUs будет показано вновь после закрытия")]
     [SerializeField] private int HourEnabledRateUs = 24;
+
     [Header("Ссылка для отправки оценки")]
     [SerializeField] private string url;
+
+    [Header("Цвет для окраса спрайтов оценки")]
+    [SerializeField] private Color colorItem;
 
     void IIniting.OnInit()
     {
@@ -27,6 +37,7 @@ public class RateUsSystem : GameSystem, IIniting
 
     void Start()
     {
+        FirstTimeRateUsStart = timeFirstRateUs;
         InitTimeStartRateUs();
     }
 
@@ -73,12 +84,6 @@ public class RateUsSystem : GameSystem, IIniting
 
     private void SetStarRateUs()
     {
-        /*var Ocenka = 1;
-        for (int b = 0; b < RateUsComponent.Star.Length; b++)
-        {
-            RateUsComponent.Star[b].onClick.AddListener(delegate { SelectedRateUs(Ocenka); });
-            Ocenka++;
-        }*/
         RateUsComponent.SendOcenkaGame.onClick.AddListener(delegate { SendRateUs(); });
         RateUsComponent.CloseRateUs.onClick.AddListener(delegate { CloseRateUs(); });
     }
@@ -115,11 +120,20 @@ public class RateUsSystem : GameSystem, IIniting
     public void SelectedRateUs(int ocenka)
     {
         Ocenka = ocenka;
+        SetColorItemOcenka();
         RateUsComponent.SendOcenkaGame.gameObject.SetActive(true);
     }
 
 
-    
+    private void SetColorItemOcenka()
+    {
+        for (int b = 0; b < RateUsComponent.Star.Length; b++)
+        {
+            if(Ocenka > b)
+                RateUsComponent.Star[b].color = colorItem;
+            else RateUsComponent.Star[b].color = Color.white;
+        }
+    }
     private void SetDateRateUs() // Указываем время для следкющего запуска RateUs
     {
         DateTime dateTime = DateTime.Now;

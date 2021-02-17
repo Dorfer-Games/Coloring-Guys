@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class MoneyRewardedSystem : GameSystem, IIniting
 {
     public static MoneyRewardedSystem rewardedSystem { get; private set; }
-
+    public Transform startPoint_X5, startPoint_No; // Точки, с которых будут стартовать анимация монеток
     [SerializeField] private GameObject moneyAnimation;
     [SerializeField] private TMP_Text moneyText;
     [SerializeField] private Button Next;
@@ -20,24 +20,24 @@ public class MoneyRewardedSystem : GameSystem, IIniting
     {
         moneyText.text = player.money.ToString();
     }
-    public void AnimationStart()
+    public void AnimationStart(int moneyCount, Transform startPoint)
     {
+        moneyAnimation.GetComponent<AnimationMoneyRewarded>().SetStartPoint(startPoint);
         moneyAnimation.SetActive(true);
-        StartCoroutine(StartAnimationRewarded());
+        StartCoroutine(StartAnimationRewarded(moneyCount));
     }
 
 
     private void AddMoney(int moneyCount)
     {
-        player.money += 100;
+        player.money += moneyCount;
         moneyText.text = player.money.ToString();
     }
-    private IEnumerator StartAnimationRewarded()
+    private IEnumerator StartAnimationRewarded(int moneyCount)
     {
         Next.enabled = false;
         yield return new WaitForSeconds(1.7f);
-        AddMoney(100);
-        //moneyAnimation.SetActive(false);
+        AddMoney(moneyCount);
         yield return new WaitForSeconds(0.5f);
         Bootstrap.GameRestart(0);
     }

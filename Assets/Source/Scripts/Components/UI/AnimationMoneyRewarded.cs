@@ -6,7 +6,7 @@ public class AnimationMoneyRewarded : MonoBehaviour
 {
     [SerializeField] private float durationAnimation;
 
-    [SerializeField] private Transform target, startPoint;
+    [SerializeField] private Transform startPoint, target;
 
     private void Start()
     {
@@ -20,7 +20,10 @@ public class AnimationMoneyRewarded : MonoBehaviour
         anim.Play();
     }
 
-
+    public void SetStartPoint(Transform point)
+    {
+        startPoint = point;
+    }
     private void Disabled()
     {
         gameObject.SetActive(false);

@@ -7,6 +7,13 @@
       "dependencies": {},
       "hash": "fc456992b4d08ba8460567f7f5b629df76dbe059"
     },
+    "com.google.external-dependency-manager": {
+      "version": "1.2.164",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://unityregistry-pa.googleapis.com"
+    },
     "com.supyrb.signals": {
       "version": "https://github.com/supyrb/signals.git#0.5.0",
       "depth": 0,

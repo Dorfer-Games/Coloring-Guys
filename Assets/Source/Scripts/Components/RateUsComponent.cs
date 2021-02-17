@@ -6,6 +6,6 @@ public class RateUsComponent : MonoBehaviour
 {
     public GameObject RateUs;
 
-    public Button[] Star;
+    public Image[] Star;
     public Button SendOcenkaGame, CloseRateUs;
 }

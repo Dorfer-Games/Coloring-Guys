@@ -87,8 +87,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c74e4aebfc849d543925cb40d610d343, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeFirstRateUs: 10
   HourEnabledRateUs: 24
   url: https://play.google.com/store/apps/details?id=hexagone.colored.guys&hl=en_US&gl=US
+  colorItem: {r: 1, g: 0, b: 0.3529412, a: 1}
 --- !u!1 &115316038545404343
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,7 +120,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6298820699443823219}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4879993842253864682
 MonoBehaviour:
@@ -177,6 +179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6e12fa79e6c1a04582f11b4ab4c28c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPoint_X5: {fileID: 0}
+  startPoint_No: {fileID: 0}
   moneyAnimation: {fileID: 0}
   moneyText: {fileID: 0}
   Next: {fileID: 0}
@@ -298,7 +302,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6298820699443823219}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &963679671297357072
 MonoBehaviour:
@@ -579,7 +583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42fe6b126d5b84f4d8c9dead2c3f72d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTesting: 0
+  isTesting: 1
   playerData:
     level: 0
     money: 0
@@ -657,12 +661,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3636463571061505316}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 6298820699443823219}
-  m_RootOrder: 10
+  m_Father: {fileID: 6298820699657881958}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8696755944600609578
 MonoBehaviour:
@@ -716,7 +720,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6298820699443823219}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &3816868687605553830
 AudioSource:
@@ -1174,7 +1178,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6298820699443823219}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7428627646859284335
 MonoBehaviour:
@@ -1403,7 +1407,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6298820699443823219}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6298820699152258734
 MonoBehaviour:
@@ -1502,7 +1506,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6298820699443823219}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5909191357592889088
 MonoBehaviour:
@@ -1648,7 +1652,6 @@ Transform:
   - {fileID: 6298820698708016937}
   - {fileID: 5055018347515145049}
   - {fileID: 9167923084418211408}
-  - {fileID: 2056078046752015801}
   - {fileID: 1739090682016214202}
   - {fileID: 6321443005915481606}
   - {fileID: 6298820699320947386}
@@ -1713,6 +1716,8 @@ Transform:
   - {fileID: 6298820699880326952}
   - {fileID: 5472485589368988656}
   - {fileID: 1081368941}
+  - {fileID: 2475993685805533692}
+  - {fileID: 2056078046752015801}
   m_Father: {fileID: 8410704116390783444}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2232,3 +2237,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrowGOName: Rotation Point
+--- !u!1 &8651991670641461074
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2475993685805533692}
+  - component: {fileID: 5503846427452919692}
+  m_Layer: 0
+  m_Name: AdsSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2475993685805533692
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8651991670641461074}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6298820699657881958}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5503846427452919692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8651991670641461074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 119f0da28c09adb49add3baeff96efe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

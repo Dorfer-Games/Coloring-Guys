@@ -6,6 +6,7 @@ public class MenuUIScreen : UIScreen
 {
     [field: SerializeField] public Button TapToRestartButton;
     [field: SerializeField] public Transform LevelsProgressBar;
+    [field: SerializeField] public Button AdsRewardedStackColor;
     
 
     

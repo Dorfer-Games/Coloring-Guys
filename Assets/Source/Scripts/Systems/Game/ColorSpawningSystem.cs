@@ -38,7 +38,7 @@ public class ColorSpawningSystem : GameSystem, IIniting
         {
             var character = game.characterDictionary[@object];
             var color = other.GetComponent<ColorStackComponent>();
-
+            
             colors.Remove(color);
             character.stacks = Mathf.Clamp(character.stacks + color.Count, 0, Mathf.RoundToInt(config.GetValue(EGameValue.ColorMax)));
             StartCoroutine(RespawnRoutine(color.Parent, config.GetValue(EGameValue.ColorSpawnDelay)));
