@@ -92,4 +92,4 @@ Material:
     - _MatCapColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 0.49056602, g: 0.49056602, b: 0.49056602, a: 0.6}
     - _SColor: {r: 0.0754717, g: 0.0754717, b: 0.0754717, a: 1}
-    - _SpecColor: {r: 0, g: 0.9399266, b: 1, a: 1}
+    - _SpecColor: {r: 1, g: 1, b: 1, a: 1}

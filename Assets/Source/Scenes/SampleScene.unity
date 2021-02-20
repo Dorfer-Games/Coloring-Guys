@@ -145,6 +145,12 @@ AudioListener:
     type: 3}
   m_PrefabInstance: {fileID: 924401149648409694}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &692481580 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4791414953912403959, guid: 7c59469aae2288b4a9454662a7f79fe3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1656354551001427644}
+  m_PrefabAsset: {fileID: 0}
 --- !u!108 &705507994 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 924401148944492228, guid: c0a3d2330378b0e4ba5e24c11539db6c,
@@ -167,6 +173,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1000318829 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6680066041517472468, guid: 865d14520ea908b47818a741324e3095,
+    type: 3}
+  m_PrefabInstance: {fileID: 9177517942646854963}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3895b2788cad114fab0b27bf1522627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1101878548
@@ -599,6 +617,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1231674933}
+    - target: {fileID: 7151467239613403334, guid: 7c59469aae2288b4a9454662a7f79fe3,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1000318829}
     - target: {fileID: 7997984982147096800, guid: 7c59469aae2288b4a9454662a7f79fe3,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -646,6 +669,12 @@ PrefabInstance:
       objectReference: {fileID: 1231674933}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c59469aae2288b4a9454662a7f79fe3, type: 3}
+--- !u!1 &1656354551001427645 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6439827654359519375, guid: 7c59469aae2288b4a9454662a7f79fe3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1656354551001427644}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2817540915302931224
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -845,6 +874,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bootstrap
       objectReference: {fileID: 0}
+    - target: {fileID: 4879993842253864682, guid: 865d14520ea908b47818a741324e3095,
+        type: 3}
+      propertyPath: screenFinish
+      value: 
+      objectReference: {fileID: 1656354551001427645}
     - target: {fileID: 6298820699152258734, guid: 865d14520ea908b47818a741324e3095,
         type: 3}
       propertyPath: numberStartGameText
@@ -900,6 +934,11 @@ PrefabInstance:
       propertyPath: moneyAnimation
       value: 
       objectReference: {fileID: 334099938}
+    - target: {fileID: 8234167041651902824, guid: 865d14520ea908b47818a741324e3095,
+        type: 3}
+      propertyPath: parentSpawn
+      value: 
+      objectReference: {fileID: 692481580}
     - target: {fileID: 9177517942646854965, guid: 865d14520ea908b47818a741324e3095,
         type: 3}
       propertyPath: confetti.Array.data[0]

@@ -15,4 +15,9 @@ public class MenuUIScreen : UIScreen
         base.Subscribe();
         TapToRestartButton.onClick.AddListener(() => Bootstrap.ChangeGameState(EGamestate.Game));
     }
+
+    public void Store()
+    {
+        Bootstrap.ChangeGameState(EGamestate.Store);
+    }
 }

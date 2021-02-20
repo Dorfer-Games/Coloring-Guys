@@ -5,6 +5,7 @@
         Menu = 1,
         Game = 2,
         VFX = 5,
-        Finish = 10
+        Finish = 10,
+        Store = 13
     }
 }

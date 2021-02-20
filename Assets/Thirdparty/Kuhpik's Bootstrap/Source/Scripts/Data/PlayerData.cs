@@ -15,5 +15,6 @@ namespace Kuhpik
         public int lastIterationLevels;
         public int RateUs;
         public string RateUsDateTime;
+        public int countOpensItemStore;
     }
 }
