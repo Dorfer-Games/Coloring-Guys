@@ -67,6 +67,10 @@ public class AdvertismentManager : MonoBehaviour
 
             InitializeInterstitialAds();
             InitializeRewardedAds();
+
+            #if DEBUG
+            MaxSdk.ShowMediationDebugger();
+            #endif
         };
 
         MaxSdk.SetHasUserConsent(true);
@@ -84,7 +88,7 @@ public class AdvertismentManager : MonoBehaviour
         noAds = value;
     }
 
-    #region Interstitial ADS
+#region Interstitial ADS
 
 
     private void InitializeInterstitialAds()
@@ -169,9 +173,9 @@ public class AdvertismentManager : MonoBehaviour
         return Time.realtimeSinceStartup-currentTime >=InterstitialCooldown && noAds == false;
     }
   
-    #endregion
+#endregion
 
-    #region Rewarded ADS
+#region Rewarded ADS
     
     public void InitializeRewardedAds()
     {
@@ -258,9 +262,9 @@ public class AdvertismentManager : MonoBehaviour
         rewardedData.callback?.Invoke();
     }
 
-    #endregion
+#endregion
 
-    #region AppMetrica Events by Kuhpik
+#region AppMetrica Events by Kuhpik
 
     void OnADClicked(string type, string reason, string restult)
         {
@@ -320,5 +324,5 @@ public class AdvertismentManager : MonoBehaviour
             return Application.internetReachability != NetworkReachability.NotReachable;
         }
 
-    #endregion
+#endregion
 }
