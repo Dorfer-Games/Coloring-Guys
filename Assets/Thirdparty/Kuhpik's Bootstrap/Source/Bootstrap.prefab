@@ -306,6 +306,7 @@ Transform:
   m_Children:
   - {fileID: 962595137265155884}
   - {fileID: 320721077472762033}
+  - {fileID: 7648002913295284910}
   m_Father: {fileID: 8410704116390783444}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -369,6 +370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3895b2788cad114fab0b27bf1522627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  priceItemStore: 500
 --- !u!1 &1490988820558159296
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,14 +681,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42fe6b126d5b84f4d8c9dead2c3f72d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTesting: 1
+  isTesting: 0
   playerData:
     level: 0
-    money: 0
+    money: 1000
     numberIterationLevels: 0
     lastIterationLevels: 0
     RateUs: 0
     RateUsDateTime: 
+    countOpensItemStore: 0
 --- !u!1 &3322304284965847664
 GameObject:
   m_ObjectHideFlags: 0
@@ -1115,6 +1118,51 @@ MonoBehaviour:
   portrait: 1
   allCameras: 1
   cameras: []
+--- !u!1 &4854644648700967341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7648002913295284910}
+  - component: {fileID: 4771475440906795352}
+  m_Layer: 0
+  m_Name: Set Settings Store
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7648002913295284910
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4854644648700967341}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 814344399091582423}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4771475440906795352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4854644648700967341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d96a447644e62e548b66cbfec50b9c76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraStore: {fileID: 0}
+  mainCamera: {fileID: 0}
 --- !u!1 &5292902772167647389
 GameObject:
   m_ObjectHideFlags: 0
@@ -2288,6 +2336,7 @@ MonoBehaviour:
   StoreItemPrefab: {fileID: 197832232875598433, guid: abe1ff8ce94b15042bd398f2dcc3b548,
     type: 3}
   parentSpawn: {fileID: 0}
+  storeItems: []
   SoreItem: []
 --- !u!1 &7763382715252897243
 GameObject:

@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class SoreItemComponent : MonoBehaviour
 {
+    public StoreItem storeItem;
     [Tooltip("Иконка Главного предмета")]
     [SerializeField] Image imageMain;
     [Tooltip("Куплен предмет или нет")]
@@ -12,14 +13,21 @@ public class SoreItemComponent : MonoBehaviour
 
     private Sprite ImageMainItem;
 
-    public void InitItemStore(Sprite item, bool purchased)
+
+
+
+    private void Start()
     {
-        ImageMainItem = item;
-        purchasedItemStore = purchased;
+        InitItemStore();
+    }
+    public void InitItemStore()
+    {
+        ImageMainItem = storeItem.imageMain;
+        purchasedItemStore = storeItem.purchasedItemStore;
 
         if (purchasedItemStore)
         {
-            imageMain.sprite = item;
+            imageMain.sprite = storeItem.imageMain;
         }
     }
 

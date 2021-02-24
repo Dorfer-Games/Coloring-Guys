@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83fe485b1be2eac44adef53add34b9e1, type: 3}
   m_Name: SkinStandart 2
   m_EditorClassIdentifier: 
+  nameSO: item2
   imageMain: {fileID: 21300000, guid: c07cc1c049d14ba479d9eb11e7761d15, type: 3}
   purchasedItemStore: 0

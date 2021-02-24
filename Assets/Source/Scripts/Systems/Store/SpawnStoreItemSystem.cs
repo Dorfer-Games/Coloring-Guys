@@ -13,7 +13,7 @@ public class SpawnStoreItemSystem : GameSystem, IIniting
         foreach (var items in storeItems)
         {
             var Item = Instantiate(StoreItemPrefab, parentSpawn.transform).GetComponent<SoreItemComponent>();
-            Item.InitItemStore(items.imageMain, items.purchasedItemStore);
+            Item.storeItem = items;
             SoreItem.Add(Item);
         }
     }
