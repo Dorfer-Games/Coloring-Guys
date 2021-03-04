@@ -6,6 +6,12 @@ ModelImporter:
   - first:
       74: -1155198038275538331
     second: CharsSkin_export_bip
+  - first:
+      74: -4988912024670336752
+    second: CharsSkin_export_bip_02
+  - first:
+      74: -852070796756350309
+    second: CharsSkin_export_bip_03
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -77,7 +83,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 1
+  importAnimation: 0
   humanDescription:
     serializedVersion: 3
     human:
