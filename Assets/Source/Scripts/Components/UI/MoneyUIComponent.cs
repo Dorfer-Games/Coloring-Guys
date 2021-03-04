@@ -2,7 +2,7 @@
 using Kuhpik;
 using UnityEngine;
 using System;
-public class MoneyUIComponent : Sing, IIniting
+public class MoneyUIComponent : GameSystem, IIniting
 {
     public Action<int> UpdateMoney;
 

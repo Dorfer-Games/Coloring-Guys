@@ -43,7 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 212db90b88abc5f49b4d1557981e3529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyText: {fileID: 0}
 --- !u!1 &1231674931
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,10 +682,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTesting: 1
   playerData:
-    level: 10
+    level: 0
     money: 1000
-    numberIterationLevels: 1
-    lastIterationLevels: 1
+    numberIterationLevels: 0
+    lastIterationLevels: 0
     RateUs: 0
     RateUsDateTime: 
     countOpensItemStore: 0
