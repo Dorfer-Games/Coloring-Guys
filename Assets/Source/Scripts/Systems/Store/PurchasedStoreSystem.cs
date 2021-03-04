@@ -13,7 +13,6 @@ public class PurchasedStoreSystem : GameSystemWithScreen<StoreUI>, IIniting
 
     public void OnInit()
     {
-        screen.MoneyText.text = player.money.ToString();
         SpawnitemSystem = Bootstrap.GetSystem<SpawnStoreItemSystem>();
         screen.PurchasedTextPrice.text = priceItemStore.ToString();
         foreach (var items in SpawnitemSystem.StoreItem)
@@ -43,7 +42,7 @@ public class PurchasedStoreSystem : GameSystemWithScreen<StoreUI>, IIniting
                     SpawnitemSystem.storeItems[randomItem].purchasedItemStore = true;
                     SpawnitemSystem.storeItems[randomItem].Save();
                     player.money -= priceItemStore;
-                    screen.MoneyText.text = player.money.ToString();
+                    Bootstrap.GetSystem<MoneyUIComponent>().UpdateMoney.Invoke(player.money);
                     break;
                 }
             }

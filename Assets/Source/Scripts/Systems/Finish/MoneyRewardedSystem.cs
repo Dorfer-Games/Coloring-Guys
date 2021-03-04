@@ -5,21 +5,17 @@ using Kuhpik;
 using TMPro;
 using UnityEngine.UI;
 
-public class MoneyRewardedSystem : GameSystem, IIniting
+public class MoneyRewardedSystem : GameSystem
 {
     public static MoneyRewardedSystem rewardedSystem { get; private set; }
     public Transform startPoint_X5, startPoint_No; // Точки, с которых будут стартовать анимация монеток
     [SerializeField] private GameObject moneyAnimation;
-    [SerializeField] private TMP_Text moneyText;
     [SerializeField] private Button Next;
     private void Start()
     {
         if (rewardedSystem == null) rewardedSystem = this;
     }
-    void IIniting.OnInit()
-    {
-        moneyText.text = player.money.ToString();
-    }
+  
     public void AnimationStart(int moneyCount, Transform startPoint)
     {
         moneyAnimation.GetComponent<AnimationMoneyRewarded>().SetStartPoint(startPoint);
@@ -31,7 +27,7 @@ public class MoneyRewardedSystem : GameSystem, IIniting
     private void AddMoney(int moneyCount)
     {
         player.money += moneyCount;
-        moneyText.text = player.money.ToString();
+        Bootstrap.GetSystem<MoneyUIComponent>().UpdateMoney.Invoke(player.money);
     }
     private IEnumerator StartAnimationRewarded(int moneyCount)
     {

@@ -12,10 +12,14 @@ public class FinishUIScreen : UIScreen
     [field: SerializeField] public Button NoThanksButton { get; private set; }
     [field: SerializeField] public Button AdsRewardedButton { get; private set; }
     [field: SerializeField] public RateUsComponent RateUsUI { get; private set; }
+    [SerializeField] private TMP_Text moneyText;
+    private MoneyUIComponent moneyUIComponent;
 
     private void Start()
     {
         StartCoroutine(EnabledButtonNoThinks());
+        moneyUIComponent = FindObjectOfType<MoneyUIComponent>();
+        moneyUIComponent.UpdateMoney += (money) => { moneyText.text = money.ToString(); };
     }
 
 

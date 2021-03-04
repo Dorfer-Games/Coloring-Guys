@@ -60,7 +60,7 @@ public class AdsSystem : GameSystem
     private void MoneyAdd_AdsRewardedStore()
     {
         player.money += 150;
-        storeUI.MoneyAdd(player.money);
+        Bootstrap.GetSystem<MoneyUIComponent>().UpdateMoney.Invoke(player.money);
     }
 
     private void BosterAddStackColor_AdsRewarded()

@@ -7,12 +7,15 @@ using UnityEngine.UI;
 public class StoreUI : UIScreen
 {
     public TMP_Text PurchasedTextPrice;
-    public TMP_Text MoneyText;
+    [SerializeField] private TMP_Text MoneyText;
     public Button closeButton, AdsRewarded;
 
-    public void MoneyAdd(int money)
+    private MoneyUIComponent moneyUIComponent;
+
+    void Start()
     {
-        MoneyText.text = money.ToString();
+        moneyUIComponent = FindObjectOfType<MoneyUIComponent>();
+        moneyUIComponent.UpdateMoney += (money) => { MoneyText.text = money.ToString(); };
     }
 
 }

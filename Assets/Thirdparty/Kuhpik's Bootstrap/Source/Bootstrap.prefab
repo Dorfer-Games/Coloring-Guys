@@ -184,7 +184,6 @@ MonoBehaviour:
   startPoint_X5: {fileID: 0}
   startPoint_No: {fileID: 0}
   moneyAnimation: {fileID: 0}
-  moneyText: {fileID: 0}
   Next: {fileID: 0}
 --- !u!1 &513388093700741845
 GameObject:
@@ -689,7 +688,7 @@ MonoBehaviour:
     RateUs: 0
     RateUsDateTime: 
     countOpensItemStore: 0
-    selectedSkinPlayer: 0
+    selectedSkinPlayer: 1
 --- !u!1 &3322304284965847664
 GameObject:
   m_ObjectHideFlags: 0
