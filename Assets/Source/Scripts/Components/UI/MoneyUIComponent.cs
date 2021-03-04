@@ -1,13 +1,13 @@
 ﻿using TMPro;
 using Kuhpik;
 using UnityEngine;
-
-public class MoneyUIComponent : GameSystem, IIniting
+using System;
+public class MoneyUIComponent : Sing, IIniting
 {
-    [SerializeField] private TMP_Text moneyText;
+    public Action<int> UpdateMoney;
 
     void IIniting.OnInit()
     {
-        moneyText.text = player.money.ToString();
+        UpdateMoney.Invoke(player.money);
     }
 }

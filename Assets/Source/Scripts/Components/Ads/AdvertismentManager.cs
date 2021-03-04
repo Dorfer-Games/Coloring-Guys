@@ -9,8 +9,8 @@ public class AdvertismentManager : MonoBehaviour
     #region Constants
 
     private const string MaxSdkKey = "6AQkyPv9b4u7yTtMH9PT40gXg00uJOTsmBOf7hDxa_-FnNZvt_qTLnJAiKeb5-2_T8GsI_dGQKKKrtwZTlCzAR";
-    private const string InterstitialAdUnitId = "08f3b8d126cd3b5a";
-    private const string RewardedAdUnitId = "8674ff263564ee19";
+    private const string InterstitialAdUnitId = "6ef2e5a983b81263";
+    private const string RewardedAdUnitId = "6a441a333e9edbb8";
     private const string RewardedInterstitialAdUnitId = "ENTER_REWARD_INTER_AD_UNIT_ID_HERE";
     private const string BannerAdUnitId = "ENTER_BANNER_AD_UNIT_ID_HERE";
     private const string MRecAdUnitId = "ENTER_MREC_AD_UNIT_ID_HERE";

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83fe485b1be2eac44adef53add34b9e1, type: 3}
   m_Name: SkinStandart 1
   m_EditorClassIdentifier: 
-  nameSO: item1
-  imageMain: {fileID: 21300000, guid: 8c272547439a4d7418b6dc2c51eb352d, type: 3}
+  nameSO: Steave
+  indexSkin: 1
+  imageMain: {fileID: 21300000, guid: 8c7bb9a58cf19db41be7c49e7d73bcca, type: 3}
   purchasedItemStore: 0

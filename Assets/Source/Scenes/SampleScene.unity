@@ -460,6 +460,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2131073159, guid: 7c59469aae2288b4a9454662a7f79fe3, type: 3}
+      propertyPath: moneyText
+      value: 
+      objectReference: {fileID: 6830910690814342998}
     - target: {fileID: 340354417683438429, guid: 7c59469aae2288b4a9454662a7f79fe3,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -668,19 +672,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1656354551001427644}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &1750244886060740958 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 1485694754478466304, guid: c0a3d2330378b0e4ba5e24c11539db6c,
-    type: 3}
-  m_PrefabInstance: {fileID: 3290857594195873945}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &2552658627056974025 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3438776000170732695, guid: c0a3d2330378b0e4ba5e24c11539db6c,
-    type: 3}
-  m_PrefabInstance: {fileID: 3290857594195873945}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &2817540915302931224
+--- !u!1001 &1691348351511076554
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -754,6 +746,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5df5e9185d140346be43fb9e4004f8d, type: 3}
+--- !u!198 &1750244886060740958 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1485694754478466304, guid: c0a3d2330378b0e4ba5e24c11539db6c,
+    type: 3}
+  m_PrefabInstance: {fileID: 3290857594195873945}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &2552658627056974025 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3438776000170732695, guid: c0a3d2330378b0e4ba5e24c11539db6c,
+    type: 3}
+  m_PrefabInstance: {fileID: 3290857594195873945}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3290857594195873945
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -987,6 +991,26 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 924401150975899631}
+    - target: {fileID: 7182900847264475508, guid: 865d14520ea908b47818a741324e3095,
+        type: 3}
+      propertyPath: isTesting
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182900847264475508, guid: 865d14520ea908b47818a741324e3095,
+        type: 3}
+      propertyPath: playerData.level
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182900847264475508, guid: 865d14520ea908b47818a741324e3095,
+        type: 3}
+      propertyPath: playerData.lastIterationLevels
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182900847264475508, guid: 865d14520ea908b47818a741324e3095,
+        type: 3}
+      propertyPath: playerData.numberIterationLevels
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7248024980830803038, guid: 865d14520ea908b47818a741324e3095,
         type: 3}
       propertyPath: Next

@@ -5,8 +5,10 @@ using Kuhpik;
 public class SpawnStoreItemSystem : GameSystem, IIniting
 {
     [SerializeField] private GameObject StoreItemPrefab, parentSpawn;
+    [HideInInspector]
     public StoreItem[] storeItems;
-    public List<SoreItemComponent> SoreItem = new List<SoreItemComponent>();
+    [HideInInspector]
+    public List<SoreItemComponent> StoreItem = new List<SoreItemComponent>();
     public void OnInit()
     {
         storeItems = Resources.LoadAll<StoreItem>("Store");
@@ -14,7 +16,7 @@ public class SpawnStoreItemSystem : GameSystem, IIniting
         {
             var Item = Instantiate(StoreItemPrefab, parentSpawn.transform).GetComponent<SoreItemComponent>();
             Item.storeItem = items;
-            SoreItem.Add(Item);
+            StoreItem.Add(Item);
         }
     }
 }

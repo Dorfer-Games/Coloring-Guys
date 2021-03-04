@@ -23,18 +23,28 @@ public class CharactersSpawnSystem : GameSystem, IIniting
 
             game.characters[i] = new Character();
             game.Player.Add(character);
+            game.characters[i].DataAllToPlayer = character.GetComponent<DataAllToPlayerComponent>();
             game.characters[i].rigidbody = character.GetComponent<Rigidbody>();
-            game.characters[i].animator = character.transform.Find("bandit").GetComponent<Animator>();
             game.characters[i].color = characterColors[i];
             game.characters[i].onCollisionComponent = character.GetComponent<OnCollisionEnterComponent>();
             game.characters[i].onTriggerComponent = character.GetComponent<OnTriggerEnterComponent>();
             game.characters[i].onTriggerEnterImpact = character.GetComponent<OnTriggerEnterImpactComponent>();
             game.characters[i].audioComponent = character.GetComponent<AudioComponent>();
-            character.GetComponent<SkinedPlayerComponent>().UpdateBodyColor(characterColors[i]);
             game.characters[i].jumpPlayerComponent = character.GetComponent<AutoJumpPlayerComponent>();
             game.characters[i].isPlayer = i == 0;
-        }        
-
+        }
+        
         game.characterDictionary = game.characters.ToDictionary(x => x.rigidbody.transform, x => x);
+        Bootstrap.GetSystem<CharactersRandomizeSystem>().UpdateSkins();
+    }
+
+
+    public void SetComponentPlayer(int LenghtPlayer)
+    {
+        for (int i = 0; i < LenghtPlayer; i++)
+        {
+            game.characters[i].animator = game.characters[i].DataAllToPlayer.Animator();
+            game.characters[i].DataAllToPlayer.UpdateBodyColor(characterColors[i]);
+        }
     }
 }

@@ -9,6 +9,7 @@ public class StoreItem : ScriptableObject
 {
     [Tooltip("Обязательно для заполнения!")]
     [SerializeField] private string nameSO;
+    public int indexSkin;
     [Tooltip("Иконка Главного предмета")]
     public Sprite imageMain;
     [Tooltip("Куплен предмет или нет")]

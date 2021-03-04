@@ -681,15 +681,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42fe6b126d5b84f4d8c9dead2c3f72d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTesting: 0
+  isTesting: 1
   playerData:
-    level: 0
+    level: 10
     money: 1000
-    numberIterationLevels: 0
-    lastIterationLevels: 0
+    numberIterationLevels: 1
+    lastIterationLevels: 1
     RateUs: 0
     RateUsDateTime: 
     countOpensItemStore: 0
+    selectedSkinPlayer: 0
 --- !u!1 &3322304284965847664
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,12 +784,6 @@ MonoBehaviour:
     type: 3}
   offset: 0.0195
   stackPointName: Color Bricks
-  nameParentObject:
-  - bandit
-  - AmongUs
-  - pelvis
-  - spine_01
-  - spine_02
 --- !u!1 &3694283937025454334
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,7 +1174,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4420679084630506728
 Transform:
   m_ObjectHideFlags: 0
@@ -1192,7 +1187,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6298820699657881958}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1942446742733041799
 MonoBehaviour:
@@ -1206,16 +1201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 914b38436366325429d5058ad1b32814, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterMeshes:
-  - {fileID: -9009122783502730950, guid: 42a20a18c8785cb4c9532a94e7c9ca16, type: 3}
-  - {fileID: -6497202718259346592, guid: c533c31f1edb76d49bfc7a53e8dd65c9, type: 3}
-  - {fileID: 3102418097020553141, guid: 1a060955eb09cfb479e931bb22a6f58a, type: 3}
-  - {fileID: 923889395499075645, guid: e92a3313caf03a94d8860c84a749e446, type: 3}
-  - {fileID: 5354399220951565127, guid: f3559152603355f48908fb9d44ce09b7, type: 3}
-  - {fileID: -4855682069719555874, guid: 053c9c4ef6359604786912cfb7c200bc, type: 3}
-  - {fileID: 5821973798782213239, guid: 5bebc97ad7cec634692785ae97f24ccc, type: 3}
-  - {fileID: -3773299157681429354, guid: b20f0805c7183d04b830890dc5f5b497, type: 3}
-  - {fileID: -8336248049030891819, guid: 1ae718c6423d2fb42a6c11e339ac6bf2, type: 3}
+  characterMeshes: []
 --- !u!1 &5400607694079846525
 GameObject:
   m_ObjectHideFlags: 0
@@ -1245,7 +1231,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6298820699657881958}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5859257875183120794
 MonoBehaviour:
@@ -1854,8 +1840,8 @@ Transform:
   - {fileID: 6298820699435350833}
   - {fileID: 6298820698868298055}
   - {fileID: 6298820699943031359}
-  - {fileID: 4420679084630506728}
   - {fileID: 3789316981738689324}
+  - {fileID: 4420679084630506728}
   - {fileID: 7614586478922007543}
   - {fileID: 6298820700472323775}
   - {fileID: 6298820699880326952}
@@ -2337,7 +2323,7 @@ MonoBehaviour:
     type: 3}
   parentSpawn: {fileID: 0}
   storeItems: []
-  SoreItem: []
+  StoreItem: []
 --- !u!1 &7763382715252897243
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,10 +9,14 @@ public class ColorStackDisplaySystem : GameSystem, IIniting
     [SerializeField] GameObject stackPrefab;
     [SerializeField] float offset;
     [SerializeField] string stackPointName;
-    [SerializeField] private string[] nameParentObject;
     Dictionary<Character, Transform> characterHexPoints;
 
     void IIniting.OnInit()
+    {
+        Init();
+    }
+
+    public void Init()
     {
         if (Mathf.RoundToInt(config.GetValue(EGameValue.DisplayHexes)) == 1)
         {
@@ -20,7 +24,7 @@ public class ColorStackDisplaySystem : GameSystem, IIniting
 
             for (int i = 0; i < game.characters.Length; i++)
             {
-                var point = game.characters[i].rigidbody.transform.Find(nameParentObject[0]).Find(nameParentObject[1]).Find(nameParentObject[2]).Find(nameParentObject[3]).Find(nameParentObject[4]).transform.Find(stackPointName);
+                var point = game.characters[i].DataAllToPlayer.BricksColorStack();
                 characterHexPoints.Add(game.characters[i], point);
 
                 for (int j = 0; j < Mathf.RoundToInt(config.GetValue(EGameValue.ColorMax)); j++)
@@ -40,7 +44,6 @@ public class ColorStackDisplaySystem : GameSystem, IIniting
             Signals.Get<HexCountChangedSignal>().AddListener(ChangeHexCountDisplaying, 10);
         }
     }
-
     void Color(MeshRenderer renderer, Color color)
     {
         renderer.materials[0].color = color;

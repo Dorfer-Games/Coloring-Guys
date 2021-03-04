@@ -16,5 +16,6 @@ namespace Kuhpik
         public int RateUs;
         public string RateUsDateTime;
         public int countOpensItemStore;
+        public int selectedSkinPlayer;
     }
 }

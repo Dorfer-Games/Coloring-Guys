@@ -9,13 +9,16 @@ public class AdsSystem : GameSystem
 {
     private FinishUIScreen finishUI;
     private MenuUIScreen menuUI;
+    private StoreUI storeUI;
     private static int levelStartAds;
     private void Start()
     {
         finishUI = GameObject.FindObjectOfType<FinishUIScreen>();
         menuUI = GameObject.FindObjectOfType<MenuUIScreen>();
+        storeUI = GameObject.FindObjectOfType<StoreUI>();
         finishUI.AdsRewardedButton.onClick.AddListener(delegate { AdsRewarded_X5(); });
         menuUI.AdsRewardedStackColor.onClick.AddListener(delegate { AdsRewarded_BoosterColorStack(); });
+        storeUI.AdsRewarded.onClick.AddListener(delegate { AdsRewarded_Store(); });
         ChangeLevel();
     }
 
@@ -27,6 +30,11 @@ public class AdsSystem : GameSystem
     {
         AdvertismentManager.Instance.ShowRewarded(MoneyAdd_AdsRewarded, $"ad_on_X5");
         LevelLoadingSystem.loadingSystem.AddLevel();
+    }
+
+    private void AdsRewarded_Store()
+    {
+        AdvertismentManager.Instance.ShowRewarded(MoneyAdd_AdsRewardedStore, $"ad_on_STORE");
     }
 
 
@@ -49,7 +57,11 @@ public class AdsSystem : GameSystem
     {
         MoneyRewardedSystem.rewardedSystem.AnimationStart(500, MoneyRewardedSystem.rewardedSystem.startPoint_X5);
     }
-
+    private void MoneyAdd_AdsRewardedStore()
+    {
+        player.money += 150;
+        storeUI.MoneyAdd(player.money);
+    }
 
     private void BosterAddStackColor_AdsRewarded()
     {

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83fe485b1be2eac44adef53add34b9e1, type: 3}
   m_Name: SkinStandart 2
   m_EditorClassIdentifier: 
-  nameSO: item2
-  imageMain: {fileID: 21300000, guid: c07cc1c049d14ba479d9eb11e7761d15, type: 3}
+  nameSO: mario
+  indexSkin: 2
+  imageMain: {fileID: 21300000, guid: 273a868a6b176fb48a773c115a86d568, type: 3}
   purchasedItemStore: 0
