@@ -6,7 +6,12 @@ ModelImporter:
   - first:
       74: -1155198038275538331
     second: CharsSkin_export_bip
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gradient_txt
+    second: {fileID: 2100000, guid: 7f8d77dec1ebaba46b8a9b8358a37ff2, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
