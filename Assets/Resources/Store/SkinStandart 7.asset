@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83fe485b1be2eac44adef53add34b9e1, type: 3}
-  m_Name: SkinStandart 2
+  m_Name: SkinStandart 7
   m_EditorClassIdentifier: 
-  nameSO: DeadPool
-  indexSkin: 2
-  imageMain: {fileID: 21300000, guid: d6ce916bee82abf4ab0ee04a6c4c84a6, type: 3}
+  nameSO: sausage
+  indexSkin: 7
+  imageMain: {fileID: 21300000, guid: 6061bda0833dfd84e90e1280155826f5, type: 3}
   purchasedItemStore: 0

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83fe485b1be2eac44adef53add34b9e1, type: 3}
-  m_Name: SkinStandart 2
+  m_Name: SkinStandart 3
   m_EditorClassIdentifier: 
-  nameSO: DeadPool
-  indexSkin: 2
-  imageMain: {fileID: 21300000, guid: d6ce916bee82abf4ab0ee04a6c4c84a6, type: 3}
+  nameSO: harleyQuinn
+  indexSkin: 3
+  imageMain: {fileID: 21300000, guid: 51799ecbb15b8f64681b2edc1b0c5889, type: 3}
   purchasedItemStore: 0
