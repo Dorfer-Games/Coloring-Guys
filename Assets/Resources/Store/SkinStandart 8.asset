@@ -15,4 +15,4 @@ MonoBehaviour:
   nameSO: unicorn
   indexSkin: 8
   imageMain: {fileID: 21300000, guid: 71f689f0c6d44654bab98afc63d418bf, type: 3}
-  purchasedItemStore: 0
+  purchasedItemStore: 1

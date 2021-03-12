@@ -15,7 +15,7 @@ public class LevelLoadingSystem : GameSystem, IIniting, IDisposing
 
     public System.Action<int> OnLevel;
 
-    public int levelAmount = 0;
+    public int levelAmount = 0, levelUIProgressBar;
 
 
 
@@ -31,7 +31,23 @@ public class LevelLoadingSystem : GameSystem, IIniting, IDisposing
     {
         #region Loading Levels
         levelAmount = player.level - player.lastIterationLevels;
-        
+        for (int d = 0; d <= countLevelsFirstIteration; d++)
+        {
+            if (levelUIProgressBar <= player.level)
+            {
+                levelUIProgressBar += 5;
+            }
+            if (levelUIProgressBar > player.level)
+            {
+                levelUIProgressBar -= 5;
+                player.lastIterationLevels = levelUIProgressBar;
+                break;
+            }
+            if (d >= countLevelsFirstIteration)
+            {
+                d = 0;
+            }
+        }
         if (levelAmount > countLevelsFirstIteration)
             {
             if (player.numberIterationLevels < (levels.Length - 1))
@@ -43,8 +59,7 @@ public class LevelLoadingSystem : GameSystem, IIniting, IDisposing
             {
                 player.numberIterationLevels = 0;
             }
-print(player.numberIterationLevels);
-            player.lastIterationLevels = player.level;
+            
             levelAmount = player.level - player.lastIterationLevels;
             CreateLevel(player.numberIterationLevels);
         }

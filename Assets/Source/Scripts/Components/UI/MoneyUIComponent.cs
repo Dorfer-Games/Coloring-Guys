@@ -6,6 +6,7 @@ public class MoneyUIComponent : GameSystem, IIniting
 {
     public Action<int> UpdateMoney;
 
+   
     void IIniting.OnInit()
     {
         UpdateMoney.Invoke(player.money);

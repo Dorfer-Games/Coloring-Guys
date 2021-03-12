@@ -36,9 +36,10 @@ public class UIControllerLevels : GameSystem, IIniting
             }
         }
         var amountLevels = player.lastIterationLevels;
+        int levelUI = LevelLoadingSystem.loadingSystem.levelUIProgressBar;
         for (int d = 0; d < levelsProgressBars.Length; d++)
         {
-            levelsProgressBars[d].SetText(amountLevels + d + 1);
+            levelsProgressBars[d].SetText(levelUI + d + 1);
         }
     }
 

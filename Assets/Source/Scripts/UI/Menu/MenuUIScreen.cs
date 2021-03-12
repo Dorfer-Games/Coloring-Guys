@@ -8,10 +8,10 @@ public class MenuUIScreen : UIScreen
     [field: SerializeField] public Transform LevelsProgressBar;
     [field: SerializeField] public Button AdsRewardedStackColor;
     [SerializeField] private TMP_Text moneyText;
-    private MoneyUIComponent moneyUIComponent;
+    private MoneyUIComponent MoneyUIComponent;
 
-    
- 
+
+
 
     public override void Subscribe()
     {
@@ -26,7 +26,7 @@ public class MenuUIScreen : UIScreen
 
     void Start()
     {
-        moneyUIComponent = FindObjectOfType<MoneyUIComponent>();
-        moneyUIComponent.UpdateMoney += (money) => { moneyText.text = money.ToString(); };
+        MoneyUIComponent = FindObjectOfType<MoneyUIComponent>();
+        MoneyUIComponent.UpdateMoney += (money) => { moneyText.text = money.ToString(); };
     }
 }

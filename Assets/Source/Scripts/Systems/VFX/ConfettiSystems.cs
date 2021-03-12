@@ -24,6 +24,6 @@ public class ConfettiSystems : GameSystem, IIniting
     private IEnumerator FinisshUIStart()
     {
        yield return new WaitForSeconds(timeNextScreenStart);
-        Bootstrap.ChangeGameState(EGamestate.Finish);
+        Bootstrap.ChangeGameState(EGamestate.RateUs);
     }
 }

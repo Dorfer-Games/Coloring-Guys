@@ -29,6 +29,7 @@ public class AdsSystem : GameSystem
     private void AdsRewarded_X5()
     {
         AdvertismentManager.Instance.ShowRewarded(MoneyAdd_AdsRewarded, $"ad_on_X5");
+        if(game.isVictory)
         LevelLoadingSystem.loadingSystem.AddLevel();
     }
 

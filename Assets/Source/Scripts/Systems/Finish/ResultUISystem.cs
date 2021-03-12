@@ -12,6 +12,7 @@ public class ResultUISystem : GameSystemWithScreen<FinishUIScreen>, IIniting
         
         if (game.isVictory) {
             screen.VictoryPanel.SetActive(true);
+            screen.StartCorutineButton();
         }
         else
         {
@@ -19,12 +20,8 @@ public class ResultUISystem : GameSystemWithScreen<FinishUIScreen>, IIniting
         }
 
         Bootstrap.GetSystem<AdsSystem>().AdsInterstitialEndLevelGame();
-        for (int i = 0; i < game.characters.Length; i++)
-        {
-            game.characters[i].animator.SetBool("idle", true);
-        }
+      
         HapticSystem.hapticSystem.VibrateLong();
-        screen.TryAgainButton.onClick.AddListener(() => LevelNotVictory());
         screen.NoThanksButton.onClick.AddListener(() => NoThanksLevelVictory());
     }
 
@@ -41,7 +38,9 @@ public class ResultUISystem : GameSystemWithScreen<FinishUIScreen>, IIniting
 
     private void NoThanksLevelVictory()
     {
-        LevelLoadingSystem.loadingSystem.AddLevel();
+        if (game.isVictory)
+            LevelLoadingSystem.loadingSystem.AddLevel();
+        else LevelNotVictory();
         MoneyRewardedSystem.rewardedSystem.AnimationStart(100, MoneyRewardedSystem.rewardedSystem.startPoint_No);
     }
 

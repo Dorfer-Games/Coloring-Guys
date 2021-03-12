@@ -9,22 +9,36 @@ public class PurchasedStoreSystem : GameSystemWithScreen<StoreUI>, IIniting
     private SpawnStoreItemSystem SpawnitemSystem;
     [SerializeField] private int priceItemStore = 500;
     private bool findRandomSkin;
-
+    private MoneyUIComponent MoneyUIComponent;
 
     public void OnInit()
     {
         SpawnitemSystem = Bootstrap.GetSystem<SpawnStoreItemSystem>();
-        screen.PurchasedTextPrice.text = priceItemStore.ToString();
+        ChangeMoneyPlayer_PriceSkin();
+        MoneyUIComponent = FindObjectOfType<MoneyUIComponent>();
+        MoneyUIComponent.UpdateMoney += (money) => { ChangeMoneyPlayer_PriceSkin(); };
         foreach (var items in SpawnitemSystem.StoreItem)
         {
              itemPurchesed += items.ChangeItem;
         }
     }
-
+    private void ChangeMoneyPlayer_PriceSkin()
+    {
+        if (player.money < priceItemStore || player.countOpensItemStore > SpawnitemSystem.StoreItem.Count)
+            screen.purhased.gameObject.SetActive(false);
+        if (player.money >= priceItemStore && player.countOpensItemStore < SpawnitemSystem.StoreItem.Count)
+            screen.purhased.gameObject.SetActive(true);
+    }
 
     public void SelectedStoreSkinPlayer(int indexSkin)
     {
                 player.selectedSkinPlayer = indexSkin;
+        for (int b = 0; b < SpawnitemSystem.StoreItem.Count; b++)
+        {
+            if(indexSkin == b)
+            SpawnitemSystem.StoreItem[b].Selected(true);
+            else SpawnitemSystem.StoreItem[b].Selected(false);
+        }
         Bootstrap.GetSystem<CharactersRandomizeSystem>().UpdateSkinsPlayer();
         Bootstrap.GetSystem<ColorStackDisplaySystem>().Init();
     }

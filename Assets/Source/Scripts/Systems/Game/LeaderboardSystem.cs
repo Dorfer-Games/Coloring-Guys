@@ -7,15 +7,15 @@ using System;
 public class LeaderboardSystem : GameSystemWithScreen<GameUIScreen>, IIniting, IUpdating
 {
     [SerializeField] GameObject leaderboardElementPrefab;
-    [SerializeField] GameObject leaderboardElementFinishPrefab, screenFinish;
     Dictionary<Character, LeaderboardUIElement> elementsDict;
-    List<string> nameCharactersFinishLiderboard = new List<string>();
-    int counter, moneyFinishLiderboard = 100;
+    int counter;
     public event Action<String> OnCrownEnter;
+
+
     void IIniting.OnInit()
     {
         InitLiderbordGame();
-        InitLiderbordFinish();
+        Bootstrap.GetSystem<LiderboardFinishSystem>().InitLiderbordFinish();
     }
 
     private void InitLiderbordGame()
@@ -33,30 +33,6 @@ public class LeaderboardSystem : GameSystemWithScreen<GameUIScreen>, IIniting, I
 
         UpdatePlaces();
     }
-
-    private void InitLiderbordFinish()
-    {
-        var namingSystem = Bootstrap.GetSystem<CharactersNamingSystem>();
-        for (int b = 0; b < game.characters.Length; b++)
-        {
-            var Instance = Instantiate(leaderboardElementFinishPrefab, screenFinish.transform).GetComponent<LiderboardFinishComponent>();
-            NamePlayersFinishLiderboard(Instance, namingSystem, b + 1);
-            moneyFinishLiderboard -= 5;
-        }
-    }
-
-    private void NamePlayersFinishLiderboard(LiderboardFinishComponent liderboardFinish, CharactersNamingSystem namingSystem, int mestoPlayerLiderboard)
-    {
-        int randomNameINT = UnityEngine.Random.Range(0, namingSystem.names.Length);
-        string name = namingSystem.names[randomNameINT];
-        if (!nameCharactersFinishLiderboard.Contains(name))
-        {
-            if (mestoPlayerLiderboard == 1) name = "Player";
-            liderboardFinish.UpdateName(name, mestoPlayerLiderboard, moneyFinishLiderboard);
-            nameCharactersFinishLiderboard.Add(name);
-        }
-        else NamePlayersFinishLiderboard(liderboardFinish, namingSystem, mestoPlayerLiderboard);
-    } // Подбирает имена
 
     void IUpdating.OnUpdate()
     {
@@ -91,7 +67,7 @@ public class LeaderboardSystem : GameSystemWithScreen<GameUIScreen>, IIniting, I
             var ui = elementsDict[orderedList[i]];
             ui.UpdateName(orderedList[i].rigidbody.name, orderedList[i].isDeath);
             //ui.UpdatePlace(i);
-            //ui.transform.SetAsLastSibling();
+            ui.transform.SetAsLastSibling();
         }
     }
 }

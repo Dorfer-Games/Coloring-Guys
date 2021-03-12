@@ -7,11 +7,11 @@ public class SoreItemComponent : MonoBehaviour
     public StoreItem storeItem;
     private PurchasedStoreSystem purchasedStoreSystem;
     [Tooltip("Иконка Главного предмета")]
-    [SerializeField] Image imageMain;
+    [SerializeField] Image imageMain, ImageSkin, ImageNotSkin;
     [Tooltip("Куплен предмет или нет")]
     [SerializeField] bool purchasedItemStore;
     [SerializeField] private int indexSkin; // какой по счёту скин мы выбрали
-    private Sprite ImageMainItem;
+    [SerializeField] private Sprite ImageMainActiveItem, ImageMainNotActiveItem, ImageSkinItem;
 
 
 
@@ -23,15 +23,22 @@ public class SoreItemComponent : MonoBehaviour
     }
     public void InitItemStore()
     {
-        ImageMainItem = storeItem.imageMain;
+        ImageSkinItem = storeItem.imageMain;
         purchasedItemStore = storeItem.purchasedItemStore;
         indexSkin = storeItem.indexSkin;
 
         if (purchasedItemStore)
         {
-            imageMain.sprite = storeItem.imageMain;
+            ImageSkin.sprite = storeItem.imageMain;
+            ImageNotSkin.gameObject.SetActive(false);
+            ImageSkin.gameObject.SetActive(true);
         }
-    }
+        else
+        {
+            ImageSkin.gameObject.SetActive(false);
+            ImageNotSkin.gameObject.SetActive(true);
+        }
+        }
 
 
    public void SelectedSkinPlayer()
@@ -39,11 +46,19 @@ public class SoreItemComponent : MonoBehaviour
         if (purchasedItemStore)
             purchasedStoreSystem.SelectedStoreSkinPlayer(indexSkin);
     }
+
+    public void Selected(bool selected)
+    {
+        if (selected) imageMain.sprite = ImageMainActiveItem;
+        else imageMain.sprite = ImageMainNotActiveItem;
+    }
     public void ChangeItem(GameObject item)
     {
         if (item == gameObject)
         {
-            imageMain.sprite = ImageMainItem;
+            ImageSkin.sprite = ImageSkinItem;
+            ImageSkin.gameObject.SetActive(true);
+            ImageNotSkin.gameObject.SetActive(false);
             purchasedItemStore = true;
         }
     }

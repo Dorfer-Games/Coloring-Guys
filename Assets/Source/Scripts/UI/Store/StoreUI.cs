@@ -8,14 +8,13 @@ public class StoreUI : UIScreen
 {
     public TMP_Text PurchasedTextPrice;
     [SerializeField] private TMP_Text MoneyText;
-    public Button closeButton, AdsRewarded;
+    public Button closeButton, AdsRewarded, purhased;
 
-    private MoneyUIComponent moneyUIComponent;
+    private MoneyUIComponent MoneyUIComponent;
 
     void Start()
     {
-        moneyUIComponent = FindObjectOfType<MoneyUIComponent>();
-        moneyUIComponent.UpdateMoney += (money) => { MoneyText.text = money.ToString(); };
+        MoneyUIComponent = FindObjectOfType<MoneyUIComponent>();
+        MoneyUIComponent.UpdateMoney += (money) => { MoneyText.text = money.ToString(); };
     }
-
 }

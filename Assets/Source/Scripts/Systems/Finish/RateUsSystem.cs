@@ -30,7 +30,7 @@ public class RateUsSystem : GameSystem, IIniting
     void IIniting.OnInit()
     {
 
-        RateUsComponent = GameObject.FindObjectOfType<FinishUIScreen>().RateUsUI;
+        RateUsComponent = GameObject.FindObjectOfType<RateUs_UI>().RateUsUI;
         ChangeDataRateUs();
         SetStarRateUs();
     }
@@ -66,8 +66,9 @@ public class RateUsSystem : GameSystem, IIniting
             {
                 if (game.isVictory && FirstTimeRateUsStart <= 0f)
                 {
-                    RateUsComponent.RateUs.SetActive(true);
+                    SendAppMetrica(7);
                 }
+                else Bootstrap.ChangeGameState(EGamestate.Finish);
             }
             if (player.RateUs > 0)
             {
@@ -75,11 +76,17 @@ public class RateUsSystem : GameSystem, IIniting
                 {
                     if (ChangeDateTimeRateUs())
                     {
-                        RateUsComponent.RateUs.SetActive(true);
+                        SendAppMetrica(7);
+                    }
+                    else
+                    {
+                        Bootstrap.ChangeGameState(EGamestate.Finish);
                     }
                 }
+                if(!game.isVictory) Bootstrap.ChangeGameState(EGamestate.Finish);
             }
         }
+        else Bootstrap.ChangeGameState(EGamestate.Finish);
     }
 
     private void SetStarRateUs()
@@ -90,13 +97,14 @@ public class RateUsSystem : GameSystem, IIniting
 
     private void CloseRateUs()
     {
-        RateUsComponent.RateUs.SetActive(false);
         if (player.RateUs > -1 && player.RateUs < 3)
         {
             player.RateUs++;
             SetDateRateUs();
         }
         else if (player.RateUs > -1 && player.RateUs >= 2) player.RateUs = -1;
+        Bootstrap.ChangeGameState(EGamestate.Finish);
+        SendAppMetrica(0);
     }
 
 
@@ -105,15 +113,16 @@ public class RateUsSystem : GameSystem, IIniting
     {
         if (Ocenka > 0 && Ocenka < 5)
         {
-            RateUsComponent.RateUs.SetActive(false);
             player.RateUs = -1;
+            Bootstrap.ChangeGameState(EGamestate.Finish);
         }
         else if(Ocenka > 0 && Ocenka >= 5)
         {
-            RateUsComponent.RateUs.SetActive(false);
             player.RateUs = -1;
             Application.OpenURL(url);
+            Bootstrap.ChangeGameState(EGamestate.Finish);
         }
+        SendAppMetrica(Ocenka);
     }
 
 
@@ -129,9 +138,9 @@ public class RateUsSystem : GameSystem, IIniting
     {
         for (int b = 0; b < RateUsComponent.Star.Length; b++)
         {
-            if(Ocenka > b)
-                RateUsComponent.Star[b].color = colorItem;
-            else RateUsComponent.Star[b].color = Color.white;
+            if (Ocenka > b)
+                RateUsComponent.ActivateStar(b);
+            else RateUsComponent.DiactvateStar(b);
         }
     }
     private void SetDateRateUs() // Указываем время для следкющего запуска RateUs
@@ -162,5 +171,20 @@ public class RateUsSystem : GameSystem, IIniting
                 FirstTimeRateUsStart -= Time.deltaTime;
             yield return null;
         }
+    }
+
+    private void SendAppMetrica(int type)
+    {
+        var @params = new Dictionary<string, object>()
+        {
+            { "type", type}
+        };
+        if(type == 7)
+        AppMetrica.Instance.ReportEvent("RateUs_passed_required_number_time", @params);
+        if (type == 0)
+            AppMetrica.Instance.ReportEvent("RateUs_window_closed", @params);
+        if(type >= 1 && type <= 5)
+            AppMetrica.Instance.ReportEvent("RateUs_estimation", @params);
+        AppMetrica.Instance.SendEventsBuffer();
     }
 }

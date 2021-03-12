@@ -3,6 +3,7 @@
     "com.dbrizov.naughtyattributes": "https://github.com/dbrizov/NaughtyAttributes.git#upm",
     "com.google.external-dependency-manager": "1.2.164",
     "com.supyrb.signals": "https://github.com/supyrb/signals.git#0.5.0",
+    "com.unity.2d.sprite": "1.0.0",
     "com.unity.cinemachine": "2.6.3",
     "com.unity.collab-proxy": "1.2.16",
     "com.unity.ide.rider": "1.1.4",
