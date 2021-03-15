@@ -8,11 +8,20 @@ public class LiderboardFinishComponent : MonoBehaviour
 
 
     public GameObject Player;
-    public void UpdateName(string name, int mestoLiderboard, int money)
+    public void UpdateName(string name, int mestoLiderboard)
     {
         nameText.text = name;
-        if(NumberText.gameObject != null)
-        NumberText.text = mestoLiderboard.ToString();
+
+            NumberText.text = mestoLiderboard.ToString();
+    }
+
+
+    public void UpdateMoney(int money)
+    {
         moneyText.text = money.ToString();
+    }
+    public string ReturnName()
+    {
+        return nameText.text;
     }
 }

@@ -4,20 +4,18 @@ using UnityEngine;
 public class ResultUISystem : GameSystemWithScreen<FinishUIScreen>, IIniting
 {
 
-    GameValueConfig Config;
+ 
 
     void IIniting.OnInit()
-    {
-        config.Init(config.GameValusConfigs);
-        
+    {    
         if (game.isVictory) {
             screen.VictoryPanel.SetActive(true);
-            screen.StartCorutineButton();
         }
         else
         {
             screen.AlmostPanel.SetActive(true);
         }
+        screen.StartCorutineButton();
 
         Bootstrap.GetSystem<AdsSystem>().AdsInterstitialEndLevelGame();
       
@@ -40,7 +38,6 @@ public class ResultUISystem : GameSystemWithScreen<FinishUIScreen>, IIniting
     {
         if (game.isVictory)
             LevelLoadingSystem.loadingSystem.AddLevel();
-        else LevelNotVictory();
         MoneyRewardedSystem.rewardedSystem.AnimationStart(100, MoneyRewardedSystem.rewardedSystem.startPoint_No);
     }
 

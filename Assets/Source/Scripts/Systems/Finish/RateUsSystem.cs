@@ -83,7 +83,6 @@ public class RateUsSystem : GameSystem, IIniting
                         Bootstrap.ChangeGameState(EGamestate.Finish);
                     }
                 }
-                if(!game.isVictory) Bootstrap.ChangeGameState(EGamestate.Finish);
             }
         }
         else Bootstrap.ChangeGameState(EGamestate.Finish);

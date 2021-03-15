@@ -56,7 +56,7 @@ public class AdsSystem : GameSystem
     #region Callback срабатывающие после завершения рекламы
     private void MoneyAdd_AdsRewarded()
     {
-        MoneyRewardedSystem.rewardedSystem.AnimationStart(500, MoneyRewardedSystem.rewardedSystem.startPoint_X5);
+        MoneyRewardedSystem.rewardedSystem.AnimationStart(player.money_round, MoneyRewardedSystem.rewardedSystem.startPoint_X5);
     }
     private void MoneyAdd_AdsRewardedStore()
     {

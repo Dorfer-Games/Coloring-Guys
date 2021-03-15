@@ -14,7 +14,7 @@ public class CharactersNamingSystem : GameSystem, IIniting
         TextAsset fileText = (TextAsset)Resources.Load("NameCharacters", typeof(TextAsset));
         names = fileText.text.Split();
         game.characters[0].rigidbody.name = "Player";
-        ListNamesPlayers.Add("Player");
+        ListNamesPlayers.Add("You");
         for (int i = 1; i < game.characters.Length; i++)
         {
             Name();

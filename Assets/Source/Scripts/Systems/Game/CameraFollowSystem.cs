@@ -9,6 +9,7 @@ public class CameraFollowSystem : GameSystem, IIniting
     [SerializeField] Transform mainCamera;
     void IIniting.OnInit()
     {
+        Bootstrap.GetSystem<SettingsCamera>().UpdateDataCamera();
         var seq = DOTween.Sequence();
         var camera = mainCamera.transform;
         var camPoint = game.characters[0].rigidbody.transform.Find("Camera point");

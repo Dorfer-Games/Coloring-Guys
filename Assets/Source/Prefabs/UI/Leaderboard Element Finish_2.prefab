@@ -568,7 +568,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 5968095025574798227}
   moneyText: {fileID: 2298326525501540552}
-  NumberText: {fileID: 0}
+  NumberText: {fileID: 3692369934479971112}
+  Player: {fileID: 0}
 --- !u!1 &8638550706908737141
 GameObject:
   m_ObjectHideFlags: 0

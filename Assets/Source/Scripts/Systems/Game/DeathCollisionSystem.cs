@@ -43,7 +43,7 @@ public class DeathCollisionSystem : GameSystem, IIniting
                     game.characters[0].audioComponent.DisabledAudio();
                 }
             }
-           // Bootstrap.GetSystem<LiderboardFinishSystem>().AddDeathPlayer(character.rigidbody.gameObject);
+             Bootstrap.GetSystem<LiderboardFinishSystem>().AddDeathPlayer(character.rigidbody.gameObject);
             Bootstrap.GetSystem<SmilesSystem>().CreateSmiles(@object, character.onTriggerEnterImpact.lastCollisionPlayer, false);
         }
     }

@@ -10,7 +10,7 @@ public class MoneyRewardedSystem : GameSystem
     public static MoneyRewardedSystem rewardedSystem { get; private set; }
     public Transform startPoint_X5, startPoint_No; // Точки, с которых будут стартовать анимация монеток
     [SerializeField] private GameObject moneyAnimation;
-    [SerializeField] private Button Next;
+    [SerializeField] private Button Next, NoThinks;
     private void Start()
     {
         if (rewardedSystem == null) rewardedSystem = this;
@@ -32,6 +32,7 @@ public class MoneyRewardedSystem : GameSystem
     private IEnumerator StartAnimationRewarded(int moneyCount)
     {
         Next.enabled = false;
+        NoThinks.enabled = false;
         yield return new WaitForSeconds(1.7f);
         AddMoney(moneyCount);
         yield return new WaitForSeconds(0.5f);

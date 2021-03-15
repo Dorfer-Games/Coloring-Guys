@@ -139,6 +139,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d96a447644e62e548b66cbfec50b9c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &375782930 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6747220572849499526, guid: c0a3d2330378b0e4ba5e24c11539db6c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8073134265626730157}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &456269671 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 463654, guid: 1edb7f7d5ea68467097decc77664b28d,
@@ -350,16 +362,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1650086427 stripped
+--- !u!114 &1772460191 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8073134265059855542, guid: c0a3d2330378b0e4ba5e24c11539db6c,
+  m_CorrespondingSourceObject: {fileID: 7612734630167162399, guid: 7c59469aae2288b4a9454662a7f79fe3,
     type: 3}
-  m_PrefabInstance: {fileID: 8073134265626730157}
+  m_PrefabInstance: {fileID: 5861705156153986911}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1810707468
@@ -821,6 +833,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8073134265059855540, guid: c0a3d2330378b0e4ba5e24c11539db6c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0a3d2330378b0e4ba5e24c11539db6c, type: 3}
 --- !u!1001 &9177517942646854963
@@ -841,7 +858,7 @@ PrefabInstance:
     - target: {fileID: 435185160, guid: 865d14520ea908b47818a741324e3095, type: 3}
       propertyPath: virtualCamera
       value: 
-      objectReference: {fileID: 1650086427}
+      objectReference: {fileID: 375782930}
     - target: {fileID: 1323686357218844495, guid: 865d14520ea908b47818a741324e3095,
         type: 3}
       propertyPath: m_RootOrder
@@ -947,6 +964,11 @@ PrefabInstance:
       propertyPath: Next
       value: 
       objectReference: {fileID: 1871185667}
+    - target: {fileID: 7248024980830803038, guid: 865d14520ea908b47818a741324e3095,
+        type: 3}
+      propertyPath: NoThinks
+      value: 
+      objectReference: {fileID: 1772460191}
     - target: {fileID: 7248024980830803038, guid: 865d14520ea908b47818a741324e3095,
         type: 3}
       propertyPath: startPoint_No

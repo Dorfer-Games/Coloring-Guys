@@ -9,19 +9,21 @@ public class SettingsCamera : GameSystem, IIniting
     [SerializeField] private Camera camera, mainCamera;
 
     [SerializeField] private CinemachineVirtualCamera virtualCamera;
-    void IIniting.OnInit()
+    public void UpdateDataCamera()
     {
-        camera.enabled = true;
-        mainCamera.enabled = false;
         virtualCamera.Follow = game.characters[0].rigidbody.transform; // Цель за, которой двигается камера
         virtualCamera.LookAt = game.characters[0].rigidbody.transform; // Цель за, которой следит камера
-        Open();
     }
 
-    public void Open()
+    private void Open()
     {
         virtualCamera.gameObject.SetActive(true);
         camera.enabled = true;
         mainCamera.enabled = false;
+    }
+
+    public void OnInit()
+    {
+        Open();
     }
 }

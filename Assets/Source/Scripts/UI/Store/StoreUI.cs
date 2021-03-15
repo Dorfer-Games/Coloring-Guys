@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class StoreUI : UIScreen
 {
-    public TMP_Text PurchasedTextPrice;
     [SerializeField] private TMP_Text MoneyText;
     public Button closeButton, AdsRewarded, purhased;
 
