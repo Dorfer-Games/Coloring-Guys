@@ -821,7 +821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42fe6b126d5b84f4d8c9dead2c3f72d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTesting: 1
+  isTesting: 0
   playerData:
     level: 0
     money: 1000

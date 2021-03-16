@@ -588,11 +588,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1231674933}
-    - target: {fileID: 928962521978330907, guid: 7c59469aae2288b4a9454662a7f79fe3,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -313.9995
-      objectReference: {fileID: 0}
     - target: {fileID: 949320832657838077, guid: 7c59469aae2288b4a9454662a7f79fe3,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1033,11 +1028,6 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 3290857592901989160}
-    - target: {fileID: 7182900847264475508, guid: 865d14520ea908b47818a741324e3095,
-        type: 3}
-      propertyPath: isTesting
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7248024980830803038, guid: 865d14520ea908b47818a741324e3095,
         type: 3}
       propertyPath: Next
