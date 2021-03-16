@@ -8,7 +8,8 @@ public class StoreUI : UIScreen
 {
     [SerializeField] private TMP_Text MoneyText;
     public Button closeButton, AdsRewarded, purhased;
-
+    public Sprite SpriteDeactivateButtonPirchased, SpriteActivateButtonPirchased;
+    public Image purchasedImage;
     private MoneyUIComponent MoneyUIComponent;
 
     void Start()

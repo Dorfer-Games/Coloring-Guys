@@ -12,11 +12,14 @@ public class SpawnStoreItemSystem : GameSystem, IIniting
     public void OnInit()
     {
         storeItems = Resources.LoadAll<StoreItem>("Store");
+        int b = 0;
         foreach (var items in storeItems)
         {
             var Item = Instantiate(StoreItemPrefab, parentSpawn.transform).GetComponent<SoreItemComponent>();
             Item.storeItem = items;
+            Item.indexSpawnSet = b;
             StoreItem.Add(Item);
+            b++;
         }
     }
 }

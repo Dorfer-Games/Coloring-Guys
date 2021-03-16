@@ -233,6 +233,7 @@ MonoBehaviour:
   - {fileID: 5934356218567998710, guid: 4ef97f0bc469e5d4ca39cadd5b6e6a2b, type: 3}
   - {fileID: 5934356218567998710, guid: 4ef97f0bc469e5d4ca39cadd5b6e6a2b, type: 3}
   - {fileID: 5934356218567998710, guid: 4ef97f0bc469e5d4ca39cadd5b6e6a2b, type: 3}
+  moneyNotThanks: 0
 --- !u!1 &400980980462286989
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,6 +466,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   priceItemStore: 500
+  time: 3
+  offset: 0.1
 --- !u!1 &1490988820558159296
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,10 +821,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42fe6b126d5b84f4d8c9dead2c3f72d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTesting: 0
+  isTesting: 1
   playerData:
-    level: 4
-    money: 0
+    level: 0
+    money: 1000
     numberIterationLevels: 0
     lastIterationLevels: 0
     RateUs: 0
@@ -1598,6 +1601,8 @@ MonoBehaviour:
   - {fileID: 4179703956241861376, guid: 3f45809c3d0faca4caf4bb87476ef900, type: 3}
   - {fileID: 5456975307693696057, guid: 7fa366495cf9c3248bb53a4f9d74a5c9, type: 3}
   - {fileID: 8584566050458122475, guid: 37cd3c60f2cfc4847963e6d03636c747, type: 3}
+  - {fileID: 2781599380708795587, guid: f414f121906d25a4ab62487d1f4cf998, type: 3}
+  - {fileID: 3431137445958986506, guid: 1066984d421840f45ad386a944bbd0d3, type: 3}
   currentLevel: 0
   countLevelsFirstIteration: 4
   levelAmount: 0

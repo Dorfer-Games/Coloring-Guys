@@ -9,17 +9,13 @@ public class ResetAllCellSystem : GameSystem, IIniting
 
     void IIniting.OnInit()
     {
-        if (game.isVictory)
-        {
+        DOTween.KillAll();
             for(int b = 0; b < game.cellsList.Length; b++)
             {
-                try
-                {
-                    var cell = game.cellsList[b].Cell;
-                    cell.transform.DOLocalMoveY(config.GetValue(EGameValue.CellUpY), 0f);
-                }
-                catch { }
-            }
+                    var cell = game.cellsList[b];
+            cell.SetColor(Color.white);
+            cell.SetDown(false);
+                    cell.Cell.transform.DOLocalMoveY(config.GetValue(EGameValue.CellUpY), 0f);
         }
     }
 }

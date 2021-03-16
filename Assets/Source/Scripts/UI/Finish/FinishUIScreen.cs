@@ -11,7 +11,7 @@ public class FinishUIScreen : UIScreen
     [field: SerializeField] public Button NoThanksButton { get; private set; }
     [field: SerializeField] public Button AdsRewardedButton { get; private set; }
     public Transform Liderboard;
-    public TMP_Text moneyText, moneyAdText;
+    public TMP_Text moneyText, moneyAdText, moneyNotThanksText;
 
     private MoneyUIComponent MoneyUIComponent;
     void Start()

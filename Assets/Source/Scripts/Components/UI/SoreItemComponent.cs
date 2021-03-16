@@ -11,6 +11,7 @@ public class SoreItemComponent : MonoBehaviour
     [Tooltip("Куплен предмет или нет")]
     [SerializeField] bool purchasedItemStore;
     [SerializeField] private int indexSkin; // какой по счёту скин мы выбрали
+    public int indexSpawnSet; // идекс присваивает система спавна предметов в магазине для иконки выделения скинов в магазине
     [SerializeField] private Sprite ImageMainActiveItem, ImageMainNotActiveItem, ImageSkinItem;
 
 
@@ -44,7 +45,7 @@ public class SoreItemComponent : MonoBehaviour
    public void SelectedSkinPlayer()
     {
         if (purchasedItemStore)
-            purchasedStoreSystem.SelectedStoreSkinPlayer(indexSkin);
+            purchasedStoreSystem.SelectedStoreSkinPlayer(indexSkin, indexSpawnSet);
     }
 
     public void Selected(bool selected)
@@ -60,6 +61,7 @@ public class SoreItemComponent : MonoBehaviour
             ImageSkin.gameObject.SetActive(true);
             ImageNotSkin.gameObject.SetActive(false);
             purchasedItemStore = true;
+            SelectedSkinPlayer();
         }
     }
 }

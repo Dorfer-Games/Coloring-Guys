@@ -11,6 +11,7 @@ public class AdsSystem : GameSystem
     private MenuUIScreen menuUI;
     private StoreUI storeUI;
     private static int levelStartAds;
+
     private void Start()
     {
         finishUI = GameObject.FindObjectOfType<FinishUIScreen>();
@@ -47,8 +48,8 @@ public class AdsSystem : GameSystem
 
     public void AdsInterstitialEndLevelGame()
     {
-        if(levelStartAds > 2)
-        AdvertismentManager.Instance.ShowInterstitial();
+            if (levelStartAds > 2)
+                AdvertismentManager.Instance.ShowInterstitial();
     }
 
 

@@ -6,11 +6,15 @@ using UnityEngine;
 
 public class CellCollisionSystem : GameSystem, IIniting
 {
+
+
+
+
     void IIniting.OnInit()
     {
-        foreach (var character in game.characters)
-        {
-            character.onCollisionComponent.OnEnter += ColorCell;
+            foreach (var character in game.characters)
+            {
+                character.onCollisionComponent.OnEnter += ColorCell;
         }
     }
 
@@ -59,12 +63,12 @@ public class CellCollisionSystem : GameSystem, IIniting
 
     void BringCellBack(Transform cell)
     {
-        var component = game.cellDictionary[cell.parent];
-        component.SetColor(Color.white);
+            var component = game.cellDictionary[cell.parent];
+            component.SetColor(Color.white);
 
-        cell.DOLocalMoveY(config.GetValue(EGameValue.CellUpY), config.GetValue(EGameValue.CellFallTime)).SetDelay(config.GetValue(EGameValue.CellBackTime)).SetId(component.GetInstanceID()).OnComplete(() =>
-        {
-            component.SetDown(false);
-        });
+            cell.DOLocalMoveY(config.GetValue(EGameValue.CellUpY), config.GetValue(EGameValue.CellFallTime)).SetDelay(config.GetValue(EGameValue.CellBackTime)).SetId(component.GetInstanceID()).OnComplete(() =>
+            {
+                component.SetDown(false);
+            });
     }
 }

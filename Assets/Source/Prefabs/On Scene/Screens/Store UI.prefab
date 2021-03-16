@@ -610,6 +610,7 @@ GameObject:
   - component: {fileID: 5407063550566628849}
   - component: {fileID: 7238313713847232289}
   - component: {fileID: 8124919094130567874}
+  - component: {fileID: 1481554940840576251}
   m_Layer: 0
   m_Name: Ad Rewarded Button
   m_TagString: Untagged
@@ -717,6 +718,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!95 &1481554940840576251
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3376214876578591890}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 20f8f68feeda1954db16f813a9f44edf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3696534483425123372
 GameObject:
   m_ObjectHideFlags: 0

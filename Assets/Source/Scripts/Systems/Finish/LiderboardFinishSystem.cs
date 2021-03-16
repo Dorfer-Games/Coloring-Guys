@@ -12,7 +12,8 @@ public class LiderboardFinishSystem : GameSystemWithScreen<FinishUIScreen>, IIni
     List<string> namesAddLiderboard = new List<string>();
     int moneyFinishLiderboard = 100, mesto = 7;
     CharactersNamingSystem naming;
-
+    [HideInInspector]
+    public int moneyNotThanks;
     void IIniting.OnInit()
     {
         StartCoroutine(timeStartRandomName());
@@ -56,6 +57,8 @@ public class LiderboardFinishSystem : GameSystemWithScreen<FinishUIScreen>, IIni
             if(InstanceCharactersFinishLiderboard[b].ReturnName() == "You")
             {
                 screen.moneyAdText.text = "+" + Convert.ToString(moneyFinishLiderboard * 5);
+                screen.moneyNotThanksText.text = "+" + Convert.ToString(moneyFinishLiderboard);
+                moneyNotThanks = moneyFinishLiderboard;
                 player.money_round = moneyFinishLiderboard * 5;
             }
             if (b == 0)

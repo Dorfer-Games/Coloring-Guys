@@ -9,8 +9,11 @@ public class ConfettiSystems : GameSystem, IIniting
     [SerializeField] private float timeNextScreenStart = 1.5f;
     public void OnInit()
     {
-        if(game.isVictory)
-        StartCoroutine(offsetTimeStartConfetti());
+        if (game.isVictory)
+        {
+            StartCoroutine(offsetTimeStartConfetti());
+            game.characters[0].animator.SetBool("Dance", true);
+        }
         else
             Bootstrap.ChangeGameState(EGamestate.RateUs);
     }
