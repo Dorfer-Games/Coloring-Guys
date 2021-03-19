@@ -3,12 +3,14 @@
 using UnityEngine;
 using Kuhpik;
 using UnityEngine.UI;
+using System.Collections.Generic;
+
 public class PurchasedStoreSystem : GameSystemWithScreen<StoreUI>, IIniting, IUpdating
 {
     public Action<GameObject> itemPurchesed;
     private SpawnStoreItemSystem SpawnitemSystem;
-    [SerializeField] private int priceItemStore = 500;
-    private bool findRandomSkin, animationPurchasedAutoStore;
+    public int priceItemStore = 500;
+    private bool animationPurchasedAutoStore;
     private MoneyUIComponent MoneyUIComponent;
     #region Animation Purchased Auto Store
     [Header("Animation Purchased Auto Store")]
@@ -20,6 +22,7 @@ public class PurchasedStoreSystem : GameSystemWithScreen<StoreUI>, IIniting, IUp
 
 
 
+    
     public void OnInit()
     {
         SpawnitemSystem = Bootstrap.GetSystem<SpawnStoreItemSystem>();
@@ -33,12 +36,25 @@ public class PurchasedStoreSystem : GameSystemWithScreen<StoreUI>, IIniting, IUp
     }
     private void ChangeMoneyPlayer_PriceSkin()
     {
-        if (player.money < priceItemStore || player.countOpensItemStore > SpawnitemSystem.StoreItem.Count)
+        #region Узанём сколько предметов игрок открыл в магазине
+        int countOpenItemStore = 0;
+        for (int b = 0; b < SpawnitemSystem.storeItems.Length; b++)
+        {
+            if (SpawnitemSystem.storeItems[b].purchasedItemStore)
+            {
+                countOpenItemStore++;
+            }
+        }
+        player.countOpensItemStore = SpawnitemSystem.StoreItem.Count - countOpenItemStore;
+        #endregion
+
+
+        if (player.money < priceItemStore || player.countOpensItemStore == 0)
         {
             screen.purchasedImage.sprite = screen.SpriteDeactivateButtonPirchased;
             screen.purhased.enabled = false;
         }
-        if (player.money >= priceItemStore && player.countOpensItemStore < SpawnitemSystem.StoreItem.Count)
+        if (player.money >= priceItemStore && player.countOpensItemStore != 0)
         {
             screen.purchasedImage.sprite = screen.SpriteActivateButtonPirchased;
             screen.purhased.enabled = true;
@@ -66,13 +82,13 @@ public class PurchasedStoreSystem : GameSystemWithScreen<StoreUI>, IIniting, IUp
     {
         HapticSystem.hapticSystem.VibrateShort();
         int random = RandomSkinOpenStore();
-        SpawnitemSystem.StoreItem[random].Selected(true);
-        for (int b = 0; b < SpawnitemSystem.StoreItem.Count; b++)
-        {
-            if(b != random)
+            SpawnitemSystem.StoreItem[random].Selected(true);
+            for (int b = 0; b < SpawnitemSystem.StoreItem.Count; b++)
+            {
+                if (b != random)
                     SpawnitemSystem.StoreItem[b].Selected(false);
-            }
         }
+    }
 
 
     public void PurchasedItem()
@@ -85,24 +101,17 @@ public class PurchasedStoreSystem : GameSystemWithScreen<StoreUI>, IIniting, IUp
 
     private void Purchased()
     {
-        if (player.money >= priceItemStore && player.countOpensItemStore < SpawnitemSystem.StoreItem.Count)
+        if (player.money >= priceItemStore && player.countOpensItemStore != 0)
         {
-            for (int b = 0; b < SpawnitemSystem.StoreItem.Count; b++)
-            {
-                findRandomSkin = true;
                 int randomItem = RandomSkinOpenStore();
-                findRandomSkin = false;
                 var item = SpawnitemSystem.StoreItem[randomItem];
                 if (!SpawnitemSystem.storeItems[randomItem].purchasedItemStore)
                 {
                     itemPurchesed?.Invoke(item.gameObject);
-                    player.countOpensItemStore++;
                     SpawnitemSystem.storeItems[randomItem].purchasedItemStore = true;
                     SpawnitemSystem.storeItems[randomItem].Save();
                     player.money -= priceItemStore;
                     Bootstrap.GetSystem<MoneyUIComponent>().UpdateMoney.Invoke(player.money);
-                    break;
-                }
             }
         }
     }
@@ -110,13 +119,15 @@ public class PurchasedStoreSystem : GameSystemWithScreen<StoreUI>, IIniting, IUp
 
     private int RandomSkinOpenStore()
     {
+        screen.purhased.enabled = false;
         while (true)
         {
-            int randomItem = UnityEngine.Random.Range(0, SpawnitemSystem.StoreItem.Count);
-            if (!SpawnitemSystem.storeItems[randomItem].purchasedItemStore)
-            {
-                return randomItem;
-            }
+                int randomItem = UnityEngine.Random.Range(0, SpawnitemSystem.StoreItem.Count);
+                if (!SpawnitemSystem.storeItems[randomItem].purchasedItemStore)
+                {
+                    screen.purhased.enabled = true;
+                    return randomItem;
+                }
         }
     }
 

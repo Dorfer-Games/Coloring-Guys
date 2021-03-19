@@ -923,7 +923,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackPrefab: {fileID: 552291627672545299, guid: b5ec85edfb54a7243a045b394af14f24,
     type: 3}
-  offset: 0.0195
+  offset: 0.015
   stackPointName: Color Bricks
 --- !u!1 &3694283937025454334
 GameObject:

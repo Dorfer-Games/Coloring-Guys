@@ -9,7 +9,7 @@ public class SoreItemComponent : MonoBehaviour
     [Tooltip("Иконка Главного предмета")]
     [SerializeField] Image imageMain, ImageSkin, ImageNotSkin;
     [Tooltip("Куплен предмет или нет")]
-    [SerializeField] bool purchasedItemStore;
+    public bool purchasedItemStore;
     [SerializeField] private int indexSkin; // какой по счёту скин мы выбрали
     public int indexSpawnSet; // идекс присваивает система спавна предметов в магазине для иконки выделения скинов в магазине
     [SerializeField] private Sprite ImageMainActiveItem, ImageMainNotActiveItem, ImageSkinItem;

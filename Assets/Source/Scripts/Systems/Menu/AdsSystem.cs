@@ -30,8 +30,6 @@ public class AdsSystem : GameSystem
     private void AdsRewarded_X5()
     {
         AdvertismentManager.Instance.ShowRewarded(MoneyAdd_AdsRewarded, $"ad_on_X5");
-        if(game.isVictory)
-        LevelLoadingSystem.loadingSystem.AddLevel();
     }
 
     private void AdsRewarded_Store()
@@ -58,6 +56,8 @@ public class AdsSystem : GameSystem
     private void MoneyAdd_AdsRewarded()
     {
         MoneyRewardedSystem.rewardedSystem.AnimationStart(player.money_round, MoneyRewardedSystem.rewardedSystem.startPoint_X5);
+        if (game.isVictory)
+            LevelLoadingSystem.loadingSystem.AddLevel();
     }
     private void MoneyAdd_AdsRewardedStore()
     {
