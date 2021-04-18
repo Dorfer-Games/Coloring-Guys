@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83fe485b1be2eac44adef53add34b9e1, type: 3}
-  m_Name: SkinStandart 3
+  m_Name: Mandalorian Skin
   m_EditorClassIdentifier: 
-  nameSO: harleyQuinn
-  indexSkin: 3
-  imageMain: {fileID: 21300000, guid: 51799ecbb15b8f64681b2edc1b0c5889, type: 3}
+  nameSO: mandalorian
+  indexSkin: 6
+  imageMain: {fileID: 21300000, guid: 1a7dc1b27f8870a4ba1e89c590e86960, type: 3}
   purchasedItemStore: 0

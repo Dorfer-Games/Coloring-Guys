@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83fe485b1be2eac44adef53add34b9e1, type: 3}
-  m_Name: SkinStandart 5
+  m_Name: Unicorn Skin
   m_EditorClassIdentifier: 
-  nameSO: joker
-  indexSkin: 5
-  imageMain: {fileID: 21300000, guid: c9726b4fde60bd24aae68bc6a4731aab, type: 3}
+  nameSO: unicorn
+  indexSkin: 8
+  imageMain: {fileID: 21300000, guid: 71f689f0c6d44654bab98afc63d418bf, type: 3}
   purchasedItemStore: 0

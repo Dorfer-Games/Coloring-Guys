@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83fe485b1be2eac44adef53add34b9e1, type: 3}
-  m_Name: SkinStandart 10
+  m_Name: Skillet Skin
   m_EditorClassIdentifier: 
-  nameSO: simpson
-  indexSkin: 10
-  imageMain: {fileID: 21300000, guid: 273a868a6b176fb48a773c115a86d568, type: 3}
+  nameSO: skillet
+  indexSkin: 9
+  imageMain: {fileID: 21300000, guid: 0d5ccf49ed755ff4caeb210624bbc34e, type: 3}
   purchasedItemStore: 0

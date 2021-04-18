@@ -1,6 +1,4 @@
 ﻿using UnityEngine;
-
-using UnityEngine.UI;
 using System;
 using System.IO;
 
@@ -15,11 +13,11 @@ public class StoreItem : ScriptableObject
     [Tooltip("Куплен предмет или нет")]
     public bool purchasedItemStore;
 
-
     private void Awake()
     {
         Load();
     }
+
     public void Save()
     {
         Data data = new Data();
@@ -46,7 +44,7 @@ public class StoreItem : ScriptableObject
         {
             StreamReader f = new StreamReader(Application.persistentDataPath + nameSO + ".txt");
             Data data = new Data();
-            
+
             string json = f.ReadToEnd();
             data = JsonUtility.FromJson<Data>(json);
             purchasedItemStore = data.purchasedItemStore;
@@ -62,7 +60,6 @@ public class StoreItem : ScriptableObject
 [Serializable]
 class Data
 {
-
     public Sprite imageMain;
     public bool purchasedItemStore;
 }

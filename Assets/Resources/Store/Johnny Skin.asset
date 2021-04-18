@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83fe485b1be2eac44adef53add34b9e1, type: 3}
-  m_Name: SkinStandart 6
+  m_Name: Johnny Skin
   m_EditorClassIdentifier: 
-  nameSO: mandalorian
-  indexSkin: 6
-  imageMain: {fileID: 21300000, guid: 1a7dc1b27f8870a4ba1e89c590e86960, type: 3}
+  nameSO: johnnySkin
+  indexSkin: 4
+  imageMain: {fileID: 21300000, guid: 622eb0d3709b40e44bd9f4619653e8ab, type: 3}
   purchasedItemStore: 0
