@@ -4,6 +4,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 
 public class MaxSdkCallbacks : MonoBehaviour
@@ -25,7 +26,6 @@ public class MaxSdkCallbacks : MonoBehaviour
             _onSdkInitializedEvent -= value;
         }
     }
-
 
     // Fire when the MaxVariableService has finished loading the latest set of variables.
     private static Action _onVariablesUpdatedEvent;
@@ -58,7 +58,6 @@ public class MaxSdkCallbacks : MonoBehaviour
             _onSdkConsentDialogDismissedEvent -= value;
         }
     }
-
 
     // Fired when a banner is loaded
     private static Action<string> _onBannerAdLoadedEvent;
@@ -140,7 +139,6 @@ public class MaxSdkCallbacks : MonoBehaviour
         }
     }
 
-
     // Fired when a MREC is loaded
     private static Action<string> _onMRecAdLoadedEvent;
     public static event Action<string> OnMRecAdLoadedEvent
@@ -221,6 +219,85 @@ public class MaxSdkCallbacks : MonoBehaviour
         }
     }
 
+    // Fired when a cross promo ad is loaded
+    private static Action<string> _onCrossPromoAdLoadedEvent;
+    public static event Action<string> OnCrossPromoAdLoadedEvent
+    {
+        add
+        {
+            LogSubscribedToEvent("OnCrossPromoAdLoadedEvent");
+            _onCrossPromoAdLoadedEvent += value;
+        }
+        remove
+        {
+            LogUnsubscribedToEvent("OnCrossPromoAdLoadedEvent");
+            _onCrossPromoAdLoadedEvent -= value;
+        }
+    }
+
+    // Fired when a cross promo ad has failed to load
+    private static Action<string, int> _onCrossPromoAdLoadFailedEvent;
+    public static event Action<string, int> OnCrossPromoAdLoadFailedEvent
+    {
+        add
+        {
+            LogSubscribedToEvent("OnCrossPromoAdLoadFailedEvent");
+            _onCrossPromoAdLoadFailedEvent += value;
+        }
+        remove
+        {
+            LogUnsubscribedToEvent("OnCrossPromoAdLoadFailedEvent");
+            _onCrossPromoAdLoadFailedEvent -= value;
+        }
+    }
+
+    // Fired when a cross promo ad ad is clicked
+    private static Action<string> _onCrossPromoAdClickedEvent;
+    public static event Action<string> OnCrossPromoAdClickedEvent
+    {
+        add
+        {
+            LogSubscribedToEvent("OnCrossPromoAdClickedEvent");
+            _onCrossPromoAdClickedEvent += value;
+        }
+        remove
+        {
+            LogUnsubscribedToEvent("OnCrossPromoAdClickedEvent");
+            _onCrossPromoAdClickedEvent -= value;
+        }
+    }
+
+    // Fired when a cross promo ad ad expands to encompass a greater portion of the screen
+    private static Action<string> _onCrossPromoAdExpandedEvent;
+    public static event Action<string> OnCrossPromoAdExpandedEvent
+    {
+        add
+        {
+            LogSubscribedToEvent("OnCrossPromoAdExpandedEvent");
+            _onCrossPromoAdExpandedEvent += value;
+        }
+        remove
+        {
+            LogUnsubscribedToEvent("OnCrossPromoAdExpandedEvent");
+            _onCrossPromoAdExpandedEvent -= value;
+        }
+    }
+
+    // Fired when a cross promo ad ad collapses back to its initial size
+    private static Action<string> _onCrossPromoAdCollapsedEvent;
+    public static event Action<string> OnCrossPromoAdCollapsedEvent
+    {
+        add
+        {
+            LogSubscribedToEvent("OnCrossPromoAdCollapsedEvent");
+            _onCrossPromoAdCollapsedEvent += value;
+        }
+        remove
+        {
+            LogUnsubscribedToEvent("OnCrossPromoAdCollapsedEvent");
+            _onCrossPromoAdCollapsedEvent -= value;
+        }
+    }
 
     // Fired when an interstitial ad is loaded and ready to be shown
     private static Action<string> _onInterstitialLoadedEvent;
@@ -317,7 +394,6 @@ public class MaxSdkCallbacks : MonoBehaviour
             _onInterstitialClickedEvent -= value;
         }
     }
-
 
     // Fired when a rewarded ad finishes loading and is ready to be displayed
     private static Action<string> _onRewardedAdLoadedEvent;
@@ -430,7 +506,6 @@ public class MaxSdkCallbacks : MonoBehaviour
             _onRewardedAdReceivedRewardEvent -= value;
         }
     }
-    
 
     // Fired when a rewarded interstitial ad finishes loading and is ready to be displayed
     private static Action<string> _onRewardedInterstitialAdLoadedEvent;
@@ -560,28 +635,14 @@ public class MaxSdkCallbacks : MonoBehaviour
         var eventName = eventProps["name"];
         if (eventName == "OnSdkInitializedEvent")
         {
-            var consentDialogStateStr = eventProps["consentDialogState"];
-            var sdkConfiguration = new MaxSdkBase.SdkConfiguration();
-
-            if ("1".Equals(consentDialogStateStr))
-            {
-                sdkConfiguration.ConsentDialogState = MaxSdkBase.ConsentDialogState.Applies;
-            }
-            else if ("2".Equals(consentDialogStateStr))
-            {
-                sdkConfiguration.ConsentDialogState = MaxSdkBase.ConsentDialogState.DoesNotApply;
-            }
-            else
-            {
-                sdkConfiguration.ConsentDialogState = MaxSdkBase.ConsentDialogState.Unknown;
-            }
+            var sdkConfiguration = MaxSdkBase.SdkConfiguration.Create(eventProps);
             InvokeEvent(_onSdkInitializedEvent, sdkConfiguration);
         }
         else if (eventName == "OnVariablesUpdatedEvent")
         {
             InvokeEvent(_onVariablesUpdatedEvent);
         }
-        else if ( eventName == "OnSdkConsentDialogDismissedEvent" )
+        else if (eventName == "OnSdkConsentDialogDismissedEvent")
         {
             InvokeEvent(_onSdkConsentDialogDismissedEvent);
         }
@@ -632,6 +693,28 @@ public class MaxSdkCallbacks : MonoBehaviour
             else if (eventName == "OnMRecAdCollapsedEvent")
             {
                 InvokeEvent(_onMRecAdCollapsedEvent, adUnitIdentifier);
+            }
+            else if (eventName == "OnCrossPromoAdLoadedEvent")
+            {
+                InvokeEvent(_onCrossPromoAdLoadedEvent, adUnitIdentifier);
+            }
+            else if (eventName == "OnCrossPromoAdLoadFailedEvent")
+            {
+                var errorCode = 0;
+                int.TryParse(eventProps["errorCode"], out errorCode);
+                InvokeEvent(_onCrossPromoAdLoadFailedEvent, adUnitIdentifier, errorCode);
+            }
+            else if (eventName == "OnCrossPromoAdClickedEvent")
+            {
+                InvokeEvent(_onCrossPromoAdClickedEvent, adUnitIdentifier);
+            }
+            else if (eventName == "OnCrossPromoAdExpandedEvent")
+            {
+                InvokeEvent(_onCrossPromoAdExpandedEvent, adUnitIdentifier);
+            }
+            else if (eventName == "OnCrossPromoAdCollapsedEvent")
+            {
+                InvokeEvent(_onCrossPromoAdCollapsedEvent, adUnitIdentifier);
             }
             else if (eventName == "OnInterstitialLoadedEvent")
             {
@@ -745,7 +828,9 @@ public class MaxSdkCallbacks : MonoBehaviour
     {
         var sdkConfiguration = new MaxSdkBase.SdkConfiguration();
         sdkConfiguration.ConsentDialogState = MaxSdkBase.ConsentDialogState.Unknown;
-        
+        sdkConfiguration.AppTrackingStatus = MaxSdkBase.AppTrackingStatus.Authorized;
+        sdkConfiguration.CountryCode = RegionInfo.CurrentRegion.TwoLetterISORegionName;
+
         _onSdkInitializedEvent(sdkConfiguration);
     }
 #endif

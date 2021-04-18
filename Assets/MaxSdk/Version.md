@@ -1,5 +1,30 @@
 ## Versions
 
+## 4.1.2
+    * Add support for embedding the Swift Standard Library (for iOS < 12.2) if a network requires it.
+    * Fix failure to parse doubles when dealing with exponential notation by returning -1.
+    * Fix build when targeting platforms other than Android or iOS.
+## 4.1.1
+    * Add API to retrieve country code, via `MaxSdk.GetSdkConfiguration().CountryCode`.
+## 4.1.0
+    * Add API to retrieve revenue via `MaxSdk.GetAdInfo(adUnitId).Revenue`.
+    * Add API to retrieve SDK configuration via `MaxSdk.GetSdkConfiguration()`.
+    * Persist fullscreen ad stubs through scene changes in Unity Editor mode.
+## 4.0.1
+    * Remove Terms of Service URL from being a consent flow requirement.
+    * Update Quality Service Plugin maven repository.
+## 4.0.0
+    * Initial support for MAX consent flow. Please see our documentation for instructions on enabling it.
+    * Add Cross Promo Advertisement API.
+    * Add `GetAdValue` API to get arbitrary ad value for a given ad unit identifier with key.
+    * Add support for Swift (swift file and build properties) if a network requires it.
+    * Deprecate `MaxSdk.UserService.ShowConsentDialog()` for iOS builds. This version of the iOS consent flow has been deprecated as of MAX Unity Plugin v4.0.0 + iOS SDK v7.0.0, please refer to our documentation for enabling the new consent flow.
+    * Rename ad info button to creative debugger.
+    * Android banners are now shown within the safe area (not shown under notches).
+    * Updated the External Dependency Manager version to 1.2.164.
+    * Update to support set extra parameters for MRECs.
+## 3.2.5
+    * Fix hard coded path separator causing issues on Windows.
 ## 3.2.4
     * Fix iOS build errors on Unity 2019.3+ when embedding framework libraries if Podfile contains `Unity-iPhone` target.
     * Enable verbose logging at run time when enabling the setting via Integration Manager (previously only enabled build time logging).
