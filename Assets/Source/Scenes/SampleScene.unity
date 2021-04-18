@@ -1183,6 +1183,46 @@ PrefabInstance:
       propertyPath: cameraStore
       value: 
       objectReference: {fileID: 1830018545}
+    - target: {fileID: 6298820698868298054, guid: 865d14520ea908b47818a741324e3095,
+        type: 3}
+      propertyPath: hexPath
+      value: Hexes\{0}
+      objectReference: {fileID: 0}
+    - target: {fileID: 6298820698868298054, guid: 865d14520ea908b47818a741324e3095,
+        type: 3}
+      propertyPath: environmentPath
+      value: Environments\Level {0}
+      objectReference: {fileID: 0}
+    - target: {fileID: 6298820698868298054, guid: 865d14520ea908b47818a741324e3095,
+        type: 3}
+      propertyPath: environmentsMax
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6298820698868298054, guid: 865d14520ea908b47818a741324e3095,
+        type: 3}
+      propertyPath: hexTypes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6298820698868298054, guid: 865d14520ea908b47818a741324e3095,
+        type: 3}
+      propertyPath: hexTypes.Array.data[0]
+      value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 6298820698868298054, guid: 865d14520ea908b47818a741324e3095,
+        type: 3}
+      propertyPath: hexTypes.Array.data[1]
+      value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 6298820698868298054, guid: 865d14520ea908b47818a741324e3095,
+        type: 3}
+      propertyPath: hexTypes.Array.data[2]
+      value: Hexagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 6298820698868298054, guid: 865d14520ea908b47818a741324e3095,
+        type: 3}
+      propertyPath: countLevelsFirstIteration
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6298820699152258734, guid: 865d14520ea908b47818a741324e3095,
         type: 3}
       propertyPath: numberStartGameText
@@ -1220,8 +1260,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7182900847264475508, guid: 865d14520ea908b47818a741324e3095,
         type: 3}
+      propertyPath: playerData.level
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182900847264475508, guid: 865d14520ea908b47818a741324e3095,
+        type: 3}
       propertyPath: playerData.money
       value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182900847264475508, guid: 865d14520ea908b47818a741324e3095,
+        type: 3}
+      propertyPath: playerData.lastIterationLevels
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182900847264475508, guid: 865d14520ea908b47818a741324e3095,
+        type: 3}
+      propertyPath: playerData.numberIterationLevels
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7248024980830803038, guid: 865d14520ea908b47818a741324e3095,
         type: 3}

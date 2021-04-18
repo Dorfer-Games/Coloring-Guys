@@ -10,7 +10,7 @@ public class CharactersSpawnSystem : GameSystem, IIniting
 
     void IIniting.OnInit()
     {
-        var spawnPoints = game.level.transform.Find("Characters SP").GetComponentsInChildren<CharacterSpawnComponent>().OrderBy(x => x.Index).ToArray();
+        var spawnPoints = game.environment.transform.Find("Characters SP").GetComponentsInChildren<CharacterSpawnComponent>().OrderBy(x => x.Index).ToArray();
         game.characters = new Character[spawnPoints.Length];
         game.Player = new List<GameObject>();
 

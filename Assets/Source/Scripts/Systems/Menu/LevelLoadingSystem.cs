@@ -1,5 +1,6 @@
 using DG.Tweening;
 using Kuhpik;
+using NaughtyAttributes;
 using Supyrb;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,64 +8,74 @@ using UnityEngine;
 
 public class LevelLoadingSystem : GameSystem, IIniting, IDisposing
 {
-    public static LevelLoadingSystem loadingSystem { get; private set; }
-    public GameObject[] levels;
+    //Используем папку ресурсов для оптимизации памяти.
+    [Header("Environment")]
+    [SerializeField] string environmentPath;
+    [SerializeField] int environmentsMax;
+
+    [Header("Hex")]
+    [SerializeField] string hexPath;
+    [SerializeField] [ReorderableList] string[] hexTypes; //Будем зацикливать
+
+    [Header("Others")]
     public int currentLevel = 0;
-
     public int countLevelsFirstIteration = 9; // количество уровней в одной итерации. 9, потому что отсчёт идёт с 0
-
     public System.Action<int> OnLevel;
-
     public int levelAmount = 0, levelUIProgressBar;
 
-
+    public static LevelLoadingSystem loadingSystem { get; private set; }
 
     private void Awake()
     {
-        if(loadingSystem == null)
-        loadingSystem = this;
+        if (loadingSystem == null)
+            loadingSystem = this;
     }
 
-
-
+    // Надо переписать, это вообще не понятно.
     void IIniting.OnInit()
     {
         #region Loading Levels
+
         levelAmount = player.level - player.lastIterationLevels;
+
         for (int d = 0; d <= countLevelsFirstIteration; d++)
         {
             if (levelUIProgressBar <= player.level)
             {
                 levelUIProgressBar += 5;
             }
+
             if (levelUIProgressBar > player.level)
             {
                 levelUIProgressBar -= 5;
                 player.lastIterationLevels = levelUIProgressBar;
                 break;
             }
+
             if (d >= countLevelsFirstIteration)
             {
                 d = 0;
             }
         }
+
         if (levelAmount > countLevelsFirstIteration)
-            {
-            if (player.numberIterationLevels < (levels.Length - 1))
+        {
+            if (player.numberIterationLevels < (environmentsMax - 1))
             {
                 player.numberIterationLevels++;
             }
-            else //if (player.numberIterationLevels > (levels.Length - 1))
 
+            else
             {
                 player.numberIterationLevels = 0;
             }
-            
+
             levelAmount = player.level - player.lastIterationLevels;
             CreateLevel(player.numberIterationLevels);
         }
-            else
-            {
+
+        else
+        {
             CreateLevel(player.numberIterationLevels);
         }
 
@@ -75,18 +86,26 @@ public class LevelLoadingSystem : GameSystem, IIniting, IDisposing
     {
         OnLevel?.Invoke(player.level);
         SendAppMetrica();
-        game.level = Instantiate(levels[level]);
+
+        var hexIndex = GameloopExtensions.CalculateLoopIndex(player.level, 5, hexTypes.Length); //Используй это же.
+        var environmentIndex = GameloopExtensions.CalculateLoopIndex(player.level, 5, environmentsMax);
+
+        var environment = Resources.Load<GameObject>(string.Format(environmentPath, environmentIndex + 1)); //Потому что уровни начинаются не с 0 а с 1.
+        var cells = Resources.Load<GameObject>(string.Format(hexPath, hexTypes[hexIndex]));
+
+        game.environment = Instantiate(environment);
+        game.cells = Instantiate(cells);
+
         game.cellDictionary = FindObjectsOfType<CellComponent>().ToDictionary(x => x.transform, x => x);
         game.cellsList = FindObjectsOfType<CellComponent>();
     }
 
     public void AddLevel()
     {
-            player.level++;
+        player.level++;
     }
 
-
-    private void SendAppMetrica()
+    void SendAppMetrica()
     {
         var @params = new Dictionary<string, object>()
         {
@@ -96,6 +115,7 @@ public class LevelLoadingSystem : GameSystem, IIniting, IDisposing
         AppMetrica.Instance.ReportEvent("level_start", @params);
         AppMetrica.Instance.SendEventsBuffer();
     }
+
     void IDisposing.OnDispose()
     {
         Signals.Clear();

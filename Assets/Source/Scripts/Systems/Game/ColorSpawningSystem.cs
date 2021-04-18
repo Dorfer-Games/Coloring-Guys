@@ -19,7 +19,7 @@ public class ColorSpawningSystem : GameSystem, IIniting
     void IIniting.OnInit()
     {
         levelInfo = GameObject.FindObjectOfType<LevelInfoComponent>();
-        colorSpawnPoints = game.level.transform.Find("Colors SP").GetComponentsInChildren<ColorSpawnComponent>().ToArray();
+        colorSpawnPoints = game.environment.transform.Find("Colors SP").GetComponentsInChildren<ColorSpawnComponent>().ToArray();
 
         foreach (var character in game.characters)
         {

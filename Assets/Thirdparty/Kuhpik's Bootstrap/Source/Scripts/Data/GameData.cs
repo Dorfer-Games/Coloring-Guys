@@ -8,7 +8,8 @@ namespace Kuhpik
     /// </summary>
     public class GameData
     {
-        public GameObject level;
+        public GameObject cells;
+        public GameObject environment;
         public Character[] characters;
         public Vector3 playerRotation;
         public List<GameObject> Player;
