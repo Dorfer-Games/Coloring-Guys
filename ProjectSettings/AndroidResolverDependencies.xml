@@ -7,10 +7,10 @@
     <package>com.android.support:customtabs:25.3.1</package>
     <package>com.android.support:recyclerview-v7:28.+</package>
     <package>com.android.support:support-v4:25.3.1</package>
-    <package>com.applovin.mediation:facebook-adapter:[6.2.1.0]</package>
-    <package>com.applovin.mediation:google-adapter:[19.7.0.1]</package>
-    <package>com.applovin.mediation:ironsource-adapter:7.1.0.2.0</package>
-    <package>com.applovin.mediation:unityads-adapter:3.6.0.0</package>
+    <package>com.applovin.mediation:facebook-adapter:[6.3.0.0]</package>
+    <package>com.applovin.mediation:google-adapter:[20.0.0.0]</package>
+    <package>com.applovin.mediation:ironsource-adapter:7.1.5.0.0</package>
+    <package>com.applovin.mediation:unityads-adapter:3.6.0.1</package>
     <package>com.applovin:applovin-sdk:10.1.2</package>
     <package>com.appsflyer:af-android-sdk:6.2.0</package>
     <package>com.appsflyer:unity-wrapper:6.2.0</package>
