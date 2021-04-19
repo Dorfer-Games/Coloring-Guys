@@ -50,6 +50,7 @@ public class AdvertismentManager : MonoBehaviour
         {
             Instance = this;
         }
+
         else
         {
             Destroy(gameObject);

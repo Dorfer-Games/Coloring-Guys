@@ -33,6 +33,7 @@ public class CharactersRandomizeSystem : GameSystem, IIniting
                 game.characters[d].DataAllToPlayer.EnabledSkinPlayer();
             }
         }
+
         Bootstrap.GetSystem<CharactersSpawnSystem>().SetComponentPlayer(game.characters.Length);
     }
 
@@ -40,6 +41,7 @@ public class CharactersRandomizeSystem : GameSystem, IIniting
     {
         game.characters[0].DataAllToPlayer.skin = player.selectedSkinPlayer;
         game.characters[0].DataAllToPlayer.EnabledSkinPlayer();
+
         Bootstrap.GetSystem<CharactersSpawnSystem>().SetComponentPlayer(1);
     }
 
@@ -47,5 +49,7 @@ public class CharactersRandomizeSystem : GameSystem, IIniting
     {
         game.characters[0].DataAllToPlayer.skin = player.selectedSkinPlayer;
         game.characters[0].DataAllToPlayer.EnabledSkinPlayer();
+
+        Bootstrap.GetSystem<CharactersSpawnSystem>().SetComponentPlayer(game.characters.Length);
     }
 }

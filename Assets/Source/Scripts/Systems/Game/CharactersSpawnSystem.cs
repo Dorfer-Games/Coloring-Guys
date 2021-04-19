@@ -58,7 +58,6 @@ public class CharactersSpawnSystem : GameSystem, IIniting
         }
 
         game.characterDictionary = game.characters.ToDictionary(x => x.rigidbody.transform, x => x);
-        //Bootstrap.GetSystem<CharactersRandomizeSystem>().UpdateSkins();
     }
 
 
