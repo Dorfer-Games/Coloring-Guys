@@ -73,7 +73,7 @@ public class AdvertismentManager : MonoBehaviour
             #endif
         };
 
-        MaxSdk.SetHasUserConsent(true);
+        MaxSdk.SetHasUserConsent(false); //Что бы поставить true надо спрашивать согласие у юзера.
         MaxSdk.SetSdkKey(MaxSdkKey);
         MaxSdk.InitializeSdk();
     }
