@@ -10,7 +10,7 @@ public class LiderboardFinishSystem : GameSystemWithScreen<FinishUIScreen>, IIni
     [SerializeField] GameObject[] leaderboardElementFinishPrefab;
     List<LiderboardFinishComponent> InstanceCharactersFinishLiderboard;
     List<string> namesAddLiderboard = new List<string>();
-    int moneyFinishLiderboard = 100, mesto = 7;
+    int moneyFinishLiderboard = 100, mesto = 0;
     CharactersNamingSystem naming;
     [HideInInspector] public int moneyNotThanks;
 
@@ -22,6 +22,8 @@ public class LiderboardFinishSystem : GameSystemWithScreen<FinishUIScreen>, IIni
     public void AddDeathPlayer(GameObject player)
     {
         int index = 0;
+
+        if (mesto == 0) mesto = game.characters.Length - 1; //Костыль, а что поделать при такой связанности?)
 
         for (int b = 0; b < InstanceCharactersFinishLiderboard.Count; b++)
         {
@@ -69,6 +71,7 @@ public class LiderboardFinishSystem : GameSystemWithScreen<FinishUIScreen>, IIni
             if (b > 1) moneyFinishLiderboard -= 5;
         }
     }
+
     public void InitLiderbordFinish()
     {
         InstanceCharactersFinishLiderboard = new List<LiderboardFinishComponent>();
