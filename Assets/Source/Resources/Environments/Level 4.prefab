@@ -253,7 +253,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 0
 --- !u!4 &8616482058895649881
 Transform:
@@ -528,7 +528,7 @@ GameObject:
   m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2474501814209780461
 Transform:
@@ -622,7 +622,7 @@ GameObject:
   m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2474501814209778411
 Transform:
@@ -716,7 +716,7 @@ GameObject:
   m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2474501814209787644
 Transform:
@@ -807,7 +807,7 @@ GameObject:
   m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2474501814209783219
 Transform:
@@ -841,7 +841,7 @@ GameObject:
   m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2474501814209784814
 Transform:
@@ -935,7 +935,7 @@ GameObject:
   m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2474501814209778116
 Transform:
@@ -1029,7 +1029,7 @@ GameObject:
   m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2474501814209776276
 Transform:
@@ -1120,7 +1120,7 @@ GameObject:
   m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2474501814209781172
 Transform:
@@ -1767,7 +1767,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1945475775615002617
 Transform:
@@ -1944,7 +1944,7 @@ GameObject:
   m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4110859625832024801
 Transform:
@@ -2372,7 +2372,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &7253832190943011316
 Transform:
@@ -3362,7 +3362,7 @@ GameObject:
   m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &8456501473702706112
 Transform:
@@ -3394,7 +3394,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &8779318330435733253
 Transform:
@@ -3444,7 +3444,7 @@ GameObject:
   m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &8722579977810355991
 Transform:
@@ -3635,7 +3635,7 @@ GameObject:
   m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &9208066804203620901
 Transform:
@@ -3663,6 +3663,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Color Spawn Point
+      objectReference: {fileID: 0}
+    - target: {fileID: 2907084554765840233, guid: 10e4607ac006a714cbb11456fd7fcdc9,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8325712032275782610, guid: 10e4607ac006a714cbb11456fd7fcdc9,
         type: 3}
@@ -3734,6 +3739,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8616482058895649881}
     m_Modifications:
+    - target: {fileID: 2581321118440817044, guid: 289c620d0da9aba44aea60475fa8abdd,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2581321118440817045, guid: 289c620d0da9aba44aea60475fa8abdd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3748,6 +3758,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Center.z
       value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 5504669988913300257, guid: 289c620d0da9aba44aea60475fa8abdd,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5504669988913300262, guid: 289c620d0da9aba44aea60475fa8abdd,
         type: 3}
@@ -3833,6 +3848,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Trap
+      objectReference: {fileID: 0}
+    - target: {fileID: 5504669989273006323, guid: 289c620d0da9aba44aea60475fa8abdd,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7670796482528605903, guid: 289c620d0da9aba44aea60475fa8abdd,
         type: 3}
@@ -3939,6 +3959,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character Spawn Point (AI) (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8853268423157881654, guid: f8c3e1024bddb9c42948b5643c84f03a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8c3e1024bddb9c42948b5643c84f03a, type: 3}
 --- !u!4 &8549594156708484365 stripped
@@ -3958,6 +3983,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Color Spawn Point
+      objectReference: {fileID: 0}
+    - target: {fileID: 2907084554765840233, guid: 10e4607ac006a714cbb11456fd7fcdc9,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8325712032275782610, guid: 10e4607ac006a714cbb11456fd7fcdc9,
         type: 3}
@@ -4029,6 +4059,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8616482058895649881}
     m_Modifications:
+    - target: {fileID: 2581321118440817044, guid: 289c620d0da9aba44aea60475fa8abdd,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2873223295461614972, guid: 289c620d0da9aba44aea60475fa8abdd,
         type: 3}
       propertyPath: m_Center.x
@@ -4038,6 +4073,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Center.z
       value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 5504669988913300257, guid: 289c620d0da9aba44aea60475fa8abdd,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5504669988913300262, guid: 289c620d0da9aba44aea60475fa8abdd,
         type: 3}
@@ -4123,6 +4163,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Trap
+      objectReference: {fileID: 0}
+    - target: {fileID: 5504669989273006323, guid: 289c620d0da9aba44aea60475fa8abdd,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7670796482528605903, guid: 289c620d0da9aba44aea60475fa8abdd,
         type: 3}
@@ -4229,6 +4274,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character Spawn Point (AI) (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8853268423157881654, guid: f8c3e1024bddb9c42948b5643c84f03a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8c3e1024bddb9c42948b5643c84f03a, type: 3}
 --- !u!4 &4947775646407479973 stripped
@@ -4248,6 +4298,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Color Spawn Point
+      objectReference: {fileID: 0}
+    - target: {fileID: 2907084554765840233, guid: 10e4607ac006a714cbb11456fd7fcdc9,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8325712032275782610, guid: 10e4607ac006a714cbb11456fd7fcdc9,
         type: 3}
@@ -4384,6 +4439,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character Spawn Point (AI)
       objectReference: {fileID: 0}
+    - target: {fileID: 8853268423157881654, guid: f8c3e1024bddb9c42948b5643c84f03a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8c3e1024bddb9c42948b5643c84f03a, type: 3}
 --- !u!4 &6185772159524442624 stripped
@@ -4463,6 +4523,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Character Spawn Point (AI)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8853268423157881654, guid: f8c3e1024bddb9c42948b5643c84f03a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8c3e1024bddb9c42948b5643c84f03a, type: 3}
@@ -4588,6 +4653,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Color Spawn Point (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2907084554765840233, guid: 10e4607ac006a714cbb11456fd7fcdc9,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8325712032275782610, guid: 10e4607ac006a714cbb11456fd7fcdc9,
         type: 3}
@@ -4724,6 +4794,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character Spawn Point (AI)
       objectReference: {fileID: 0}
+    - target: {fileID: 8853268423157881654, guid: f8c3e1024bddb9c42948b5643c84f03a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8c3e1024bddb9c42948b5643c84f03a, type: 3}
 --- !u!4 &434380016329597471 stripped
@@ -4798,6 +4873,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Character Spawn Point (Player)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8853268423157881654, guid: f8c3e1024bddb9c42948b5643c84f03a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8c3e1024bddb9c42948b5643c84f03a, type: 3}
@@ -4879,6 +4959,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character Spawn Point (AI)
       objectReference: {fileID: 0}
+    - target: {fileID: 8853268423157881654, guid: f8c3e1024bddb9c42948b5643c84f03a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8c3e1024bddb9c42948b5643c84f03a, type: 3}
 --- !u!4 &2278664738802389774 stripped
@@ -4898,6 +4983,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Color Spawn Point
+      objectReference: {fileID: 0}
+    - target: {fileID: 2907084554765840233, guid: 10e4607ac006a714cbb11456fd7fcdc9,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8325712032275782610, guid: 10e4607ac006a714cbb11456fd7fcdc9,
         type: 3}
@@ -4969,10 +5059,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8616482058895649881}
     m_Modifications:
+    - target: {fileID: 3435909998493755380, guid: 42178b0c5c5549d4fa3fd9ae5a1ef9af,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4681897556023905802, guid: 42178b0c5c5549d4fa3fd9ae5a1ef9af,
         type: 3}
       propertyPath: m_Name
       value: trapShlagbaum
+      objectReference: {fileID: 0}
+    - target: {fileID: 4681897556023905802, guid: 42178b0c5c5549d4fa3fd9ae5a1ef9af,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5454599849798489264, guid: 42178b0c5c5549d4fa3fd9ae5a1ef9af,
         type: 3}
@@ -5043,6 +5143,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 7373868938579017287, guid: 42178b0c5c5549d4fa3fd9ae5a1ef9af,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392559383672354278, guid: 42178b0c5c5549d4fa3fd9ae5a1ef9af,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42178b0c5c5549d4fa3fd9ae5a1ef9af, type: 3}
@@ -5233,6 +5343,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character Spawn Point (AI) (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8853268423157881654, guid: f8c3e1024bddb9c42948b5643c84f03a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8c3e1024bddb9c42948b5643c84f03a, type: 3}
 --- !u!4 &1375264243831927130 stripped
@@ -5248,10 +5363,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8616482058895649881}
     m_Modifications:
+    - target: {fileID: 3902224809834759885, guid: 5aa66608bd28b5c4f80c58c334af8998,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902224810137420954, guid: 5aa66608bd28b5c4f80c58c334af8998,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902224810339886632, guid: 5aa66608bd28b5c4f80c58c334af8998,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 3902224811276673305, guid: 5aa66608bd28b5c4f80c58c334af8998,
         type: 3}
       propertyPath: m_Name
       value: CellTrapJump
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902224811276673305, guid: 5aa66608bd28b5c4f80c58c334af8998,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 3902224811276673306, guid: 5aa66608bd28b5c4f80c58c334af8998,
         type: 3}
