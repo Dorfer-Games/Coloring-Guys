@@ -60,20 +60,19 @@ public class RateUsSystem : GameSystem, IIniting
 
     private void ChangeDataRateUs()
     {
+       if(game.isVictory) {
         if (player.RateUs > -1)
         {
             if (player.RateUs == 0)
             {
-                if (game.isVictory && FirstTimeRateUsStart <= 0f)
+                if (FirstTimeRateUsStart <= 0f)
                 {
                     SendAppMetrica(7);
                 }
                 else Bootstrap.ChangeGameState(EGamestate.Finish);
             }
-            if (player.RateUs > 0)
-            {
-                if (game.isVictory)
-                {
+                if (player.RateUs > 0)
+               {
                     if (ChangeDateTimeRateUs())
                     {
                         SendAppMetrica(7);
@@ -85,7 +84,7 @@ public class RateUsSystem : GameSystem, IIniting
                 }
             }
         }
-        else Bootstrap.ChangeGameState(EGamestate.Finish);
+        if(!game.isVictory || player.RateUs <= -1) Bootstrap.ChangeGameState(EGamestate.Finish);
     }
 
     private void SetStarRateUs()

@@ -89,6 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 212db90b88abc5f49b4d1557981e3529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerItemOpenStore: 0
 --- !u!1 &1231674931
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,8 +824,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTesting: 0
   playerData:
-    level: 0
-    money: 1000
+    level: 15
+    money: 10000
     numberIterationLevels: 0
     lastIterationLevels: 0
     RateUs: 0
@@ -1596,13 +1597,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c77997b12c578bd408d244f6e9a33aa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels:
-  - {fileID: 8102454399946895666, guid: a7db712e9e8bdaa4c9266e58bf1132e4, type: 3}
-  - {fileID: 4179703956241861376, guid: 3f45809c3d0faca4caf4bb87476ef900, type: 3}
-  - {fileID: 5456975307693696057, guid: 7fa366495cf9c3248bb53a4f9d74a5c9, type: 3}
-  - {fileID: 8584566050458122475, guid: 37cd3c60f2cfc4847963e6d03636c747, type: 3}
-  - {fileID: 2781599380708795587, guid: f414f121906d25a4ab62487d1f4cf998, type: 3}
-  - {fileID: 3431137445958986506, guid: 1066984d421840f45ad386a944bbd0d3, type: 3}
+  environmentPath: Environments\Level {0}
+  environmentsMax: 6
+  hexPath: Hexes\{0}
+  hexTypes:
+  - Hexagon
+  - HexagonCircle
+  - HexagonSquare
+  - HexagonTriangls
   currentLevel: 0
   countLevelsFirstIteration: 4
   levelAmount: 0
@@ -2202,6 +2204,23 @@ MonoBehaviour:
   - {r: 0.33962262, g: 0.25792095, b: 0.25888216, a: 1}
   - {r: 0.8773585, g: 0.34583884, b: 0.27727836, a: 1}
   - {r: 0.6082635, g: 0, b: 1, a: 1}
+  skinDatas:
+  - Skins:
+    - {fileID: 11400000, guid: 952028501240e3d4eab8840577bfe06e, type: 2}
+    - {fileID: 11400000, guid: 952028501240e3d4eab8840577bfe06e, type: 2}
+    - {fileID: 11400000, guid: 952028501240e3d4eab8840577bfe06e, type: 2}
+    - {fileID: 11400000, guid: 2e8a26e5909d0e94788787efda898fb5, type: 2}
+    - {fileID: 11400000, guid: 04eb6d939449e9a498510a310e2696c9, type: 2}
+    - {fileID: 11400000, guid: 2e8a26e5909d0e94788787efda898fb5, type: 2}
+    - {fileID: 11400000, guid: 526767c9e1b2ff04888ec8cc833f3ab9, type: 2}
+  - Skins:
+    - {fileID: 11400000, guid: 2e8a26e5909d0e94788787efda898fb5, type: 2}
+    - {fileID: 11400000, guid: 2e8a26e5909d0e94788787efda898fb5, type: 2}
+    - {fileID: 11400000, guid: 2e8a26e5909d0e94788787efda898fb5, type: 2}
+    - {fileID: 11400000, guid: 526767c9e1b2ff04888ec8cc833f3ab9, type: 2}
+    - {fileID: 11400000, guid: 6e1512368d0ce8f4895dcc1cbcd07b4e, type: 2}
+    - {fileID: 11400000, guid: 526767c9e1b2ff04888ec8cc833f3ab9, type: 2}
+    - {fileID: 11400000, guid: 0cfd572fd7f01144bb5645b65bb09eb7, type: 2}
 --- !u!1 &6298820699944581968
 GameObject:
   m_ObjectHideFlags: 0

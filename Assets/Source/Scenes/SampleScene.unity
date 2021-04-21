@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2413745203429881437}
-  m_IndirectSpecularColor: {r: 0.3129986, g: 1.380828, b: 1.8133767, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -201,6 +201,56 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bfe3b149145747cc92dc53bb4df4e9b, type: 3}
+--- !u!1 &326137589
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 326137590}
+  - component: {fileID: 326137591}
+  m_Layer: 0
+  m_Name: LevelCreater
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &326137590
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326137589}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &326137591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326137589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33399545fadfd824dbf60ea0eff4227e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cellPrefab: {fileID: 4475343288119919344, guid: 33a9030198364ff4e9627cc499cb7075,
+    type: 3}
+  borders: {x: 50, y: 50}
+  scale: 3
+  xOffset: 1
+  zOffset: 1
+  index: 0
 --- !u!114 &352409688 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4771475440906795352, guid: 865d14520ea908b47818a741324e3095,
@@ -1222,46 +1272,6 @@ PrefabInstance:
       propertyPath: cameraStore
       value: 
       objectReference: {fileID: 1830018545}
-    - target: {fileID: 6298820698868298054, guid: 865d14520ea908b47818a741324e3095,
-        type: 3}
-      propertyPath: hexPath
-      value: Hexes\{0}
-      objectReference: {fileID: 0}
-    - target: {fileID: 6298820698868298054, guid: 865d14520ea908b47818a741324e3095,
-        type: 3}
-      propertyPath: environmentPath
-      value: Environments\Level {0}
-      objectReference: {fileID: 0}
-    - target: {fileID: 6298820698868298054, guid: 865d14520ea908b47818a741324e3095,
-        type: 3}
-      propertyPath: environmentsMax
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6298820698868298054, guid: 865d14520ea908b47818a741324e3095,
-        type: 3}
-      propertyPath: hexTypes.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6298820698868298054, guid: 865d14520ea908b47818a741324e3095,
-        type: 3}
-      propertyPath: hexTypes.Array.data[0]
-      value: Hexagon
-      objectReference: {fileID: 0}
-    - target: {fileID: 6298820698868298054, guid: 865d14520ea908b47818a741324e3095,
-        type: 3}
-      propertyPath: hexTypes.Array.data[1]
-      value: Hexagon
-      objectReference: {fileID: 0}
-    - target: {fileID: 6298820698868298054, guid: 865d14520ea908b47818a741324e3095,
-        type: 3}
-      propertyPath: hexTypes.Array.data[2]
-      value: Hexagon
-      objectReference: {fileID: 0}
-    - target: {fileID: 6298820698868298054, guid: 865d14520ea908b47818a741324e3095,
-        type: 3}
-      propertyPath: countLevelsFirstIteration
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6298820699152258734, guid: 865d14520ea908b47818a741324e3095,
         type: 3}
       propertyPath: numberStartGameText
@@ -1287,147 +1297,11 @@ PrefabInstance:
       propertyPath: parentScreen
       value: 
       objectReference: {fileID: 6911839774532756887}
-    - target: {fileID: 6298820699943031358, guid: 865d14520ea908b47818a741324e3095,
-        type: 3}
-      propertyPath: skinDatas.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6298820699943031358, guid: 865d14520ea908b47818a741324e3095,
-        type: 3}
-      propertyPath: skinDatas.Array.data[0].Skins.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6298820699943031358, guid: 865d14520ea908b47818a741324e3095,
-        type: 3}
-      propertyPath: skinDatas.Array.data[1].Skins.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6298820699943031358, guid: 865d14520ea908b47818a741324e3095,
-        type: 3}
-      propertyPath: skinDatas.Array.data[0].Skins.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 952028501240e3d4eab8840577bfe06e,
-        type: 2}
-    - target: {fileID: 6298820699943031358, guid: 865d14520ea908b47818a741324e3095,
-        type: 3}
-      propertyPath: skinDatas.Array.data[0].Skins.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 952028501240e3d4eab8840577bfe06e,
-        type: 2}
-    - target: {fileID: 6298820699943031358, guid: 865d14520ea908b47818a741324e3095,
-        type: 3}
-      propertyPath: skinDatas.Array.data[0].Skins.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 952028501240e3d4eab8840577bfe06e,
-        type: 2}
-    - target: {fileID: 6298820699943031358, guid: 865d14520ea908b47818a741324e3095,
-        type: 3}
-      propertyPath: skinDatas.Array.data[0].Skins.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: 2e8a26e5909d0e94788787efda898fb5,
-        type: 2}
-    - target: {fileID: 6298820699943031358, guid: 865d14520ea908b47818a741324e3095,
-        type: 3}
-      propertyPath: skinDatas.Array.data[0].Skins.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: 04eb6d939449e9a498510a310e2696c9,
-        type: 2}
-    - target: {fileID: 6298820699943031358, guid: 865d14520ea908b47818a741324e3095,
-        type: 3}
-      propertyPath: skinDatas.Array.data[0].Skins.Array.data[5]
-      value: 
-      objectReference: {fileID: 11400000, guid: 2e8a26e5909d0e94788787efda898fb5,
-        type: 2}
-    - target: {fileID: 6298820699943031358, guid: 865d14520ea908b47818a741324e3095,
-        type: 3}
-      propertyPath: skinDatas.Array.data[0].Skins.Array.data[6]
-      value: 
-      objectReference: {fileID: 11400000, guid: 526767c9e1b2ff04888ec8cc833f3ab9,
-        type: 2}
-    - target: {fileID: 6298820699943031358, guid: 865d14520ea908b47818a741324e3095,
-        type: 3}
-      propertyPath: skinDatas.Array.data[0].Skins.Array.data[7]
-      value: 
-      objectReference: {fileID: 11400000, guid: 526767c9e1b2ff04888ec8cc833f3ab9,
-        type: 2}
-    - target: {fileID: 6298820699943031358, guid: 865d14520ea908b47818a741324e3095,
-        type: 3}
-      propertyPath: skinDatas.Array.data[1].Skins.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 2e8a26e5909d0e94788787efda898fb5,
-        type: 2}
-    - target: {fileID: 6298820699943031358, guid: 865d14520ea908b47818a741324e3095,
-        type: 3}
-      propertyPath: skinDatas.Array.data[1].Skins.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 2e8a26e5909d0e94788787efda898fb5,
-        type: 2}
-    - target: {fileID: 6298820699943031358, guid: 865d14520ea908b47818a741324e3095,
-        type: 3}
-      propertyPath: skinDatas.Array.data[1].Skins.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 2e8a26e5909d0e94788787efda898fb5,
-        type: 2}
-    - target: {fileID: 6298820699943031358, guid: 865d14520ea908b47818a741324e3095,
-        type: 3}
-      propertyPath: skinDatas.Array.data[1].Skins.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: 526767c9e1b2ff04888ec8cc833f3ab9,
-        type: 2}
-    - target: {fileID: 6298820699943031358, guid: 865d14520ea908b47818a741324e3095,
-        type: 3}
-      propertyPath: skinDatas.Array.data[1].Skins.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: 6e1512368d0ce8f4895dcc1cbcd07b4e,
-        type: 2}
-    - target: {fileID: 6298820699943031358, guid: 865d14520ea908b47818a741324e3095,
-        type: 3}
-      propertyPath: skinDatas.Array.data[1].Skins.Array.data[5]
-      value: 
-      objectReference: {fileID: 11400000, guid: 526767c9e1b2ff04888ec8cc833f3ab9,
-        type: 2}
-    - target: {fileID: 6298820699943031358, guid: 865d14520ea908b47818a741324e3095,
-        type: 3}
-      propertyPath: skinDatas.Array.data[1].Skins.Array.data[6]
-      value: 
-      objectReference: {fileID: 11400000, guid: 0cfd572fd7f01144bb5645b65bb09eb7,
-        type: 2}
-    - target: {fileID: 6298820699943031358, guid: 865d14520ea908b47818a741324e3095,
-        type: 3}
-      propertyPath: skinDatas.Array.data[1].Skins.Array.data[7]
-      value: 
-      objectReference: {fileID: 11400000, guid: 0cfd572fd7f01144bb5645b65bb09eb7,
-        type: 2}
     - target: {fileID: 6298820700472323774, guid: 865d14520ea908b47818a741324e3095,
         type: 3}
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 3290857592901989160}
-    - target: {fileID: 7182900847264475508, guid: 865d14520ea908b47818a741324e3095,
-        type: 3}
-      propertyPath: isTesting
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7182900847264475508, guid: 865d14520ea908b47818a741324e3095,
-        type: 3}
-      propertyPath: playerData.level
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7182900847264475508, guid: 865d14520ea908b47818a741324e3095,
-        type: 3}
-      propertyPath: playerData.money
-      value: 10000
-      objectReference: {fileID: 0}
-    - target: {fileID: 7182900847264475508, guid: 865d14520ea908b47818a741324e3095,
-        type: 3}
-      propertyPath: playerData.lastIterationLevels
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7182900847264475508, guid: 865d14520ea908b47818a741324e3095,
-        type: 3}
-      propertyPath: playerData.numberIterationLevels
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 7248024980830803038, guid: 865d14520ea908b47818a741324e3095,
         type: 3}
       propertyPath: Next

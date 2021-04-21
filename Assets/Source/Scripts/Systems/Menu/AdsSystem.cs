@@ -46,7 +46,7 @@ public class AdsSystem : GameSystem
 
     public void AdsInterstitialEndLevelGame()
     {
-            if (levelStartAds > 2)
+            if (levelStartAds > 1)
                 AdvertismentManager.Instance.ShowInterstitial();
     }
 
