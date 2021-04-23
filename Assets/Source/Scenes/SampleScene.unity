@@ -217,7 +217,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &326137590
 Transform:
   m_ObjectHideFlags: 0
@@ -1351,6 +1351,16 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 3290857592901989160}
+    - target: {fileID: 7182900847264475508, guid: 865d14520ea908b47818a741324e3095,
+        type: 3}
+      propertyPath: isTesting
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182900847264475508, guid: 865d14520ea908b47818a741324e3095,
+        type: 3}
+      propertyPath: playerData.level
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7248024980830803038, guid: 865d14520ea908b47818a741324e3095,
         type: 3}
       propertyPath: Next

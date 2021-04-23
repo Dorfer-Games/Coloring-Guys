@@ -74,7 +74,7 @@ Material:
     - _RampSmooth: 0.418
     - _RampThreshold: 0.694
     - _RimMax: 2
-    - _RimMin: 0
+    - _RimMin: 2
     - _RimPower: 4.72
     - _Shininess: 0.98
     - _Smoothness: 5.13
@@ -93,4 +93,3 @@ Material:
     - _RimColor: {r: 1, g: 0.6556604, b: 0.6556604, a: 0.6}
     - _SColor: {r: 0.31394622, g: 0.40266272, b: 0.8018868, a: 1}
     - _SpecColor: {r: 0, g: 0, b: 0, a: 1}
-  m_BuildTextureStacks: []
