@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6390250607199483794
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6390250607199483797}
+  - component: {fileID: 6390250607199483796}
+  m_Layer: 0
+  m_Name: Characters Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6390250607199483797
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6390250607199483794}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6390250607199483796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6390250607199483794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d39ed3170f6b35441a5b1f80aa9375c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterPrefab: {fileID: 6162855981926546082, guid: d5df5e9185d140346be43fb9e4004f8d,
+    type: 3}
+  characterColors:
+  - {r: 0.16313636, g: 0.8867924, b: 0.16313636, a: 1}
+  - {r: 1, g: 0.99997795, b: 0, a: 1}
+  - {r: 0, g: 0, b: 1, a: 1}
+  - {r: 1, g: 0.49019608, b: 0, a: 1}
+  - {r: 1, g: 0, b: 0.78535175, a: 1}
+  - {r: 0.33962262, g: 0.25792095, b: 0.25888216, a: 1}
+  - {r: 0.8773585, g: 0.34583884, b: 0.27727836, a: 1}
+  - {r: 0.6082635, g: 0, b: 1, a: 1}
+  skinDatas:
+  - Skins:
+    - {fileID: 11400000, guid: 952028501240e3d4eab8840577bfe06e, type: 2}
+    - {fileID: 11400000, guid: 952028501240e3d4eab8840577bfe06e, type: 2}
+    - {fileID: 11400000, guid: 952028501240e3d4eab8840577bfe06e, type: 2}
+    - {fileID: 11400000, guid: 2e8a26e5909d0e94788787efda898fb5, type: 2}
+    - {fileID: 11400000, guid: 04eb6d939449e9a498510a310e2696c9, type: 2}
+    - {fileID: 11400000, guid: 2e8a26e5909d0e94788787efda898fb5, type: 2}
+    - {fileID: 11400000, guid: 526767c9e1b2ff04888ec8cc833f3ab9, type: 2}
+  - Skins:
+    - {fileID: 11400000, guid: 2e8a26e5909d0e94788787efda898fb5, type: 2}
+    - {fileID: 11400000, guid: 2e8a26e5909d0e94788787efda898fb5, type: 2}
+    - {fileID: 11400000, guid: 2e8a26e5909d0e94788787efda898fb5, type: 2}
+    - {fileID: 11400000, guid: 526767c9e1b2ff04888ec8cc833f3ab9, type: 2}
+    - {fileID: 11400000, guid: 6e1512368d0ce8f4895dcc1cbcd07b4e, type: 2}
+    - {fileID: 11400000, guid: 526767c9e1b2ff04888ec8cc833f3ab9, type: 2}
+    - {fileID: 11400000, guid: 0cfd572fd7f01144bb5645b65bb09eb7, type: 2}
+  - Skins:
+    - {fileID: 11400000, guid: 0cfd572fd7f01144bb5645b65bb09eb7, type: 2}
+    - {fileID: 11400000, guid: 0cfd572fd7f01144bb5645b65bb09eb7, type: 2}
+    - {fileID: 11400000, guid: 526767c9e1b2ff04888ec8cc833f3ab9, type: 2}
+    - {fileID: 11400000, guid: 526767c9e1b2ff04888ec8cc833f3ab9, type: 2}
+    - {fileID: 11400000, guid: 6e1512368d0ce8f4895dcc1cbcd07b4e, type: 2}
+    - {fileID: 11400000, guid: 3849a7dfcc3b53748bebe18b4bdba44b, type: 2}
+    - {fileID: 11400000, guid: 3849a7dfcc3b53748bebe18b4bdba44b, type: 2}
+  - Skins:
+    - {fileID: 11400000, guid: 2e8a26e5909d0e94788787efda898fb5, type: 2}
+    - {fileID: 11400000, guid: 04eb6d939449e9a498510a310e2696c9, type: 2}
+    - {fileID: 11400000, guid: 04eb6d939449e9a498510a310e2696c9, type: 2}
+    - {fileID: 11400000, guid: 526767c9e1b2ff04888ec8cc833f3ab9, type: 2}
+    - {fileID: 11400000, guid: 952028501240e3d4eab8840577bfe06e, type: 2}
+    - {fileID: 11400000, guid: 3849a7dfcc3b53748bebe18b4bdba44b, type: 2}
+    - {fileID: 11400000, guid: d7068e54f0c5ccb4cbc602ba2bde5726, type: 2}
+  - Skins:
+    - {fileID: 11400000, guid: d7068e54f0c5ccb4cbc602ba2bde5726, type: 2}
+    - {fileID: 11400000, guid: d7068e54f0c5ccb4cbc602ba2bde5726, type: 2}
+    - {fileID: 11400000, guid: d7068e54f0c5ccb4cbc602ba2bde5726, type: 2}
+    - {fileID: 11400000, guid: 526767c9e1b2ff04888ec8cc833f3ab9, type: 2}
+    - {fileID: 11400000, guid: 0cfd572fd7f01144bb5645b65bb09eb7, type: 2}
+    - {fileID: 11400000, guid: 952028501240e3d4eab8840577bfe06e, type: 2}
+    - {fileID: 11400000, guid: 74af6642e3ed1404f8d9ee3397fbe3de, type: 2}
+  - Skins:
+    - {fileID: 11400000, guid: 74af6642e3ed1404f8d9ee3397fbe3de, type: 2}
+    - {fileID: 11400000, guid: 04eb6d939449e9a498510a310e2696c9, type: 2}
+    - {fileID: 11400000, guid: 2e8a26e5909d0e94788787efda898fb5, type: 2}
+    - {fileID: 11400000, guid: d7068e54f0c5ccb4cbc602ba2bde5726, type: 2}
+    - {fileID: 11400000, guid: d7068e54f0c5ccb4cbc602ba2bde5726, type: 2}
+    - {fileID: 11400000, guid: 952028501240e3d4eab8840577bfe06e, type: 2}
+    - {fileID: 11400000, guid: 46904e5d5f00ba04da2538e8bdfd5761, type: 2}
+  - Skins:
+    - {fileID: 11400000, guid: 3849a7dfcc3b53748bebe18b4bdba44b, type: 2}
+    - {fileID: 11400000, guid: 46904e5d5f00ba04da2538e8bdfd5761, type: 2}
+    - {fileID: 11400000, guid: 6e1512368d0ce8f4895dcc1cbcd07b4e, type: 2}
+    - {fileID: 11400000, guid: 04eb6d939449e9a498510a310e2696c9, type: 2}
+    - {fileID: 11400000, guid: 0cfd572fd7f01144bb5645b65bb09eb7, type: 2}
+    - {fileID: 11400000, guid: 952028501240e3d4eab8840577bfe06e, type: 2}
+    - {fileID: 11400000, guid: 85f6c17b5292b8848b3a6121f8b3dcd5, type: 2}
+  - Skins:
+    - {fileID: 11400000, guid: 85f6c17b5292b8848b3a6121f8b3dcd5, type: 2}
+    - {fileID: 11400000, guid: d7068e54f0c5ccb4cbc602ba2bde5726, type: 2}
+    - {fileID: 11400000, guid: 46904e5d5f00ba04da2538e8bdfd5761, type: 2}
+    - {fileID: 11400000, guid: 6e1512368d0ce8f4895dcc1cbcd07b4e, type: 2}
+    - {fileID: 11400000, guid: 6e1512368d0ce8f4895dcc1cbcd07b4e, type: 2}
+    - {fileID: 11400000, guid: 952028501240e3d4eab8840577bfe06e, type: 2}
+    - {fileID: 11400000, guid: 04eb6d939449e9a498510a310e2696c9, type: 2}
+  - Skins:
+    - {fileID: 11400000, guid: 2e8a26e5909d0e94788787efda898fb5, type: 2}
+    - {fileID: 11400000, guid: 74af6642e3ed1404f8d9ee3397fbe3de, type: 2}
+    - {fileID: 11400000, guid: 85f6c17b5292b8848b3a6121f8b3dcd5, type: 2}
+    - {fileID: 11400000, guid: 46904e5d5f00ba04da2538e8bdfd5761, type: 2}
+    - {fileID: 11400000, guid: 85f6c17b5292b8848b3a6121f8b3dcd5, type: 2}
+    - {fileID: 11400000, guid: 74af6642e3ed1404f8d9ee3397fbe3de, type: 2}
+    - {fileID: 11400000, guid: 04eb6d939449e9a498510a310e2696c9, type: 2}
