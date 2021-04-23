@@ -133,6 +133,7 @@ public class AdvertismentManager : MonoBehaviour
 
     private void OnInterstitialDisplayEvent(string adUnitId)
     {
+        OnADWatched("interstitial", "on_level_start", "watched");
     }
 
     private void OnInterstitialLoadedEvent(string adUnitId)
@@ -156,7 +157,7 @@ public class AdvertismentManager : MonoBehaviour
 
     private void InterstitialFailedToDisplayEvent(string adUnitId, int errorCode)
     {
-        OnADCanceled("interstitial","on_level_start",$"failed_to_display_{errorCode}");
+        //OnADCanceled("interstitial","on_level_start",$"failed_to_display_{errorCode}");
         // Interstitial ad failed to display. We recommend loading the next ad
         LoadInterstitial();
     }
@@ -164,7 +165,7 @@ public class AdvertismentManager : MonoBehaviour
     private void OnInterstitialDismissedEvent(string adUnitId)
     {
         // Interstitial ad is hidden. Pre-load the next ad
-        OnADCanceled("interstitial",$"{rewardedData.reason}",$"dismissed");
+        //OnADCanceled("interstitial",$"{rewardedData.reason}",$"dismissed");
         currentTime  = Time.realtimeSinceStartup;
         LoadInterstitial();
     }
@@ -237,7 +238,7 @@ public class AdvertismentManager : MonoBehaviour
     
     private void OnRewardedAdFailedToDisplayEvent(string adUnitId, int errorCode)
     {
-        OnADCanceled("rewarded",$"{rewardedData.reason}",$"failed_to_display_{errorCode}");
+        //OnADCanceled("rewarded",$"{rewardedData.reason}",$"failed_to_display_{errorCode}");
         // Rewarded ad failed to display. We recommend loading the next ad
         LoadRewardedAd();
     }
@@ -251,7 +252,7 @@ public class AdvertismentManager : MonoBehaviour
     private void OnRewardedAdDismissedEvent(string adUnitId)
     {
         // Rewarded ad is hidden. Pre-load the next ad
-        OnADCanceled("rewarded",$"{rewardedData.reason}",$"dismissed");
+        //OnADWatched("rewarded",$"{rewardedData.reason}",$"canceled");
         currentTime  = Time.realtimeSinceStartup;
         LoadRewardedAd();
     }
@@ -303,21 +304,7 @@ public class AdvertismentManager : MonoBehaviour
                 {"connection", GetInternetConnection()}
             };
     
-            AppMetrica.Instance.ReportEvent("video_ads_watched", @params);
-        }
-
-        void OnADCanceled(string type, string reason, string result)
-        {
-            var @params = new Dictionary<string, object>() 
-            { 
-                {"ad_type", type},
-                {"placement", reason},
-                {"result", result},
-                {"connection", GetInternetConnection()}
-            };
-            
-    
-            AppMetrica.Instance.ReportEvent("video_ads_canceled", @params);
+            AppMetrica.Instance.ReportEvent("video_ads_watch", @params);
         }
     
         public bool GetInternetConnection()
