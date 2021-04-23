@@ -203,7 +203,7 @@ public class AdvertismentManager : MonoBehaviour
         var available = MaxSdk.IsRewardedAdReady(RewardedAdUnitId);
         OnADClicked("rewarded", reason, available ? "success" : "not_available");
 
-        rewardedData = new RewardedData() { callback = callback, reason = reason };
+        rewardedData = new RewardedData() { callback = callback, reason = reason.ToLower() };
         
         if (available)
         {
