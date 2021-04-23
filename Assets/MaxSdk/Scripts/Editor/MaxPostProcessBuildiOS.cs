@@ -72,7 +72,7 @@ namespace AppLovinMax.Scripts.Editor
 
         private static readonly List<string> EmbedSwiftStandardLibrariesNetworks = new List<string>
         {
-            "Facebook", 
+            "Facebook",
             "MoPub"
         };
 
@@ -108,6 +108,7 @@ namespace AppLovinMax.Scripts.Editor
             LocalizeUserTrackingDescriptionIfNeeded(AppLovinSettings.Instance.UserTrackingUsageDescriptionJa, "ja", buildPath, project, unityMainTargetGuid);
             LocalizeUserTrackingDescriptionIfNeeded(AppLovinSettings.Instance.UserTrackingUsageDescriptionKo, "ko", buildPath, project, unityMainTargetGuid);
             LocalizeUserTrackingDescriptionIfNeeded(AppLovinSettings.Instance.UserTrackingUsageDescriptionZhHans, "zh-Hans", buildPath, project, unityMainTargetGuid);
+            LocalizeUserTrackingDescriptionIfNeeded(AppLovinSettings.Instance.UserTrackingUsageDescriptionZhHant, "zh-Hant", buildPath, project, unityMainTargetGuid);
 
             AddSwiftSupportIfNeeded(buildPath, project, unityFrameworkTargetGuid);
             EmbedSwiftStandardLibrariesIfNeeded(buildPath, project, unityMainTargetGuid);
@@ -260,7 +261,7 @@ namespace AppLovinMax.Scripts.Editor
         /// For Swift 5+ code that uses the standard libraries, the Swift Standard Libraries MUST be embedded for iOS < 12.2
         /// Swift 5 introduced ABI stability, which allowed iOS to start bundling the standard libraries in the OS starting with iOS 12.2
         /// Issue Reference: https://github.com/facebook/facebook-sdk-for-unity/issues/506
-	  /// </summary>
+        /// </summary>
         private static void EmbedSwiftStandardLibrariesIfNeeded(string buildPath, PBXProject project, string mainTargetGuid)
         {
             var maxMediationDirectory = PluginMediationDirectory;
@@ -347,6 +348,12 @@ namespace AppLovinMax.Scripts.Editor
             var consentFlowInfoRoot = plist.root.CreateDict("AppLovinConsentFlowInfo");
             consentFlowInfoRoot.SetBoolean("AppLovinConsentFlowEnabled", consentFlowEnabled);
             consentFlowInfoRoot.SetString("AppLovinConsentFlowPrivacyPolicy", privacyPolicyUrl);
+
+            var termsOfServiceUrl = AppLovinSettings.Instance.ConsentFlowTermsOfServiceUrl;
+            if (!string.IsNullOrEmpty(termsOfServiceUrl))
+            {
+                consentFlowInfoRoot.SetString("AppLovinConsentFlowTermsOfService", termsOfServiceUrl);
+            }
 
             plist.root.SetString("NSUserTrackingUsageDescription", userTrackingUsageDescription);
         }

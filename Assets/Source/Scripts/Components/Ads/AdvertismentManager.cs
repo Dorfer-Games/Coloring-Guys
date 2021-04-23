@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using AudienceNetwork;
 using Supyrb;
 using UnityEngine;
 
@@ -66,8 +67,10 @@ public class AdvertismentManager : MonoBehaviour
         {
             Debug.Log("MAX SDK Initialized");
 
+            AdSettings.SetDataProcessingOptions(new string[] { });
             InitializeInterstitialAds();
             InitializeRewardedAds();
+
 
             #if DEBUG
             MaxSdk.ShowMediationDebugger();

@@ -1,5 +1,9 @@
 ## Versions
 
+## 4.2.0
+    * Add an optional Terms of Service URL field to be shown when prompting the user for consent during the ATT consent flow.
+    * Add Chinese Traditional localization support for User Tracking Usage Description.
+    * Fix link text not readable in Integration Manager when in dark mode.
 ## 4.1.2
     * Add support for embedding the Swift Standard Library (for iOS < 12.2) if a network requires it.
     * Fix failure to parse doubles when dealing with exponential notation by returning -1.

@@ -16,6 +16,8 @@ namespace AppLovinMax.Scripts.IntegrationManager.Editor
 {
     public class AppLovinIntegrationManagerWindow : EditorWindow
     {
+        private const string keyNewLocalizationsMarked = "com.applovin.new_localizations_marked_v0"; // Update the key version each time new localizations are added.
+        
         private const string windowTitle = "AppLovin Integration Manager";
 
         private const string appLovinSdkKeyLink = "https://dash.applovin.com/o/account#keys";
@@ -46,6 +48,8 @@ namespace AppLovinMax.Scripts.IntegrationManager.Editor
         private static GUILayoutOption privacySettingFieldWidthOption = GUILayout.Width(400);
         private static readonly GUILayoutOption fieldWidth = GUILayout.Width(actionFieldWidth);
 
+        private static readonly Color darkModeTextColor = new Color(0.29f, 0.6f, 0.8f);
+
         private GUIStyle titleLabelStyle;
         private GUIStyle headerLabelStyle;
         private GUIStyle environmentValueStyle;
@@ -56,6 +60,7 @@ namespace AppLovinMax.Scripts.IntegrationManager.Editor
         private PluginData pluginData;
         private bool pluginDataLoadFailed;
         private bool isPluginMoved;
+        private bool shouldMarkNewLocalizations;
 
         private AppLovinEditorCoroutine loadDataCoroutine;
         private Texture2D uninstallIcon;
@@ -93,7 +98,7 @@ namespace AppLovinMax.Scripts.IntegrationManager.Editor
             linkLabelStyle = new GUIStyle(EditorStyles.label)
             {
                 wordWrap = true,
-                normal = {textColor = Color.blue}
+                normal = {textColor = EditorGUIUtility.isProSkin ? darkModeTextColor : Color.blue}
             };
 
             wrapTextLabelStyle = new GUIStyle(EditorStyles.label)
@@ -124,6 +129,8 @@ namespace AppLovinMax.Scripts.IntegrationManager.Editor
 
         private void OnEnable()
         {
+            shouldMarkNewLocalizations = !EditorPrefs.GetBool(keyNewLocalizationsMarked, false);
+            
             AppLovinIntegrationManager.downloadPluginProgressCallback = OnDownloadPluginProgress;
 
             // Plugin downloaded and imported. Update current versions for the imported package.
@@ -134,6 +141,12 @@ namespace AppLovinMax.Scripts.IntegrationManager.Editor
 
         private void OnDisable()
         {
+            // New localizations have been shown to the publisher, now remove them.
+            if (shouldMarkNewLocalizations)
+            {
+                EditorPrefs.SetBool(keyNewLocalizationsMarked, true);
+            }
+            
             if (loadDataCoroutine != null)
             {
                 loadDataCoroutine.Stop();
@@ -579,16 +592,10 @@ namespace AppLovinMax.Scripts.IntegrationManager.Editor
                 GUILayout.EndHorizontal();
                 GUILayout.Space(4);
 
-                GUILayout.BeginHorizontal();
-                GUILayout.Space(4);
-                EditorGUILayout.HelpBox("Apple has not confirmed the final release date for the ATT prompt requirement. Enabling the consent flow now will cause material drop in revenue in iOS 14.5+ users.", MessageType.Warning);
-                GUILayout.Space(4);
-                GUILayout.EndHorizontal();
-                GUILayout.Space(4);
-
                 GUI.enabled = AppLovinSettings.Instance.ConsentFlowEnabled;
 
                 AppLovinSettings.Instance.ConsentFlowPrivacyPolicyUrl = DrawTextField("Privacy Policy URL", AppLovinSettings.Instance.ConsentFlowPrivacyPolicyUrl, GUILayout.Width(privacySettingLabelWidth), privacySettingFieldWidthOption);
+                AppLovinSettings.Instance.ConsentFlowTermsOfServiceUrl = DrawTextField("Terms of Service URL (optional)", AppLovinSettings.Instance.ConsentFlowTermsOfServiceUrl, GUILayout.Width(privacySettingLabelWidth), privacySettingFieldWidthOption);
                 AppLovinSettings.Instance.UserTrackingUsageDescriptionEn = DrawTextField("User Tracking Usage Description", AppLovinSettings.Instance.UserTrackingUsageDescriptionEn, GUILayout.Width(privacySettingLabelWidth), privacySettingFieldWidthOption);
 
                 GUILayout.BeginHorizontal();
@@ -599,12 +606,20 @@ namespace AppLovinMax.Scripts.IntegrationManager.Editor
 
                 if (AppLovinSettings.Instance.UserTrackingUsageLocalizationEnabled)
                 {
-                    AppLovinSettings.Instance.UserTrackingUsageDescriptionZhHans = DrawTextField("Chinese (zh-Hans)", AppLovinSettings.Instance.UserTrackingUsageDescriptionZhHans, GUILayout.Width(privacySettingLabelWidth), privacySettingFieldWidthOption);
+                    AppLovinSettings.Instance.UserTrackingUsageDescriptionZhHans = DrawTextField("Chinese, Simplified (zh-Hans)", AppLovinSettings.Instance.UserTrackingUsageDescriptionZhHans, GUILayout.Width(privacySettingLabelWidth), privacySettingFieldWidthOption);
+                    AppLovinSettings.Instance.UserTrackingUsageDescriptionZhHant = DrawTextField("Chinese, Traditional (zh-Hant)" + (shouldMarkNewLocalizations ? " *" : "") , AppLovinSettings.Instance.UserTrackingUsageDescriptionZhHant, GUILayout.Width(privacySettingLabelWidth), privacySettingFieldWidthOption); // TODO: Remove new mark for next release.
                     AppLovinSettings.Instance.UserTrackingUsageDescriptionFr = DrawTextField("French (fr)", AppLovinSettings.Instance.UserTrackingUsageDescriptionFr, GUILayout.Width(privacySettingLabelWidth), privacySettingFieldWidthOption);
                     AppLovinSettings.Instance.UserTrackingUsageDescriptionDe = DrawTextField("German (de)", AppLovinSettings.Instance.UserTrackingUsageDescriptionDe, GUILayout.Width(privacySettingLabelWidth), privacySettingFieldWidthOption);
                     AppLovinSettings.Instance.UserTrackingUsageDescriptionJa = DrawTextField("Japanese (ja)", AppLovinSettings.Instance.UserTrackingUsageDescriptionJa, GUILayout.Width(privacySettingLabelWidth), privacySettingFieldWidthOption);
                     AppLovinSettings.Instance.UserTrackingUsageDescriptionKo = DrawTextField("Korean (ko)", AppLovinSettings.Instance.UserTrackingUsageDescriptionKo, GUILayout.Width(privacySettingLabelWidth), privacySettingFieldWidthOption);
                     AppLovinSettings.Instance.UserTrackingUsageDescriptionEs = DrawTextField("Spanish (es)", AppLovinSettings.Instance.UserTrackingUsageDescriptionEs, GUILayout.Width(privacySettingLabelWidth), privacySettingFieldWidthOption);
+
+                    GUILayout.Space(4);
+                    GUILayout.BeginHorizontal();
+                    GUILayout.Space(4);
+                    EditorGUILayout.HelpBox( (shouldMarkNewLocalizations ? "* " : "")+ "MAX may add more localized strings to this list in the future, which will set the default value of the User Tracking Usage Description string for more locales. If you are overriding these with your own custom translations, you may want to review this list whenever you upgrade the plugin to see if there are new entries you may want to customize.", MessageType.Info);
+                    GUILayout.Space(4);
+                    GUILayout.EndHorizontal();
 
                     GUILayout.Space(4);
                     GUILayout.BeginHorizontal();
