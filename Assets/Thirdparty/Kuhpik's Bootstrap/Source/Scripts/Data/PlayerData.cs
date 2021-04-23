@@ -10,6 +10,7 @@ namespace Kuhpik
     public class PlayerData
     {
         public int level;
+        public int levelsPlayed;
         public int money;
         public int numberIterationLevels;
         public int lastIterationLevels;

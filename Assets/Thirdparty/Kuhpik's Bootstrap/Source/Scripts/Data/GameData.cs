@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,8 +15,10 @@ namespace Kuhpik
         public Vector3 playerRotation;
         public List<GameObject> Player;
 
-
+        public string levelType; //Имя гексов
+        public int levelLoop;
         public bool isVictory;
+        public DateTime gameStartTime;
 
         //-----------Helping-------------//
         public Dictionary<Transform, Character> characterDictionary; //Намного быстрее чем через LINQ искать по трансформу.

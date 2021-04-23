@@ -2,7 +2,7 @@ using DG.Tweening;
 using Kuhpik;
 using NaughtyAttributes;
 using Supyrb;
-using System.Collections.Generic;
+using System;
 using System.Linq;
 using UnityEngine;
 
@@ -85,7 +85,6 @@ public class LevelLoadingSystem : GameSystem, IIniting, IDisposing
     private void CreateLevel(int level)
     {
         OnLevel?.Invoke(player.level);
-        SendAppMetrica();
 
         var hexIndex = GameloopExtensions.CalculateLoopIndex(player.level, 5, hexTypes.Length); //Используй это же.
         var environmentIndex = GameloopExtensions.CalculateLoopIndex(player.level, 5, environmentsMax);
@@ -95,6 +94,8 @@ public class LevelLoadingSystem : GameSystem, IIniting, IDisposing
 
         game.environment = Instantiate(environment);
         game.cells = Instantiate(cells);
+        game.levelType = hexTypes[hexIndex];
+        game.levelLoop = player.numberIterationLevels + 1;
 
         game.cellDictionary = FindObjectsOfType<CellComponent>().ToDictionary(x => x.transform, x => x);
         game.cellsList = FindObjectsOfType<CellComponent>();
@@ -103,17 +104,6 @@ public class LevelLoadingSystem : GameSystem, IIniting, IDisposing
     public void AddLevel()
     {
         player.level++;
-    }
-
-    void SendAppMetrica()
-    {
-        var @params = new Dictionary<string, object>()
-        {
-            { "level", player.level + 1 }
-        };
-
-        AppMetrica.Instance.ReportEvent("level_start", @params);
-        AppMetrica.Instance.SendEventsBuffer();
     }
 
     void IDisposing.OnDispose()

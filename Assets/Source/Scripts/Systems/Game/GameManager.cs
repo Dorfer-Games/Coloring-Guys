@@ -7,16 +7,13 @@ using TMPro;
 public class GameManager : GameSystemWithScreen<GameUIScreen>, IIniting, IUpdating
 {
     public static GameManager gameManager { get; private set; }
-
     public event Action<bool> StartGame;
 
     [SerializeField] private TMP_Text numberStartGameText;
     float timeStartGame = 3.5f;
 
-
     private void Awake()
-    {
-     
+    {     
         if (gameManager == null) gameManager = this;
     }
 
@@ -34,17 +31,18 @@ public class GameManager : GameSystemWithScreen<GameUIScreen>, IIniting, IUpdati
             }
         }
     }
+
     void IIniting.OnInit()
     {
         StartGame?.Invoke(false);
         StartCoroutine(TimeStartGame());
     }
 
-
     private IEnumerator TimeStartGame()
     {
         yield return new WaitForSeconds(3.5f);
         StartGame?.Invoke(true);
+        game.gameStartTime = DateTime.Now;
         yield return new WaitForSeconds(1.5f);
         AudioSysytem.audioSysytem.audio.pitch = 1.0f;
         numberStartGameText.gameObject.SetActive(false);
