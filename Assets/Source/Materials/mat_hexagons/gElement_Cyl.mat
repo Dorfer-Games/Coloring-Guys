@@ -71,15 +71,15 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RampSmooth: 0.287
-    - _RampThreshold: 0.929
-    - _RimMax: 1.18
-    - _RimMin: 0
+    - _RampSmooth: 0.424
+    - _RampThreshold: 0.871
+    - _RimMax: 0.79
+    - _RimMin: 0.59
     - _RimPower: 4.72
     - _Shininess: 0.98
     - _Smoothness: 5.13
     - _SmoothnessTextureChannel: 0
-    - _SpecSmooth: 0.658
+    - _SpecSmooth: 0.715
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
