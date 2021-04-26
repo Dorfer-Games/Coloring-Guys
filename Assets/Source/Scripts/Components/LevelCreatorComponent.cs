@@ -70,25 +70,29 @@ public class LevelCreatorComponent : MonoBehaviour
 
         for (int i = 0; i < borders.y; i++)
         {
-            var additionalXoffset = (i % 1) * (xOffset / 1f);
+            var additionalXoffset = (i % 2) * (xOffset / 2f);
 
             for (int j = 0; j < borders.x; j++)
             {
                 float x = xOffset * j + additionalXoffset;
                 float z = zOffset * i;
-                for (int b = 0; b <= 1; b++) {
+
+                for (int b = 0; b <= 1; b++)
+                {
                     if (b == 0)
                     {
                         var cell = PrefabUtility.InstantiatePrefab(cellPrefab) as GameObject;
                         cell.transform.SetParent(cells.transform);
                         cell.transform.localPosition = new Vector3(x, 0, z);
+                        cell.transform.eulerAngles = new Vector3(0, 45, 0);
                     }
+
                     else
                     {
                         var cell = PrefabUtility.InstantiatePrefab(cellPrefab) as GameObject;
                         cell.transform.SetParent(cells.transform);
                         cell.transform.localPosition = new Vector3(x, 0, z);
-                        cell.transform.eulerAngles = new Vector3(0,180f,0);
+                        cell.transform.eulerAngles = new Vector3(0, 180f + 45, 0);
                     }
                 }
 
