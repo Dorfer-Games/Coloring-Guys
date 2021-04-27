@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class OnTriggerCellChange : MonoBehaviour
 {
@@ -8,10 +6,14 @@ public class OnTriggerCellChange : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.TryGetComponent<ColorStackComponent>(out var component))
+        if (other.transform.CompareTag("Color"))
         {
-            if (cellComponent.IsDown) {
-                component.UpdatePosition();
+            if (other.transform.TryGetComponent<ColorStackComponent>(out var component))
+            {
+                if (cellComponent.IsDown)
+                {
+                    component.UpdatePosition();
+                }
             }
         }
     }

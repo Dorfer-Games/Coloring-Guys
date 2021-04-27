@@ -248,8 +248,8 @@ MonoBehaviour:
     type: 3}
   borders: {x: 50, y: 50}
   scale: 3
-  xOffset: 1
-  zOffset: 1
+  xOffset: 1.25
+  zOffset: 0.75
   index: 0
 --- !u!114 &352409688 stripped
 MonoBehaviour:
@@ -1321,6 +1321,11 @@ PrefabInstance:
       propertyPath: cameraStore
       value: 
       objectReference: {fileID: 1830018545}
+    - target: {fileID: 6298820698868298054, guid: 865d14520ea908b47818a741324e3095,
+        type: 3}
+      propertyPath: hexTypes.Array.data[3]
+      value: TrianglsRotated
+      objectReference: {fileID: 0}
     - target: {fileID: 6298820699152258734, guid: 865d14520ea908b47818a741324e3095,
         type: 3}
       propertyPath: numberStartGameText
@@ -1359,7 +1364,7 @@ PrefabInstance:
     - target: {fileID: 7182900847264475508, guid: 865d14520ea908b47818a741324e3095,
         type: 3}
       propertyPath: playerData.level
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7248024980830803038, guid: 865d14520ea908b47818a741324e3095,
         type: 3}
