@@ -20,7 +20,7 @@ public class CharactersSpawnSystem : GameSystem, IIniting
 
     void IIniting.OnInit()
     {
-        var spawnPoints = game.environment.transform.Find("Characters SP").GetComponentsInChildren<CharacterSpawnComponent>().OrderBy(x => x.Index).ToArray();
+        var spawnPoints = GameObject.Find("Characters SP").GetComponentsInChildren<CharacterSpawnComponent>().OrderBy(x => x.Index).ToArray();
         var colors = characterColors.OrderBy(x => Guid.NewGuid()).ToArray();
 
         var loopIndex = GameloopExtensions.CalculateLoopIndex(player.level, 5, skinDatas.Length);
