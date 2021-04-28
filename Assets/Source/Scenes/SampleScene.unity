@@ -1324,7 +1324,7 @@ PrefabInstance:
     - target: {fileID: 6298820698868298054, guid: 865d14520ea908b47818a741324e3095,
         type: 3}
       propertyPath: hexTypes.Array.data[3]
-      value: TrianglsRotated
+      value: Triangle Shape
       objectReference: {fileID: 0}
     - target: {fileID: 6298820699152258734, guid: 865d14520ea908b47818a741324e3095,
         type: 3}
