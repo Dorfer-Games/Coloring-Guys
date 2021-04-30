@@ -27,8 +27,8 @@ public class LevelLoadingSystem : GameSystem, IIniting, IDisposing
 
     private void Awake()
     {
-        if (loadingSystem == null)
-            loadingSystem = this;
+        if (loadingSystem == null) loadingSystem = this;
+        DOTween.Init().SetCapacity(3200, 200);
     }
 
     // Ќадо переписать, это вообще не пон€тно.
