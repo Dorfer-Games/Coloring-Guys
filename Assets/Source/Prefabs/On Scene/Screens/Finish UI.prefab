@@ -2374,7 +2374,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You lose!
+  m_text: PLAY AGAIN
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fc65c3a3165907d4ba31c5a348f0e386, type: 2}
   m_sharedMaterial: {fileID: 2474841572158009931, guid: fc65c3a3165907d4ba31c5a348f0e386,
