@@ -130,6 +130,7 @@ public class AdvertismentManager : MonoBehaviour
             else
             {
                 Signals.Get<OnInterstitialAdClosed>()?.Dispatch();
+                Bootstrap.GameRestart(0); //Small hack
                 LoadInterstitial();
             }
         }
@@ -177,7 +178,7 @@ public class AdvertismentManager : MonoBehaviour
     
     public bool IsInterstitialReady()
     {
-        return Time.realtimeSinceStartup-currentTime >=InterstitialCooldown && noAds == false;
+        return Time.realtimeSinceStartup-currentTime >= InterstitialCooldown && noAds == false;
     }
   
 #endregion

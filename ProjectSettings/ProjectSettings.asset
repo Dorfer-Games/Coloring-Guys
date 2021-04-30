@@ -170,7 +170,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: hexagone.colored.guys
   buildNumber: {}
-  AndroidBundleVersionCode: 4
+  AndroidBundleVersionCode: 5
   AndroidMinSdkVersion: 22
   AndroidTargetSdkVersion: 30
   AndroidPreferredInstallLocation: 1
