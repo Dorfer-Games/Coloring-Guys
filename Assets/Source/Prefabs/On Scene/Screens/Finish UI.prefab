@@ -435,7 +435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16cfe0746d2e1d147bafbe9dccaa8b98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  durationAnimation: 1
+  durationAnimation: 0.75
   startPoint: {fileID: 3312131257223498520}
   target: {fileID: 2038599420574780094}
 --- !u!1 &1213042780407840380

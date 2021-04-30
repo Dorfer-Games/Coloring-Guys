@@ -43,6 +43,7 @@ public class AdsSystem : GameSystem
     private void MoneyAdd_AdsRewarded()
     {
         MoneyRewardedSystem.rewardedSystem.AnimationStart(player.money_round, MoneyRewardedSystem.rewardedSystem.startPoint_X5);
+        finishUI.AdsRewardedButton.transform.parent.gameObject.SetActive(false);
         if (game.isVictory) LevelLoadingSystem.loadingSystem.AddLevel();
     }
 

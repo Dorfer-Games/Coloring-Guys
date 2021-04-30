@@ -5,19 +5,21 @@ using DG.Tweening;
 public class AnimationMoneyRewarded : MonoBehaviour
 {
     [SerializeField] private float durationAnimation;
-
     [SerializeField] private Transform startPoint, target;
+
+    public Sequence AnimationSequence { get; private set; }
 
     private void Start()
     {
         transform.position = startPoint.position;
-        var anim = DOTween.Sequence();
-        anim.Append(transform.DOScale(new Vector3(1f,1f,1f), durationAnimation));
-        anim.Append(transform.DOMove(target.position, durationAnimation));
-        anim.Join(transform.DOScale(new Vector3(0.137f, 0.137f, 0.137f), durationAnimation));
-        anim.OnComplete(() => Disabled());
-        anim.SetEase(Ease.Linear);
-        anim.Play();
+
+        AnimationSequence = DOTween.Sequence();
+        AnimationSequence.Append(transform.DOScale(new Vector3(1f,1f,1f), durationAnimation));
+        AnimationSequence.Append(transform.DOMove(target.position, durationAnimation));
+        AnimationSequence.Join(transform.DOScale(new Vector3(0.137f, 0.137f, 0.137f), durationAnimation));
+        AnimationSequence.OnComplete(() => Disabled());
+        AnimationSequence.SetEase(Ease.Linear);
+        AnimationSequence.Play();
     }
 
     public void SetStartPoint(Transform point)

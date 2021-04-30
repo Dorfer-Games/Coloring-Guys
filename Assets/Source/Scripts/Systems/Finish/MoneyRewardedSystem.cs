@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using DG.Tweening;
 
 public class MoneyRewardedSystem : GameSystem
 {
@@ -25,17 +26,24 @@ public class MoneyRewardedSystem : GameSystem
 
     void AddMoney(int moneyCount)
     {
+        var lastMoney = player.money;
+        var sequence = DOTween.Sequence();
+        var moneyUI = Bootstrap.GetSystem<MoneyUIComponent>();
+
         player.money += moneyCount;
-        Bootstrap.GetSystem<MoneyUIComponent>().UpdateMoney.Invoke(player.money);
+
+        sequence.SetDelay(moneyAnimation.GetComponent<AnimationMoneyRewarded>().AnimationSequence.Duration() - 0.5f);
+        sequence.Append(DOVirtual.Float(lastMoney, player.money, 1f, moneyUI.UpdateMoneyFloat));
+        sequence.AppendInterval(0.25f);
+        sequence.OnComplete(() => Bootstrap.GameRestart(0));
+        sequence.Play();
     }
 
     IEnumerator StartAnimationRewarded(int moneyCount)
     {
         Next.enabled = false;
         NoThinks.enabled = false;
-        yield return new WaitForSeconds(0.5f);
+        yield return null;
         AddMoney(moneyCount);
-        yield return new WaitForSeconds(2f);
-        Bootstrap.GameRestart(0);
     }
 }

@@ -14,6 +14,11 @@ public class MoneyUIComponent : GameSystem, IIniting
         UpdateMoney.Invoke(player.money);
     }
 
+    public void UpdateMoneyFloat(float value)
+    {
+        UpdateMoney.Invoke(Mathf.FloorToInt(value));
+    }
+
     void ChangeItemStore_Menu() // нужно для индикатора в меню(решил так сделать, потому что нужен быстрый результат для того, чтобы отправить apk. Позже сделаю правильнее)
     {
         int count = 0;
