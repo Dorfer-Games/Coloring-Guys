@@ -7,13 +7,13 @@ public class AnimationMoneyRewarded : MonoBehaviour
     [SerializeField] private float durationAnimation;
     [SerializeField] private Transform startPoint, target;
 
-    public Sequence AnimationSequence { get; private set; }
+    public float Duration => durationAnimation * 2;
 
-    private void Start()
+    private void OnEnable()
     {
         transform.position = startPoint.position;
 
-        AnimationSequence = DOTween.Sequence();
+        var AnimationSequence = DOTween.Sequence();
         AnimationSequence.Append(transform.DOScale(new Vector3(1f,1f,1f), durationAnimation));
         AnimationSequence.Append(transform.DOMove(target.position, durationAnimation));
         AnimationSequence.Join(transform.DOScale(new Vector3(0.137f, 0.137f, 0.137f), durationAnimation));

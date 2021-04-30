@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using AudienceNetwork;
+using Kuhpik;
 using Supyrb;
 using UnityEngine;
 
@@ -137,6 +138,7 @@ public class AdvertismentManager : MonoBehaviour
     private void OnInterstitialDisplayEvent(string adUnitId)
     {
         OnADWatched("interstitial", "on_level_start", "watched");
+        Bootstrap.GameRestart(0); //Small hack cause no other interstitials reasons expect on game end.
     }
 
     private void OnInterstitialLoadedEvent(string adUnitId)

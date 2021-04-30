@@ -35,15 +35,15 @@ public class AdsSystem : GameSystem
 
     public void AdsInterstitialEndLevelGame()
     {
-        AdvertismentManager.Instance.ShowInterstitial();
+        if (AdvertismentManager.Instance.IsInterstitialReady()) AdvertismentManager.Instance.ShowInterstitial();
+        else Bootstrap.GameRestart(0);
     }
 
     #region Callback срабатывающие после завершения рекламы
 
     private void MoneyAdd_AdsRewarded()
     {
-        MoneyRewardedSystem.rewardedSystem.AnimationStart(player.money_round, MoneyRewardedSystem.rewardedSystem.startPoint_X5);
-        finishUI.AdsRewardedButton.transform.parent.gameObject.SetActive(false);
+        MoneyRewardedSystem.rewardedSystem.AnimationStart(player.money_round, MoneyRewardedSystem.rewardedSystem.startPoint_X5, () => Bootstrap.GameRestart(0));
         if (game.isVictory) LevelLoadingSystem.loadingSystem.AddLevel();
     }
 

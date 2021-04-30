@@ -44,8 +44,7 @@ public class ResultUISystem : GameSystemWithScreen<FinishUIScreen>, IIniting
     void NoThanksLevelVictory()
     {
         if (game.isVictory) LevelLoadingSystem.loadingSystem.AddLevel();
-        MoneyRewardedSystem.rewardedSystem.AnimationStart(Bootstrap.GetSystem<LiderboardFinishSystem>().moneyNotThanks, MoneyRewardedSystem.rewardedSystem.startPoint_No);
-        Bootstrap.GetSystem<AdsSystem>().AdsInterstitialEndLevelGame();
+        MoneyRewardedSystem.rewardedSystem.AnimationStart(Bootstrap.GetSystem<LiderboardFinishSystem>().moneyNotThanks, MoneyRewardedSystem.rewardedSystem.startPoint_No, () => Bootstrap.GetSystem<AdsSystem>().AdsInterstitialEndLevelGame());
     }
 
     int GetProgress()

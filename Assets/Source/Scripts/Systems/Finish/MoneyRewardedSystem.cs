@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using DG.Tweening;
+using System;
 
 public class MoneyRewardedSystem : GameSystem
 {
@@ -12,16 +13,20 @@ public class MoneyRewardedSystem : GameSystem
     [SerializeField] private GameObject moneyAnimation;
     [SerializeField] private Button Next, NoThinks;
 
+    Action callback;
+
     void Start()
     {
         if (rewardedSystem == null) rewardedSystem = this;
     }
   
-    public void AnimationStart(int moneyCount, Transform startPoint)
+    public void AnimationStart(int moneyCount, Transform startPoint, Action callback)
     {
+        UIManager.GetUIScreen<FinishUIScreen>().AdsRewardedButton.transform.parent.gameObject.SetActive(false);
         moneyAnimation.GetComponent<AnimationMoneyRewarded>().SetStartPoint(startPoint);
         moneyAnimation.SetActive(true);
-        StartCoroutine(StartAnimationRewarded(moneyCount));
+        this.callback = callback;
+        AddMoney(moneyCount);
     }
 
     void AddMoney(int moneyCount)
@@ -32,18 +37,15 @@ public class MoneyRewardedSystem : GameSystem
 
         player.money += moneyCount;
 
-        sequence.SetDelay(moneyAnimation.GetComponent<AnimationMoneyRewarded>().AnimationSequence.Duration() - 0.5f);
+        sequence.SetDelay(moneyAnimation.GetComponent<AnimationMoneyRewarded>().Duration - 0.5f);
         sequence.Append(DOVirtual.Float(lastMoney, player.money, 1f, moneyUI.UpdateMoneyFloat));
         sequence.AppendInterval(0.25f);
-        sequence.OnComplete(() => Bootstrap.GameRestart(0));
+        sequence.OnComplete(InvokeCallback);
         sequence.Play();
     }
 
-    IEnumerator StartAnimationRewarded(int moneyCount)
+    void InvokeCallback()
     {
-        Next.enabled = false;
-        NoThinks.enabled = false;
-        yield return null;
-        AddMoney(moneyCount);
+        callback?.Invoke();
     }
 }
