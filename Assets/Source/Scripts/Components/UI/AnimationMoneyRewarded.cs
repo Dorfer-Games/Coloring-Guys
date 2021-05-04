@@ -38,12 +38,16 @@ public class AnimationMoneyRewarded : MonoBehaviour
     {
         for (int i = 0; i < transform.childCount; i++)
         {
+            transform.GetChild(i).DOScale(2f, 0);
+        }
+
+        for (int i = 0; i < transform.childCount; i++)
+        {
             var sequence = DOTween.Sequence();
             var child = transform.GetChild(i);
 
-            sequence.Append(child.DOScale(Vector3.one * 1.25f, 0f));
             sequence.Append(child.DOMove(target.position, durationAnimation).SetEase(Ease.Linear));
-            sequence.Join(child.DOScale(Vector3.one * 0.25f, durationAnimation).SetEase(Ease.InQuart));
+            sequence.Join(child.DOScale(Vector3.one * 0.75f, durationAnimation).SetEase(Ease.InQuart));
             sequence.OnComplete(() => child.gameObject.SetActive(false));
             sequence.Play();
 
