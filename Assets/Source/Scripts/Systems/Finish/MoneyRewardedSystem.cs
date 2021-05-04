@@ -37,8 +37,8 @@ public class MoneyRewardedSystem : GameSystem
 
         player.money += moneyCount;
 
-        sequence.SetDelay(moneyAnimation.GetComponent<AnimationMoneyRewarded>().Duration - 0.5f);
-        sequence.Append(DOVirtual.Float(lastMoney, player.money, 1f, moneyUI.UpdateMoneyFloat));
+        sequence.SetDelay(moneyAnimation.GetComponent<AnimationMoneyRewarded>().Duration / 3);
+        sequence.Append(DOVirtual.Float(lastMoney, player.money, 1.25f, moneyUI.UpdateMoneyFloat));
         sequence.AppendInterval(0.25f);
         sequence.OnComplete(InvokeCallback);
         sequence.Play();
