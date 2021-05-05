@@ -7,12 +7,23 @@ public class ConfettiSystems : GameSystem, IIniting
     [SerializeField] private ParticleSystem[] confetti;
     [SerializeField] private float timeNextScreenStart = 1.5f;
 
+    [Header("Animation")]
+    [SerializeField] float yPositionToFixJump;
+
     public void OnInit()
     {
         if (game.isVictory)
         {
             StartCoroutine(offsetTimeStartConfetti());
-            //game.characters[0].animator.SetBool("Dance", true);
+
+            //Quick fix for dancing animation
+            var character = game.characters[0].rigidbody.transform;
+            var position = character.position;
+
+            game.characters[0].animator.SetBool("Jumping", false);
+            position.y = yPositionToFixJump;
+            character.position = position;
+
             game.characters[0].animator.Play("Samba Dancing");
         }
 
