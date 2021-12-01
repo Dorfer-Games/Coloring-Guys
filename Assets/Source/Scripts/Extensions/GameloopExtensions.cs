@@ -2,12 +2,16 @@
 
 public static class GameloopExtensions
 {
+    // Например, level = 16, toLoop = 5, max = 3.
+    // Где ToLoop это кол-во уровней в цикле, а max это кол-во циклов.
+    // Т.е. если у нас 16 уровень, при toLoop 5 и max 3, то нам вернёт уже первый цикл.
+  
     public static int CalculateLoopIndex(int level, int toLoop, int max)
     {
-        var one = level;  // Например, начинаем с 38
-        var two = Mathf.FloorToInt(one / toLoop); // 38 / 5 = 7
-        var three = Mathf.Abs(two) + max; // 7 + 3 = 10. Прибавляем для того, что бы первые уровни не считать остаток от числа ниже 3.
-        var four = three % max; // 10 % 3 = 1
+        var one = level;
+        var two = Mathf.FloorToInt(one / toLoop);
+        var three = Mathf.Abs(two) + max;
+        var four = three % max;
 
         return four;
     }
